@@ -1,4 +1,4 @@
-public class Test_integers {
+public class TestIntegers {
     public static void main(String[] args) {
         double a = 56.56789;
         int b = (int) Math.round(a);
@@ -25,7 +25,8 @@ public class Test_integers {
 
         int bbb = 12;
         int kk = 1 + ++bbb;//14
-        System.out.println(bbb);//13
+        System.out.println(bbb + kk);//27
+
 
         byte aA = 3;
         short bB = 4;
