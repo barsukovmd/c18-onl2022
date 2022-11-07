@@ -1,4 +1,4 @@
-public class Max_Number_From_Array {
+public class countMaxNumberFromArray {
     public static void main(String[] args) {
         int[] nums = {1, 2, 10, 3};
         int x = max(nums);

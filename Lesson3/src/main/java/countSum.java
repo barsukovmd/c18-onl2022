@@ -1,12 +1,11 @@
-public class Lesson3_Sum {
-
+public class countSum {
     public static void main(String[] args) {
-        int calculateSum = sum(100, 200);
+        long calculateSum = sum(100, 200);
         System.out.println(calculateSum);
     }
 
     public static int sum(int a, int b) {
-        if ((a + b) > Integer.max(100, 200)) {
+        if ((a + b) > Integer.MAX_VALUE) { //нужно ли написать Integer.max(a,b) ??
             return -1;
         } else {
             return a + b;

@@ -1,5 +1,5 @@
 
-public class Array_Numbers_Average {
+public class countArrayNumbersAverage {
     public static void main(String[] args) {
         int[] arrays = {0, -2, 3, -1, 5};
         double x = average(arrays);

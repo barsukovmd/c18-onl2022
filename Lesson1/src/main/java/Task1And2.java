@@ -1,4 +1,4 @@
-public class Task1_2 {
+public class Task1And2 {
     public static void main(String[] args) {
         int count = 0;
         for (String arg : args) {
