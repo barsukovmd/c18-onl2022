@@ -1,8 +1,7 @@
 
 public class showChart5 {
     public static void main(String[] args) {
-        String s1 = "byte  \tshort  \tchar  \tint  \tlong  \tfloat  \tdouble \tboolean";
-
+        String s1 = "      \tbyte \tshort  \tchar  \tint  \tlong  \tfloat  \tdouble \tboolean";
         System.out.println(s1);
 
         String s2 = "byte   \tt   \tня     \tx     \tня   \tня    \tня     \tня     \tx";
