@@ -5,7 +5,6 @@ public class CountSum {
         long calculateSum = sum(100, 200);
         System.out.println(calculateSum);
     }
-
     public static int sum(int a, int b) {
         if (((long) a + b) > MAX_VALUE) {
             return -1;
