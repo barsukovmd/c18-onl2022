@@ -5,9 +5,7 @@ public class Task1And2 {
             int i = Integer.parseInt(arg);
             if (i > 0) {
                 count++;
-
             }
-
         }
         System.out.println("Колличество положительных чисел "+ count);
     }
