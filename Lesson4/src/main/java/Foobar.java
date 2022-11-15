@@ -18,7 +18,7 @@ public class Foobar {
         } else {
             System.out.println("Enter appropriate number");
             Scanner scanner = new Scanner(System.in);
-            scanner.hasNextInt();//не очень понимаю разницу между nextInt и hasNextInt
+            scanner.next();
         }
     }
 }
