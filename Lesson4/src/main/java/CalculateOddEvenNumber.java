@@ -1,9 +1,7 @@
-
 public class CalculateOddEvenNumber {
     public static void main(String[] args) {
         int[] nums = {1, 2, 3, 4, 5, 6};
-        int y = calculateCountOfOddElementsInMatrix(nums);
-        System.out.println(y);// не могу понять почему возвращает последнее число 2 раза
+        calculateCountOfOddElementsInMatrix(nums);
     }
 
     public static int calculateCountOfOddElementsInMatrix(int[] nums) {

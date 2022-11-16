@@ -15,10 +15,6 @@ public class Foobar {
             System.out.println("bar");
         } else if (x % 3 == 0 & x % 5 == 0) {
             System.out.println("foobar");
-        } else {
-            System.out.println("Enter appropriate number");
-            Scanner scanner = new Scanner(System.in);
-            scanner.next();
         }
     }
 }

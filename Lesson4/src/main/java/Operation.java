@@ -15,7 +15,7 @@ public class Operation {
         } else if (number < 0) {
             return number - 2;
         } else if (number == 0) {
-            return number + 10;
+            return 10;
         }
         return number;
     }
