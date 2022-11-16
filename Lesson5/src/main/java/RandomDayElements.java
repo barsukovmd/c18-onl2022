@@ -22,10 +22,8 @@ public class RandomDayElements {
                 System.out.println("Friday");
                 break;
             case 6:
-                System.out.println("Saturday");
-                break;
             case 7:
-                System.out.println("Sunday");
+                System.out.println("Weekends");
                 break;
         }
     }

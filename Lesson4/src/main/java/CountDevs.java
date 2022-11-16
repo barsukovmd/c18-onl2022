@@ -5,16 +5,21 @@ public class CountDevs {
         System.out.println("Enter number of DevOps");
         Scanner scanner = new Scanner(System.in);
         int x = scanner.nextInt();
-        getCountDevs(x);
+        countNumberOfDevs(x);
+        for (int i = 0; i < 1000; i++) {
+            countNumberOfDevs(i);
+        }
     }
 
-    public static void getCountDevs(int x) {
-        if (x < 5 & x % 2 == 0 & x % 3 == 0) {
-            System.out.println(x + " программиста");
-        } else if (x >= 5 | x % 2 == 0 | x % 3 == 0 | x % 5 == 0) {
-            System.out.println(x + " программистов");
-        } else {
+    public static void countNumberOfDevs(int x) {
+        int d10 = x % 10;
+        int d100 = x % 100;
+        if (d10 == 1 && d100 != 11) {
             System.out.println(x + " программист");
+        } else if ((d10 >= 2 && d10 <= 4) && !(d100 >= 12 && d100 < 14)) {
+            System.out.println(x + " программиста");
+        } else {
+            System.out.println(x + " программистов");
         }
     }
 }
@@ -22,13 +27,5 @@ public class CountDevs {
 
 
 
-/*
- * На вход приходит число.
- * Вывести в консоль фразу из разряда "_COUNT_ программистов",
- * заменить _COUNT_ на число которое пришло на вход в метод и заменить окончание в слове "программистов" на
- * уместное с точки зрения русского языка.
- * Пример: 1 программист, 42 программиста, 50 программистов
- *
- * @param count - количество программистов
- */
+
 
