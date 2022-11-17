@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Random;
 
 //8) Создайте массив из int[] mass = new int[12]; Рандомно заполните его значениями от 0 до 15.
@@ -7,26 +8,26 @@ public class MassiveRandom {
     public static void main(String[] args) {
         int[] array = new int[12];
         Random random = new Random();
-        int c = random.nextInt(15);
-        getMaxElementPosition(array);
+        for (int i = 0; i < 12; i++) {
+            array[i] = random.nextInt(15);
+        }
+        System.out.println(Arrays.toString(array));
+        findMaxNumber(array);
     }
 
+    private static void findMaxNumber(int[] array) {
+        if (array != null && array.length > 0) {
+            int maxIndex = 0;
+            int maxNumber = array[0];
 
-    public static void getMaxElementPosition(int[] array) {
-        int max = 0;
-        int index = 0;
-        for (int i = 0; i < array.length; i++) {
-            if (max > array[i]) {
-                max = i;
-            }
-            for (int j = i + 1; j < array.length; j++) {
-                if (array[i] == array[j]) {
-                    index = array[j];
-                    System.out.println(index);
+            for (int i = 0; i < array.length; i++) {
+                if (array[i] >= maxNumber) {
+                    maxNumber = array[i];
+                    maxIndex = i;
                 }
+
             }
+            System.out.println("Max Index " + maxIndex + " Max number " + maxNumber);
         }
-        array[max] = max;
-        array[index] = index;
     }
 }
