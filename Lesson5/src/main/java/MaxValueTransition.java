@@ -16,9 +16,9 @@ public class MaxValueTransition {
                 max = mass[i];
                 maxPlace = i;
             }
-            mass[maxPlace] = mass[0];
-            mass[0] = max;//не понимаю, почему два одинаковых числа максимальных значения(вместо обмена позиций)
         }
+        mass[maxPlace] = mass[0];
+        mass[0] = max;
         System.out.println(Arrays.toString(mass));
     }
 }
