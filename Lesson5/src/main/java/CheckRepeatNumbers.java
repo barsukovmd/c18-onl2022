@@ -9,6 +9,7 @@ public class CheckRepeatNumbers {
     public static void main(String[] args) {
         int[] array = {1, 22, 3, 4, 2, 5, 7, 5, 3, 22};
         System.out.println(Arrays.toString(array));
+        System.out.println("Repeated elements");
         checkRepeatedElements(array);
     }
 
@@ -25,8 +26,7 @@ public class CheckRepeatNumbers {
                     }
                 }
             }
+
         }
-
-
+        }
     }
-}
