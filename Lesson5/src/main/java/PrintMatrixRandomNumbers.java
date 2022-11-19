@@ -20,10 +20,7 @@ public class PrintMatrixRandomNumbers {
      * <p>
      * + * *
      * * - +
-<<<<<<< HEAD
-=======
      * <p>
->>>>>>> origin/develop
      * Обратите внимание, что 21% 3 == 0 и 21% 7 = 0, но выводить надо не +-, а +
      */
     public static void main(String[] args) {
@@ -37,25 +34,22 @@ public class PrintMatrixRandomNumbers {
         int a = scanner.nextInt();
         System.out.println("Enter width of matrix");
         int b = scanner.nextInt();
-        int[][] ints = new int[a][b];
-<<<<<<< HEAD
+        char[][] ints = new char[a][b];
         for (int i = 0; i < ints.length; i++) {
             for (int j = 0; j < ints.length; j++) {
-                ints[i][j] = random.nextInt(100);
-                ints[a][b] = ints[i][j];
-=======
-        ints[a][b] = random.nextInt(100);
+                ints[i][j] = (char) random.nextInt(100);
+            }
+        }
         for (int i = 0; i < ints.length; i++) {
             for (int j = 0; j < ints.length; j++) {
->>>>>>> origin/develop
-                if (ints[a][b] % 3 == 0) {
-                    ints[a][b] = '+';
-                } else if (ints[a][b] % 7 == 0) {
-                    ints[a][b] = '-';
+                if (ints[i][j] % 3 == 0) {
+                    ints[i][j] = '+';
+                } else if (ints[i][j] % 7 == 0) {
+                    ints[i][j] = '-';
                 } else {
-                    ints[a][b] = '*';
+                    ints[i][j] = '*';
                 }
             }
         }
     }
-}
+    }
