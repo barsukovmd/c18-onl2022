@@ -34,12 +34,13 @@ public class PrintMatrixRandomNumbers {
         int a = scanner.nextInt();
         System.out.println("Enter width of matrix");
         int b = scanner.nextInt();
-        char[][] ints = new char[a][b];
+        int[][] ints = new int[a][b];
         for (int i = 0; i < ints.length; i++) {
-            for (int j = 0; j < ints.length; j++) {
-                ints[i][j] = (char) random.nextInt(100);
+            for (int j = 0; j < ints[i].length; j++) {
+                ints[i][j] = random.nextInt(100);
             }
         }
+
         for (int i = 0; i < ints.length; i++) {
             for (int j = 0; j < ints.length; j++) {
                 if (ints[i][j] % 3 == 0) {
@@ -50,6 +51,7 @@ public class PrintMatrixRandomNumbers {
                     ints[i][j] = '*';
                 }
             }
+            System.out.println();
         }
     }
     }

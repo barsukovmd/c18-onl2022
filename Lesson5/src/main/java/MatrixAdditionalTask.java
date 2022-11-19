@@ -20,7 +20,7 @@ public class MatrixAdditionalTask {
         for (int i = 0; i < ints.length; i++) {
             for (int j = 0; j < ints.length; j++) {
                 ints[i][j] = random.nextInt(10000);
-                System.out.print("\t" + ints[i][j] + " ");
+                System.out.print("\t " + ints[i][j] + " ");
             }
             System.out.println();
         }
