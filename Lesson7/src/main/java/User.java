@@ -1,33 +1,48 @@
+//* 2) Создать в классе User несколько конструкторов(сделано). Создать объект этого класса,
+//     *использовав один из них.
+//     * В этом конструкторе сделать вызов другого конструктора этого же класса.
+//     */??????????????????
 public class User {
-    String name;
-    String surname;
-    String sex;
-    int age;
+    //характеристики, глобальные переменные
+    public String name, surname;
+    public String sex;
+    public int age;
 
-    public User() {
-
-    }
-
-    public void setName(String name, String surname) {
+    public User(String name, String surname, String sex, int age) {
         this.name = name;
         this.surname = surname;
-        System.out.println("Name: " + name + " " + "Surname: " + surname);
+        this.sex = sex;
+        this.age = age;
+    }
+
+    public User(String name, String surname, String sex) {
+
+        this.name = name;
+        this.surname = surname;
+        this.sex = sex;
+    }
+
+    public User(String sex, int age) {
+        this.sex = sex;
+        this.age = age;
+    }
+
+
+    public void myNameSurname(String name, String surname) {
+        System.out.println(name + surname);
     }
 
     @Deprecated
-    public void setSex(String sex) {
-        this.sex = sex;
-        System.out.println("Sex: " + sex);
+    public void mySex(String sex) {
+        System.out.println(sex);
     }
 
-    public void setAgeIncrease(int age) {
-        this.age = age;
-        System.out.println("Age: " + age);
+    public void myAge(int age) {
+        System.out.println(age);
     }
 
-    public void setPersonInfo(String name, String surname, String sex, int age) {
-        setName(name, surname);
-        setSex(sex);
-        setAgeIncrease(age);
+    public void myPersonInfo(String name, String surname, int age, String sex) {
+        System.out.println(name + " " + surname + " " + age + " " + sex);
     }
 }
+
