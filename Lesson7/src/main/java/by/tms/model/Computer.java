@@ -1,15 +1,23 @@
 package by.tms.model;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.Random;
 import java.util.Scanner;
 
+@Setter
+@Getter
 public class Computer {
-    String Processor;
-    String Operation;
-    String HardDisk;
-    String ResourceOfCycles; //(включился выключился это один цикл)
+    private String Processor;
+    private String Operation;
+    private String HardDisk;
+    private String ResourceOfCycles; //(включился выключился - один цикл)
 
-    public void showAllStrings() {
+    public Computer(String processor, String operation, String hardDisk, String resourceOfCycles) {
+        Processor = processor;
+        Operation = operation;
+        HardDisk = hardDisk;
+        ResourceOfCycles = resourceOfCycles;
     }
 
     public void on() {
@@ -17,8 +25,8 @@ public class Computer {
         Random random = new Random();
         Scanner scanner = new Scanner(System.in);
         int on = scanner.nextInt();
-        int i = random.nextInt(1);
-        if (on == i) {
+        int i = random.nextInt(2);
+        if (i == on) {
             System.out.println("Компьютер выключился");
         } else if (on != i) {
             System.out.println("компьютер сгорает");
