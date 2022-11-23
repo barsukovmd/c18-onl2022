@@ -1,8 +1,8 @@
 public class User {
     //характеристики, глобальные переменные
-    public String name, surname;
-    public String sex;
-    public int age;
+    private String name, surname;
+    private String sex;
+    private int age;
 
     public User(String name, String surname) {
         this.name = name;

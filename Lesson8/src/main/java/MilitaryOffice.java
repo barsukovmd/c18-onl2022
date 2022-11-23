@@ -23,6 +23,5 @@ public class MilitaryOffice {
     Person person12 = new Person("Fedor", 26, true, "Belarus", "Minsk");
     Person person13 = new Person("Vitaliy", 27, true, "Belarus", "Minsk");
     Person person14 = new Person("Vlad", 24, true, "Belarus", "Minsk");
-
 }
 

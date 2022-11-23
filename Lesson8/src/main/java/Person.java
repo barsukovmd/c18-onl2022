@@ -1,9 +1,9 @@
 public class Person {
-    protected String name;
-    protected int age;
-    protected boolean sex;//false
-    protected String country;
-    protected String city;
+    private String name;
+    private int age;
+    private boolean sex;//false
+    private String country;
+    private String city;
 
     public Person(String country, String city) {
         this.country = country;
