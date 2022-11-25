@@ -3,19 +3,19 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Computer {
-    private final String Processor;
-    private final String Operation;
-    private final String HardDisk;
-    private int ResourceOfCycles;
-    private boolean burned;//false 0
-    Random random = new Random();
-    Scanner scanner = new Scanner(System.in);
+    private final String processor;
+    private final String operation;
+    private final String hardDisk;
+    private int resourceOfCycles;
+    private final boolean burned = false;
+    private final Random random = new Random();
+    private final Scanner scanner = new Scanner(System.in);
 
     public Computer(String processor, String operation, String hardDisk, int resourceOfCycles) {
-        Processor = processor;
-        Operation = operation;
-        HardDisk = hardDisk;
-        ResourceOfCycles = resourceOfCycles;
+        this.processor = processor;
+        this.operation = operation;
+        this.hardDisk = hardDisk;
+        this.resourceOfCycles = resourceOfCycles;
         System.out.println(processor + " processor " + operation + " operation " + hardDisk + " hardDisk " + resourceOfCycles + " resourceOfCycles");
     }
 
@@ -33,9 +33,11 @@ public class Computer {
     }
 
     public void on() {
-        System.out.println("Please enter 0 or 1");
+        if (!burned && resourceOfCycles > 0) {
+            System.out.println("Please enter 0 or 1");
+        }
         int i = random.nextInt(2);
-        if (i == randomValueFromConcole() && !burned && ResourceOfCycles > 0) {
+        if (i == randomValueFromConcole() && !burned && resourceOfCycles > 0) {
             System.out.println("Компьютер включился");
         } else if (i != randomValueFromConcole()) {
             System.out.println("компьютер сгорает");
@@ -49,9 +51,9 @@ public class Computer {
     }
 
     public void off() {
-        if (!burned && ResourceOfCycles > 0) {
+        if (!burned && resourceOfCycles > 0) {
             System.out.println("Выключение");
-            System.out.println(" ResourceOfCycles " + --ResourceOfCycles);
+            System.out.println(" ResourceOfCycles " + --resourceOfCycles);
             scanner.nextInt();
         } else {
             System.out.println("Компьютер сгорел");
