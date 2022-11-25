@@ -7,9 +7,9 @@ public class Computer {
     private final String operation;
     private final String hardDisk;
     private int resourceOfCycles;
-    private boolean burned;//false 0
-    Random random = new Random();
-    Scanner scanner = new Scanner(System.in);
+    private final boolean burned = false;
+    private final Random random = new Random();
+    private final Scanner scanner = new Scanner(System.in);
 
     public Computer(String processor, String operation, String hardDisk, int resourceOfCycles) {
         this.processor = processor;

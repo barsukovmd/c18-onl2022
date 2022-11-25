@@ -15,7 +15,6 @@ public class Massive {
         System.out.println(numbers ? "number is in array" : "number not in array");
         // не получается вывести на экран весь массив чисел после
         // совпадения, понимаю, что из-за return
-
         System.out.println(Arrays.toString(ints));
     }
 
