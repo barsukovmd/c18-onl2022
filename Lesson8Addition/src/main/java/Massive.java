@@ -13,31 +13,19 @@ public class Massive {
         int[] ints = new int[10];
         boolean numbers = checkNumber(console, ints, random);
         System.out.println(numbers ? "number is in array" : "number not in array");
-<<<<<<< HEAD
         // не получается вывести на экран весь массив чисел после
         // совпадения, понимаю, что из-за return
-=======
->>>>>>> origin/develop
+
         System.out.println(Arrays.toString(ints));
     }
 
     private static boolean checkNumber(int console, int[] ints, Random random) {
-<<<<<<< HEAD
-
-=======
->>>>>>> origin/develop
         for (int i = 0; i < ints.length; i++) {
             ints[i] = random.nextInt(10);
             if (ints[i] == console) {
                 return true;
             }
-<<<<<<< HEAD
-
         }
-
-=======
-        }
->>>>>>> origin/develop
         return false;
     }
 }
