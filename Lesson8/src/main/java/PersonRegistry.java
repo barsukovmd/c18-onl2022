@@ -1,7 +1,12 @@
-public class PersonRegistry {
-    private Person[] person;
+import lombok.Getter;
+import lombok.Setter;
 
-    public PersonRegistry(Person[] person) {
-        this.person = person;
+@Setter
+@Getter
+public class PersonRegistry {
+    private Person[] persons;
+
+    public PersonRegistry(Person[] persons) {
+        this.persons = persons;
     }
 }

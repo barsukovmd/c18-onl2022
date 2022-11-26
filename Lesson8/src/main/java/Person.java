@@ -1,30 +1,26 @@
+import lombok.Setter;
+import lombok.Getter;
+
+@Setter
+@Getter
 public class Person {
     private String name;
     private int age;
-    private boolean sex;
-    private final String country;
-    private final String city;
+    private String sex;
+    private String country;
+    private String city;
 
     public Person(String country, String city) {
         this.country = country;
         this.city = city;
     }
 
-    public Person(String name, int age, boolean sex, String country, String city) {
+    public Person(String name, int age, String sex, String country, String city) {
         this.name = name;
         this.age = age;
         this.sex = sex;
         this.country = country;
         this.city = city;
-    }
-
-    public String checkRecruits(MilitaryOffice militaryOffice) {
-        boolean sex = true;
-        if (age > 18 && age < 27 && sex) {
-            return militaryOffice.toString();
-        } else {
-            return null;
-        }
     }
 
        /* System.out.println("Please enter your age");
