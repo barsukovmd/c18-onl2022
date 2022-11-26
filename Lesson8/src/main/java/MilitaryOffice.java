@@ -7,7 +7,7 @@ public class MilitaryOffice {
     }
 
     public void checkRecruits(PersonRegistry personRegistry, int age, boolean sex) {
-        for (int i = 0; i < personRegistry.getPersons().length; i++) {
+        for (int i = 0; i < personRegistry.getPersons().length; i++) {//почему здесь не ставим
             if (age > 18 && age < 27 && sex) {
                 System.out.println(personRegistry + " is ready for army");
             } else if (age < 18 || age > 27 || !sex) {
