@@ -6,7 +6,7 @@ import lombok.Getter;
 public class Person {
     private String name;
     private int age;
-    private boolean sex;
+    private String sex;
     private String country;
     private String city;
 
@@ -15,7 +15,7 @@ public class Person {
         this.city = city;
     }
 
-    public Person(String name, int age, boolean sex, String country, String city) {
+    public Person(String name, int age, String sex, String country, String city) {
         this.name = name;
         this.age = age;
         this.sex = sex;
