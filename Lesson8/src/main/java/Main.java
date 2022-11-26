@@ -19,6 +19,6 @@ public class Main {
         persons[14] = new Person("Vlad", 24, true, "Belarus", "Minsk");
         PersonRegistry personRegistry = new PersonRegistry(persons);
         MilitaryOffice militaryOffice = new MilitaryOffice(personRegistry);
-        // militaryOffice.getPersonRegistry();
+        militaryOffice.setPersonRegistry(personRegistry);
     }
 }

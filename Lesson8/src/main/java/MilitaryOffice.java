@@ -1,5 +1,9 @@
+import lombok.Getter;
+import lombok.Setter;
 
-public class MilitaryOffice {
+@Setter
+@Getter
+class MilitaryOffice {
     private PersonRegistry personRegistry;
 
     public MilitaryOffice(PersonRegistry personRegistry) {

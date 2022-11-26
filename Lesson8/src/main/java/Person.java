@@ -1,3 +1,8 @@
+import lombok.Setter;
+import lombok.Getter;
+
+@Setter
+@Getter
 public class Person {
     private String name;
     private int age;
