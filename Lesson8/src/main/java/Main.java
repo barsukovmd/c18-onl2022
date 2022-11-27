@@ -23,6 +23,6 @@ public class Main {
         MilitaryOffice militaryOffice = new MilitaryOffice(personRegistry);
         militaryOffice.checkRecruitsAge(21, true);//я к примеру не хочу, чтобы нужно было вводить возраст и пол
 
-        System.out.println(militaryOffice);
+        System.out.println(Arrays.toString(persons));
     }
 }

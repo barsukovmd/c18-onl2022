@@ -3,14 +3,13 @@ package car;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.Scanner;
 
 @Getter
 @Setter
 public class Car {
-    private Scanner scanner = new Scanner(System.in);
     private FuelTank fuelTank;
     private Engine engine;
+    private Mileage mileage;
     private String carBrand;
     private int carYear;
     private int checkMileage;
@@ -20,13 +19,17 @@ public class Car {
         this.engine = engine;
     }
 
+    public Car(String carBrand, int carYear) {
+        this.carBrand = carBrand;
+        this.carYear = carYear;
+    }
+
     public int checkDistance(int checkMileage) {
-        if (checkMileage > 0) {
+        if (checkMileage > 0 && engine.isOn() && !engine.isOff()) {
             for (int i = 0; i < checkMileage; i++) {
                 checkMileage--;
             }
         }
         return checkMileage;
     }
-
 }
