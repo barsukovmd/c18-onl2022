@@ -24,9 +24,11 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("Turn on your car engine");
         Car[] cars = new Car[3];
-        Engine engine = new Engine(false, 100);
+        Engine engine = new Engine(false, 100, 40);
         FuelTank fuelTank = new FuelTank(50);
-        cars[0] = new Car(fuelTank, engine);
+        cars[0] = new Car("BMW", 2020);
+        cars[1] = new Car("Acura", 2020);
+        cars[2] = new Car("Jeep", 2020);
         cars[0].checkDistance(10);
         cars[0].getFuelTank().checkFuel(10);
         cars[0].getEngine().setResourceOfEngine(10);
@@ -35,4 +37,4 @@ public class Main {
         cars[2] = new Car(fuelTank, engine);
         System.out.println(Arrays.toString(cars));
     }
-}
+    }

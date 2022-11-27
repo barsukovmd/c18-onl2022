@@ -11,14 +11,17 @@ public final class Engine {
     private Scanner scanner = new Scanner(System.in);
     private boolean isOn;
     private int resourceOfEngine;
+    private int fuelTank;
+    private String engineType;
 
-    public Engine(boolean isOn, int resourceOfEngine) {
+    public Engine(boolean isOn, int resourceOfEngine, int fuelTank) {
         this.isOn = isOn;
         this.resourceOfEngine = resourceOfEngine;
+        this.fuelTank = fuelTank;
     }
 
     public boolean isOn() {
-        if (isOn && resourceOfEngine > 0) {
+        if (isOn && resourceOfEngine > 0 && fuelTank > 0) {
             scanner.next();
             System.out.println("Car engine is turned on");
             return false;

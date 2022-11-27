@@ -12,4 +12,5 @@ public class Mileage {
     public Mileage(int checkMileage) {
         this.checkMileage = checkMileage;
     }
+
 }
