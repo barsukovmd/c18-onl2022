@@ -1,12 +1,12 @@
-import lombok.Setter;
 import lombok.Getter;
+import lombok.Setter;
 
 @Setter
 @Getter
 public class Person {
     private String name;
     private int age;
-    private String sex;
+    private boolean sex = true;
     private String country;
     private String city;
 
@@ -15,7 +15,7 @@ public class Person {
         this.city = city;
     }
 
-    public Person(String name, int age, String sex, String country, String city) {
+    public Person(String name, int age, boolean sex, String country, String city) {
         this.name = name;
         this.age = age;
         this.sex = sex;
@@ -23,7 +23,7 @@ public class Person {
         this.city = city;
     }
 
-       /* System.out.println("Please enter your age");
+    /* System.out.println("Please enter your age");
         age = scanner.nextInt();
         System.out.println("Please enter your sex");
         sex = Boolean.parseBoolean(scanner.next());
