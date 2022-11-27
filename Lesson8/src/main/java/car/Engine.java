@@ -10,7 +10,7 @@ public class Engine {
     private int resourceOfEngine = 1000;
 
     public void on() {
-        if (isOn) {
+        if (isOn && resourceOfEngine > 0) {
             System.out.println("Car engine is turned on");
         } else {
             System.out.println("Please turn on your car engine");
