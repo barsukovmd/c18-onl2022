@@ -14,12 +14,5 @@ public class Mileage {
         this.checkMileage = checkMileage;
     }
 
-    public int checkDistance(int checkMileage) {
-        if (checkMileage > 0) {
-            for (int i = 0; i < checkMileage; i++) {
-                checkMileage--;
-            }
-        }
-        return checkMileage;
-    }
+
 }
