@@ -1,5 +1,7 @@
 package car;
 
+import java.util.Arrays;
+
 /*
 //- Машина имеет двигатель, бензобак (реализуйте класс для каждой сущности).
  // Чтобы поехать, машину необходимо завести, т.е. включить двигатель.
@@ -31,8 +33,6 @@ public class Main {
         System.out.println(cars[0].getEngine().getResourceOfEngine());
         cars[1] = new Car(fuelTank, engine);
         cars[2] = new Car(fuelTank, engine);
-        for (Car allCars : cars) {
-            System.out.println(allCars);
-        }
+        System.out.println(Arrays.toString(cars));
     }
 }
