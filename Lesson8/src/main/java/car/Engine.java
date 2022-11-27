@@ -7,24 +7,33 @@ import java.util.Scanner;
 
 @Setter
 @Getter
-public class Engine {
+public final class Engine {
     private Scanner scanner = new Scanner(System.in);
-    private boolean isOn = true;
-    private int resourceOfEngine = 1000;
+    private boolean isOn;
+    private int resourceOfEngine;
 
-    public void on() {
+    public Engine(boolean isOn, int resourceOfEngine) {
+        this.isOn = isOn;
+        this.resourceOfEngine = resourceOfEngine;
+    }
+
+    public boolean isOn() {
         if (isOn && resourceOfEngine > 0) {
+            scanner.next();
             System.out.println("Car engine is turned on");
+            return false;
         } else {
             System.out.println("Please turn on your car engine");
         }
+        return true;
     }
 
-    public boolean off() {
+    public boolean isOff() {
         if (!isOn) {
             System.out.println("Please turn off the engine");
+            return false;
         }
-        return false;
+        return true;
     }
 
     public int checkResourceOfEngine(int resourceOfEngine) {
@@ -35,7 +44,7 @@ public class Engine {
     }
 
     public void rideTheCar() {
-        if (off()) {
+        if (isOff()) {
             System.out.println("Car should be turned on");
         } else {
             scanner.nextInt();
