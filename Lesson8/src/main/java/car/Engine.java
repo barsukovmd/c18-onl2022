@@ -3,9 +3,12 @@ package car;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.Scanner;
+
 @Setter
 @Getter
 public class Engine {
+    private Scanner scanner = new Scanner(System.in);
     private boolean isOn = true;
     private int resourceOfEngine = 1000;
 
@@ -17,10 +20,11 @@ public class Engine {
         }
     }
 
-    public void off() {
+    public boolean off() {
         if (!isOn) {
             System.out.println("Please turn off the engine");
         }
+        return false;
     }
 
     public int checkResourceOfEngine(int resourceOfEngine) {
@@ -28,5 +32,14 @@ public class Engine {
             resourceOfEngine--;
         }
         return resourceOfEngine;
+    }
+
+    public void rideTheCar() {
+        if (off()) {
+            System.out.println("Car should be turned on");
+        } else {
+            scanner.nextInt();
+            System.out.println("Car is riding");
+        }
     }
 }

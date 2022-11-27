@@ -8,6 +8,7 @@ import java.util.Scanner;
 @Getter
 @Setter
 public class Car {
+    private Scanner scanner = new Scanner(System.in);
     private FuelTank fuelTank;
     private Engine engine;
 
