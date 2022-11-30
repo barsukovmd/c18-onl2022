@@ -3,7 +3,7 @@ import java.util.Arrays;
 @SuppressWarnings("ALL")
 public class Main {
     public static void main(String[] args) {
-        Person[] persons = new Person[30];
+        Person[] persons = new Person[15];
         persons[0] = new Person("Vitaliy", 20, true, "Belarus", "Minsk");
         persons[1] = new Person("Igor", 25, true, "Belarus", "Minsk");
         persons[2] = new Person("Vladimir", 18, true, "Belarus", "Minsk");
@@ -19,10 +19,7 @@ public class Main {
         persons[12] = new Person("Fedor", 26, true, "Belarus", "Minsk");
         persons[13] = new Person("Vitaliy", 27, true, "Belarus", "Minsk");
         persons[14] = new Person("Vlad", 24, true, "Belarus", "Minsk");
-        PersonRegistry personRegistry = new PersonRegistry(persons);
-        MilitaryOffice militaryOffice = new MilitaryOffice(personRegistry);
-        militaryOffice.checkRecruitsAge(21, true);//я к примеру не хочу, чтобы нужно было вводить возраст и пол
+        MilitaryOffice militaryOffice = new MilitaryOffice(new PersonRegistry(persons));
 
-        System.out.println(Arrays.toString(persons));
     }
 }

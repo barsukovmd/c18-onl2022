@@ -1,6 +1,8 @@
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.Arrays;
+
 
 @Setter
 @Getter
@@ -11,15 +13,18 @@ class MilitaryOffice {
         this.personRegistry = personRegistry;
     }
 
-    public void checkRecruitsAge(int age, boolean sex) {//не понимаю как достать возраст, пол и другие поля из другого для сравнения в методе??
-        //или нам нужно просто заново новые задекларировать?
+    public String checkRecruitsAge() {
         for (int i = 0; i < personRegistry.getPersons().length; i++) {
-            if (age > 18 && age < 27 && sex) {
-                System.out.println(personRegistry + " is ready for army");
-            } else if (age < 18 || age > 27) {
-                System.out.println(personRegistry + " Not compatible for army");
+            Person person = personRegistry.getPersons()[i];
+            int personAge = person.getAge();
+            boolean personSex = person.isSex();
+            if (personAge > 18 && personAge < 27 && personSex) {
+                return personRegistry + " is ready for army";
+            } else if (personAge < 18 || personAge > 27) {
+                return personRegistry + " Not compatible for army";
             }
         }
+        return Arrays.toString(personRegistry.getPersons());
     }
 
     public void checkRecruitsAge25To27(int age) {

@@ -15,6 +15,17 @@ public class Person {
         this.city = city;
     }
 
+    @Override
+    public String toString() {
+        return "Person{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                ", sex=" + sex +
+                ", country='" + country + '\'' +
+                ", city='" + city + '\'' +
+                '}';
+    }
+
     public Person(String name, int age, boolean sex, String country, String city) {
         this.name = name;
         this.age = age;
