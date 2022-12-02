@@ -9,14 +9,11 @@ import lombok.ToString;
 @Getter
 
 public class Flower {
-
     private String name;
-    private int price;
     private FlowerType flowerType;
 
-    public Flower(String name, int price, FlowerType flowerType) {
-        this.name = name;
-        this.price = price;
+    public Flower(FlowerType flowerType) {
+        this.name = getFlowerType().name();
         this.flowerType = flowerType;
     }
 }
