@@ -7,11 +7,10 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-public class Bouquet extends Flower {
+public class Bouquet {
     Flower[] flowers;
 
-    public Bouquet(String name, int price, Flower[] flowers) {
-        super(name, price);
+    public Bouquet(Flower[] flowers) {
         this.flowers = flowers;
     }
 
