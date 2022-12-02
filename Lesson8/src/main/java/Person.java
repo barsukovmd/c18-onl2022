@@ -1,8 +1,10 @@
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 @Setter
 @Getter
+@ToString
 public class Person {
     private String name;
     private int age;
@@ -20,16 +22,5 @@ public class Person {
         this.name = name;
         this.age = age;
         this.sex = sex;
-    }
-
-    @Override
-    public String toString() {
-        return "Person{" +
-                "name='" + name + '\'' +
-                ", age=" + age +
-                ", sex=" + sex +
-                ", country='" + country + '\'' +
-                ", city='" + city + '\'' +
-                '}';
     }
 }
