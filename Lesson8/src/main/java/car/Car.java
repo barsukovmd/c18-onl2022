@@ -14,6 +14,10 @@ public class Car {
     private int carYear;
     private int checkMileage;
 
+    public Car(Engine engine) {
+        this.engine = engine;
+    }
+
     public Car(FuelTank fuelTank, Engine engine) {
         this.fuelTank = fuelTank;
         this.engine = engine;

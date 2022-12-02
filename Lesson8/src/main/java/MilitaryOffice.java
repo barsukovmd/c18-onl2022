@@ -1,7 +1,6 @@
 import lombok.Getter;
 import lombok.Setter;
 
-
 @Setter
 @Getter
 class MilitaryOffice {
@@ -11,45 +10,55 @@ class MilitaryOffice {
         this.personRegistry = personRegistry;
     }
 
-    public void checkRecruitsAge(int age, boolean sex) {//не понимаю как достать возраст, пол и другие поля из другого для сравнения в методе??
-        //или нам нужно просто заново новые задекларировать?
-        for (int i = 0; i < personRegistry.getPersons().length; i++) {
-            if (age > 18 && age < 27 && sex) {
-                System.out.println(personRegistry + " is ready for army");
-            } else if (age < 18 || age > 27) {
-                System.out.println(personRegistry + " Not compatible for army");
-            }
-        }
+    private boolean checkRecruits(Person person) {
+        return person.getAge() >= 18 && person.getAge() <= 27 && person.getSex().equals(Sex.MALE);
     }
 
-    public void checkRecruitsAge25To27(int age) {
+    public Person[] getAllRecruits() {
+        Person[] person = personRegistry.getPersons();
+        Person[] allRecruits = new Person[person.length];
         for (int i = 0; i < personRegistry.getPersons().length; i++) {
-            if (age >= 25 && age <= 27) {
-                System.out.println(personRegistry + " is ready for army");
-            } else {
-                System.out.println(personRegistry + " Not compatible for army");
+            Person people = person[i];
+            if (checkRecruits(people)) {
+                person[i] = people;
             }
         }
+        return allRecruits;
     }
 
-    public void checkRecruitsName(String name) {
+    public Person[] getRecruitsWithAlexander() {
+        Person[] person = personRegistry.getPersons();
+        Person[] recruits = new Person[person.length];
+        for (int i = 0; i < personRegistry.getPersons().length; i++) {
+            Person people = person[i];
+            if (checkRecruits(people) && people.getName().equalsIgnoreCase("Alexander")) {
+                recruits[i] = people;
+            }
+        }
+        return recruits;
+    }
+
+    public Person[] getRecruitsInMinsk() {
+        Person[] persons = personRegistry.getPersons();
+        Person[] personRecruits = new Person[persons.length];
+        for (int i = 0; i < persons.length; i++) {
+            Person person = persons[i];
+            if (checkRecruits(person) && person.getCity().equalsIgnoreCase("Minsk")) {
+                personRecruits[i] = person;
+            }
+        }
+        return personRecruits;
+    }
+
+    public int getRecruits25To27() {
         int count = 0;
-        for (int i = 0; i < personRegistry.getPersons().length; i++) {
-            count++;
-            if (name.equals("Aleksandr")) {
-                System.out.println(personRegistry + " with Aleksander name" + count);
-            } else {
-                System.out.println(personRegistry + " not Aleksander names");
+        for (Person person : personRegistry.getPersons()) {
+            if (person.getAge() >= 25 && person.getAge() <= 27 && checkRecruits(person)) {
+                count++;
             }
         }
-    }
-
-    public void checkRecruitsAddress(String address) {
-        if (address.equals("Minsk")) {
-            System.out.println(personRegistry + "Minsk");
-        } else {
-            System.out.println(personRegistry + " not from Minsk");
-        }
+        return count;
     }
 }
+
 

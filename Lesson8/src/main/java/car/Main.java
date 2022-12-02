@@ -20,7 +20,8 @@ import java.util.Arrays;
          - Реализуйте пару полей для двигателя и бензобака, например: тип двигателя, общий объем бензобака,
          сколько бензина сейчас и т.д.
          */
-public class Main {
+public class Main {//"this.engine" is null Подскажите, здесь похожая ошибка в null??
+
     public static void main(String[] args) {
         System.out.println("Turn on your car engine");
         Car[] cars = new Car[3];
