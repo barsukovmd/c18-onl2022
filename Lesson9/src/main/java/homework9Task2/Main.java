@@ -1,7 +1,4 @@
 package homework9Task2;
-
-public class Main {
-    public static void main(String[] args) {
 //        * Задача2: Цветочный магазин.
 // * Создать класс "Flower", который содержит переменные имя и стоимость, гет сет и toString (lombok подключаем)
 //                * Необходимо:
@@ -23,5 +20,9 @@ public class Main {
 //                * TULIP - 8
 //                * CARNATION - 11
 //                *
+
+public class Main {
+    public static void main(String[] args) {
+
     }
 }

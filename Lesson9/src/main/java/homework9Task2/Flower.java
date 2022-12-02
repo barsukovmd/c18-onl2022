@@ -9,6 +9,12 @@ import lombok.ToString;
 @Getter
 
 public class Flower {
+    private FlowerType flowerType;
     private String name;
-    private int price;
+
+    public Flower(FlowerType flowerType, String name, int price) {
+        this.flowerType = flowerType;
+        this.name = name;
+        this.flowerType.cost = price;
+    }
 }
