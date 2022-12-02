@@ -1,4 +1,4 @@
-package Test;
+package test;
 
 public class CustomEmployee extends Employee {
     private String customCharacter;

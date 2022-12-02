@@ -1,4 +1,4 @@
-package Homework9;
+package homework9Task1;
 
 import lombok.Getter;
 

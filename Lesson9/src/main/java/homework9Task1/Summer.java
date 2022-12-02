@@ -1,4 +1,4 @@
-package Homework9;
+package homework9Task1;
 
 public class Summer extends AllSeasons {// создал доп классы, чтобы потренировать наследование и конструкторы
 

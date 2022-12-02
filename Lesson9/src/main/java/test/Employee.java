@@ -1,4 +1,4 @@
-package Test;
+package test;
 
 public class Employee extends Person {
     private String company;

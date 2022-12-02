@@ -1,8 +1,6 @@
-package Homework9;
+package homework9Task1;
 
-import java.util.Arrays;
-
-import static Homework9.Seasons.*;
+import static homework9Task1.Seasons.*;
 
 //* Задача1: Времена года
 //        //* 1) Создать перечисление(enum), содержащее названия времен года.
