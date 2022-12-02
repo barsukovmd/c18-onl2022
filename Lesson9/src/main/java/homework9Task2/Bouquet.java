@@ -22,5 +22,4 @@ public class Bouquet extends Flower {
         }
         return price;
     }
-
 }
