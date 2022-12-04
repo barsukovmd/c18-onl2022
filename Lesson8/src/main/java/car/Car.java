@@ -2,10 +2,12 @@ package car;
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 
 @Getter
 @Setter
+@ToString
 public class Car {
     private FuelTank fuelTank;
     private Engine engine;
@@ -29,6 +31,7 @@ public class Car {
     }
 
     public int checkDistance(int checkMileage) {
+
         if (checkMileage > 0 && engine.isOn() && !engine.isOff()) {
             for (int i = 0; i < checkMileage; i++) {
                 checkMileage--;

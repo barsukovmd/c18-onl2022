@@ -1,9 +1,9 @@
-import lombok.Getter;
-import lombok.ToString;
+package militaryOffice;
 
+import lombok.Getter;
 
 @Getter
-@ToString
+
 public class PersonRegistry {
     private Person[] persons;
 
