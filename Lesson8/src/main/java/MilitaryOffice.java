@@ -5,32 +5,38 @@ import lombok.Setter;
 @Getter
 class MilitaryOffice {
     private PersonRegistry personRegistry;
+    private Person person;
 
     public MilitaryOffice(PersonRegistry personRegistry) {
         this.personRegistry = personRegistry;
     }
 
     private boolean checkRecruits(Person person) {
-        return person.getAge() >= 18 && person.getAge() <= 27 && person.getSex().equals(Sex.MALE);
+        int age = person.getAge();
+        return age >= 18 && age <= 27 && person.getSex().equals(Sex.MALE);
     }
 
     public Person[] getAllRecruits() {
         Person[] person = personRegistry.getPersons();
         Person[] allRecruits = new Person[person.length];
         for (int i = 0; i < personRegistry.getPersons().length; i++) {
-            Person people = person[i];
-            if (checkRecruits(people)) {
-                person[i] = people;
+            for (int j = 0; j < person.length; ) {
+                Person people = person[i];
+                person[i] = allRecruits[j];
+                j++;
+                if (checkRecruits(people)) {
+                    person[i] = people;
+                }
             }
         }
         return allRecruits;
     }
 
     public Person[] getRecruitsWithAlexander() {
-        Person[] person = personRegistry.getPersons();
-        Person[] recruits = new Person[person.length];
+        Person[] persons = personRegistry.getPersons();
+        Person[] recruits = new Person[persons.length];
         for (int i = 0; i < personRegistry.getPersons().length; i++) {
-            Person people = person[i];
+            Person people = persons[i];
             if (checkRecruits(people) && people.getName().equalsIgnoreCase("Alexander")) {
                 recruits[i] = people;
             }
@@ -50,10 +56,12 @@ class MilitaryOffice {
         return personRecruits;
     }
 
-    public int getRecruits25To27() {
+    public int getRecruits(int from, int to) {
         int count = 0;
         for (Person person : personRegistry.getPersons()) {
-            if (person.getAge() >= 25 && person.getAge() <= 27 && checkRecruits(person)) {
+            from = 25;
+            to = 27;
+            if (person.getAge() >= from && person.getAge() <= to && checkRecruits(person)) {
                 count++;
             }
         }

@@ -19,13 +19,13 @@ public class Main {
         persons[13] = new Person("Vitaliy", 27, Sex.MALE, "Belarus", "Minsk");
         persons[14] = new Person("Vlad", 24, Sex.MALE, "Belarus", "Minsk");
         MilitaryOffice militaryOffice = new MilitaryOffice(new PersonRegistry(persons));
-        Person[] peopleAlexander = militaryOffice.getRecruitsWithAlexander();
-        Person[] allRecruits = militaryOffice.getAllRecruits();
-        Person[] recruitsFromMinsk = militaryOffice.getRecruitsInMinsk();
-        int[] people25To27 = new int[]{militaryOffice.getRecruits25To27()};
-        System.out.println(Arrays.toString(peopleAlexander));
-        System.out.println(Arrays.toString(allRecruits));
-        System.out.println(Arrays.toString(recruitsFromMinsk));
-        System.out.println(Arrays.toString(people25To27));
+        Person[] people = militaryOffice.getAllRecruits();
+        Person[] getAlexander = militaryOffice.getRecruitsWithAlexander();
+        Person[] recruitsMinsk = militaryOffice.getRecruitsInMinsk();
+        int recruits25To27 = militaryOffice.getRecruits(25, 27);
+        System.out.println(Arrays.toString(people));
+        System.out.println(Arrays.toString(getAlexander));
+        System.out.println(Arrays.toString(recruitsMinsk));
+        System.out.println(recruits25To27);
     }
 }
