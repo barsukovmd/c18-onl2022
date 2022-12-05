@@ -28,7 +28,7 @@ public class Main {
         System.out.println(Arrays.toString(minskRecruits));
         int allRecruits = militaryOffice.getRecruits();
         System.out.println(allRecruits);
-        int recruitsExactAge = militaryOffice.getRecruitsExactAge();
+        int recruitsExactAge = militaryOffice.getRecruitsExactAge(25, 27);
         System.out.println(recruitsExactAge);
     }
 }

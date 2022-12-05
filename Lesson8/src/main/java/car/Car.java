@@ -10,7 +10,7 @@ import lombok.ToString;
 @ToString
 public class Car {
     private FuelTank fuelTank;
-    private Engine engine;
+    private final Engine engine;
     private Mileage mileage;
     private String carBrand;
     private int carYear;
@@ -25,7 +25,8 @@ public class Car {
         this.engine = engine;
     }
 
-    public Car(String carBrand, int carYear) {
+    public Car(Engine engine, String carBrand, int carYear) {
+        this.engine = engine;
         this.carBrand = carBrand;
         this.carYear = carYear;
     }

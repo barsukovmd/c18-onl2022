@@ -43,11 +43,9 @@ public class MilitaryOffice {
         return personRecruits;
     }
 
-    public int getRecruitsExactAge() {
+    public int getRecruitsExactAge(int from, int to) {
         int count = 0;
         for (Person persons : personRegistry.getPersons()) {
-            int from = 25;
-            int to = 27;
             if (persons.getAge() >= from && persons.getAge() <= to && checkRecruits(persons)) {
                 count++;
             }
