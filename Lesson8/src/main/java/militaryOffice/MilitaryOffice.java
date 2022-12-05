@@ -19,7 +19,7 @@ public class MilitaryOffice {
         return count;
     }
 
-    public Person[] getRecruits(String name) {
+    public Person[] getRecruitsAlexander(String name) {
         Person[] persons = personRegistry.getPersons();
         Person[] personRecruits = new Person[persons.length];
         for (int i = 0; i < persons.length; i++) {
@@ -43,12 +43,12 @@ public class MilitaryOffice {
         return personRecruits;
     }
 
-    public int getRecruits(int from, int to) {
+    public int getRecruitsExactAge() {
         int count = 0;
-        for (Person person : personRegistry.getPersons()) {
-            from = 25;
-            to = 27;
-            if (person.getAge() >= from && person.getAge() <= to && checkRecruits(person)) {
+        for (Person persons : personRegistry.getPersons()) {
+            int from = 25;
+            int to = 27;
+            if (persons.getAge() >= from && persons.getAge() <= to && checkRecruits(persons)) {
                 count++;
             }
         }
