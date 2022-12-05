@@ -32,4 +32,14 @@ public class Robot implements IRobot {
     public int getPrice() {
         return leg.getPrice() + hand.getPrice() + head.getPrice();
     }
+
+    public int getExpensiveRobot(Robot... robots) {
+        int max = 0;
+        for (Robot allRobots : robots) {
+            if (allRobots.getPrice() > max) {
+                max = allRobots.getPrice();
+            }
+        }
+        return max;
+    }
 }

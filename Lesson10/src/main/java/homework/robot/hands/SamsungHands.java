@@ -9,7 +9,7 @@ public class SamsungHands implements IHand {
 
     @Override
     public void grab() {
-        System.out.println("Samsung hand can grabs wide subjects");
+        System.out.println("Samsung hand can grab wide subjects");
     }
 
     @Override
