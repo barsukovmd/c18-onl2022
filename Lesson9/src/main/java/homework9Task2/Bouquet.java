@@ -4,19 +4,21 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
+
 @Getter
 @Setter
 @ToString
-public class Bouquet extends Flower {
+
+
+public class Bouquet {
     private Flower[] flowers;
 
-    public Bouquet(FlowerType flowerType, Flower[] flowers) {
-        super(flowerType);
+    public Bouquet(Flower[] flowers) {
         this.flowers = flowers;
     }
 
-    public int getPrice() {
-        int pricePerFlower = 0;
+    public int getPrice(FlowerType flowerType) {
+        int pricePerFlower = flowerType.getCost();
         for (Flower allFlowers : flowers) {
             pricePerFlower += allFlowers.getFlowerType().getCost();
         }

@@ -1,8 +1,9 @@
-import lombok.Getter;
-import lombok.Setter;
+package militaryOffice;
 
-@Setter
+import lombok.Getter;
+
 @Getter
+
 public class PersonRegistry {
     private Person[] persons;
 

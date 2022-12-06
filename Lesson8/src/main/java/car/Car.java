@@ -2,13 +2,15 @@ package car;
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 
 @Getter
 @Setter
+@ToString
 public class Car {
     private FuelTank fuelTank;
-    private Engine engine;
+    private final Engine engine;
     private Mileage mileage;
     private String carBrand;
     private int carYear;
@@ -23,12 +25,14 @@ public class Car {
         this.engine = engine;
     }
 
-    public Car(String carBrand, int carYear) {
+    public Car(Engine engine, String carBrand, int carYear) {
+        this.engine = engine;
         this.carBrand = carBrand;
         this.carYear = carYear;
     }
 
     public int checkDistance(int checkMileage) {
+
         if (checkMileage > 0 && engine.isOn() && !engine.isOff()) {
             for (int i = 0; i < checkMileage; i++) {
                 checkMileage--;

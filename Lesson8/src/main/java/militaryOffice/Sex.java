@@ -1,6 +1,4 @@
-import lombok.Getter;
-
-@Getter
+package militaryOffice;
 
 public enum Sex {
     MALE, FEMALE

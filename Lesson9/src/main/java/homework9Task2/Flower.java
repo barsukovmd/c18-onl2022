@@ -9,11 +9,11 @@ import lombok.ToString;
 @Getter
 
 public class Flower {
-    private String name;
+    private final String name;
     private FlowerType flowerType;
 
-    public Flower(FlowerType flowerType) {
-        this.name = getFlowerType().name();
+    public Flower(String name, FlowerType flowerType) {
+        this.name = name;
         this.flowerType = flowerType;
     }
 }

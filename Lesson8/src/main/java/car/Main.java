@@ -11,7 +11,7 @@ import java.util.Arrays;
          - //Машину можно заглушить.
          - После каждой поездки считаем, что машина прошла фиксированное расстояние.
          - Реализовать возможность посмотреть, какое расстояние машина прошла за все время.
-         -// Чтобы создать машину обязательно нужно иметь двигатель и бензобак.
+         -// Чтобы создать машину, обязательно нужно иметь двигатель и бензобак.
          - Марка машины, год выпуска, пройденное расстояние - не обязательны при создании машины и могут быть выставлены потом.
          (не обязательно задавать в конструкторе)
          - После создания поменять двигатель машине нельзя.
@@ -23,19 +23,19 @@ import java.util.Arrays;
 public class Main {//"this.engine" is null Подскажите, здесь похожая ошибка в null??
 
     public static void main(String[] args) {
-        System.out.println("Turn on your car engine");
         Car[] cars = new Car[3];
-        Engine engine = new Engine(false, 100, 40);
+        Engine engine = new Engine(true, 100, 40);
         FuelTank fuelTank = new FuelTank(50);
-        cars[0] = new Car("BMW", 2020);
-        cars[1] = new Car("Acura", 2020);
-        cars[2] = new Car("Jeep", 2020);
-        cars[0].checkDistance(10);
+        System.out.println("Turn on your car engine");
+        cars[0] = new Car(engine, "BMW", 2020);
+        cars[1] = new Car(engine, "Acura", 2020);
+        cars[2] = new Car(engine, "Jeep", 2020);
+        System.out.println(Arrays.toString(cars));
+        cars[0].setFuelTank(new FuelTank(100));
         cars[0].getFuelTank().checkFuel(10);
         cars[0].getEngine().setResourceOfEngine(10);
         System.out.println(cars[0].getEngine().getResourceOfEngine());
         cars[1] = new Car(fuelTank, engine);
         cars[2] = new Car(fuelTank, engine);
-        System.out.println(Arrays.toString(cars));
     }
-    }
+}
