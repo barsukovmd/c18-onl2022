@@ -21,11 +21,11 @@ public class Main {
         persons[13] = new Person("Vitaliy", 27, Sex.MALE, "Belarus", "Minsk");
         persons[14] = new Person("Vlad", 24, Sex.MALE, "Belarus", "Minsk");
         MilitaryOffice militaryOffice = new MilitaryOffice(new PersonRegistry(persons));
-        Person[] alexander = militaryOffice.getRecruitsAlexander("Alexander");
+        Person[] alexander = militaryOffice.getRecruitsByName("Alexander");
         System.out.println("Recruits with name Alexander are  " + Arrays.toString(alexander));
         System.out.println("!!!");
-        Person[] minskRecruits = militaryOffice.getRecruitsInMinsk();
-        System.out.println(Arrays.toString(minskRecruits));
+        Person[] minskRecruits = militaryOffice.getRecruitsInExactCity();
+        System.out.println(Arrays.toString((minskRecruits)) + " from Minsk");
         int allRecruits = militaryOffice.getRecruits();
         System.out.println(allRecruits);
         int recruitsExactAge = militaryOffice.getRecruitsExactAge(25, 27);

@@ -16,4 +16,6 @@ public enum Seasons {
         this.seasons = seasons;
         this.temperature = temperature;
     }
+
+
 }
