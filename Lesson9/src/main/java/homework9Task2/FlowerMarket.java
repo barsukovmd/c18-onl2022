@@ -2,13 +2,12 @@ package homework9Task2;
 
 public class FlowerMarket {
     public Bouquet getBouquet(String... flowers) {
-//        FlowerType flowerType = new Flower(FlowerType.valueOf());
-//        FlowerType.valueOf(String.valueOf(FlowerType.ASTER));
-//        FlowerType.valueOf(String.valueOf(FlowerType.LILY));
-//        FlowerType.valueOf(String.valueOf(FlowerType.TULIP));
-//        FlowerType.valueOf(String.valueOf(FlowerType.CARNATION));
-//        FlowerType.valueOf(String.valueOf(FlowerType.GERBERA));
-//        FlowerType.valueOf(String.valueOf(FlowerType.ROSE));
+        Flower[] flower = new Flower[flowers.length];
+        for (int i = 0; i < flowers.length; i++) {
+            String flowerType = flowers[i];
+
+        }
+
         return null;
 
     }

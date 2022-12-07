@@ -17,11 +17,24 @@ public class Bouquet {
         this.flowers = flowers;
     }
 
-    public int getPrice(FlowerType flowerType) {
-        int pricePerFlower = flowerType.getCost();
+    public int getPricePerBouquet() {
+        int pricePerBouquet = 0;
         for (Flower allFlowers : flowers) {
-            pricePerFlower += allFlowers.getFlowerType().getCost();
+            if (allFlowers != null) {
+                pricePerBouquet += allFlowers.getFlowerType().getPrice();
+            }
         }
-        return pricePerFlower;
+        return pricePerBouquet;
+    }
+
+    public void getFlowersBack(String... getFlowerBack) {
+        for (String deleteFlowers : getFlowerBack) {
+            for (int i = 0; i < flowers.length; i++) {
+                //можно сделать через foreach, для понимания оставлю так(fori)
+                if (flowers[i] != null && deleteFlowers.equalsIgnoreCase(flowers[i].getFlowerType().getName())) {
+                    break;
+                }
+            }
+        }
     }
 }

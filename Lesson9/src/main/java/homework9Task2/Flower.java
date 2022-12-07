@@ -9,11 +9,9 @@ import lombok.ToString;
 @Getter
 
 public class Flower {
-    private final String name;
     private FlowerType flowerType;
 
-    public Flower(String name, FlowerType flowerType) {
-        this.name = name;
+    public Flower(FlowerType flowerType) {
         this.flowerType = flowerType;
     }
 }

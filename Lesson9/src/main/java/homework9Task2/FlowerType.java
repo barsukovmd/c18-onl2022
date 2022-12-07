@@ -8,10 +8,15 @@ import lombok.ToString;
 
 @Getter
 public enum FlowerType {
-    ROSE(15), LILY(7), ASTER(5), GERBERA(5), TULIP(8), CARNATION(11);
-    private int cost;
+    ROSE(15, "ROSE"), LILY(7, "LILY"),
+    ASTER(5, "ASTER"), GERBERA(5, "GERBERA"),
+    TULIP(8, "TULIP"), CARNATION(11, "CARNATION"),
+    ;
+    private final int price;
+    private final String name;
 
-    FlowerType(int price) {
-        cost = price;
+    FlowerType(int price, String name) {
+        this.price = price;
+        this.name = name;
     }
 }
