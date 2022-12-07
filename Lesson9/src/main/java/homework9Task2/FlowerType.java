@@ -4,8 +4,6 @@ import lombok.Getter;
 import lombok.ToString;
 
 @ToString
-
-
 @Getter
 public enum FlowerType {
     ROSE(15, "ROSE"), LILY(7, "LILY"),
