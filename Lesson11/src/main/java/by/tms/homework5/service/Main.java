@@ -1,5 +1,8 @@
 package by.tms.homework5.service;
 
+import lombok.extern.log4j.Log4j;
+
+@Log4j//exception annotation
 //3)
 //        Создаем интерфейс IStart. В интерфейсе определяем методы: • предстартовая проверка систем(возвращает true/false)
 //        • запуск двигателей(void)
