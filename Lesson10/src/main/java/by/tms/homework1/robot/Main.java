@@ -1,13 +1,13 @@
-package by.tms.homework.robot;
+package by.tms.homework1.robot;
 
-import by.tms.homework.robot.hands.SamsungHands;
-import by.tms.homework.robot.hands.SonyHands;
-import by.tms.homework.robot.hands.ToshibaHands;
-import by.tms.homework.robot.heads.SamsungHeads;
-import by.tms.homework.robot.heads.SonyHeads;
-import by.tms.homework.robot.legs.SamsungLegs;
-import by.tms.homework.robot.legs.SonyLegs;
-import by.tms.homework.robot.legs.ToshibaLegs;
+import by.tms.homework1.robot.hands.SamsungHands;
+import by.tms.homework1.robot.hands.SonyHands;
+import by.tms.homework1.robot.hands.ToshibaHands;
+import by.tms.homework1.robot.heads.SamsungHeads;
+import by.tms.homework1.robot.heads.SonyHeads;
+import by.tms.homework1.robot.legs.SamsungLegs;
+import by.tms.homework1.robot.legs.SonyLegs;
+import by.tms.homework1.robot.legs.ToshibaLegs;
 
 public class Main {
     /*

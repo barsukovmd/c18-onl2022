@@ -1,4 +1,4 @@
-package by.tms.homework.robot.hands;
+package by.tms.homework1.robot.hands;
 
 public class ToshibaHands implements IHand {
     private int price;

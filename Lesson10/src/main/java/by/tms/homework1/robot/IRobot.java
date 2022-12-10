@@ -1,4 +1,4 @@
-package by.tms.homework.robot;
+package by.tms.homework1.robot;
 
 public interface IRobot {
 

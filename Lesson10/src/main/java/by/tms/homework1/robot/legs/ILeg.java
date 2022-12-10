@@ -1,4 +1,4 @@
-package by.tms.homework.robot.legs;
+package by.tms.homework1.robot.legs;
 
 public interface ILeg {
     void bend();

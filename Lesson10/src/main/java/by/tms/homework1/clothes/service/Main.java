@@ -1,4 +1,4 @@
-package by.tms.homework.clothes.service;
+package by.tms.homework1.clothes.service;
 
 //1) Робот
 //        Задание описано в архиве robot в классе Run

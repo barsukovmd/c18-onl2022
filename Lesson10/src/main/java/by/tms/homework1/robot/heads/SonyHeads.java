@@ -1,4 +1,4 @@
-package by.tms.homework.robot.heads;
+package by.tms.homework1.robot.heads;
 
 public class SonyHeads implements IHead {
     private int price;

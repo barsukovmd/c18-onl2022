@@ -1,4 +1,4 @@
-package by.tms.homework.robot.legs;
+package by.tms.homework1.robot.legs;
 
 public class SamsungLegs implements ILeg {
     public SamsungLegs(int price) {

@@ -1,8 +1,8 @@
-package by.tms.homework.robot;
+package by.tms.homework1.robot;
 
-import by.tms.homework.robot.hands.IHand;
-import by.tms.homework.robot.heads.IHead;
-import by.tms.homework.robot.legs.ILeg;
+import by.tms.homework1.robot.hands.IHand;
+import by.tms.homework1.robot.heads.IHead;
+import by.tms.homework1.robot.legs.ILeg;
 import lombok.Getter;
 import lombok.Setter;
 

@@ -1,4 +1,4 @@
-package by.tms.homework.robot.heads;
+package by.tms.homework1.robot.heads;
 
 public interface IHead {
     void turn();
