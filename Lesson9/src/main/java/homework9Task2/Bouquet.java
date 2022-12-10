@@ -30,8 +30,8 @@ public class Bouquet {
     public void getFlowersBack(String... getFlowerBack) {
         for (String deleteFlowers : getFlowerBack) {
             for (int i = 0; i < flowers.length; i++) {
-                //можно сделать через foreach, для понимания оставлю так(fori)
                 if (flowers[i] != null && deleteFlowers.equalsIgnoreCase(flowers[i].getFlowerType().getName())) {
+                    flowers[i] = null;
                     break;
                 }
             }
