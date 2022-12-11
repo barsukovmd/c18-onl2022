@@ -78,9 +78,9 @@ public class Authorization {
         password = scanner.nextLine();
         confirmPassword = scanner.nextLine();
         try {
-            checkLogin();
-            checkPassword();
-            checkConfirmPassword();
+            checkLogin();//я не мог добавить сюда методы, потому что идея просила сделать методы статичными
+            checkPassword();//я не мог добавить сюда методы, потому что идея просила сделать методы статичными
+            checkConfirmPassword();//я не мог добавить сюда методы, потому что идея просила сделать методы статичными
         } catch (WrongLoginException e) {//не понимаю почему здесь ошибка??
             if (!isLogin && login != null) {
                 System.out.println(e.getMessage());
