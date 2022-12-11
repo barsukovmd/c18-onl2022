@@ -69,14 +69,13 @@ public class Authorization {
         }
     }
 
-    //"You have entered incorrect login or password, please try again"
-    public static boolean checkAuthorization(String login, String password, String confirmPassword) throws WrongLoginException, WrongPasswordException {
+    public static boolean checkAuthorization(String login, String password, String confirmPassword) {
         Scanner scanner = new Scanner(System.in);
         login = scanner.nextLine();
         password = scanner.nextLine();
         confirmPassword = scanner.nextLine();
         try {
-            checkLogin();//я не мог добавить сюда методы, потому что идея просила сделать методы статичными
+            checkLogin();//не мог добавить сюда методы, потому что идея просила сделать методы статичными
             checkPassword();
             checkConfirmPassword();
         } catch (WrongLoginException e) {//не понимаю почему здесь ошибка??
@@ -97,36 +96,3 @@ public class Authorization {
         return true;
     }
 }
-
-
-//Если сделать наоборот:
-//        try {
-//            if (!isLogin && !isPassword && !isConfirmPassword && login == null) {
-//                System.out.println("You have entered incorrect login or password, please try again");
-//                return false;
-//            } else if (!isLogin && isPassword && isConfirmPassword && login != null) {
-//                throw new WrongLoginException("You have entered incorrect login, please try again");
-//            } else if (isLogin && !isPassword && isConfirmPassword && login != null) {
-//                throw new WrongPasswordException("You have entered incorrect password, please try again");
-//            } else if (isLogin && isPassword && !isConfirmPassword && login != null) {
-//                System.out.println("You have entered incorrect password, please try again");
-//            } else if (isLogin && isPassword && isConfirmPassword && login == null) {
-//                System.out.println("Your login is empty, please enter login");
-//            }
-//        } catch (WrongLoginException e) {
-//            System.out.println(e.getMessage());
-//            return false;
-//        } catch (WrongPasswordException e) {
-//            System.out.println(e.getMessage());
-//        }
-//        return true;
-
-
-//            if (isLogin && isPassword && isConfirmPassword && login != null) {
-//                System.out.println("You have logged in");
-//                return true;
-//            } else {
-//                System.out.println("You have entered incorrect login or password, please try again");
-//                return false;
-//            }
-
