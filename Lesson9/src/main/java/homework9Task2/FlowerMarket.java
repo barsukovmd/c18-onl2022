@@ -1,25 +1,69 @@
 package homework9Task2;
 
-public class FlowerMarket {
-    public Bouquet getBouquet(String... flowers) {
-//        FlowerType flowerType = new Flower(FlowerType.valueOf());
-//        FlowerType.valueOf(String.valueOf(FlowerType.ASTER));
-//        FlowerType.valueOf(String.valueOf(FlowerType.LILY));
-//        FlowerType.valueOf(String.valueOf(FlowerType.TULIP));
-//        FlowerType.valueOf(String.valueOf(FlowerType.CARNATION));
-//        FlowerType.valueOf(String.valueOf(FlowerType.GERBERA));
-//        FlowerType.valueOf(String.valueOf(FlowerType.ROSE));
-        return null;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 
+import java.util.ArrayList;
+import java.util.List;
+
+@Getter
+@Setter
+@ToString
+@AllArgsConstructor
+
+public class FlowerMarket implements FlowerMarketOptions {
+    private final List<Bouquet> soldBouquets = new ArrayList<>();
+
+    public Bouquet getBouquet(String... flowers) {
+        Flower[] flower = new Flower[flowers.length];
+        for (int i = 0; i < flowers.length; i++) {
+            String flowerType = flowers[i];
+            FlowerType type = findPriceByFlowerName(flowerType);
+            if (type != null) {
+//                flower[i] = new Flower(type.getName(), type.getPrice());
+                //почему выдает ошибку, что нельзя сослаться таким образом?
+            }
+        }
+        Bouquet bouquet = new Bouquet(flower);
+        soldBouquets.add(bouquet);
+        return bouquet;
     }
 
+    private FlowerType findPriceByFlowerName(String name) {
+        for (FlowerType flowerType : FlowerType.values()) {
+            if (flowerType.name().equalsIgnoreCase(name)) {
+                return flowerType;
+            }
+        }
+        return null;
+    }
+
+    public int getCountSoldFlowers() {
+        int count = 0;
+        for (Bouquet soldBouquet : soldBouquets) {
+            count += soldBouquet.getFlowers().length;
+        }
+        return count;
+    }
+
+    @Override
+    public String info() {
+        StringBuilder result = new StringBuilder();
+        for (Bouquet soldBouquet : soldBouquets) {
+            result.append(soldBouquet.toString());
+        }
+        return result.toString();
+    }
+
+    @Override
+    public int getPriceInDay() {
+        int price = 0;
+        for (Bouquet soldBouquet : soldBouquets) {
+            price += soldBouquet.getPricePerBouquet();
+        }
+        return price;
+    }
 }
-//public class Calculator {
-//    public static void main(String... sss) {
-//        Calculator calculator = new Calculator();
-//        int sum = calculator.sum(1,10,123,234,6234,12,8);
-//    }
-//    int sum(int... numbers){
-//        return Arrays.stream(numbers).sum();
-//    }
-//}
+

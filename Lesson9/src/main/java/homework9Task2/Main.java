@@ -2,8 +2,12 @@ package homework9Task2;
 
 public class Main {
     public static void main(String[] args) {
-        Flower flower = new Flower("Гербера", FlowerType.GERBERA);
-        int a = flower.getFlowerType().getCost();
-        System.out.println(a);
+        FlowerMarketOptions flowerMarket = new FlowerMarket();
+//        Bouquet[] bouquets = {
+//                flowerMarket.getBouquet(ROSE, TULIP, ASTER, CARNATION)
+//                flowerMarket.getBouquet(ROSE, LILY, GERBERA, ASTER, CARNATION)
+//                flowerMarket.getBouquet(ROSE, TULIP, LILY, ASTER, CARNATION)
+//                flowerMarket.getBouquet(ROSE, TULIP, LILY, ASTER, CARNATION)
+//        };
     }
 }

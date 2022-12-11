@@ -19,7 +19,7 @@ public class MilitaryOffice {
         return count;
     }
 
-    public Person[] getRecruitsAlexander(String name) {
+    public Person[] getRecruitsByName(String name) {
         Person[] persons = personRegistry.getPersons();
         Person[] personRecruits = new Person[persons.length];
         for (int i = 0; i < persons.length; i++) {
@@ -31,7 +31,7 @@ public class MilitaryOffice {
         return personRecruits;
     }
 
-    public Person[] getRecruitsInMinsk() {
+    public Person[] getRecruitsInExactCity() {
         Person[] persons = personRegistry.getPersons();
         Person[] personRecruits = new Person[persons.length];
         for (int i = 0; i < persons.length; i++) {
