@@ -1,5 +1,8 @@
 package by.tms.homework2.service;
 
+import by.tms.homework2.model.Authorization;
+import by.tms.homework2.model.Person;
+
 /**
  * Создать статический метод "checkAuthorization" который будет вызваться из метода main и принимает на вход три параметра: login, password и confirmPassword. Поле login должен содержать:
  * - Tолько латинские буквы, цифры и знак подчеркивания.
@@ -8,7 +11,7 @@ package by.tms.homework2.service;
  * Если login не соответствует этим требованиям, необходимо выбросить WrongLoginException.
  * Password должен содержать:
  * - Только латинские буквы, цифры и знак подчеркивания.
- * -  Длина password должна быть меньше 20 символов.
+ * - Длина password должна быть меньше 20 символов.
  * (Если не знаете как проверить первое условие, то проверяем только 2 условие - вызваем метод lenght())
  * Также password и confirmPassword должны быть равны. Если password не соответствует этим требованиям, необходимо выбросить WrongPasswordException.
  * WrongPasswordException и WrongLoginException - пользовательские классы исключения с двумя конструкторами – один по умолчанию,
@@ -22,6 +25,8 @@ package by.tms.homework2.service;
 public class Main {
 
     public static void main(String[] args) {
+        Person person = new Person(new Authorization(null, "123", "123"));
+        System.out.println(person.getAuthorization());
 
     }
 }

@@ -10,8 +10,8 @@ public enum FlowerType {
     ASTER(5, "ASTER"), GERBERA(5, "GERBERA"),
     TULIP(8, "TULIP"), CARNATION(11, "CARNATION"),
     ;
-    private final int price;
-    private final String name;
+    private int price;
+    private String name;
 
     FlowerType(int price, String name) {
         this.price = price;

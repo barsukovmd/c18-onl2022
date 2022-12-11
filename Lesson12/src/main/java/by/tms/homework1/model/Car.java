@@ -39,6 +39,7 @@ public class Car {
     public void checkFuel() {
         if (checkEngine && checkEngine) {
             System.out.println("Fuel is Full");
+            checkEngine = true;
         } else {
             System.out.println("Fuel is Empty");
         }
@@ -47,6 +48,9 @@ public class Car {
     public void checkDistance() {
         if (checkEngine && checkFuel && checkMiles) {
             System.out.println("Car resource is in good condition");
+            checkEngine = true;
+            checkFuel = true;
+            checkMiles = true;
         } else {
             System.out.println("Car resource is empty");
         }

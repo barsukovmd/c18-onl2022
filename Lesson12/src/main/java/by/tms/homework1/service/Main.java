@@ -27,6 +27,7 @@ public class Main {
             car.start();
         } catch (CarIsNotReadyForRide e) {
             System.out.println(car + e.getMessage());
+            return;
         }
         System.out.println("!!!");
         try {

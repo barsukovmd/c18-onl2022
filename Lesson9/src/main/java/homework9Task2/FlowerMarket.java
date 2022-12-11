@@ -22,7 +22,7 @@ public class FlowerMarket implements FlowerMarketOptions {
             String flowerType = flowers[i];
             FlowerType type = findPriceByFlowerName(flowerType);
             if (type != null) {
-                flower[i] = new Flower(type.getName(), type.getPrice());
+//                flower[i] = new Flower(type.getName(), type.getPrice());
                 //почему выдает ошибку, что нельзя сослаться таким образом?
             }
         }
