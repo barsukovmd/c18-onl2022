@@ -1,7 +1,6 @@
 package by.tms.homework2.service;
 
 import by.tms.homework2.model.Authorization;
-import by.tms.homework2.model.Person;
 
 /**
  * Создать статический метод "checkAuthorization" который будет вызваться из метода main и принимает на вход три параметра: login, password и confirmPassword. Поле login должен содержать:
@@ -25,8 +24,6 @@ import by.tms.homework2.model.Person;
 public class Main {
 
     public static void main(String[] args) {
-        Person person = new Person(new Authorization(null, "123", "123"));
-        System.out.println(person.getAuthorization());
-
+        Authorization.checkAuthorization("login", "123", "123");
     }
 }
