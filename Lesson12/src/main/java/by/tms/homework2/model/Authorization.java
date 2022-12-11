@@ -26,7 +26,7 @@ public class Authorization {
     }
 
     public static void checkLogin() {
-        if (login == null) {
+        if ((login == null) && (login.length() < 20)) {
             isLogin = false;
         }
         for (int i = 0; i < login.length(); i++) {
