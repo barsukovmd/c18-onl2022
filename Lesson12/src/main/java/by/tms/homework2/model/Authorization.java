@@ -20,9 +20,9 @@ public class Authorization {
     private static boolean isConfirmPassword;
 
     public Authorization(String login, String password, String confirmPassword) {
-        this.login = login;
-        this.password = password;
-        this.confirmPassword = confirmPassword;
+        Authorization.login = login;
+        Authorization.password = password;
+        Authorization.confirmPassword = confirmPassword;
     }
 
     public static void checkLogin() {
