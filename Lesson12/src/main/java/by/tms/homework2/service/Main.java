@@ -1,8 +1,6 @@
 package by.tms.homework2.service;
 
 import by.tms.homework2.model.Authorization;
-import by.tms.homework2.model.WrongLoginException;
-import by.tms.homework2.model.WrongPasswordException;
 
 /**
  * Создать статический метод "checkAuthorization" который будет вызваться из метода main и принимает на вход три параметра: login, password и confirmPassword. Поле login должен содержать:
@@ -25,11 +23,7 @@ import by.tms.homework2.model.WrongPasswordException;
  */
 public class Main {
 
-    public static void main(String[] args) throws WrongPasswordException, WrongLoginException {
-        Authorization authorization = new Authorization("123", "123", "123");
-        System.out.println(authorization);
-        System.out.println("!!!");
-        Authorization.checkAuthorization("login", "123", "123");
+    public static void main(String[] args) {
         Authorization.checkAuthorization("login", "123", "123");
     }
 }
