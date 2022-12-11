@@ -24,14 +24,14 @@ public class Authorization {
     }
 
     public static boolean checkLogin(String login) {
-        if ((login == null) && login.length() < 20) {
+        if ((login == null) && login.length() > 20) {
             return false;
         }
         for (int i = 0; i < login.length(); i++) {
             char c = login.charAt(i);//нашел этот метод для использования в нашем задании
             int n = login.charAt(i);
             char underSlash = '_';//подскажите можно ли так сделать
-            if (!(c >= 'A' && c <= 'Z') && !(c >= 'a' && c <= 'z') && login.length() > 20 && n != login.charAt(i)) {
+            if (!(c >= 'A' && c <= 'Z') && !(c >= 'a' && c <= 'z') && login.length() <= 20 && n != login.charAt(i)) {
                 if (!(underSlash == '_')) {
                     return false;
                 }
@@ -41,14 +41,14 @@ public class Authorization {
     }
 
     public static boolean checkPassword(String password) {
-        if ((password == null) && (password.length() < 20)) {
+        if ((password == null) && (password.length() > 20)) {
             return false;
         }
         for (int i = 0; i < password.length(); i++) {
             char c = password.charAt(i);
             int n = password.charAt(i);
             char underSlash = '_';
-            if (!(c >= 'A' && c <= 'Z') && !(c >= 'a' && c <= 'z') && password.length() > 20 && n != password.charAt(i)) {
+            if (!(c >= 'A' && c <= 'Z') && !(c >= 'a' && c <= 'z') && password.length() <= 20 && n != password.charAt(i)) {
                 if (!(underSlash == '_')) {
                     return false;
                 }
@@ -61,7 +61,7 @@ public class Authorization {
         return Objects.equals(password, confirmPassword);
     }
 
-    public static boolean checkAuthorization(String login, String password, String confirmPassword) {
+    public static boolean checkAuthorization(String login, String password, String confirmPassword) throws WrongLoginException, WrongPasswordException {
         try {
             if (checkLogin(login) && checkPassword(password) && checkConfirmPassword(password, confirmPassword)) {
                 System.out.println("You have logged in");
