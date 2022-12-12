@@ -12,8 +12,11 @@ package by.tms.homework1.service;
 // * 6) В цикле вызвать метод play() для каждого инструмента, который должен выводить строку
 // * "Играет такой-то инструмент, с такими-то характеристиками".
 
+import by.tms.homework1.model.InstrumentCreation;
+
 public class Main {
     public static void main(String[] args) {
-
+        Instrument instrument = new InstrumentCreation().createInterface(Instrument.Type.GUITAR);
+        instrument.play();
     }
 }

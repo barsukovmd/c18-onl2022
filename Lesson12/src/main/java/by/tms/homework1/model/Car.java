@@ -14,9 +14,9 @@ public class Car {
     private String brand;
     private int speed;
     private int price;
-    private boolean checkEngine = true;
-    private boolean checkFuel = true;
-    private boolean checkMiles = true;
+    private boolean checkEngine;
+    private boolean checkFuel;
+    private boolean checkMiles;
 
     public Car(String brand, int speed, int price) {
         this.brand = brand;
@@ -37,7 +37,7 @@ public class Car {
     }
 
     public void checkFuel() {
-        if (checkEngine && checkEngine) {
+        if (checkEngine && checkFuel) {
             System.out.println("Fuel is Full");
             checkEngine = true;
         } else {
