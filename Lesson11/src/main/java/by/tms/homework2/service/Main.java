@@ -19,5 +19,6 @@ package by.tms.homework2.service;
 public class Main {
     public static void main(String[] args) {
 
+
     }
 }

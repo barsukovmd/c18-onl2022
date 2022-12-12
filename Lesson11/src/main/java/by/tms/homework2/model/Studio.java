@@ -8,7 +8,7 @@ import by.tms.homework2.service.WomanClothes;
 ////        * Метод одетьЖенщину выводит на консоль всю информацию о женской одежде. То же самое для метода одетьМужчину.
 ////        *
 public class Studio implements ManClothes, WomanClothes {
-
+    
 
     @Override
     public void dressMan() {

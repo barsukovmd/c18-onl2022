@@ -11,5 +11,4 @@ public abstract class Clothes {
     private int size;
     private int price;
     private String color;
-
 }
