@@ -10,5 +10,5 @@ import lombok.Getter;
 
 public enum PersonType {
     MAN(ManClothes.class), WOMAN(WomanClothes.class);
-    private final Class iClass;
+    private final Class check;
 }

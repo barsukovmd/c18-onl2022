@@ -1,5 +1,12 @@
 package by.tms.homework2.service;
 
+import by.tms.homework2.model.Clothes;
+import by.tms.homework2.model.ClothesType;
+import by.tms.homework2.model.Skirt;
+
+import java.util.ArrayList;
+
+
 //* Задача2: Одежда
 //        *
 //        * 1) Создать перечисление, содержащее размеры одежды (XXS, XS, S, M, L).
@@ -18,7 +25,21 @@ package by.tms.homework2.service;
 //        *
 public class Main {
     public static void main(String[] args) {
+        ArrayList<Clothes> clothesArrayList = new ArrayList<>();
+    }
 
+    private static Clothes createClothes(ClothesType clothesType, int size, String color, int price, Clothes clothes) {
+        return switch (clothesType) {
 
+            case SKIRT -> Skirt.builder()
+                    .color(color)
+                    .price(price)
+
+                    .build();
+
+            case TIE -> null;
+            case TSHIRT -> null;
+            case PANTS -> null;
+        };
     }
 }
