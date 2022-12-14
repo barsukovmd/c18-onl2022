@@ -1,11 +1,17 @@
-package by.tms.homework2.service;
+package by.tms.clothes.service;
 
-import by.tms.homework2.model.Clothes;
-import by.tms.homework2.model.ClothesType;
-import by.tms.homework2.model.Skirt;
+import by.tms.clothes.model.*;
+import lombok.Getter;
+import lombok.ToString;
+import lombok.experimental.SuperBuilder;
 
 import java.util.ArrayList;
 
+import static by.tms.clothes.model.Size.*;
+
+@SuperBuilder
+@ToString
+@Getter
 
 //* Задача2: Одежда
 //        *
@@ -26,20 +32,41 @@ import java.util.ArrayList;
 public class Main {
     public static void main(String[] args) {
         ArrayList<Clothes> clothesArrayList = new ArrayList<>();
+        clothesArrayList.add(createClothes(ClothesType.SKIRT, XS, "Blue", 100));
+        clothesArrayList.add(createClothes(ClothesType.TSHIRT, XS, "Red", 150));
+        clothesArrayList.add(createClothes(ClothesType.TSHIRT, L, "Green", 100));
+        clothesArrayList.add(createClothes(ClothesType.TIE, M, "Brown", 100));
+        Studio studio = new Studio(clothesArrayList);
+        studio.dressUp(PersonType.MAN);
+        studio.dressWoman();
+
     }
 
-    private static Clothes createClothes(ClothesType clothesType, int size, String color, int price, Clothes clothes) {
+    private static Clothes createClothes(ClothesType clothesType, Size size, String color, int price) {
         return switch (clothesType) {
 
             case SKIRT -> Skirt.builder()
                     .color(color)
                     .price(price)
-
+                    .size(size.ordinal())
                     .build();
 
-            case TIE -> null;
-            case TSHIRT -> null;
-            case PANTS -> null;
+            case TIE -> Tie.builder()
+                    .color(color)
+                    .price(price)
+                    .size(size.ordinal())
+                    .build();
+
+            case TSHIRT -> TShirt.builder()
+                    .color(color)
+                    .price(price)
+                    .size(size.ordinal())
+                    .build();
+            case PANTS -> Pants.builder()
+                    .color(color)
+                    .price(price)
+                    .size(size.ordinal())
+                    .build();
         };
     }
 }

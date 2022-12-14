@@ -1,10 +1,10 @@
-package by.tms.homework1.service;
+package by.tms.instruments.service;
 
 public interface Instrument {
     String KEY = "До мажор";
 
     enum Type {
-        DRUM, GUITAR, TRUMPET;
+        DRUM, GUITAR, TRUMPET
     }
 
     void play();

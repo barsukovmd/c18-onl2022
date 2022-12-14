@@ -1,6 +1,6 @@
-package by.tms.homework1.model;
+package by.tms.instruments.model;
 
-import by.tms.homework1.service.Instrument;
+import by.tms.instruments.service.Instrument;
 import lombok.Getter;
 import lombok.ToString;
 

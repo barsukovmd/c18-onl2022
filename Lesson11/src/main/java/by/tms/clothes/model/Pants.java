@@ -1,7 +1,7 @@
-package by.tms.homework2.model;
+package by.tms.clothes.model;
 
-import by.tms.homework2.service.ManClothes;
-import by.tms.homework2.service.WomanClothes;
+import by.tms.clothes.service.ManClothes;
+import by.tms.clothes.service.WomanClothes;
 import lombok.experimental.SuperBuilder;
 
 @SuperBuilder

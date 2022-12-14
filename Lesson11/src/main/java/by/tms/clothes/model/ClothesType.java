@@ -1,4 +1,4 @@
-package by.tms.homework2.model;
+package by.tms.clothes.model;
 
 import lombok.Getter;
 

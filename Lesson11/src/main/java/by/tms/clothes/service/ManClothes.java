@@ -1,4 +1,4 @@
-package by.tms.homework2.service;
+package by.tms.clothes.service;
 
 public interface ManClothes {
     void dressMan();

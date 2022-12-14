@@ -1,4 +1,4 @@
-package by.tms.homework1.service;
+package by.tms.instruments.service;
 
 // * Задача1:
 // * Интерфейс Инструмент
@@ -13,9 +13,9 @@ package by.tms.homework1.service;
 // * "Играет такой-то инструмент, с такими-то характеристиками".
 
 
-import by.tms.homework1.model.Drum;
-import by.tms.homework1.model.Guitar;
-import by.tms.homework1.model.Trumpet;
+import by.tms.instruments.model.Drum;
+import by.tms.instruments.model.Guitar;
+import by.tms.instruments.model.Trumpet;
 
 import java.util.ArrayList;
 

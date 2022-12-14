@@ -1,8 +1,10 @@
-package by.tms.homework2.model;
+package by.tms.clothes.model;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.ToString;
+import lombok.experimental.SuperBuilder;
+
+@SuperBuilder
 
 @Getter
 @ToString
