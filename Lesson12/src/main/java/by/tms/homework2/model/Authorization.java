@@ -1,6 +1,5 @@
 package by.tms.homework2.model;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -10,17 +9,16 @@ import java.util.Objects;
 @ToString
 @Setter
 @Getter
-@AllArgsConstructor
 
 public class Authorization {
-    private static String password;
-    private static String login;
-    private static String confirmPassword;
+    private String password;
+    private String login;
+    private String confirmPassword;
 
-    public Authorization(String login, String password, String confirmPassword) {
-        Authorization.login = login;
-        Authorization.password = password;
-        Authorization.confirmPassword = confirmPassword;
+    public Authorization(String password, String login, String confirmPassword) {
+        this.password = password;
+        this.login = login;
+        this.confirmPassword = confirmPassword;
     }
 
     public static boolean checkLogin(String login) {
@@ -28,9 +26,9 @@ public class Authorization {
             return false;
         }
         for (int i = 0; i < login.length(); i++) {
-            char c = login.charAt(i);//нашел этот метод для использования в нашем задании
+            char c = login.charAt(i);
             int n = login.charAt(i);
-            char underSlash = '_';//подскажите можно ли так сделать
+            char underSlash = '_';
             if (!(c >= 'A' && c <= 'Z') && !(c >= 'a' && c <= 'z') && n != login.charAt(i)) {
                 if (!(underSlash == '_')) {
                     return false;
@@ -73,10 +71,7 @@ public class Authorization {
             } else {
                 return false;
             }
-        } catch (WrongLoginException e) {
-            System.out.println(e.getMessage());
-            return false;
-        } catch (WrongPasswordException e) {//можно сделать collapse(), чтобы через | было
+        } catch (WrongLoginException | WrongPasswordException e) {
             System.out.println(e.getMessage());
             return false;
         }
