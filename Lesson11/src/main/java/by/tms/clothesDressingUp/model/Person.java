@@ -3,7 +3,13 @@ package by.tms.clothesDressingUp.model;
 import by.tms.clothesDressingUp.service.Coat;
 import by.tms.clothesDressingUp.service.Pants;
 import by.tms.clothesDressingUp.service.Shoes;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 
+@Getter
+@ToString
+@Setter
 //У человека поля:
 ////        -имя
 ////        -куртка -штаны -обувь
@@ -25,15 +31,24 @@ public class Person implements Coat, Pants, Shoes {
 
     @Override
     public void dress() {
-        coat.dress();
-        pants.dress();
-        shoes.dress();
+        if (checkPersonForDressing()) {
+            coat.dress();
+            pants.dress();
+            shoes.dress();
+        }
     }
 
     @Override
     public void undress() {
-        coat.undress();
-        pants.undress();
-        shoes.undress();
+        if (!checkPersonForDressing()) {
+            coat.undress();
+            pants.undress();
+            shoes.undress();
+        }
+    }
+
+    public boolean checkPersonForDressing() {
+        System.out.println("Person has dressed up");
+        return true;
     }
 }
