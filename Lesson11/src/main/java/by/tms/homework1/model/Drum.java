@@ -10,9 +10,12 @@ import lombok.ToString;
 public class Drum implements Instrument {
     private int size;
 
+    public Drum(int size) {
+        this.size = size;
+    }
+
     @Override
     public void play() {
-        size = 30;
-        System.out.println("Drum plays with " + size + " size 30cm");
+        System.out.println("Drum plays with " + size + " cm of diameter");
     }
 }

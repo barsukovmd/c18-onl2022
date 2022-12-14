@@ -14,5 +14,8 @@ package by.tms.homework1.clothes.service;
 //        У человека поля:
 //        -ИМЯ
 public class Main {
+    public static void main(String[] args) {
+
+    }
 
 }

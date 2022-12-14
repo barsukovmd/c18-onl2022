@@ -10,6 +10,10 @@ import lombok.ToString;
 public class Trumpet implements Instrument {
     private int diameter;
 
+    public Trumpet(int diameter) {
+        this.diameter = diameter;
+    }
+
     @Override
     public void play() {
         diameter = 10;

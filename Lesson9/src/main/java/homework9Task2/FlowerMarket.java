@@ -8,6 +8,7 @@ import lombok.ToString;
 import java.util.ArrayList;
 import java.util.List;
 
+
 @Getter
 @Setter
 @ToString
@@ -22,7 +23,11 @@ public class FlowerMarket implements FlowerMarketOptions {
             String flowerType = flowers[i];
             FlowerType type = findPriceByFlowerName(flowerType);
             if (type != null) {
-                flower[i] = new Flower(type);
+                flowers[i] = new Flower(type.getName(), type.getPrice());//у меня все равно выдает ошибку, сделал
+                //конструктор и все как надо передал, продебажил пишет, что
+                // required: homework9Task2.FlowerType
+                //  found:    int,java.lang.String(хотя я сделал FlowerType)
+                //  reason: actual and formal argument lists differ in length
             }
         }
         Bouquet bouquet = new Bouquet(flower);
@@ -32,7 +37,7 @@ public class FlowerMarket implements FlowerMarketOptions {
 
     private FlowerType findPriceByFlowerName(String name) {
         for (FlowerType flowerType : FlowerType.values()) {
-            if (flowerType.name().equalsIgnoreCase(name)) {
+            if (flowerType.getName().equalsIgnoreCase(name)) {
                 return flowerType;
             }
         }
