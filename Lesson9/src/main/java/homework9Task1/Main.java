@@ -1,8 +1,5 @@
 package homework9Task1;
 
-import static homework9Task1.Seasons.*;
-
-
 //* Задача1: Времена года
 //        //* 1) Создать перечисление(enum), содержащее названия времен года.
 //        //* 2) Создать переменную содержащую ваше любимое время года и распечатать всю информацию о нем.
@@ -16,21 +13,14 @@ import static homework9Task1.Seasons.*;
 //        *
 public class Main {
     public static void main(String[] args) {
-        AllSeasons seasons1 = new Spring(10, SPRING);//тренировка полиморфизма
-        AllSeasons seasons2 = new Summer(30, SUMMER);//тренировка полиморфизма
-        AllSeasons seasons3 = new Autumn(15, AUTUMN);//тренировка полиморфизма
-        AllSeasons seasons4 = new Winter(-10, WINTER);//тренировка полиморфизма
-        seasons3.favouriteSeason(AUTUMN);
-        seasons1.favouriteSeason(SPRING);
-        System.out.println();
-        seasons4.getDescription();
-        seasons2.getDescription();
+
         for (Seasons season : Seasons.values()) {
-            System.out.println(season.getSeasons());
+            System.out.println(season.getInfo() + ". Температура " + season.getTemperature());
         }
-
         System.out.println("!!!");
-
+        String favSeason = Seasons.AUTUMN.toString();
+        System.out.println(favSeason + " my favourite weather");
+        System.out.println("!!!");
         for (Seasons seasons : Seasons.values()) {
             switch (seasons) {
                 case AUTUMN -> System.out.println("I really love this season is " + seasons);
