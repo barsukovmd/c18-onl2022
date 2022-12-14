@@ -1,8 +1,11 @@
 package by.tms.homework2.model;
 
 import by.tms.homework2.service.ManClothes;
+import lombok.experimental.SuperBuilder;
 
-public class Tie extends Clothes implements ManClothes {
+@SuperBuilder
+class Tie extends Clothes implements ManClothes {
+
     public Tie(int size, int price, String color) {
         super(size, price, color);
     }

@@ -23,7 +23,7 @@ public class FlowerMarket implements FlowerMarketOptions {
             String flowerType = flowers[i];
             FlowerType type = findPriceByFlowerName(flowerType);
             if (type != null) {
-                flowers[i] = new Flower(type.getName(), type.getPrice());//у меня все равно выдает ошибку, сделал
+//                flowers[i] = new Flower(type.getName(), type.getPrice());//у меня все равно выдает ошибку, сделал
                 //конструктор и все как надо передал, продебажил пишет, что
                 // required: homework9Task2.FlowerType
                 //  found:    int,java.lang.String(хотя я сделал FlowerType)
