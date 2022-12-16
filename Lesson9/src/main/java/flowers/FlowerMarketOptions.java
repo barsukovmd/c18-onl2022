@@ -1,4 +1,4 @@
-package Flowers;
+package flowers;
 
 public interface FlowerMarketOptions {
     int getCountSoldFlowers();

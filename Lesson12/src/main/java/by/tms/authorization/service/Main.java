@@ -1,8 +1,8 @@
-package by.tms.homework2.service;
+package by.tms.authorization.service;
 
-import by.tms.homework2.model.Authorization;
-import by.tms.homework2.model.WrongLoginException;
-import by.tms.homework2.model.WrongPasswordException;
+import by.tms.authorization.model.Authorization;
+import by.tms.authorization.model.WrongLoginException;
+import by.tms.authorization.model.WrongPasswordException;
 
 /**
  * Создать статический метод "checkAuthorization" который будет вызваться из метода main и принимает на вход три параметра: login, password и confirmPassword. Поле login должен содержать:

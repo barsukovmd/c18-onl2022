@@ -1,4 +1,4 @@
-package Flowers;
+package flowers;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -20,17 +20,16 @@ public class FlowerMarket implements FlowerMarketOptions {
 
     @Override
     public Bouquet getBouquet(FlowerType... flowers) {
-        Flower[] flower = new Flower[flowers.length];
+        Flower[] result = new Flower[flowers.length];
         for (int i = 0; i < flowers.length; i++) {
             FlowerType flowerName = flowers[i];
             FlowerType type = findPriceByFlowerName(flowerName);
             if (type != null) {
-                Flower[] result = new Flower[flowers.length];
                 result[i] = new Flower(type);
                 System.out.println(Arrays.toString(result));
             }
         }
-        Bouquet bouquet = new Bouquet(flower);
+        Bouquet bouquet = new Bouquet(result);
         soldBouquets.add(bouquet);
         return bouquet;
     }

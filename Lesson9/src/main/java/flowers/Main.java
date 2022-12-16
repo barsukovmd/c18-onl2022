@@ -1,8 +1,6 @@
-package Flowers;
+package flowers;
 
-import java.util.Arrays;
-
-import static Flowers.FlowerType.*;
+import static flowers.FlowerType.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -13,8 +11,11 @@ public class Main {
                 flowerMarket.getBouquet(ASTER, GERBERA, CARNATION),
                 flowerMarket.getBouquet(ASTER, CARNATION, TULIP, ROSE)
         };
-        String s = Arrays.toString(bouquets);
-        System.out.println(s);
+        for (Bouquet bouquet : bouquets) {
+            int pricePerBouquet = bouquet.getPricePerBouquet();
+            System.out.println(pricePerBouquet);
+        }
+        System.out.println("!!!");
         int countSoldFlowers = flowerMarket.getCountSoldFlowers();
         int priceInDay = flowerMarket.getPriceInDay();
         String info = flowerMarket.info();

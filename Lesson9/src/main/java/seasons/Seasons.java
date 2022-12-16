@@ -1,4 +1,4 @@
-package homework9Task1;
+package seasons;
 
 import lombok.Getter;
 import lombok.ToString;

@@ -1,7 +1,7 @@
-package by.tms.homework1.service;
+package by.tms.car.service;
 
-import by.tms.homework1.model.Car;
-import by.tms.homework1.model.CarIsNotReadyForRide;
+import by.tms.car.model.Car;
+import by.tms.car.model.CarIsNotReadyForRide;
 
 /**
  * Домашка.

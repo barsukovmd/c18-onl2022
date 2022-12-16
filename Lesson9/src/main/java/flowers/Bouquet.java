@@ -1,4 +1,4 @@
-package Flowers;
+package flowers;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

@@ -1,4 +1,4 @@
-package by.tms.homework2.model;
+package by.tms.authorization.model;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -64,7 +64,7 @@ public class Authorization {
             if (checkLogin(login) && checkPassword(password) && checkConfirmPassword(password, confirmPassword)) {
                 System.out.println("You have logged in");
                 return true;
-            } else if (!checkLogin(login) || login == null) {
+            } else if (!checkLogin(login)) {
                 throw new WrongLoginException("You have entered wrong login");
             } else if (!checkPassword(password) || !checkConfirmPassword(password, confirmPassword) || checkPassword(password) != checkConfirmPassword(password, confirmPassword)) {
                 throw new WrongPasswordException("You have entered wrong password");

@@ -1,4 +1,4 @@
-package by.tms.homework1.model;
+package by.tms.car.model;
 
 import lombok.Getter;
 import lombok.Setter;
