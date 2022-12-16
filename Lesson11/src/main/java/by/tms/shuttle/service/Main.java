@@ -1,4 +1,4 @@
-package by.tms.homework5.service;
+package by.tms.shuttle.service;
 
 //@Log4j//exception annotation
 //3)
