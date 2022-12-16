@@ -1,4 +1,4 @@
-package homework9Task2;
+package Flowers;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -6,6 +6,7 @@ import lombok.Setter;
 import lombok.ToString;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 
@@ -17,17 +18,17 @@ import java.util.List;
 public class FlowerMarket implements FlowerMarketOptions {
     private final List<Bouquet> soldBouquets = new ArrayList<>();
 
-    public Bouquet getBouquet(String... flowers) {
+    @Override
+    public Bouquet getBouquet(FlowerType... flowers) {
+
         Flower[] flower = new Flower[flowers.length];
         for (int i = 0; i < flowers.length; i++) {
-            String flowerType = flowers[i];
-            FlowerType type = findPriceByFlowerName(flowerType);
+            FlowerType flowerName = flowers[i];
+            FlowerType type = findPriceByFlowerName(flowerName);
             if (type != null) {
-                flowers[i] = new Flower(type.getName(), type.getPrice());//у меня все равно выдает ошибку, сделал
-                //конструктор и все как надо передал, продебажил пишет, что
-                // required: homework9Task2.FlowerType
-                //  found:    int,java.lang.String(хотя я сделал FlowerType)
-                //  reason: actual and formal argument lists differ in length
+                Flower[] result = new Flower[flowers.length];
+                result[i] = new Flower(type);
+                System.out.println(Arrays.toString(result));
             }
         }
         Bouquet bouquet = new Bouquet(flower);
@@ -35,9 +36,9 @@ public class FlowerMarket implements FlowerMarketOptions {
         return bouquet;
     }
 
-    private FlowerType findPriceByFlowerName(String name) {
-        for (FlowerType flowerType : FlowerType.values()) {
-            if (flowerType.getName().equalsIgnoreCase(name)) {
+    private FlowerType findPriceByFlowerName(FlowerType flowerType) {
+        for (FlowerType flowerTypeResult : FlowerType.values()) {
+            if (!flowerTypeResult.getName().equalsIgnoreCase(flowerType.getName())) {
                 return flowerType;
             }
         }

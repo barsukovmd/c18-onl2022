@@ -1,4 +1,4 @@
-package homework9Task2;
+package Flowers;
 
 public interface FlowerMarketOptions {
     int getCountSoldFlowers();
@@ -7,6 +7,6 @@ public interface FlowerMarketOptions {
 
     int getPriceInDay();
 
-    Bouquet getBouquet(String... flowers);
+    Bouquet getBouquet(FlowerType... flowers);
 }
 
