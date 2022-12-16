@@ -1,4 +1,4 @@
-package homework9Task2;
+package Flowers;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -24,10 +24,10 @@ public class Bouquet {
         return pricePerBouquet;
     }
 
-    public void deleteFlower(String... removedFlowers) {
-        for (String removedFlowers1 : removedFlowers) {
+    public void deleteFlower(FlowerType... removedFlowers) {
+        for (FlowerType removedFlowers1 : removedFlowers) {
             for (int i = 0; i < flowers.length; i++) {
-                if (flowers[i] != null && removedFlowers1.equalsIgnoreCase(flowers[i].getFlowerType().getName())) {
+                if (flowers[i] != null && removedFlowers1.getName().equalsIgnoreCase(flowers[i].getFlowerType().getName())) {
                     flowers[i] = null;
                     break;
                 }

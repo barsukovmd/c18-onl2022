@@ -1,4 +1,4 @@
-package by.tms.homework3.service;
+package by.tms.fruits.service;
 
 //* Задача3
 //        * Создать абстрактный класс Фрукт и классы Яблоко, Груша, Абрикос расширяющие его.

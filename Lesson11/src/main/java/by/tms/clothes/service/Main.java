@@ -7,6 +7,7 @@ import lombok.experimental.SuperBuilder;
 
 import java.util.ArrayList;
 
+import static by.tms.clothes.model.ClothesType.*;
 import static by.tms.clothes.model.Size.*;
 
 @SuperBuilder
@@ -32,10 +33,10 @@ import static by.tms.clothes.model.Size.*;
 public class Main {
     public static void main(String[] args) {
         ArrayList<Clothes> clothesArrayList = new ArrayList<>();
-        clothesArrayList.add(createClothes(ClothesType.SKIRT, XS, "Blue", 100));
-        clothesArrayList.add(createClothes(ClothesType.TSHIRT, XS, "Red", 150));
-        clothesArrayList.add(createClothes(ClothesType.TSHIRT, L, "Green", 100));
-        clothesArrayList.add(createClothes(ClothesType.TIE, M, "Brown", 100));
+        clothesArrayList.add(createClothes(SKIRT, XS, "Blue", 100));
+        clothesArrayList.add(createClothes(TSHIRT, XS, "Red", 150));
+        clothesArrayList.add(createClothes(TSHIRT, L, "Green", 100));
+        clothesArrayList.add(createClothes(TIE, M, "Brown", 100));
         Studio studio = new Studio(clothesArrayList);
         studio.dressUp(PersonType.MAN);
         studio.dressWoman();
