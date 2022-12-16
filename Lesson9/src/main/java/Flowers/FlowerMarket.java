@@ -20,7 +20,6 @@ public class FlowerMarket implements FlowerMarketOptions {
 
     @Override
     public Bouquet getBouquet(FlowerType... flowers) {
-
         Flower[] flower = new Flower[flowers.length];
         for (int i = 0; i < flowers.length; i++) {
             FlowerType flowerName = flowers[i];

@@ -1,4 +1,4 @@
-package by.tms.clothesDressingUp.service;
+package by.tms.clothes_2.service;
 
 public interface Coat {
 

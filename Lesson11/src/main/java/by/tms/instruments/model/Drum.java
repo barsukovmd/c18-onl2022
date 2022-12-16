@@ -1,11 +1,6 @@
 package by.tms.instruments.model;
 
 import by.tms.instruments.service.Instrument;
-import lombok.Getter;
-import lombok.ToString;
-
-@Getter
-@ToString
 
 public class Drum implements Instrument {
     private int size;

@@ -1,4 +1,6 @@
-package by.tms.clothesDressingUp.service;
+package by.tms.clothes_2.service;
+
+import by.tms.clothes_2.model.Person;
 
 //
 //2)
@@ -14,5 +16,6 @@ package by.tms.clothesDressingUp.service;
 //        У человека есть 2 метода:
 //        - одеться(вызываются методы надет одеть у всех вещей) - раздеться (вызываются методы снять у всех вещей)
 public class Main {
+    Person person = new Person();
 
 }
