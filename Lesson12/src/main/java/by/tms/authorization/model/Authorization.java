@@ -39,7 +39,7 @@ public class Authorization {
     }
 
     public static boolean checkPassword(String password) {
-        if (password.length() > 20 || password == null) {
+        if (password == null || password.length() > 20) {
             return false;
         }
         for (int i = 0; i < password.length(); i++) {
