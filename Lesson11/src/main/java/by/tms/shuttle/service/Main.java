@@ -1,5 +1,8 @@
 package by.tms.shuttle.service;
 
+import by.tms.shuttle.model.OneSpace;
+import by.tms.shuttle.model.Shuttle;
+
 //@Log4j//exception annotation
 //3)
 //        Создаем интерфейс IStart. В интерфейсе определяем методы: • предстартовая проверка систем(возвращает true/false)
@@ -14,7 +17,7 @@ package by.tms.shuttle.service;
 //        метод запуска двигателя). После этого производиться обратный отсчет (10 ..... 1). После
 //        обратного отсчета вызываем метод старт переданного объекта.
 //        Создаем класс Шатл. Шатл реализует интерфейс IStart.
-//        • В методе предстартовой проверки генерируем случайное число в диапазоне от 0 до 10.    - одеться(вызываются методы надетьдеть у всех вещей) - раздеться (вызываются методы снять у всех вещей)
+//        • В методе предстартовой проверки генерируем случайное число в диапазоне от 0 до 10.
 // Если сгенерированное число больше 3-х то проверка прошла успешно. Если нет, неуспешно.
 //• В методе запуска двигателей выводим строку в консоль «Двигатели Шатла запущены.
 //Все системы в норме.»
@@ -24,5 +27,17 @@ package by.tms.shuttle.service;
 //возвращал true либо false в зависимости от того прошла ли она успешно. Запустите в космос созданные вами космические корабли используя созданный вами
 //космодром и его метод старт.
 public class Main {
+    public static void main(String[] args) {
+        Shuttle shuttle = Shuttle.builder().build();
+        shuttle.checkPreStart();
+        shuttle.engineOn();
+        shuttle.start();
+        System.out.println("!!!");
+        OneSpace oneSpace = OneSpace.builder().build();
+        oneSpace.checkPreStart();
+        oneSpace.engineOn();
+        oneSpace.start();
+        System.out.println("!!!");
+    }
 
 }

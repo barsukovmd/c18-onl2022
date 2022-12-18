@@ -53,5 +53,28 @@ public class Main {
         String s = "MY FAMILY AND HIS FAMILY";
         System.out.println(s.indexOf("A"));
         System.out.println(s.lastIndexOf("A"));
+        boolean checkStart = str3.startsWith("He");
+        boolean checkEnd = str3.endsWith("rld");
+        System.out.println(checkStart);
+        System.out.println(checkEnd);
+        String replace = str3.replace("Hello", "Bye");
+        System.out.println(replace);
+        String substring = str2.substring(5);
+        System.out.println(substring);
+        System.out.println("!");
+        System.out.println("!");
+        System.out.println("!");
+        System.out.println("!");
+        System.out.println("!");
+        String string1 = "My name is Eugene, and I am working as a Java Developer";
+        String[] strings = string1.split(" ");
+        for (String string2 : strings) {
+            System.out.println(string2);
+        }
+
+        String string2 = "Cat";
+        String string3 = "Cat";
+        System.out.println(string2);
+        System.out.println(string3);
     }
 }

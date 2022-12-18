@@ -1,5 +1,13 @@
 package by.tms.fruits.service;
 
+import by.tms.fruits.model.Apple;
+import by.tms.fruits.model.Apricot;
+import by.tms.fruits.model.Fruit;
+import by.tms.fruits.model.Pier;
+
+import java.util.ArrayList;
+import java.util.List;
+
 //* Задача3
 //        * Создать абстрактный класс Фрукт и классы Яблоко, Груша, Абрикос расширяющие его.
 //        * Класс Фрукт содержит:
@@ -19,5 +27,15 @@ package by.tms.fruits.service;
 //        * Внимание!!! пользоваться instanceof НЕЛЬЗЯ, тут нужно применить перечисления.
 //        */
 public class Main {
-
+    public static void main(String[] args) {
+        List<Fruit> fruits = new ArrayList<>();
+        fruits.add(Apricot.builder().weight(5).pricePerPound(150).build());
+        fruits.add(Apple.builder().weight(15).pricePerPound(180).build());
+        fruits.add(Pier.builder().weight(12).pricePerPound(220).build());
+        for (Fruit fruit : fruits) {
+            double price = fruit.getPrice();
+            fruit.printManufacturerInfo();
+            System.out.println("\n" + price + " rubles," + " price for " + fruit.getType());
+        }
+    }
 }

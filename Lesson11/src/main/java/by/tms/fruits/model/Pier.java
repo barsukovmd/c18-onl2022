@@ -1,14 +1,11 @@
 package by.tms.fruits.model;
 
-import by.tms.fruits.service.Fruit;
+import lombok.experimental.SuperBuilder;
 
+@SuperBuilder
 public class Pier extends Fruit {
-    public Pier(String weight) {
-        super(weight);
-    }
-
     @Override
-    public void getPrice() {
-        super.getPrice();
+    public Type getType() {
+        return Type.PIER;
     }
 }
