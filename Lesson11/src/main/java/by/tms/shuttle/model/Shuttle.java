@@ -7,6 +7,9 @@ import static by.tms.shuttle.model.Type.SHUTTLE;
 
 @SuperBuilder
 public class Shuttle implements IStart {
+    public Shuttle() {
+    }
+
     @Override
     public boolean checkPreStart() {
         System.out.println("Start was initiated by " + SHUTTLE);

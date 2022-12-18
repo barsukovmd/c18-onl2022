@@ -7,7 +7,8 @@ import static by.tms.shuttle.model.Type.ORBITAL;
 
 @SuperBuilder
 public class Orbital implements IStart {
-
+    public Orbital() {
+    }
 
     @Override
     public boolean checkPreStart() {

@@ -7,6 +7,9 @@ import static by.tms.shuttle.model.Type.ONESPACE;
 
 @SuperBuilder
 public class OneSpace implements IStart {
+    public OneSpace() {
+    }
+
     @Override
     public boolean checkPreStart() {
         System.out.println("Start was initiated by " + ONESPACE);
