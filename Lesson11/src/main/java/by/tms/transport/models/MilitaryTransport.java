@@ -28,4 +28,22 @@ public class MilitaryTransport extends AirTransport {
     public String getInfo() {
         return super.getInfo() + " " + checkCatapultSystem + " " + countRockets;
     }
+
+    public void shootRocket() {
+        if (countRockets > 0) {
+            System.out.println("Rocket is coming...");
+            countRockets--;
+        } else {
+            System.out.println("Empty, no rockets");
+        }
+    }
+
+    public void catapultCheck() {
+        if (checkCatapultSystem) {
+            System.out.println("Catapult has been completed successfully");
+            checkCatapultSystem = true;
+        } else {
+            System.out.println("You don't have this system");
+        }
+    }
 }

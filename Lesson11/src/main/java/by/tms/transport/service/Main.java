@@ -45,8 +45,10 @@ public class Main {
             if (transport instanceof PassengerTransport passengerTransport) {
                 passengerTransport.checkCarParameters(10);//не мог понять почему не находит метод
             } else if (transport instanceof MilitaryTransport militaryTransport) {
-                boolean checkCatapultSystem = militaryTransport.isCheckCatapultSystem();
-                System.out.println(checkCatapultSystem + " catapults works good");
+                militaryTransport.catapultCheck();
+                militaryTransport.shootRocket();
+            } else if (transport instanceof FreightTransport freightTransport) {
+                freightTransport.checkCapacityWeight(300);
             }
         }
     }

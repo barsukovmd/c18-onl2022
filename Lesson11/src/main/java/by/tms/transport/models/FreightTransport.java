@@ -23,4 +23,14 @@ public class FreightTransport extends GroundTransport {
     public String getInfo() {
         return super.getInfo() + " " + loadCapacity;
     }
+
+    public void checkCapacityWeight(double weight) {
+        if (weight < loadCapacity) {
+            System.out.println("Freight transport is not full yet");
+        } else if (weight == loadCapacity) {
+            System.out.println("Freight transport is full");
+        } else {
+            System.out.println("Freight transport has been overwhelmed, pls unload or take another one");
+        }
+    }
 }
