@@ -32,15 +32,14 @@ import static by.tms.clothes.model.Size.*;
 //        *
 public class Main {
     public static void main(String[] args) {
-        ArrayList<Clothes> clothesArrayList = new ArrayList<>();
-        clothesArrayList.add(createClothes(SKIRT, XS, "Blue", 100));
-        clothesArrayList.add(createClothes(TSHIRT, XS, "Red", 150));
-        clothesArrayList.add(createClothes(TSHIRT, L, "Green", 100));
-        clothesArrayList.add(createClothes(TIE, M, "Brown", 100));
-        Studio studio = new Studio(clothesArrayList);
+        ArrayList<Clothes> clothes = new ArrayList<>();
+        clothes.add(createClothes(SKIRT, XS, "Blue", 100));
+        clothes.add(createClothes(TSHIRT, XS, "Red", 150));
+        clothes.add(createClothes(TSHIRT, L, "Green", 100));
+        clothes.add(createClothes(TIE, M, "Brown", 100));
+        Studio studio = new Studio(clothes);
         studio.dressUp(PersonType.MAN);
         studio.dressWoman();
-
     }
 
     private static Clothes createClothes(ClothesType clothesType, Size size, String color, int price) {

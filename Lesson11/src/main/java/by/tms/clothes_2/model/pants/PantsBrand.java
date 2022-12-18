@@ -2,11 +2,6 @@ package by.tms.clothes_2.model.pants;
 
 import by.tms.clothes_2.service.Pants;
 import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
-
-@Setter
-@Getter
 
 @AllArgsConstructor
 public class PantsBrand implements Pants {

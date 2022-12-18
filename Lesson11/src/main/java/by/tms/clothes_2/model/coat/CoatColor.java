@@ -3,11 +3,11 @@ package by.tms.clothes_2.model.coat;
 import by.tms.clothes_2.service.Coat;
 
 public class CoatColor implements Coat {
+    private String color;
+
     public CoatColor(String color) {
         this.color = color;
     }
-
-    private String color;
 
     @Override
     public void dress() {
