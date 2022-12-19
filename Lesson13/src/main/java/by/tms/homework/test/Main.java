@@ -1,5 +1,8 @@
 package by.tms.homework.test;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class Main {
     public static void main(String[] args) {
         String string = new String(new char[]{'h', 'e', 'l', 'l', 'o'});
@@ -76,5 +79,14 @@ public class Main {
         String string3 = "Cat";
         System.out.println(string2);
         System.out.println(string3);
+
+        String s7 = "Алла Александр Юлия Мария";
+        Pattern pattern = Pattern.compile("А.+а");
+        Matcher matcher = pattern.matcher("Алла");
+        while (matcher.find()) {
+            int start1 = matcher.start();
+            int end1 = matcher.end();
+        }
+        System.out.println("");
     }
 }
