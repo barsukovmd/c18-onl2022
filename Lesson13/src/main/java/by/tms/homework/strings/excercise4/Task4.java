@@ -1,4 +1,4 @@
-package by.tms.homework.strings.service;
+package by.tms.homework.strings.excercise4;
 
 public class Task4 {
     //     * 4) Есть строка в которой содержится текст, предложения разделены точками.
@@ -10,4 +10,9 @@ public class Task4 {
 //     * В main создаем строку с текстом, также можно текст задавать с консоли.
 //     * Разбиваем текст на предложения. Используя методы класса TextFormatter определяем подходит ли нам предложение.
 //     * Если подходит, то выводим на экран.
+    public static void main(String[] args) {
+        TextFormatter textFormatter = new TextFormatter("Hello, my name is Eugene. I like to walk and run, during summer season");
+        String s = textFormatter.showWords();
+        System.out.println(s.split(""));
+    }
 }
