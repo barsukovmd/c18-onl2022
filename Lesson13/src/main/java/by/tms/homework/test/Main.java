@@ -49,9 +49,7 @@ public class Main {
 
         String str3 = "Hello World";
         String str4 = "I Work";
-        boolean result = str3.regionMatches(6, str4, 2, 3);
-//        Подскажите как правильно написать, чтобы было str4.ignoreCase??? в 49 строке
-        System.out.println(result);
+        System.out.println("sd".regionMatches(true, 6, str4, 2, 3));
         System.out.println(str3.compareTo(str4));
         String s = "MY FAMILY AND HIS FAMILY";
         System.out.println(s.indexOf("A"));

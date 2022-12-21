@@ -5,7 +5,7 @@ import lombok.experimental.SuperBuilder;
 
 import java.util.concurrent.TimeUnit;
 
-@SuperBuilder
+@SuperBuilder()
 public class Spaceport {
     public Spaceport() {
     }
