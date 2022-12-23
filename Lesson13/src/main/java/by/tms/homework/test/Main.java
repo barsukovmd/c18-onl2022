@@ -1,5 +1,8 @@
 package by.tms.homework.test;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class Main {
     public static void main(String[] args) {
         String string = new String(new char[]{'h', 'e', 'l', 'l', 'o'});
@@ -46,9 +49,7 @@ public class Main {
 
         String str3 = "Hello World";
         String str4 = "I Work";
-        boolean result = str3.regionMatches(6, str4, 2, 3);
-//        Подскажите как правильно написать, чтобы было str4.ignoreCase??? в 49 строке
-        System.out.println(result);
+        System.out.println("sd".regionMatches(true, 6, str4, 2, 3));
         System.out.println(str3.compareTo(str4));
         String s = "MY FAMILY AND HIS FAMILY";
         System.out.println(s.indexOf("A"));
@@ -76,5 +77,14 @@ public class Main {
         String string3 = "Cat";
         System.out.println(string2);
         System.out.println(string3);
+
+        String s7 = "Алла Александр Юлия Мария";
+        Pattern pattern = Pattern.compile("А.+а");
+        Matcher matcher = pattern.matcher("Алла");
+        while (matcher.find()) {
+            int start1 = matcher.start();
+            int end1 = matcher.end();
+        }
+        System.out.println("");
     }
 }
