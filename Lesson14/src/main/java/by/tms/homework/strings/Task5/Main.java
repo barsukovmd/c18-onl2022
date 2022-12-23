@@ -14,6 +14,14 @@ package by.tms.homework.strings.Task5;
     * */
 public class Main {
     public static void main(String[] args) {
+        System.out.println(validate("15155151fv"));
+        System.out.println(validate("1515ahjfrfbew15155151"));
+        System.out.println(validate("bew15155151"));
+        System.out.println(validate("bew155151"));
+        System.out.println(validate("bew155151йаицй"));
+    }
 
+    public static boolean validate(String string) {
+        return string.matches("[a-z15]{4,20}");
     }
 }

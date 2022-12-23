@@ -14,7 +14,7 @@ public class Main {
     public static void main(String[] args) {
         String string = "cab, ccab, cccab";
         Pattern pattern = Pattern.compile("c.+ab");
-        Matcher matcher = pattern.matcher("cab, ccab, cccab");
+        Matcher matcher = pattern.matcher(string);
         while (matcher.find()) {
             System.out.println(string.substring(matcher.start(), matcher.end()));
         }
