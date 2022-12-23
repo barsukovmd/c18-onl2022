@@ -1,0 +1,20 @@
+package by.tms.figures.service;
+
+import lombok.experimental.SuperBuilder;
+
+@SuperBuilder
+public class Rectangle extends Figure implements IFigure {
+
+    private double firstSide;
+    private double secondSide;
+
+    @Override
+    public double getSquare() {
+        return firstSide * secondSide;
+    }
+
+    @Override
+    public Type getType() {
+        return Type.RECTANGLE;
+    }
+}

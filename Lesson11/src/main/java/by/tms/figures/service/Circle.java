@@ -1,0 +1,18 @@
+package by.tms.figures.service;
+
+import lombok.experimental.SuperBuilder;
+
+@SuperBuilder
+public class Circle extends Figure implements IFigure {
+    private double radius;
+
+    @Override
+    public double getSquare() {
+        return 3.14 * Math.pow(radius, 2);
+    }
+
+    @Override
+    public Type getType() {
+        return Type.CIRCLE;
+    }
+}
