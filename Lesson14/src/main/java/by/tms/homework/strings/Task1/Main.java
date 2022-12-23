@@ -8,6 +8,13 @@ public class Main {
      * Например, если дана строка "string"  результат будет "ri", для строки "code" результат "od",  для "Practice" результат "ct".
      */
     public static void main(String[] args) {
-
+        System.out.println(getMiddleChars("String"));
+        System.out.println(getMiddleChars("code"));
+        System.out.println(getMiddleChars("Practice"));
     }
+
+    public static String getMiddleChars(String string) {
+        return string.substring(string.length() / 2 - 1, string.length() / 2 + 1);
+    }
+
 }
