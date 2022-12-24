@@ -7,7 +7,7 @@ public class TextFormatter {
         this.string = string;
     }
 
-    public String showWords() {
+    public String getSentencesWithPalindromes() {
         StringBuilder newString = new StringBuilder();
         int count = 0;
         for (String words : TextCorrecter.splitSentencesByPoint(string)) {
