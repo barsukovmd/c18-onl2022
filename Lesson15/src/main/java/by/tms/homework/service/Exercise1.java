@@ -1,5 +1,9 @@
 package by.tms.homework.service;
 
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
 ///**
 //     * 1)В исходном файле hw1/input.txt находятся слова, каждое слово на новой строке.
 //     * После запуска программы должен создать файл output.txt, который будет содержать в себе только палиндромы.
@@ -23,8 +27,27 @@ package by.tms.homework.service;
 //     * После сериализации произвести обратный процесс(из потока в объект) и вывести на консоль
 //     *
 //     */
-public class Main {
+public class Exercise1 {
+    public static final String INPUT = "Lesson15/src/main/java/by/tms/homework/hw1/input.txt";
+    public static final String OUTPUT = "Lesson15/src/main/resources/output";
+
     public static void main(String[] args) {
 
+        try (FileInputStream fileInputStream = new FileInputStream(INPUT);
+             FileOutputStream fileOutputStream = new FileOutputStream(OUTPUT, false)) {
+            StringBuilder stringBuilder = new StringBuilder();
+            int i;
+            while ((i = fileInputStream.read()) != -1) {
+                if (TextFormatter.checkPalindromes(fileInputStream.toString()) != TextFormatter.checkWordLength(fileInputStream.toString())) {
+                    StringBuilder s = stringBuilder.append((char) i);
+                    byte[] s1 = new byte[s.length()];
+                    fileOutputStream.write(new String(s1).getBytes());
+                }
+            }
+            System.out.println(TextFormatter.countWordsInString(stringBuilder.toString()) + " number of palindromes");
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+        System.out.println("File was written");
     }
 }
