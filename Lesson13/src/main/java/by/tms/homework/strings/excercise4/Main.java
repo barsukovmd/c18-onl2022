@@ -13,7 +13,7 @@ public class Main {
     public static void main(String[] args) {
         TextFormatter textFormatter = new TextFormatter("Hello, my name is Eugene. I like to walk and run. " +
                                                         "Especially during summer season. My favourite season is autumn");
-        System.out.println(textFormatter.showWords());
+        System.out.println(textFormatter.getSentencesWithPalindromes());
     }
 
 }

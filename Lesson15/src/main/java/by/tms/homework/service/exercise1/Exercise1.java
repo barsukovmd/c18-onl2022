@@ -1,4 +1,11 @@
-package by.tms.homework.service;
+package by.tms.homework.service.exercise1;
+
+import by.tms.homework.service.TextFormatter;
+
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.List;
 
 ///**
 //     * 1)В исходном файле hw1/input.txt находятся слова, каждое слово на новой строке.
@@ -23,8 +30,17 @@ package by.tms.homework.service;
 //     * После сериализации произвести обратный процесс(из потока в объект) и вывести на консоль
 //     *
 //     */
-public class Main {
-    public static void main(String[] args) {
+public class Exercise1 {
+    public static final String INPUT = "Lesson15/src/main/java/by/tms/homework/service/Exercise1/input.txt";
+    public static final String OUTPUT = "Lesson15/src/main/resources/output";
 
+    public static void main(String[] args) {
+        List<String> files;
+        try {
+            files = Files.readAllLines(Path.of(INPUT));
+            Files.write(Path.of(OUTPUT), TextFormatter.getPalindromes(files));
+        } catch (IOException e) {
+            System.out.println("File was written");
+        }
     }
 }

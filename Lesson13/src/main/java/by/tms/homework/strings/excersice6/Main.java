@@ -11,10 +11,10 @@ public class Main {
 //     * Пример: | Л.Н. Толстой		|		200.34|
     public static void main(String[] args) {
         ArrayList<Employee> employees = new ArrayList<>();
-        employees.add(new Employee("Michael Douglas", 400.29));
-        employees.add(new Employee("Nick Douglas", 300.18));
-        employees.add(new Employee("Mich Douglas", 290.29));
-        employees.add(new Employee("Ron Douglas", 500.16));
+        employees.add(new Employee("Michael Douglas", 400.298786));
+        employees.add(new Employee("Nick Douglas", 300.188756789));
+        employees.add(new Employee("Mich Douglas", 290.298769));
+        employees.add(new Employee("Ron Douglas", 500.1687659));
         Report report = new ReportGenerator();
         report.generateReport(employees);
     }
