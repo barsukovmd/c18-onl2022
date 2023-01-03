@@ -1,6 +1,8 @@
 package by.tms.homework.service;
 
-import org.apache.commons.lang3.StringUtils;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 //* Пишем все в ООП стиле. Создаем класс TextFormatter
 ////     * в котором два метода:
@@ -8,32 +10,59 @@ import org.apache.commons.lang3.StringUtils;
 ////     * 2. Метод принимает строку и проверяет есть ли в строке слово-палиндром. Если есть возвращает true, если нет false
 ////     *
 public class TextFormatter {
-    public static String[] splitSentencesByDot(String string) {
-        return string.split("\\.");
+
+    public static int getCountWordsInString(String string) {
+        return identifyWords(string).size();
     }
 
-    public static int countWordsInString(String string) {
-        int count = 0;
-        String[] strings = string.split(" ");
-        for (String word : strings) {
-            count++;
+    public static List<String> getSentencesFromText(String text) {
+        List<String> originalSentences = Arrays.asList(text.split("[!.?]\\s*"));
+        List<String> result = new ArrayList<>();
+        for (String sentence : originalSentences) {
+            String replacedSentence = sentence.replaceAll("-*\n+", "");
+            result.add(replacedSentence);
         }
-        return count;
+        return result;
     }
 
-    public static boolean checkWordLength(String string) {
-        return string.length() >= 3 && string.length() <= 5;
+    public static List<String> getPalindromes(List<String> strings) {
+        List<String> result = new ArrayList<>();
+        for (String string : strings) {
+            if (isPalindrome(string)) {
+                result.add(string);
+            }
+        }
+        return result;
     }
 
-
-    public static boolean checkPalindromes(String string) {
-        String[] strings = splitSentencesByDot(string);
-        for (String palindrome : strings) {
-            palindrome.split(" ");
-            if (palindrome.equalsIgnoreCase(StringUtils.reverse(palindrome))) {
+    public static boolean hasPalindromeInString(String string) {
+        for (String word : identifyWords(string)) {
+            if (isPalindrome(word)) {
                 return true;
             }
         }
         return false;
     }
+
+    public static boolean hasBlacklistWordInString(String string, String[] blacklist) {
+        for (String blWord : blacklist) {
+            if (string.contains(blWord)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private static List<String> identifyWords(String string) {
+        return Arrays.asList(string.split(" "));
+    }
+
+    private static boolean isPalindrome(String string) {
+        if (string.length() < 2) {
+            return false;
+        }
+        StringBuilder sb = new StringBuilder(string);
+        return string.equalsIgnoreCase(sb.reverse().toString());
+    }
+
 }

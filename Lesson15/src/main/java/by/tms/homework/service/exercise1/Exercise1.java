@@ -1,8 +1,11 @@
-package by.tms.homework.service;
+package by.tms.homework.service.exercise1;
 
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
+import by.tms.homework.service.TextFormatter;
+
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.List;
 
 ///**
 //     * 1)В исходном файле hw1/input.txt находятся слова, каждое слово на новой строке.
@@ -28,26 +31,16 @@ import java.io.IOException;
 //     *
 //     */
 public class Exercise1 {
-    public static final String INPUT = "Lesson15/src/main/java/by/tms/homework/hw1/input.txt";
+    public static final String INPUT = "Lesson15/src/main/java/by/tms/homework/service/Exercise1/input.txt";
     public static final String OUTPUT = "Lesson15/src/main/resources/output";
 
     public static void main(String[] args) {
-
-        try (FileInputStream fileInputStream = new FileInputStream(INPUT);
-             FileOutputStream fileOutputStream = new FileOutputStream(OUTPUT, false)) {
-            StringBuilder stringBuilder = new StringBuilder();
-            int i;
-            while ((i = fileInputStream.read()) != -1) {
-                if (TextFormatter.checkPalindromes(fileInputStream.toString()) != TextFormatter.checkWordLength(fileInputStream.toString())) {
-                    StringBuilder s = stringBuilder.append((char) i);
-                    byte[] s1 = new byte[s.length()];
-                    fileOutputStream.write(new String(s1).getBytes());
-                }
-            }
-            System.out.println(TextFormatter.countWordsInString(stringBuilder.toString()) + " number of palindromes");
+        List<String> files;
+        try {
+            files = Files.readAllLines(Path.of(INPUT));
+            Files.write(Path.of(OUTPUT), TextFormatter.getPalindromes(files));
         } catch (IOException e) {
-            System.out.println(e.getMessage());
+            System.out.println("File was written");
         }
-        System.out.println("File was written");
     }
 }
