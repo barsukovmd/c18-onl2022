@@ -31,7 +31,7 @@ import java.util.List;
 //
 public class Store {
     private Product product;
-    private ArrayList<Product> productType;
+    private ArrayList<? extends Product> productType;
 
     public boolean getProductType(Product productType) {
         List<Product> type = new ArrayList<>();
@@ -42,11 +42,7 @@ public class Store {
         }
     }
 
-    public List<Product> allProducts() {
-        return getProductType();
-    }
-
-    public String deleteProductWithId(int id) {//V put V remove
+    public String deleteProductWithId(int id) {//V put(K k) V remove (K k)
         if (product.getId() == id) {
             for (Product removeProduct : productType) {
                 return removeProduct.getName();
