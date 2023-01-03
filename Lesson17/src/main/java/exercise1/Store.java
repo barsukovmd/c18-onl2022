@@ -29,8 +29,9 @@ import java.util.HashMap;
 //     * Id товара — это поле вашего объекта, вы при его создании его задаете. А индекс товара в списке товаров, это по сути его порядковый номер в списке(начинается с 0).
 //
 public class Store {
-    public Product getProductType(Integer id, Product product) {
+    public boolean addProduct(Integer id, Product product) {
         HashMap<Integer, Product> productType = new HashMap<>();
-        return productType.put(id, product);
+        productType.put(id, product);
+        return true;
     }
 }
