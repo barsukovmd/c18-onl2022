@@ -46,7 +46,7 @@ public class Store {
         return getProductType();
     }
 
-    public String deleteProductWithId(int id) {
+    public String deleteProductWithId(int id) {//V put V remove
         if (product.getId() == id) {
             for (Product removeProduct : productType) {
                 return removeProduct.getName();
