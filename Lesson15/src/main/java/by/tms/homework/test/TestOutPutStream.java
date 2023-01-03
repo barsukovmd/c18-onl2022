@@ -6,7 +6,7 @@ import java.io.IOException;
 public class TestOutPutStream {
     public static void main(String[] args) {
         String string = "Hello, new file for writing";
-        try (FileOutputStream fileOutputStream = new FileOutputStream("/Users/yauhenbarsukov/IdeaProjects/c18-onl2022/Lesson15/src/main/resources/test")) {
+        try (FileOutputStream fileOutputStream = new FileOutputStream("Lesson15/src/main/resources/test")) {
             byte[] buffer = string.getBytes();
             fileOutputStream.write(buffer, 0, buffer.length);
         } catch (IOException e) {
