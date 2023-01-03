@@ -6,7 +6,7 @@ import lombok.ToString;
 import lombok.experimental.SuperBuilder;
 
 import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
 
 @SuperBuilder
 @Getter
@@ -30,24 +30,11 @@ import java.util.List;
 //     * Id товара — это поле вашего объекта, вы при его создании его задаете. А индекс товара в списке товаров, это по сути его порядковый номер в списке(начинается с 0).
 //
 public class Store {
-    private Product product;
+
+    private HashMap<Integer, String> product;
     private ArrayList<? extends Product> productType;
 
-    public boolean getProductType(Product productType) {
-        List<Product> type = new ArrayList<>();
-        if (product.getId() != productType.getId()) {
-            return type.add(productType);
-        } else {
-            return false;
-        }
-    }
-
-    public String deleteProductWithId(int id) {//V put(K k) V remove (K k)
-        if (product.getId() == id) {
-            for (Product removeProduct : productType) {
-                return removeProduct.getName();
-            }
-        }
-        return null;
+    public String getProductType(Product productType) {
+        return product.put(productType.getId(), productType.getName());
     }
 }
