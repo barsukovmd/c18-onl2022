@@ -1,10 +1,13 @@
 package task4;
 
-// * 4)Написать класс Калькулятор (необобщенный), который содержит обобщенные статические методы - sum, multiply, divide,
-// * subtraction. Параметры этих методов - два числа разного типа, над которыми должна быть произведена операция.
-// */
+
+import static task4.Calculator.*;
+
 public class Main {
     public static void main(String[] args) {
-
+        System.out.println(multiply(23, 12));
+        System.out.println(divide(23, 12));
+        System.out.println(subtraction(120, 19));
+        System.out.println(sum(12, 21));
     }
 }
