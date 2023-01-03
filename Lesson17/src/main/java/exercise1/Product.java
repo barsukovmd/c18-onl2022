@@ -1,10 +1,8 @@
 package exercise1;
 
 import lombok.Getter;
-import lombok.experimental.SuperBuilder;
 
 @Getter
-@SuperBuilder
 //    /**
 //     * Необходимо реализовать магазин продуктов.
 //     * Создать класс Товар, поля:
@@ -12,7 +10,13 @@ import lombok.experimental.SuperBuilder;
 //     * • name(строка)
 //     * • price(целое число)
 public class Product {
-    private int id;
-    private String name;
-    private int price;
+    private final int id;
+    private final String name;
+    private final int price;
+
+    public Product(int id, String name, int price) {
+        this.id = id;
+        this.name = name;
+        this.price = price;
+    }
 }
