@@ -21,5 +21,8 @@ public class Collections {
         cities1.add("London");
         cities1.add("Minsk");
         System.out.printf("Number of cities are %d \n", cities1.size());
+        for (String s : cities1) {
+            System.out.println(s);
+        }
     }
 }
