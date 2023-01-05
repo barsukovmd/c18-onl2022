@@ -1,9 +1,13 @@
 package test;
 
-public class LyambdaTest {
+import java.util.function.IntBinaryOperator;
+
+public class LyambdaTest<T> {
+    T t;
+
     public static void main(String[] args) {
-        operation = (int x, int y) -> x + y;
-        
+        IntBinaryOperator operation = Integer::sum;
+        System.out.println(operation);
     }
 
 }
