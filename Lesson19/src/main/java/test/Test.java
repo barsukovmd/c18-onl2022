@@ -14,9 +14,23 @@ public class Test {
         people.add(new People("Niki", 30, 3));
         people.add(new People("Mirka", 23, 4));
         Arrays.stream(people1);
-        BiPredicate<People, Integer> biPredicate = (person, b) -> person.getAge() > b;
+        BiPredicate<People, Integer> biPredicate = (person, value) -> person.getAge() > value;
         boolean test = biPredicate.test(new People("Mirka", 23, 4), 10);
         System.out.println(test);
-        
+
+        Operation multiply = (a, b) -> a * b;
+        System.out.println(multiply.calculate(12, 12));
+        Operation sum = Integer::sum;
+        System.out.println(sum.calculate(10, 12));
+        Operation divide = (a, b) -> a / b;
+        System.out.println(divide.calculate(100, 20));
+        Operation minus = (a, b) -> a - b;
+        System.out.println(minus.calculate(101, 20));
+    }
+
+
+    @FunctionalInterface
+    public interface Operation {
+        int calculate(int a, int b);
     }
 }
