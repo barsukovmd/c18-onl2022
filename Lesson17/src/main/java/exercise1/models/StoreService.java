@@ -66,4 +66,9 @@ public class StoreService implements StoreAware {
         });
         return true;
     }
+
+    @Override
+    public Map<Integer, Product> getProducts() {
+        return store.getProducts();
+    }
 }
