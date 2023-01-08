@@ -75,6 +75,7 @@ public class Main {
         storeAware.addProduct(new Product(4, "PineApple", 300));
         storeAware.deleteProduct(new Product(5, "Yellow Apple", 150));
         storeAware.editProduct(2, new Product(3, "Yellow Apple", 350));
-        Map<Integer, Product> sort = new HashMap<>();
+        Map<Integer, Product> sort = new HashMap<>(storeAware.getProducts());
+        System.out.println(sort.values());
     }
 }
