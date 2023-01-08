@@ -7,6 +7,7 @@ import lombok.ToString;
 import java.util.HashMap;
 import java.util.Map;
 
+
 @Getter
 @ToString
 @AllArgsConstructor
@@ -31,23 +32,38 @@ public class StoreService implements StoreAware {
     private Store store;
 
     @Override
-    public boolean addProduct(Integer id, Product product) {
+    public boolean addProduct(Product product) {
         Map<Integer, Product> productType = new HashMap<>();
-        productType.put(id, product);
+        productType.put(product.getId(), product);
         return true;
     }
 
     @Override
-    public boolean deleteProduct(Integer id, Product product) {
+    public boolean deleteProduct(Product product) {
         Map<Integer, Product> deleteProduct = new HashMap<>();
-        deleteProduct.remove(id, product);
+        deleteProduct.put(product.getId(), product);
         return true;
     }
 
     @Override
     public boolean editProduct(Integer id, Product product) {
         Map<Integer, Product> editProduct = new HashMap<>();
-        editProduct.keySet().add(id);
+        editProduct.entrySet().add(new Map.Entry<>() {
+            @Override
+            public Integer getKey() {
+                return product.getId();
+            }
+
+            @Override
+            public Product getValue() {
+                return product;
+            }
+
+            @Override
+            public Product setValue(Product value) {
+                return new Product(value.getId(), value.getName(), value.getPrice());
+            }
+        });
         return true;
     }
 }

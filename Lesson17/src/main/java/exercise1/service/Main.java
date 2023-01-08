@@ -69,19 +69,12 @@ import java.util.Map;
 public class Main {
     public static void main(String[] args) {
         StoreAware storeAware = new StoreService(new Store());
-        Map<Integer, Product> productMap = new HashMap<>();
-        productMap.put(1, new Product(10, "Yellow Apple", 150));
-        productMap.put(2, new Product(10, "Green Apple", 200));
-        productMap.put(3, new Product(11, "PineApple", 300));
-        productMap.remove(2);
-        for (Product value : productMap.values()) {
-            System.out.println(value.getId() + value.getPrice() + value.getName());
-        }
-        storeAware.deleteProduct(2, new Product(10, "Green Apple", 200));
-        storeAware.addProduct(3, new Product(11, "WaterMelon", 250));
-        storeAware.editProduct(2, new Product(10, "Green Apple", 300));
-        for (Product value : productMap.values()) {
-            System.out.println(value.getId() + value.getPrice() + value.getName());
-        }
+        storeAware.addProduct(new Product(1, "Yellow Apple", 150));
+        storeAware.addProduct(new Product(2, "Yellow Apple", 150));
+        storeAware.addProduct(new Product(3, "Green Apple", 200));
+        storeAware.addProduct(new Product(4, "PineApple", 300));
+        storeAware.deleteProduct(new Product(5, "Yellow Apple", 150));
+        storeAware.editProduct(2, new Product(3, "Yellow Apple", 350));
+        Map<Integer, Product> sort = new HashMap<>();
     }
 }

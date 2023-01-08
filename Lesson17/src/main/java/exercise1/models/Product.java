@@ -14,7 +14,7 @@ import lombok.Setter;
 //     * • name(строка)
 //     * • price(целое число)
 public class Product {//предлагает сделать record??
-    private final int id;
+    private final Integer id;
     private final String name;
-    private final int price;
+    private final Integer price;
 }
