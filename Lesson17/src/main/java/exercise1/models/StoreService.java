@@ -1,13 +1,12 @@
-package exercise1;
+package exercise1.models;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.ToString;
-import lombok.experimental.SuperBuilder;
 
 import java.util.HashMap;
+import java.util.Map;
 
-@SuperBuilder
 @Getter
 @ToString
 @AllArgsConstructor
@@ -28,10 +27,27 @@ import java.util.HashMap;
 //     * Обратите внимание что id товара и индекс товара в списке — это разные вещи, не перепутайте.
 //     * Id товара — это поле вашего объекта, вы при его создании его задаете. А индекс товара в списке товаров, это по сути его порядковый номер в списке(начинается с 0).
 //
-public class Store {
+public class StoreService implements StoreAware {
+    private Store store;
+
+    @Override
     public boolean addProduct(Integer id, Product product) {
-        HashMap<Integer, Product> productType = new HashMap<>();
+        Map<Integer, Product> productType = new HashMap<>();
         productType.put(id, product);
+        return true;
+    }
+
+    @Override
+    public boolean deleteProduct(Integer id, Product product) {
+        Map<Integer, Product> deleteProduct = new HashMap<>();
+        deleteProduct.remove(id, product);
+        return true;
+    }
+
+    @Override
+    public boolean editProduct(Integer id, Product product) {
+        Map<Integer, Product> editProduct = new HashMap<>();
+        editProduct.keySet().add(id);
         return true;
     }
 }

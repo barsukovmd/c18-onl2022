@@ -1,4 +1,12 @@
-package exercise1;
+package exercise1.service;
+
+import exercise1.models.Product;
+import exercise1.models.Store;
+import exercise1.models.StoreAware;
+import exercise1.models.StoreService;
+
+import java.util.HashMap;
+import java.util.Map;
 
 //    /**
 //     * Необходимо реализовать магазин продуктов.
@@ -60,6 +68,20 @@ package exercise1;
 //     */
 public class Main {
     public static void main(String[] args) {
-
+        StoreAware storeAware = new StoreService(new Store());
+        Map<Integer, Product> productMap = new HashMap<>();
+        productMap.put(1, new Product(10, "Yellow Apple", 150));
+        productMap.put(2, new Product(10, "Green Apple", 200));
+        productMap.put(3, new Product(11, "PineApple", 300));
+        productMap.remove(2);
+        for (Product value : productMap.values()) {
+            System.out.println(value.getId() + value.getPrice() + value.getName());
+        }
+        storeAware.deleteProduct(2, new Product(10, "Green Apple", 200));
+        storeAware.addProduct(3, new Product(11, "WaterMelon", 250));
+        storeAware.editProduct(2, new Product(10, "Green Apple", 300));
+        for (Product value : productMap.values()) {
+            System.out.println(value.getId() + value.getPrice() + value.getName());
+        }
     }
 }
