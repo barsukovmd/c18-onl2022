@@ -26,6 +26,32 @@ public class Test {
         System.out.println(divide.calculate(100, 20));
         Operation minus = (a, b) -> a - b;
         System.out.println(minus.calculate(101, 20));
+
+        Printable printable = System.out::println;
+        printable.print("Hello Java");
+
+        int m = 10;
+        int n = 15;
+        Operation2 operation2 = () -> m * n;
+        System.out.println(operation2.calculate());
+        Expression function = n1 -> n % 2 == 0;
+        int[] nums1 = {1, 23, 12, 30, 3, 12, 31, 23, 4, 245, 3, 5, 6};
+        System.out.println(sum(nums1, function));
+
+        int[] nums = {1, 23, 12, 31, 3, 12, 31, 23, 4, 245, 3, 5, 6};
+        int x = sum(nums, n1 -> n > 5);
+        System.out.println(x);
+
+    }
+
+    private static int sum(int[] ints, Expression expression) {
+        int result = 0;
+        for (int value : ints) {
+            if (expression.isEqual(value)) {
+                result += value;
+            }
+        }
+        return result;
     }
 
 
@@ -33,4 +59,21 @@ public class Test {
     public interface Operation {
         int calculate(int a, int b);
     }
+
+    @FunctionalInterface
+    public interface Operation2 {
+        int calculate();
+    }
+
+
+    @FunctionalInterface
+    public interface Printable {
+        void print(String s);
+    }
+
+    @FunctionalInterface
+    public interface Expression {
+        boolean isEqual(int n);
+    }
+
 }

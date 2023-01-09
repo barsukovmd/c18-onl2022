@@ -3,8 +3,6 @@ package Task3;
 import lombok.NonNull;
 import lombok.ToString;
 
-import java.util.Scanner;
-
 @ToString
 @NonNull
 
@@ -19,8 +17,6 @@ public class Function implements Functional {
 ////     * - если в консоль введена цифра 2, то: использования интерфейса с
 ////     * целочисленным типом и передать в метод интерфейса логику
 ////     * нахождения факториала числа.
-    private Scanner scanner;
-
     @Override
     public Function getFunction(int number) {
         switch (number) {

@@ -14,7 +14,7 @@ package Task3;
 //     *
 public class Main {
     public static void main(String[] args) {
-        Functional<?> num = number -> number * number;
+        Functional<? extends Number> num = numb -> numb * numb;
         Functional<?> string = str -> "Hello";
         num.getFunction(1);
         string.getFunction(2);
