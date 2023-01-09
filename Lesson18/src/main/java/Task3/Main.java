@@ -1,10 +1,5 @@
-// /**
-//     *
-//     *Основное задание
-//     * 1. Написать программу для вывода на консоль названия дня недели по
-//     * введенной дате.
-//     * 2. Написать программу для вывода на экран дату следующего вторника.
-//     *
+package Task3;
+
 //     * Дополнительное задание
 //     * 3. Создать обобщенный функциональный интерфейс.
 //     * Написать класс с одним методом.
@@ -17,9 +12,13 @@
 //     * нахождения факториала числа.
 //     *
 //     *
-//     */
 public class Main {
     public static void main(String[] args) {
-
+        Functional<?> num = number -> number * number;
+        Functional<?> string = str -> "Hello";
+        num.getFunction(1);
+        string.getFunction(2);
+        System.out.println(num);
+        System.out.println(string);
     }
 }

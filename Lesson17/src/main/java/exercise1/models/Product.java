@@ -1,22 +1,20 @@
-package exercise1;
+package exercise1.models;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.Setter;
 
 @Getter
+@AllArgsConstructor
+@Setter
 //    /**
 //     * Необходимо реализовать магазин продуктов.
 //     * Создать класс Товар, поля:
 //     * • id(целое число)
 //     * • name(строка)
 //     * • price(целое число)
-public class Product {
-    private final int id;
+public class Product {//предлагает сделать record??
+    private final Integer id;
     private final String name;
-    private final int price;
-
-    public Product(int id, String name, int price) {
-        this.id = id;
-        this.name = name;
-        this.price = price;
-    }
+    private final Integer price;
 }

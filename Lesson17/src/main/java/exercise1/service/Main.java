@@ -1,4 +1,12 @@
-package exercise1;
+package exercise1.service;
+
+import exercise1.models.Product;
+import exercise1.models.Store;
+import exercise1.models.StoreAware;
+import exercise1.models.StoreService;
+
+import java.util.HashMap;
+import java.util.Map;
 
 //    /**
 //     * Необходимо реализовать магазин продуктов.
@@ -18,7 +26,7 @@ package exercise1;
 //     * соответствующим id)
 //     * • редактировать товар(принимает объект товара и редактирует им список
 //     * товаров)
-//     * Обратите внимание что id товара и индекс товара в списке — это разные вещи, не перепутайте.
+//     * Обратите внимание, что id товара и индекс товара в списке — это разные вещи, не перепутайте.
 //     * Id товара — это поле вашего объекта, вы при его создании его задаете. А индекс товара в списке товаров, это по сути его порядковый номер в списке(начинается с 0).
 //     * (обязательное к выполнению): В main:
 //     * • создаем объект магазина
@@ -42,7 +50,7 @@ package exercise1;
 //     *      ▪ по цене(возрастание)
 //     *      ▪ по цене(убывание)
 //     *      ▪ по добавлению(сначала новые, потом более старые)
-//     * После выбора сортировки, из магазина получаете список товаров, сортируете их таким образом как выбрал пользователь и выводите в консоль.
+//     * После выбора сортировки, из магазина получаете список товаров, сортируете их таким образом, как выбрал пользователь и выводите в консоль.
 //     * ◦ Добавление товара. При выборе этого действия:
 //     *      ▪ пользователь должен ввести из консоли 3 параметра (id, название, цена).
 //     *      ▪ создаем объект товара(поля заполняются данными введенными пользователем)
@@ -60,6 +68,14 @@ package exercise1;
 //     */
 public class Main {
     public static void main(String[] args) {
-
+        StoreAware storeAware = new StoreService(new Store());
+        storeAware.addProduct(new Product(1, "Yellow Apple", 150));
+        storeAware.addProduct(new Product(2, "Yellow Apple", 150));
+        storeAware.addProduct(new Product(3, "Green Apple", 200));
+        storeAware.addProduct(new Product(4, "PineApple", 300));
+        storeAware.deleteProduct(new Product(5, "Yellow Apple", 150));
+        storeAware.editProduct(2, new Product(3, "Yellow Apple", 350));
+        Map<Integer, Product> sort = new HashMap<>(storeAware.getProducts());
+        System.out.println(sort.values());
     }
 }

@@ -1,13 +1,13 @@
-package exercise1;
+package exercise1.models;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.ToString;
-import lombok.experimental.SuperBuilder;
 
 import java.util.HashMap;
+import java.util.Map;
 
-@SuperBuilder
+
 @Getter
 @ToString
 @AllArgsConstructor
@@ -28,9 +28,47 @@ import java.util.HashMap;
 //     * Обратите внимание что id товара и индекс товара в списке — это разные вещи, не перепутайте.
 //     * Id товара — это поле вашего объекта, вы при его создании его задаете. А индекс товара в списке товаров, это по сути его порядковый номер в списке(начинается с 0).
 //
-public class Store {
-    public Product getProductType(Integer id, Product product) {
-        HashMap<Integer, Product> productType = new HashMap<>();
-        return productType.put(id, product);
+public class StoreService implements StoreAware {
+    private Store store;
+
+    @Override
+    public boolean addProduct(Product product) {
+        Map<Integer, Product> productType = new HashMap<>();
+        productType.put(product.getId(), product);
+        return true;
+    }
+
+    @Override
+    public boolean deleteProduct(Product product) {
+        Map<Integer, Product> deleteProduct = new HashMap<>();
+        deleteProduct.put(product.getId(), product);
+        return true;
+    }
+
+    @Override
+    public boolean editProduct(Integer id, Product product) {
+        Map<Integer, Product> editProduct = new HashMap<>();
+        editProduct.entrySet().add(new Map.Entry<>() {
+            @Override
+            public Integer getKey() {
+                return product.getId();
+            }
+
+            @Override
+            public Product getValue() {
+                return product;
+            }
+
+            @Override
+            public Product setValue(Product value) {
+                return new Product(value.getId(), value.getName(), value.getPrice());
+            }
+        });
+        return true;
+    }
+
+    @Override
+    public Map<Integer, Product> getProducts() {
+        return store.getProducts();
     }
 }
