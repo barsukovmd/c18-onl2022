@@ -1,23 +1,18 @@
-import java.util.Calendar;
-import java.util.Date;
-import java.util.GregorianCalendar;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 
-import static java.util.Calendar.JANUARY;
+import static java.time.DayOfWeek.TUESDAY;
 
 public class Task2 {
     //     * 2. Написать программу для вывода на экран дату следующего вторника.
     public static void main(String[] args) {
-        Calendar calendar = new GregorianCalendar(2023, JANUARY, 7, 3, 40, 15);
-        Date date = calendar.getTime();
-        System.out.println(date + " date today");
-        calendar.set(Calendar.HOUR, 3);
-        calendar.set(Calendar.MINUTE, 40);
-        calendar.set(Calendar.SECOND, 15);
-        calendar.set(Calendar.DAY_OF_WEEK, 7);
-        calendar.add(Calendar.DAY_OF_WEEK, +3);
-        System.out.println(calendar.getTime() + " predictable date");
+        LocalDateTime localDateTime = LocalDateTime.now();
+        System.out.println(localDateTime + " today");
+        System.out.println(localDateTime.plusDays(+5) + " next tuesday");
+        System.out.println("Second option");
+        LocalDate localDate = LocalDate.now();
+        LocalDate nextTuesday = localDate.with(TUESDAY);
+        System.out.println(nextTuesday + " next tuesday");
     }
-//        calendar.add(Calendar.DAY_OF_WEEK, +number);//roll затрагивает только то значение, к которому обращаемся
-//        System.out.println(calendar.getTime() + " predictable date");
 }
 

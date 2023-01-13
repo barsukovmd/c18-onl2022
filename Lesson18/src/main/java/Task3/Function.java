@@ -1,38 +1,34 @@
 package Task3;
 
-import lombok.NonNull;
-import lombok.ToString;
-
 import java.util.Scanner;
 
-@ToString
-@NonNull
+public class Function {
+    private final static Scanner scanner = new Scanner(System.in).useDelimiter("\n");
 
-public class Function implements Functional {
-    //     * Дополнительное задание
-////     * 3. Создать обобщенный функциональный интерфейс.
-////     * Написать класс с одним методом.
-////     * В этом методе реализуйте логику:
-////     * - если в консоль введена цифра 1, то: использования интерфейса со
-////     * строковым типом и передать в метод интерфейса логику реверса
-////     * строки(вывода строки в обратном порядке).
-////     * - если в консоль введена цифра 2, то: использования интерфейса с
-////     * целочисленным типом и передать в метод интерфейса логику
-////     * нахождения факториала числа.
-    private Scanner scanner;
-
-    @Override
-    public Function getFunction(int number) {
-        switch (number) {
+    public void showResult() {
+        switch (scanner.nextInt()) {
             case 1 -> {
-                Functional<String> stringFunctional = number1 -> "Hello";
-                return (Function) stringFunctional;
+                Functional<String> stringFunctional = this::reverseWords;
+                System.out.println("Please enter word or sentence");
+                System.out.println(stringFunctional.getFunction(scanner.next()));
             }
             case 2 -> {
-                Functional<Integer> integerFunctional = number1 -> 100;
-                return (Function) integerFunctional;
+                Functional<Integer> integerFunctional = this::getFactorial;
+                System.out.println("Please enter number to get factorial");
+                System.out.println(integerFunctional.getFunction(scanner.nextInt()));
             }
-            default -> throw new IllegalStateException("Unexpected value: " + number);
+            default -> throw new IllegalArgumentException("You have entered wrong number ");
         }
+    }
+
+    public String reverseWords(String reverse) {
+        return new StringBuilder(reverse).reverse().toString();
+    }
+
+    public Integer getFactorial(int number) {
+        long factorial = 1;
+        for (int i = 1; i <= number; ++i)
+            factorial *= i;
+        return Math.toIntExact(factorial);
     }
 }
