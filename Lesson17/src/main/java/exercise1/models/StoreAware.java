@@ -1,13 +1,13 @@
 package exercise1.models;
 
-import java.util.Map;
+import java.util.List;
 
 public interface StoreAware {
     public boolean addProduct(Product product);
 
     public boolean deleteProduct(Product product);
 
-    public boolean editProduct(Integer id, Product product);
+    public void editProduct(long id, ProductType product, long price);
 
-    Map<Integer, Product> getProducts();
+    List<Product> getProducts();
 }

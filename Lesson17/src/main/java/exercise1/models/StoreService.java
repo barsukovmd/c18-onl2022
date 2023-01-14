@@ -4,8 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.ToString;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.List;
 
 
 @Getter
@@ -33,42 +32,31 @@ public class StoreService implements StoreAware {
 
     @Override
     public boolean addProduct(Product product) {
-        Map<Integer, Product> productType = new HashMap<>();
-        productType.put(product.getId(), product);
-        return true;
+        if (!store.getProducts().contains(product)) {
+            return store.getProducts().add(product);
+        }
+        return false;
     }
 
     @Override
     public boolean deleteProduct(Product product) {
-        Map<Integer, Product> deleteProduct = new HashMap<>();
-        deleteProduct.put(product.getId(), product);
-        return true;
+        return store.getProducts().removeIf(productType -> productType.equals(product));
     }
 
     @Override
-    public boolean editProduct(Integer id, Product product) {
-        Map<Integer, Product> editProduct = new HashMap<>();
-        editProduct.entrySet().add(new Map.Entry<>() {
-            @Override
-            public Integer getKey() {
-                return product.getId();
-            }
-
-            @Override
-            public Product getValue() {
-                return product;
-            }
-
-            @Override
-            public Product setValue(Product value) {
-                return new Product(value.getId(), value.getName(), value.getPrice());
-            }
-        });
-        return true;
+    public void editProduct(long id, ProductType product, long price) {
+        store.getProducts().stream()
+                .filter(store -> store.getId() == id)
+                .findFirst()
+                .ifPresent(newProduct -> correctProduct(product, newProduct));//не могу понять что не так
     }
 
     @Override
-    public Map<Integer, Product> getProducts() {
+    public List<Product> getProducts() {
         return store.getProducts();
+    }
+
+    private void correctProduct(ProductType was, Product become) {
+        System.out.println(was.name().equals(become.getProductType().name()));
     }
 }
