@@ -61,10 +61,7 @@ public class Main {
                 .build());
 
         personList.stream()
-                .filter(person -> person.getSurname().startsWith("Д"))
-                .map(Person::toString)
+                .map(person -> person.getSurname().startsWith("Д"))
                 .forEach(System.out::println);
-        //подскажите проблема с индексами, если ставлю очередность начиная с 1, а не с нуля выдает ошибку
-        //не получилось в методе сделать, а только через API (не через Optional)
     }
 }
