@@ -9,8 +9,7 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
         List<String> names = Arrays.asList("john", "arya", "sansa");
-        names
-                .stream()
+        names.stream()
                 .map(StringUtils::capitalize)
                 .forEach(System.out::println);
     }
