@@ -61,7 +61,7 @@ public class Main {
                 .build());
 
         personList.stream()
-                .map(person -> person.getSurname().startsWith("Д"))
+                .filter(person -> person.getSurname().startsWith("Д"))
                 .forEach(System.out::println);
     }
 }
