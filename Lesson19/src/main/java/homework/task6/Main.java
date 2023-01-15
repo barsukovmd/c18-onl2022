@@ -61,7 +61,8 @@ public class Main {
                 .sorted(Comparator.comparing(Book::getYearOfPublish))
                 .forEach(System.out::println);
 
-        library.setReaders(Arrays.asList(new Reader("Владимир", "Гуляев", true, "gulyaev@mail.ru"),
+        library.setReaders(Arrays.asList(
+                new Reader("Владимир", "Гуляев", true, "gulyaev@mail.ru"),
                 new Reader("Игорь", "Аминов", true, "aminov@mail.ru"),
                 new Reader("Алексей", "Рималов", true, "rimalov@mail.ru"),
                 new Reader("Михаил", "Шифун", false, "shifun@mail.ru"),
@@ -97,7 +98,7 @@ public class Main {
                 .flatMap(reader -> reader.getBooks().stream())
 //                .anyMatch(book -> "Александр Сергеевич Пушкин".equalsIgnoreCase(book.getAuthor()));
                 .allMatch(book -> book.getAuthor().equalsIgnoreCase(("Александр Сергеевич Пушкин")));//можно так сделать?
-        
+
 
         Map<String, List<Reader>> listOfReadersToSendInfo = library.getReaders().stream()
                 .filter(Reader::isAgreementForSharing)
