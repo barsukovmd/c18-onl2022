@@ -1,11 +1,11 @@
 package exercise1.models;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
+@ToString
 @Getter
-@AllArgsConstructor
 @Setter
 //    /**
 //     * Необходимо реализовать магазин продуктов.
@@ -13,8 +13,14 @@ import lombok.Setter;
 //     * • id(целое число)
 //     * • name(строка)
 //     * • price(целое число)
-public class Product {//предлагает сделать record??
-    private final Integer id;
-    private final String name;
-    private final Integer price;
+public class Product {
+    long id;
+    ProductType productType;
+    private long price;
+
+    public Product(long id, ProductType productType, long price) {
+        this.id = id;
+        this.productType = productType;
+        this.price = price;
+    }
 }

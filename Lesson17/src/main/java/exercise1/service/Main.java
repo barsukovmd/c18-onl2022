@@ -5,8 +5,8 @@ import exercise1.models.Store;
 import exercise1.models.StoreAware;
 import exercise1.models.StoreService;
 
-import java.util.HashMap;
-import java.util.Map;
+import static exercise1.models.ProductType.*;
+
 
 //    /**
 //     * Необходимо реализовать магазин продуктов.
@@ -69,13 +69,13 @@ import java.util.Map;
 public class Main {
     public static void main(String[] args) {
         StoreAware storeAware = new StoreService(new Store());
-        storeAware.addProduct(new Product(1, "Yellow Apple", 150));
-        storeAware.addProduct(new Product(2, "Yellow Apple", 150));
-        storeAware.addProduct(new Product(3, "Green Apple", 200));
-        storeAware.addProduct(new Product(4, "PineApple", 300));
-        storeAware.deleteProduct(new Product(5, "Yellow Apple", 150));
-        storeAware.editProduct(2, new Product(3, "Yellow Apple", 350));
-        Map<Integer, Product> sort = new HashMap<>(storeAware.getProducts());
-        System.out.println(sort.values());
+        storeAware.addProduct(new Product(1, MILK, 150));
+        storeAware.addProduct(new Product(2, BREAD, 300));
+        storeAware.addProduct(new Product(3, FRUITS, 250));
+        storeAware.addProduct(new Product(4, WATER, 280));
+        storeAware.deleteProduct(new Product(5, VEGETABLES, 270));
+        storeAware.getProducts()
+                .forEach(System.out::println);
+        storeAware.editProduct(1, BREAD, 180);
     }
 }

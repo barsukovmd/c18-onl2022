@@ -1,18 +1,22 @@
 package exercise1.models;
 
 
+import lombok.Getter;
+import lombok.Setter;
 import lombok.ToString;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.ArrayList;
+import java.util.List;
 
 @ToString
+@Getter
+@Setter
 public class Store {
-    private Map<Integer, Product> products;
+    private List<Product> products;
 
-    public Map<Integer, Product> getProducts() {
+    public List<Product> getProducts() {
         if (products == null) {
-            products = new HashMap<>();
+            products = new ArrayList<>();
         }
         return products;
     }

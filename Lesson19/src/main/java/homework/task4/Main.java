@@ -22,8 +22,7 @@ public class Main {
                 new Car(null, 2012),
                 new Car("", 2015),
                 new Car("AI3838PP", 2017));
-        cars
-                .stream()
+        cars.stream()
                 .filter(car -> car.getAutoNumber() != null && !car.getAutoNumber().isEmpty())//почему-то не работает isBlank?
                 .filter(car -> car.getYear() > 2010)
                 .map(Car::toString)

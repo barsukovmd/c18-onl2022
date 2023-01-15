@@ -8,7 +8,7 @@ public class Task2 {
     public static void main(String[] args) {
         LocalDateTime localDateTime = LocalDateTime.now();
         System.out.println(localDateTime + " today");
-        System.out.println(localDateTime.plusDays(+5) + " next tuesday");
+        System.out.println(localDateTime.plusDays(5) + " next tuesday");
         System.out.println("Second option");
         LocalDate localDate = LocalDate.now();
         LocalDate nextTuesday = localDate.with(TUESDAY);

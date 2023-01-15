@@ -18,53 +18,50 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
         List<Person> personList = new ArrayList<>();
-        personList.add(1, Person.builder()
+        personList.add(0, Person.builder()
                 .age(24)
                 .name("Александр")
                 .surname("Дегтярев")
                 .build());
 
-        personList.add(2, Person.builder()
+        personList.add(1, Person.builder()
                 .age(23)
                 .name("Михаил")
                 .surname("Мишунин")
                 .build());
 
-        personList.add(3, Person.builder()
+        personList.add(2, Person.builder()
                 .age(23)
                 .name("Василий")
                 .surname("Деревянко")
                 .build());
 
-        personList.add(4, Person.builder()
+        personList.add(3, Person.builder()
                 .age(23)
                 .name("Мария")
                 .surname("Шипелина")
                 .build());
 
-        personList.add(5, Person.builder()
+        personList.add(4, Person.builder()
                 .age(23)
                 .name("Иван")
                 .surname("Демин")
                 .build());
 
-        personList.add(6, Person.builder()
+        personList.add(5, Person.builder()
                 .age(23)
                 .name("Наталья")
                 .surname("Драник")
                 .build());
 
-        personList.add(7, Person.builder()
+        personList.add(6, Person.builder()
                 .age(23)
                 .name("Валентин")
                 .surname("Миклошевич")
                 .build());
 
-        personList
-                .stream()
-                .map(person -> person.getSurname().startsWith("Д"))
+        personList.stream()
+                .filter(person -> person.getSurname().startsWith("Д"))
                 .forEach(System.out::println);
-
-        //почему-то выдает ошибку IndexOutOfBoundsException
     }
 }

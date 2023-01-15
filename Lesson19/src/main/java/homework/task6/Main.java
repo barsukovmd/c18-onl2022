@@ -1,5 +1,9 @@
 package homework.task6;
 
+import java.util.*;
+
+import static java.util.stream.Collectors.groupingBy;
+
 // * 6) Пишем библиотеку.
 // * Для каждой книги библиотечного фонда известны автор, название и год издания.
 // * Для читателя библиотеки будем хранить ФИО и электронный адрес. Каждый читатель может взять в библиотеке одну или несколько книг.
@@ -8,7 +12,7 @@ package homework.task6;
 // * Создаем классы:
 // *  - Book с полями Автор, Название, Год издания
 // *  - Reader(читатель) с полями ФИО, электронный адрес, флаг согласия на рассылку, список взятых книг
-// *  - EmailAddress  с полями электронный адрес, дополнительная информация
+// *  - EmailAddress с полями электронный адрес, дополнительная информация
 // *  - Library содержит список книг и список читателей.
 // *
 // *  Задачи:
@@ -37,5 +41,96 @@ package homework.task6;
 // */
 public class Main {
     public static void main(String[] args) {
+        Library library = new Library();
+        library.setBooks(Arrays.asList(
+                new Book("Лев Толстой", "Смерть Ивана Ильича", 1886),
+                new Book("Фёдор Михайлович Достоевский", "Преступление и наказание", 1886),
+                new Book("Чарлз Диккенс", "Повесть о двух городах", 1859),
+                new Book("Чарлз Диккенс", "Оливер Твист", 1839),
+                new Book("Антон Павлович Чехов", "Вишнёвый сад", 1901),
+                new Book("Антон Павлович Чехов", "Попрыгунья", 1891),
+                new Book("Виктор Гюго", "Человек, который смеётся", 1860),
+                new Book("Виктор Гюго", "Собор Парижской Богоматери", 1831),
+                new Book("Виктор Гюго", "Отверженные", 1862),
+                new Book("Эрнест Хемингуэй", "По ком звонит колокол", 1940),
+                new Book("Эрнест Хемингуэй", "Снега Килиманджаро", 1936),
+                new Book("Александр Сергеевич Пушкин", "Руслан и Людмила", 1820),
+                new Book("Александр Сергеевич Пушкин", "Медный всадник", 1833),
+                new Book("Александр Сергеевич Пушкин", "Борис Годунов", 1825)));
+        library.getBooks().stream()
+                .sorted(Comparator.comparing(Book::getYearOfPublish))
+                .forEach(System.out::println);
+
+        library.setReaders(Arrays.asList(
+                new Reader("Владимир", "Гуляев", true, "gulyaev@mail.ru"),
+                new Reader("Игорь", "Аминов", true, "aminov@mail.ru"),
+                new Reader("Алексей", "Рималов", true, "rimalov@mail.ru"),
+                new Reader("Михаил", "Шифун", false, "shifun@mail.ru"),
+                new Reader("Наум", "Расулов", true, "rasulov@mail.ru"),
+                new Reader("Евгений", "Антоненко", false, "antonenko@mail.ru"),
+                new Reader("Анастасия", "Гуляев", true, "gulyaev23@mail.ru"),
+                new Reader("Наталья", "Гуляев", false, "gulyaev30@mail.ru"),
+                new Reader("Кирилл", "Гуляев", true, "gulyaev37@mail.ru")));
+        //подскажите как заполнить читателей книгами через Random?
+
+        List<EmailAddress> emailAddresses = library.getReaders().stream()
+                .map(Reader::getEmail)
+                .map(EmailAddress::new)
+                .toList();
+
+        List<Reader> readersWithAgreement = library.getReaders().stream()
+                .filter(Reader::isAgreementForSharing)
+                .toList();
+
+
+        List<Reader> readerTookBooks = library.getReaders().stream()
+                .filter(Reader::isAgreementForSharing)
+                .filter(reader -> reader.getBooks().size() > 1)
+                .toList();
+
+
+        List<Book> bookSetList = library.getReaders().stream()
+                .flatMap(reader -> reader.getBooks().stream())
+                .distinct()
+                .toList();
+
+        boolean readersTookPushkin = library.getReaders().stream()
+                .flatMap(reader -> reader.getBooks().stream())
+//                .anyMatch(book -> "Александр Сергеевич Пушкин".equalsIgnoreCase(book.getAuthor()));
+                .allMatch(book -> book.getAuthor().equalsIgnoreCase(("Александр Сергеевич Пушкин")));//можно так сделать?
+
+
+        Map<String, List<Reader>> listOfReadersToSendInfo = library.getReaders().stream()
+                .filter(Reader::isAgreementForSharing)
+                .filter(reader -> reader.getBooks().size() > 2)
+                .collect(groupingBy(reader -> reader.getBooks().size() > 2 ? "TOO MUCH" : "OK"));
+    }
+
+    public static Map<String, List<EmailAddress>> sendInfo(Library library) {
+        Map<String, List<EmailAddress>> listOfSharing = new HashMap<>();
+        for (Reader reader : library.getReaders()) {
+            if (reader.isAgreementForSharing()) {
+                if (reader.getBooksToTake().size() > 2) {
+                    if (!listOfSharing.containsKey("TOO MUCH")) {
+                        listOfSharing.put("TOO MUCH", new ArrayList<>());
+                    }
+                    listOfSharing.get("TOO MUCH").add(new EmailAddress(reader.getEmail()));
+                } else {
+                    if (!listOfSharing.containsKey("OK")) {
+                        listOfSharing.put("OK", new ArrayList<>());
+                    }
+                }
+            }
+        }
+        return listOfSharing;
+    }
+
+    private static boolean checkBooks(Library library) {//я могу так написать метод?
+        for (Book book : library.getBooks()) {
+            if (book.getAuthor().equalsIgnoreCase(("Александр Сергеевич Пушкин"))) {
+                return true;
+            }
+        }
+        return false;
     }
 }

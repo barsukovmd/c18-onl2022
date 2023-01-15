@@ -16,8 +16,7 @@ public class Main {
             number = random.nextInt(101);
             integerSet.add(number);
         }
-        integerSet
-                .stream()
+        integerSet.stream()
                 .filter(even -> even % 2 == 0)
                 .forEach(System.out::println);
     }
