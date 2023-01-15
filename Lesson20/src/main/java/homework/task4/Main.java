@@ -27,23 +27,21 @@ public class Main {
                 new Product("Cleaning", 40, 15))));
 
         categories.stream()
-                .map(Category::getProducts)
+                .flatMap(category -> category.getProducts().stream())
                 .sorted(Comparator.comparing(Product::getName))
                 .toList()
                 .forEach(System.out::println);
 
         categories.stream()
-                .map(Category::getProducts)
+                .flatMap(category -> category.getProducts().stream())
                 .sorted(Comparator.comparing(Product::getPrice))
                 .toList()
                 .forEach(System.out::println);
 
         categories.stream()
-                .map(Category::getProducts)
+                .flatMap(category -> category.getProducts().stream())
                 .sorted(Comparator.comparing(Product::getRate))
                 .toList()
                 .forEach(System.out::println);
-
-
     }
 }

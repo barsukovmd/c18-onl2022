@@ -15,8 +15,7 @@ public class Main {
 
     public static void main(String[] args) {
         Set<String> numberSet = new LinkedHashSet<>(Arrays.asList(scanner.nextLine().split(" ")));
-        numberSet.stream()
-                .distinct()
+        numberSet
                 .forEach(System.out::println);
     }
 }
