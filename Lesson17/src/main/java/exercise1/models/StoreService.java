@@ -57,6 +57,8 @@ public class StoreService implements StoreAware {
     }
 
     private void correctProduct(ProductType was, long price, Product become) {
-        System.out.println(was.name().equals(become.getProductType().name()));
+        become.setProductType(become.getProductType());
+        become.setPrice(become.getPrice());
+        become.setId(become.getId());
     }
 }
