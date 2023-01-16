@@ -21,7 +21,7 @@ public class Main {
                 new Cashier("Cashier #3"));
 
         cashDeskList.stream()
-                .flatMap(cashier -> cashier.getProductTypes(Buyer::new))//подскажите почему здесь не работает?
+                .flatMap(cashier -> cashier.getProductTypes(Buyer::new)) //подскажите почему здесь не работает?
                 .forEach(System.out::println);
     }
 }
