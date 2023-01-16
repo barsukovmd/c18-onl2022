@@ -48,7 +48,7 @@ public class StoreService implements StoreAware {
         store.getProducts().stream()
                 .filter(product -> product.getId() == id)
                 .findFirst()
-                .ifPresent(newProduct -> correctProduct(productType, newProduct));
+                .ifPresent(newProduct -> correctProduct(productType, price, newProduct));
     }
 
     @Override
@@ -56,7 +56,7 @@ public class StoreService implements StoreAware {
         return store.getProducts();
     }
 
-    private void correctProduct(ProductType was, Product become) {
+    private void correctProduct(ProductType was, long price, Product become) {
         System.out.println(was.name().equals(become.getProductType().name()));
     }
 }
