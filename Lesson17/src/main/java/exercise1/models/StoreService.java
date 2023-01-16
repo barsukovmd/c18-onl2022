@@ -44,11 +44,11 @@ public class StoreService implements StoreAware {
     }
 
     @Override
-    public void editProduct(long id, ProductType product, long price) {
+    public void editProduct(long id, ProductType productType, long price) {
         store.getProducts().stream()
-                .filter(store -> store.getId() == id)
+                .filter(product -> product.getId() == id)
                 .findFirst()
-                .ifPresent(newProduct -> correctProduct(product, newProduct));//не могу понять что не так
+                .ifPresent(newProduct -> correctProduct(productType, newProduct));
     }
 
     @Override

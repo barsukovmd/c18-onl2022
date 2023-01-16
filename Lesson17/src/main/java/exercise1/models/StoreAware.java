@@ -7,7 +7,7 @@ public interface StoreAware {
 
     public boolean deleteProduct(Product product);
 
-    public void editProduct(long id, ProductType product, long price);
+    public void editProduct(long id, ProductType productType, long price);
 
     List<Product> getProducts();
 }

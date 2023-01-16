@@ -125,7 +125,7 @@ public class Main {
         return listOfSharing;
     }
 
-    private static boolean checkBooks(Library library) {//я могу так написать метод?
+    private static boolean checkBooks(Library library) {
         for (Book book : library.getBooks()) {
             if (book.getAuthor().equalsIgnoreCase(("Александр Сергеевич Пушкин"))) {
                 return true;
