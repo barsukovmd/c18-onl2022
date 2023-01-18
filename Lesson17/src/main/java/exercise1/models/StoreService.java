@@ -44,11 +44,11 @@ public class StoreService implements StoreAware {
     }
 
     @Override
-    public void editProduct(long id, ProductType product, long price) {
+    public void editProduct(long id, ProductType productType, long price) {
         store.getProducts().stream()
-                .filter(store -> store.getId() == id)
+                .filter(product -> product.getId() == id)
                 .findFirst()
-                .ifPresent(newProduct -> correctProduct(product, newProduct));//не могу понять что не так
+                .ifPresent(newProduct -> correctProduct(productType, price, newProduct));
     }
 
     @Override
@@ -56,7 +56,10 @@ public class StoreService implements StoreAware {
         return store.getProducts();
     }
 
-    private void correctProduct(ProductType was, Product become) {
-        System.out.println(was.name().equals(become.getProductType().name()));
+    private void correctProduct(ProductType was, long price, Product become) {
+        become.setProductType(become.getProductType());
+        become.setPrice(become.getPrice());
+        become.setId(become.getId());
+        System.out.println(become);
     }
 }

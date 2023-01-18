@@ -14,7 +14,7 @@ import lombok.ToString;
 //     * • name(строка)
 //     * • price(целое число)
 public class Product {
-    long id;
+    private long id;
     ProductType productType;
     private long price;
 
