@@ -13,16 +13,17 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Main {
-
     public static void main(String[] args) {
         List<Cashier> cashDeskList = Arrays.asList(
                 new Cashier("Cashier #1"),
                 new Cashier("Cashier #2"),
-                new Cashier("Cashier #3"));
+                new Cashier("Cashier #3"),
+                new Cashier("Cashier #4"),
+                new Cashier("Cashier #5"));
 
-        cashDeskList.stream()
-                .flatMap(cashier -> cashier.getProductTypes(Buyer::new)) //подскажите почему здесь не работает?
-                .forEach(System.out::println);
+        for (int i = 1; i <= 15; i++) {
+            new Buyer("№" + i, cashDeskList.stream().toList(), Arrays.stream(ProductType.values()).toList());
+        }
     }
 }
 
