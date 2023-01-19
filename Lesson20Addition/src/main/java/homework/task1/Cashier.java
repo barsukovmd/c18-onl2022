@@ -42,7 +42,7 @@ class Cashier {
             lock.unlock();
         }
 
-        return "Buyer " + buyer.getName() + " bought: " + result + " in " + this.getCashDeskName();
+        return "Buyer " + buyer.getName() + " bought: \n" + result + " in " + this.getCashDeskName();
     }
 
     ReentrantLock getLock() {

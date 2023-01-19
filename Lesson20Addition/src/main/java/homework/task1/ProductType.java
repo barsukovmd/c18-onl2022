@@ -6,5 +6,5 @@ import lombok.ToString;
 @Getter
 @ToString
 public enum ProductType {
-    MILK, BREAD, MEAT, VEGETABLES, FRUITS, WATER
+    MILK, BREAD, MEAT, VEGETABLES, FRUITS, WATER, CHEESE, FISH
 }
