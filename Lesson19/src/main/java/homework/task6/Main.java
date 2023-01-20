@@ -77,27 +77,34 @@ public class Main {
                 .map(Reader::getEmail)
                 .map(EmailAddress::new)
                 .toList();
+        emailAddresses.forEach(System.out::println);
 
         List<Reader> readersWithAgreement = library.getReaders().stream()
                 .filter(Reader::isAgreementForSharing)
                 .toList();
+        readersWithAgreement.forEach(System.out::println);
 
 
         List<Reader> readerTookBooks = library.getReaders().stream()
                 .filter(Reader::isAgreementForSharing)
                 .filter(reader -> reader.getBooks().size() > 1)
                 .toList();
+        readerTookBooks.forEach(System.out::println);
 
 
         List<Book> bookSetList = library.getReaders().stream()
                 .flatMap(reader -> reader.getBooks().stream())
                 .distinct()
                 .toList();
+        bookSetList.forEach(System.out::println);
 
         boolean readersTookPushkin = library.getReaders().stream()
                 .flatMap(reader -> reader.getBooks().stream())
-//                .anyMatch(book -> "Александр Сергеевич Пушкин".equalsIgnoreCase(book.getAuthor()));
-                .allMatch(book -> book.getAuthor().equalsIgnoreCase(("Александр Сергеевич Пушкин")));//можно так сделать?
+                .anyMatch(book -> "Александр Сергеевич Пушкин".equalsIgnoreCase(book.getAuthor()));
+//                .allMatch(book -> book.getAuthor().equalsIgnoreCase(("Александр Сергеевич Пушкин")));
+// так нельзя. т.к allMatch проверяет что все книги пушкина у читателя, а нам нужно хотя бы одна была пушкина.
+//Т.е пушкин, пушкин, тургенев - allMatch вернет false
+//т.е пушкин, пушкин, тургенев - anyMatch вернет true
 
 
         Map<String, List<Reader>> listOfReadersToSendInfo = library.getReaders().stream()
@@ -125,8 +132,8 @@ public class Main {
         return listOfSharing;
     }
 
-    private static boolean checkBooks(Library library) {
-        for (Book book : library.getBooks()) {
+    private static boolean checkBooks(Reader reader) {
+        for (Book book : reader.getBooks()) {
             if (book.getAuthor().equalsIgnoreCase(("Александр Сергеевич Пушкин"))) {
                 return true;
             }
