@@ -4,44 +4,44 @@ import java.util.Random;
 import java.util.concurrent.locks.ReentrantLock;
 
 class Cashier {
-    private String cashier;
-    private ReentrantLock lock;
+    private final String cashDeskName;
+    private final ReentrantLock lock;
 
-    Cashier(String cashier) {
-        this.cashier = cashier;
+    Cashier(String cashDeskName) {
+        this.cashDeskName = cashDeskName;
         lock = new ReentrantLock();
     }
 
-    private String getCashier() {
-        return this.cashier;
+    private String getCashDeskName() {
+        return this.cashDeskName;
     }
 
-    String getProductTypes(Buyer buyer) {
+    String getProduct(Buyer buyer) {
         StringBuilder result = new StringBuilder();
-        Random rand = new Random();
-        int item = rand.nextInt(buyer.getProductTypes().size());
+        Random random = new Random();
+        int item = random.nextInt(buyer.getProductType().size());
         lock.lock();
         try {
-            for (; item < buyer.getProductTypes().size(); item++) {
-                if (item != buyer.getProductTypes().size() - 1) {
-                    result.append(buyer.getProductTypes()).append(", ");
+
+            for (; item < buyer.getProductType().size(); item++) {
+
+                if (item != buyer.getProductType().size()) {
+                    result.append(buyer.getProductType().get(item)).append(", ");
                 } else {
-                    result.append(buyer.getProductTypes()).append(", ");
+                    result.append(buyer.getProductType().get(item));
                 }
             }
-
-            Thread.sleep((int) (Math.random() * 150));
-
+            Thread.sleep(1000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         } finally {
             lock.unlock();
         }
-        return "Buyer " + buyer.getName() + " bought: " + result + " in " + this.cashier;
+
+        return "Buyer " + buyer.getName() + " bought: \n" + result + " in " + this.getCashDeskName();
     }
 
     ReentrantLock getLock() {
         return lock;
     }
-
 }

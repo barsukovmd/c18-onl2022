@@ -1,5 +1,4 @@
 package homework.task1;
-
 ///**
 // * Напишите программу, моделирующую кассы в магазине.
 // * Существует несколько касс, работающих одновременно.
@@ -12,17 +11,29 @@ package homework.task1;
 import java.util.Arrays;
 import java.util.List;
 
+import static homework.task1.ProductType.values;
+
 public class Main {
-
+    //Если честно не понял как сделать ВСЕ через Stream API
     public static void main(String[] args) {
-        List<Cashier> cashDeskList = Arrays.asList(
-                new Cashier("Cashier #1"),
-                new Cashier("Cashier #2"),
-                new Cashier("Cashier #3"));
-
-        cashDeskList.stream()
-                .flatMap(cashier -> cashier.getProductTypes(Buyer::new)) //подскажите почему здесь не работает?
-                .forEach(System.out::println);
+        System.out.println("Main Thread started");
+        try {
+            List<Cashier> cashDeskList = Arrays.asList(
+                    new Cashier("Cashier #1"),
+                    new Cashier("Cashier #2"),
+                    new Cashier("Cashier #3"),
+                    new Cashier("Cashier #4"),
+                    new Cashier("Cashier #5"));
+            for (int i = 0; i <= 15; i++) {
+                new Buyer("\t" + "Number " + i,
+                        cashDeskList.stream().toList(),
+                        Arrays.stream(values()).toList());
+                Thread.sleep(1000);
+            }
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e.getMessage() + " error has occurred");
+        }
+        System.out.println("Main Thread has finished");
     }
 }
 
