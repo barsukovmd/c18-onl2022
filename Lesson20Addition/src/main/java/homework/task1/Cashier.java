@@ -27,14 +27,13 @@ class Cashier {
 
             for (; item < buyer.getProductType().size(); item++) {
 
-                if (item != buyer.getProductType().size() - 1) {
+                if (item != buyer.getProductType().size()) {
                     result.append(buyer.getProductType().get(item)).append(", ");
                 } else {
                     result.append(buyer.getProductType().get(item));
                 }
             }
-
-            Thread.sleep((int) (Math.random() * 150));
+            Thread.sleep(1500);
 
         } catch (InterruptedException e) {
             e.printStackTrace();
