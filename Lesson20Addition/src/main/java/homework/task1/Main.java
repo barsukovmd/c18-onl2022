@@ -14,7 +14,7 @@ import java.util.List;
 import static homework.task1.ProductType.values;
 
 public class Main {
-    //Если честно не понял как сделать через Stream API
+    //Если честно не понял как сделать ВСЕ через Stream API
     public static void main(String[] args) {
         System.out.println("Main Thread started");
         try {
