@@ -22,7 +22,9 @@ public class Main {
                 new Cashier("Cashier #5"));
 
         for (int i = 1; i <= 15; i++) {
-            new Buyer("\t" + "Number " + i, cashDeskList.stream().toList(), Arrays.stream(ProductType.values()).toList());
+            new Buyer("\t" + "Number " + i,
+                    cashDeskList.stream().toList(),
+                    Arrays.stream(ProductType.values()).toList());
         }
     }
 }
