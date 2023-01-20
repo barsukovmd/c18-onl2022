@@ -16,6 +16,10 @@ class Cashier {
         return this.cashDeskName;
     }
 
+    ReentrantLock getLock() {
+        return lock;
+    }
+
     String getProduct(Buyer buyer) {
         StringBuilder result = new StringBuilder();
         Random random = new Random();
@@ -39,9 +43,5 @@ class Cashier {
         }
 
         return "Buyer " + buyer.getName() + " bought: \n" + result + " in " + this.getCashDeskName();
-    }
-
-    ReentrantLock getLock() {
-        return lock;
     }
 }
