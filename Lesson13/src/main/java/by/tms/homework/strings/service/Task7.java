@@ -14,11 +14,10 @@ public class Task7 {
                  объектно-ориентированного программирования, который помогает реализовать гибкий механизм
                  инкапсуляции. В паре с сеттером (Setter) он может использоваться для организации свойств
                  и методов в языках, где они не поддерживаются.""";
-//                я так понимаю он видит только первую строчку??
+        
         System.out.println("Words with latin are: " + countEnglishWords(string));
     }
 
-    //какой-то баг, я когда дебажу он пропускает все слова после первого латиницей
     public static int countEnglishWords(String string) {
         int count = 0;
         String[] strings = string.split(" ");
