@@ -1,5 +1,4 @@
 package homework.task1;
-
 ///**
 // * Напишите программу, моделирующую кассы в магазине.
 // * Существует несколько касс, работающих одновременно.
@@ -12,6 +11,8 @@ package homework.task1;
 import java.util.Arrays;
 import java.util.List;
 
+import static homework.task1.ProductType.values;
+
 public class Main {
     public static void main(String[] args) {
         List<Cashier> cashDeskList = Arrays.asList(
@@ -21,10 +22,10 @@ public class Main {
                 new Cashier("Cashier #4"),
                 new Cashier("Cashier #5"));
 
-        for (int i = 1; i <= 15; i++) {
+        for (int i = 0; i <= 15; i++) {
             new Buyer("\t" + "Number " + i,
                     cashDeskList.stream().toList(),
-                    Arrays.stream(ProductType.values()).toList());
+                    Arrays.stream(values()).toList());
         }
     }
 }
