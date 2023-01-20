@@ -20,7 +20,6 @@ class Buyer extends Thread {
     @Override
     public void run() {
         Cashier chosenCashDesk = cashiers.get(0);
-
         do {
             for (Cashier cashDesk : cashiers) {
                 if (cashDesk.getLock().getQueueLength() < chosenCashDesk.getLock().getQueueLength()) {

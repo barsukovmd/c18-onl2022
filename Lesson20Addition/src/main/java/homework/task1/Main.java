@@ -16,8 +16,8 @@ import static homework.task1.ProductType.values;
 public class Main {
     //Если честно не понял как сделать через Stream API
     public static void main(String[] args) {
+        System.out.println("Main Thread started");
         try {
-            System.out.println("Main Thread started");
             List<Cashier> cashDeskList = Arrays.asList(
                     new Cashier("Cashier #1"),
                     new Cashier("Cashier #2"),
@@ -28,9 +28,10 @@ public class Main {
                 new Buyer("\t" + "Number " + i,
                         cashDeskList.stream().toList(),
                         Arrays.stream(values()).toList());
+                Thread.sleep(1000);
             }
-        } catch (RuntimeException exception) {
-            System.out.println(exception.getMessage() + " exception ");
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e.getMessage() + " error has occurred");
         }
         System.out.println("Main Thread has finished");
     }

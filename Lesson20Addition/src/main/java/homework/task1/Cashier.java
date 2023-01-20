@@ -18,11 +18,9 @@ class Cashier {
 
     String getProduct(Buyer buyer) {
         StringBuilder result = new StringBuilder();
-        Random rand = new Random();
-        int item = rand.nextInt(buyer.getProductType().size());
-
+        Random random = new Random();
+        int item = random.nextInt(buyer.getProductType().size());
         lock.lock();
-
         try {
 
             for (; item < buyer.getProductType().size(); item++) {
@@ -33,8 +31,7 @@ class Cashier {
                     result.append(buyer.getProductType().get(item));
                 }
             }
-            Thread.sleep(1500);
-
+            Thread.sleep(1000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         } finally {
