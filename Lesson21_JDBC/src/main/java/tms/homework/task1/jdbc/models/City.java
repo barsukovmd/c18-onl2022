@@ -1,24 +1,27 @@
 package tms.homework.task1.jdbc.models;
 
 public class City {
-    private Students students;
+    private String cityName;
+    private Student student;
 
-    public City(Students students) {
-        this.students = students;
+    public City(String cityName, Student student) {
+        this.cityName = cityName;
+        this.student = student;
     }
 
-    public void setStudents(Students students) {
-        this.students = students;
+    public String getCityName() {
+        return cityName;
     }
 
-    public Students getStudents() {
-        return students;
+    public void setCityName(String cityName) {
+        this.cityName = cityName;
     }
 
-    @Override
-    public String toString() {
-        return "City{" +
-                "students=" + students +
-                '}';
+    public Student getStudent() {
+        return student;
+    }
+
+    public void setStudent(Student student) {
+        this.student = student;
     }
 }
