@@ -20,5 +20,8 @@ public class Main {
         System.out.println("Get all students");
         CRUDUtils.getStudents()
                 .forEach(System.out::println);
+        System.out.println("Get all cities");
+        CRUDUtils.getCities()
+                .forEach(System.out::println);
     }
 }

@@ -42,7 +42,7 @@ public class CRUDUtils {
         return studentsList;
     }
 
-    private static List<City> getCities() {
+    public static List<City> getCities() {
         List<City> cityList = new ArrayList<>();
         try (Connection connection = DbUtils.getConnection()) {
             Statement statement = connection.createStatement();
@@ -50,6 +50,7 @@ public class CRUDUtils {
             while (resultSet.next()) {
                 String city = resultSet.getString("city");
                 Student student = (Student) resultSet.getObject("student");
+                cityList.add(new City(city, student));
             }
         } catch (Exception e) {
             throw new RuntimeException(e.getMessage() + " Exception");
