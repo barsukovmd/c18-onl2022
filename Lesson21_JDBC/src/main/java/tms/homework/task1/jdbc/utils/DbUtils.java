@@ -14,7 +14,7 @@ public class DbUtils {
     }
 
     public static Connection getConnection() {
-        Connection connection = null;
+        Connection connection;
         try {
             connection = DriverManager.getConnection(DB_URL, DB_USERNAME, DB_PASSWORD);
         } catch (SQLException e) {
