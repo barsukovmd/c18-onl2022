@@ -3,10 +3,7 @@ package tms.homework.task1.jdbc.utils;
 import tms.homework.task1.jdbc.models.City;
 import tms.homework.task1.jdbc.models.Student;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,17 +12,18 @@ public class CRUDUtils {
     //    Предусмотреть операции добавления новых городов, новых
 ////     * студентов, удаления студентов и удаления городов.
 ////     *
-    private static final String GET_ALL_STUDENTS_QUERY = "SELECT * FROM students";
-    private static final String INSERT_STUDENT_QUERY = "INSERT INTO students(id, name, surname, age, course) VALUES(?, ?, ?, ?, ?);";
+    private static final String GET_ALL_STUDENTS_QUERY = "SELECT * FROM students_db.students";
+    private static final String INSERT_STUDENT_QUERY = "INSERT INTO students_db.students(id, name, surname, age, course) VALUES(?, ?, ?, ?, ?);";
     private static final String INSERT_CITY_QUERY = "INSERT INTO cities (city, students) VALUES (?,?);";
-    private static final String UPDATE_STUDENT_QUERY = "UPDATE students SET course = ? WHERE id = ?;";
-    private static final String DELETE_STUDENT_QUERY = "DELETE FROM students WHERE students = ?";
+    private static final String UPDATE_STUDENT_QUERY = "UPDATE students_db.students SET course = ? WHERE id = ?;";
+    private static final String DELETE_STUDENT_QUERY = "DELETE FROM students_db.students WHERE students = ?";
     private static final String DELETE_CITY_QUERY = "DELETE FROM cities WHERE cities, students = ?,? ";
+
 
     public CRUDUtils() {
     }
 
-    private static List<Student> getStudents() {
+    public static List<Student> getStudents() {
         List<Student> studentsList = new ArrayList<>();
         try (Connection connection = DbUtils.getConnection()) {
             Statement statement = connection.createStatement();
@@ -38,7 +36,7 @@ public class CRUDUtils {
                 int course = resultSet.getInt("course");
                 studentsList.add(new Student(id, name, surname, age, course));
             }
-        } catch (Exception e) {
+        } catch (SQLException e) {
             throw new RuntimeException(e.getMessage() + " Exception");
         }
         return studentsList;
