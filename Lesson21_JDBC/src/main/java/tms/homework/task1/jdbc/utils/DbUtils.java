@@ -17,6 +17,7 @@ public class DbUtils {
         Connection connection;
         try {
             connection = DriverManager.getConnection(DB_URL, DB_USERNAME, DB_PASSWORD);
+//            connection.setAutoCommit(false);
         } catch (SQLException e) {
             throw new RuntimeException(e.getMessage() + " Exception");
         }
