@@ -10,7 +10,7 @@ public class DbUtils {
     private static final String DB_USERNAME = "postgres";
     private static final String DB_PASSWORD = "Barsukov28071992";
 
-    public DbUtils() {
+    private DbUtils() {
     }
 
     public static Connection getConnection() {
