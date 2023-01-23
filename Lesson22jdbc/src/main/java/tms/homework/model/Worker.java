@@ -19,5 +19,4 @@ public class Worker {
     private Date date;
     private String description;
     private String name;
-
 }
