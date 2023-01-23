@@ -13,11 +13,12 @@ public class CRUDUtils {
 ////     * студентов, удаления студентов и удаления городов.
 ////     *
     private static final String GET_ALL_STUDENTS_QUERY = "SELECT * FROM students_db.students";
+    private static final String GET_ALL_CITIES_QUERY = "SELECT * FROM students_db.city";
     private static final String INSERT_STUDENT_QUERY = "INSERT INTO students_db.students(id, name, surname, age, course) VALUES(?, ?, ?, ?, ?);";
-    private static final String INSERT_CITY_QUERY = "INSERT INTO cities (city, students) VALUES (?,?);";
+    private static final String INSERT_CITY_QUERY = "INSERT INTO cities (city, id) VALUES (?,?);";
     private static final String UPDATE_STUDENT_QUERY = "UPDATE students_db.students SET course = ? WHERE id = ?;";
     private static final String DELETE_STUDENT_QUERY = "DELETE FROM students_db.students WHERE students = ?";
-    private static final String DELETE_CITY_QUERY = "DELETE FROM cities WHERE cities, students = ?,? ";
+    private static final String DELETE_CITY_QUERY = "DELETE FROM cities WHERE cities = ? ";
 
 
     public CRUDUtils() {
@@ -46,11 +47,11 @@ public class CRUDUtils {
         List<City> cityList = new ArrayList<>();
         try (Connection connection = DbUtils.getConnection()) {
             Statement statement = connection.createStatement();
-            ResultSet resultSet = statement.executeQuery(INSERT_CITY_QUERY);
+            ResultSet resultSet = statement.executeQuery(GET_ALL_CITIES_QUERY);
             while (resultSet.next()) {
                 String city = resultSet.getString("city");
-                Student student = (Student) resultSet.getObject("student");
-                cityList.add(new City(city, student));
+                Student studentId = (Student) resultSet.getObject(getStudents().toString());
+                cityList.add(new City(city, studentId));
             }
         } catch (Exception e) {
             throw new RuntimeException(e.getMessage() + " Exception");
