@@ -30,7 +30,24 @@
             <version>5.9.1</version>
             <scope>test</scope>
         </dependency>
+
+        <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.32</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>42.5.1</version>
+        </dependency>
+
+
     </dependencies>
+
 
     <modules>
         <module>Lesson1</module>
@@ -56,7 +73,7 @@
         <module>Lesson20</module>
         <module>Lesson20Addition</module>
         <module>Lesson21_JDBC</module>
-        <module>Lesson22</module>
+        <module>Lesson22jdbc</module>
     </modules>
 
     <properties>

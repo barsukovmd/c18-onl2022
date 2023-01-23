@@ -11,8 +11,6 @@ package homework.task1;
 import java.util.Arrays;
 import java.util.List;
 
-import static homework.task1.ProductType.values;
-
 public class Main {
     //Если честно не понял как сделать ВСЕ через Stream API
     public static void main(String[] args) {
@@ -24,16 +22,15 @@ public class Main {
                     new Cashier("Cashier #3"),
                     new Cashier("Cashier #4"),
                     new Cashier("Cashier #5"));
-            for (int i = 0; i <= 15; i++) {
+            for (int i = 1; i <= 20; i++) {
                 new Buyer("\t" + "Number " + i,
                         cashDeskList.stream().toList(),
-                        Arrays.stream(values()).toList());
-                Thread.sleep(1000);
+                        Arrays.stream(ProductType.values()).toList());
+                Thread.sleep(1500);
             }
         } catch (InterruptedException e) {
             throw new RuntimeException(e.getMessage() + " error has occurred");
         }
-        System.out.println("Main Thread has finished");
     }
 }
 
