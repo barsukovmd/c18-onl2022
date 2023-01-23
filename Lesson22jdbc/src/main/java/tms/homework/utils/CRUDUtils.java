@@ -45,10 +45,10 @@ public class CRUDUtils {
             preparedStatement.setDate(5, worker.getDate());
             preparedStatement.setString(6, worker.getDescription());
             preparedStatement.setString(7, worker.getName());
+            newWorkers = getAllWorkers();
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
             System.out.println(e.getMessage());
-            newWorkers = getAllWorkers();
         }
         return newWorkers;
     }
