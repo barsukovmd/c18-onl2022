@@ -27,8 +27,8 @@ public class CRUDUtils {
     public static List<Student> getStudents() {
         List<Student> studentsList = new ArrayList<>();
         try (Connection connection = DbUtils.getConnection()) {
-            Statement statement = connection.createStatement();
-            ResultSet resultSet = statement.executeQuery(GET_ALL_STUDENTS_QUERY);
+            PreparedStatement preparedStatement = connection.prepareStatement(GET_ALL_STUDENTS_QUERY);
+            ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
                 int id = resultSet.getInt("id");
                 String name = resultSet.getString("name");
@@ -50,7 +50,7 @@ public class CRUDUtils {
             ResultSet resultSet = statement.executeQuery(GET_ALL_CITIES_QUERY);
             while (resultSet.next()) {
                 String city = resultSet.getString("city");
-                Student studentId = (Student) resultSet.getObject(getStudents().toString());
+                Student studentId = (Student) resultSet.getObject("id");
                 cityList.add(new City(city, studentId));
             }
         } catch (Exception e) {
@@ -115,12 +115,11 @@ public class CRUDUtils {
         return studentList;
     }
 
-    public static List<City> deleteCity(Student student, City city) {
+    public static List<City> deleteCity(City city) {
         List<City> cityList = new ArrayList<>();
         try (Connection connection = DbUtils.getConnection()) {
             PreparedStatement preparedStatement = connection.prepareStatement(DELETE_CITY_QUERY);
-            preparedStatement.setString(1, student.getName() + student.getSurname());
-            preparedStatement.setString(2, city.getCityName());
+            preparedStatement.setString(1, city.getCityName());
             preparedStatement.executeUpdate();
             cityList = getCities();
         } catch (Exception e) {
