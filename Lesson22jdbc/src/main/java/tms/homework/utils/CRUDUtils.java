@@ -52,4 +52,32 @@ public class CRUDUtils {
         }
         return newWorkers;
     }
+
+    public static List<Worker> updateWorker(int id, double salary) {
+        List<Worker> updatedWorkers = new ArrayList<>();
+        try (Connection connection = DbUtils.getConnection()) {
+            PreparedStatement preparedStatement = connection.prepareStatement(UPDATE_WORKERS_QUERY);
+            preparedStatement.setInt(1, id);
+            preparedStatement.setDouble(2, salary);
+            preparedStatement.executeUpdate();
+            updatedWorkers = getAllWorkers();
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return updatedWorkers;
+    }
+
+
+    public static List<Worker> deleteWorker(int id) {
+        List<Worker> newWorkersList = new ArrayList<>();
+        try (Connection connection = DbUtils.getConnection()) {
+            PreparedStatement preparedStatement = connection.prepareStatement(DELETE_WORKERS_QUERY);
+            preparedStatement.setString(1, "id");
+            preparedStatement.execute();
+            newWorkersList = getAllWorkers();
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return newWorkersList;
+    }
 }
