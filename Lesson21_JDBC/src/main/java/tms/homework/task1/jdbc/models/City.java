@@ -11,5 +11,5 @@ import lombok.ToString;
 @AllArgsConstructor
 public class City {
     private String cityName;
-    private Student student;
+    private int cityId;
 }
