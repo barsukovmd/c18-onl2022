@@ -1,5 +1,5 @@
 <html>
 <body>
-<h2>Hello Developers!</h2>
+<h2>Здарова ЕПТ</h2>
 </body>
 </html>
