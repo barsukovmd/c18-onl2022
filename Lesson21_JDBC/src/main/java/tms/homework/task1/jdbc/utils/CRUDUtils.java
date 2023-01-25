@@ -7,7 +7,6 @@ import tms.homework.task1.jdbc.models.Student;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 @ToString
 
@@ -18,7 +17,7 @@ public class CRUDUtils {
 ////     *
     private static final String GET_ALL_STUDENTS_QUERY = "SELECT * FROM students_db.students";
     private static final String GET_ALL_CITIES_QUERY = "SELECT * FROM students_db.city";
-    private static final String INSERT_STUDENT_QUERY = "INSERT INTO students_db.students(id, name, surname, age, course) VALUES(?, ?, ?, ?, ?);";
+    private static final String INSERT_STUDENT_QUERY = "INSERT INTO students_db.students(id, name, surname, age, course, city_id) VALUES(?, ?, ?, ?, ?, ?);";
     private static final String INSERT_CITY_QUERY = "INSERT INTO cities (city, city_id) VALUES (?,?);";
     private static final String UPDATE_STUDENT_QUERY = "UPDATE students_db.students SET course = ? WHERE id = ?;";
     private static final String DELETE_STUDENT_QUERY = "DELETE FROM students_db.students WHERE students = ?";
@@ -30,7 +29,6 @@ public class CRUDUtils {
 
     public static List<Student> getStudents() {
         List<Student> studentsList = new ArrayList<>();
-        List<City> cityList = new ArrayList<>();
         try (Connection connection = DbUtils.getConnection()) {
             PreparedStatement preparedStatement = connection.prepareStatement(GET_ALL_STUDENTS_QUERY);
             ResultSet resultSet = preparedStatement.executeQuery();
@@ -40,7 +38,8 @@ public class CRUDUtils {
                 String surname = resultSet.getString("surname");
                 int age = resultSet.getInt("age");
                 int course = resultSet.getInt("course");
-                studentsList.add(new Student(id, name, surname, age, course));
+                int city_id = resultSet.getInt("city_id");
+                studentsList.add(new Student(id, name, surname, age, course, city_id));
             }
         } catch (SQLException e) {
             throw new RuntimeException(e.getMessage() + " Exception");
@@ -64,28 +63,27 @@ public class CRUDUtils {
         return cityList;
     }
 
-    public static Map<City, Student> cityStudentList() {
-        Map<City, Student> cityStudentMap = cityStudentList();
-        try (Connection connection = DbUtils.getConnection()) {
-            Statement statement = connection.createStatement();
-            ResultSet resultSetStudents = statement.executeQuery(GET_ALL_STUDENTS_QUERY);
-            ResultSet resultSetCity = statement.executeQuery(GET_ALL_CITIES_QUERY);
-            while (resultSetStudents.next() && resultSetCity.next()) {
-                int id = resultSetStudents.getInt("id");
-                String name = resultSetStudents.getString("name");
-                String surname = resultSetStudents.getString("surname");
-                int age = resultSetStudents.getInt("age");
-                int course = resultSetStudents.getInt("course");
-                String city = resultSetCity.getString("city");
-                int city_id = resultSetCity.getInt("city_id");
-                cityStudentMap.put(new City(city, city_id), new Student(id, name, surname, age, course));
-            }
-
-        } catch (Exception e) {
-            throw new RuntimeException(e.getMessage() + " Exception");
-        }
-        return cityStudentMap;
-    }
+//    public static Map<City, Student> cityStudentList() {
+//        Map<City, Student> cityStudentMap = new HashMap<>();
+//        try (Connection connection = DbUtils.getConnection()) {
+//            Statement statement = connection.createStatement();
+//            ResultSet resultSet = statement.executeQuery(GET_ALL_CITIES_QUERY + GET_ALL_STUDENTS_QUERY);
+//            while (resultSet.next()) {
+//                int id = resultSet.getInt("id");
+//                String name = resultSet.getString("name");
+//                String surname = resultSet.getString("surname");
+//                int age = resultSet.getInt("age");
+//                int course = resultSet.getInt("course");
+//                String city = resultSet.getString("city");
+//                int city_id = resultSet.getInt("city_id");
+//                cityStudentMap.put(new City(city, city_id), new Student(id, name, surname, age, course, city_id));
+//            }
+//
+//        } catch (Exception e) {
+//            throw new RuntimeException(e.getMessage() + " Exception");
+//        }
+//        return cityStudentMap;
+//    }
 
     public static List<Student> insertNewStudents(Student student) {
         List<Student> insertNewStudents = new ArrayList<>();

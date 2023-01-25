@@ -15,5 +15,6 @@ public class Student {
     private String surname;
     private int age;
     private int course;
+    private int city_id;
 
 }
