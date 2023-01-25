@@ -18,12 +18,10 @@ import tms.homework.task1.jdbc.utils.CRUDUtils;
 public class Main {
     public static void main(String[] args) {
         System.out.println("Get all students and cities");
-        CRUDUtils.getStudents()
-                .forEach(System.out::println);
+        System.out.println("\t" + CRUDUtils.getStudents() + "\n");
+        System.out.println("!!!");
         System.out.println("Get all cities");
         CRUDUtils.getCities()
                 .forEach(System.out::println);
-//        System.out.println("City and Student's list");
-//        System.out.println(CRUDUtils.cityStudentList());
     }
 }
