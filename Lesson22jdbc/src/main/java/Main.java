@@ -1,3 +1,5 @@
+import tms.homework.utils.CRUDUtils;
+
 // Задачи по тренировке SQL запросов.
 //    Во всех задачах ниже считайте, что таблица workers имеет поля id, login, salary, age, date, description (и другие при необходимости).
 //    На IN
@@ -203,6 +205,6 @@
 //    Очистите все таблицы базы данных test1.
 public class Main {
     public static void main(String[] args) {
-
+        CRUDUtils.getAllWorkers().forEach(System.out::println);
     }
 }

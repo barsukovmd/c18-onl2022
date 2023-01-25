@@ -5,7 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-import java.sql.Date;
+import java.sql.Timestamp;
 
 
 @ToString
@@ -17,7 +17,7 @@ public class Worker {
     private String login;
     private double salary;
     private int age;
-    private Date date;
+    private Timestamp localDate;
     private String description;
     private String name;
 }

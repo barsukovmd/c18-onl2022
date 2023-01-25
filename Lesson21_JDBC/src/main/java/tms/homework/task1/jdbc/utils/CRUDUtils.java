@@ -1,11 +1,16 @@
 package tms.homework.task1.jdbc.utils;
 
+import lombok.ToString;
 import tms.homework.task1.jdbc.models.City;
 import tms.homework.task1.jdbc.models.Student;
 
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+
+@ToString
 
 //CRUD - create, read, update and delete.
 public class CRUDUtils {
@@ -13,9 +18,12 @@ public class CRUDUtils {
 ////     * студентов, удаления студентов и удаления городов.
 ////     *
     private static final String GET_ALL_STUDENTS_QUERY = "SELECT * FROM students_db.students";
+    private static final String GET_ALL_STUDENTS_AND_CITIES = "SELECT * FROM students_db.students LEFT JOIN students_db.city c on c.city_id = students.city_id";
     private static final String GET_ALL_CITIES_QUERY = "SELECT * FROM students_db.city";
-    private static final String INSERT_STUDENT_QUERY = "INSERT INTO students_db.students(id, name, surname, age, course) VALUES(?, ?, ?, ?, ?);";
-    private static final String INSERT_CITY_QUERY = "INSERT INTO cities (city, id) VALUES (?,?);";
+    private static final String INSERT_STUDENT_QUERY =
+            "INSERT INTO students_db.students(id, name, surname, age, course, city_id) " +
+                    "VALUES(?, ?, ?, ?, ?, ?);";
+    private static final String INSERT_CITY_QUERY = "INSERT INTO cities (city, city_id) VALUES (?,?);";
     private static final String UPDATE_STUDENT_QUERY = "UPDATE students_db.students SET course = ? WHERE id = ?;";
     private static final String DELETE_STUDENT_QUERY = "DELETE FROM students_db.students WHERE students = ?";
     private static final String DELETE_CITY_QUERY = "DELETE FROM cities WHERE cities = ? ";
@@ -24,10 +32,10 @@ public class CRUDUtils {
     public CRUDUtils() {
     }
 
-    public static List<Student> getStudents() {
-        List<Student> studentsList = new ArrayList<>();
+    public static Map<City, Student> getStudents() {
+        Map<City, Student> studentsList = new HashMap<>();
         try (Connection connection = DbUtils.getConnection()) {
-            PreparedStatement preparedStatement = connection.prepareStatement(GET_ALL_STUDENTS_QUERY);
+            PreparedStatement preparedStatement = connection.prepareStatement(GET_ALL_STUDENTS_AND_CITIES);
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
                 int id = resultSet.getInt("id");
@@ -35,7 +43,10 @@ public class CRUDUtils {
                 String surname = resultSet.getString("surname");
                 int age = resultSet.getInt("age");
                 int course = resultSet.getInt("course");
-                studentsList.add(new Student(id, name, surname, age, course));
+                int city_id = resultSet.getInt("city_id");
+                int cityId = resultSet.getInt("city_id");
+                String cityForStudent = resultSet.getString("city");
+                studentsList.put(new City(cityForStudent, cityId), new Student(id, name, surname, age, course, city_id));
             }
         } catch (SQLException e) {
             throw new RuntimeException(e.getMessage() + " Exception");
@@ -50,7 +61,7 @@ public class CRUDUtils {
             ResultSet resultSet = statement.executeQuery(GET_ALL_CITIES_QUERY);
             while (resultSet.next()) {
                 String city = resultSet.getString("city");
-                Student studentId = (Student) resultSet.getObject("id");
+                int studentId = resultSet.getInt("city_id");
                 cityList.add(new City(city, studentId));
             }
         } catch (Exception e) {
@@ -59,22 +70,22 @@ public class CRUDUtils {
         return cityList;
     }
 
-    public static List<Student> insertNewStudents(Student student) {
-        List<Student> insertNewStudents = new ArrayList<>();
-        try (Connection connection = DbUtils.getConnection()) {
-            PreparedStatement preparedStatement = connection.prepareStatement(INSERT_STUDENT_QUERY);
-            preparedStatement.setInt(1, student.getId());
-            preparedStatement.setString(2, student.getName());
-            preparedStatement.setString(3, student.getSurname());
-            preparedStatement.setInt(4, student.getAge());
-            preparedStatement.setInt(5, student.getCourse());
-            preparedStatement.executeUpdate();
-            insertNewStudents = getStudents();
-        } catch (Exception e) {
-            throw new RuntimeException(e.getMessage() + " Exception");
-        }
-        return insertNewStudents;
-    }
+//    public static List<Student> insertNewStudents(Student student) {
+//        List<Student> insertNewStudents = new ArrayList<>();
+//        try (Connection connection = DbUtils.getConnection()) {
+//            PreparedStatement preparedStatement = connection.prepareStatement(INSERT_STUDENT_QUERY);
+//            preparedStatement.setInt(1, student.getId());
+//            preparedStatement.setString(2, student.getName());
+//            preparedStatement.setString(3, student.getSurname());
+//            preparedStatement.setInt(4, student.getAge());
+//            preparedStatement.setInt(5, student.getCourse());
+//            preparedStatement.executeUpdate();
+//            insertNewStudents = getStudents();
+//        } catch (Exception e) {
+//            throw new RuntimeException(e.getMessage() + " Exception");
+//        }
+//        return insertNewStudents;
+//    }
 
     public static List<City> insertNewCity(City city, Student student) {
         List<City> cityList = new ArrayList<>();
@@ -88,32 +99,32 @@ public class CRUDUtils {
         return cityList;
     }
 
-    public static List<Student> updateStudents(int id, int course) {
-        List<Student> updateStudents = new ArrayList<>();
-        try (Connection connection = DbUtils.getConnection()) {
-            PreparedStatement preparedStatement = connection.prepareStatement(UPDATE_STUDENT_QUERY);
-            preparedStatement.setInt(1, id);
-            preparedStatement.setInt(2, course);
-            preparedStatement.executeUpdate();
-            updateStudents = getStudents();
-        } catch (Exception e) {
-            throw new RuntimeException(e.getMessage() + " Exception");
-        }
-        return updateStudents;
-    }
+//    public static List<Student> updateStudents(int id, int course) {
+//        List<Student> updateStudents = new ArrayList<>();
+//        try (Connection connection = DbUtils.getConnection()) {
+//            PreparedStatement preparedStatement = connection.prepareStatement(UPDATE_STUDENT_QUERY);
+//            preparedStatement.setInt(1, id);
+//            preparedStatement.setInt(2, course);
+//            preparedStatement.executeUpdate();
+//            updateStudents = getStudents();
+//        } catch (Exception e) {
+//            throw new RuntimeException(e.getMessage() + " Exception");
+//        }
+//        return updateStudents;
+//    }
 
-    public static List<Student> deleteStudent(int id) {
-        List<Student> studentList = new ArrayList<>();
-        try (Connection connection = DbUtils.getConnection()) {
-            PreparedStatement preparedStatement = connection.prepareStatement(DELETE_STUDENT_QUERY);
-            preparedStatement.setInt(1, id);
-            preparedStatement.executeUpdate();
-            studentList = getStudents();
-        } catch (Exception e) {
-            throw new RuntimeException(e.getMessage() + " Exception");
-        }
-        return studentList;
-    }
+//    public static List<Student> deleteStudent(int id) {
+//        List<Student> studentList = new ArrayList<>();
+//        try (Connection connection = DbUtils.getConnection()) {
+//            PreparedStatement preparedStatement = connection.prepareStatement(DELETE_STUDENT_QUERY);
+//            preparedStatement.setInt(1, id);
+//            preparedStatement.executeUpdate();
+//            studentList = getStudents();
+//        } catch (Exception e) {
+//            throw new RuntimeException(e.getMessage() + " Exception");
+//        }
+//        return studentList;
+//    }
 
     public static List<City> deleteCity(City city) {
         List<City> cityList = new ArrayList<>();
