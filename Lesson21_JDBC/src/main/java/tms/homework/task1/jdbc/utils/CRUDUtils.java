@@ -20,7 +20,9 @@ public class CRUDUtils {
     private static final String GET_ALL_STUDENTS_QUERY = "SELECT * FROM students_db.students";
     private static final String GET_ALL_STUDENTS_AND_CITIES = "SELECT * FROM students_db.students LEFT JOIN students_db.city c on c.city_id = students.city_id";
     private static final String GET_ALL_CITIES_QUERY = "SELECT * FROM students_db.city";
-    private static final String INSERT_STUDENT_QUERY = "INSERT INTO students_db.students(id, name, surname, age, course, city_id) VALUES(?, ?, ?, ?, ?, ?);";
+    private static final String INSERT_STUDENT_QUERY =
+            "INSERT INTO students_db.students(id, name, surname, age, course, city_id) " +
+                    "VALUES(?, ?, ?, ?, ?, ?);";
     private static final String INSERT_CITY_QUERY = "INSERT INTO cities (city, city_id) VALUES (?,?);";
     private static final String UPDATE_STUDENT_QUERY = "UPDATE students_db.students SET course = ? WHERE id = ?;";
     private static final String DELETE_STUDENT_QUERY = "DELETE FROM students_db.students WHERE students = ?";
