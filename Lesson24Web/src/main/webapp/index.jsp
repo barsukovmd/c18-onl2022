@@ -8,6 +8,6 @@
 <h1><%= "Yauhen, Java Developer" %>
 </h1>
 <br/>
-<a href="hello-servlet">Hello Servlet</a>
+<a href="hello-servlet">Нажми Меня</a>
 </body>
 </html>
