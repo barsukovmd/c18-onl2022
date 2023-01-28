@@ -2,6 +2,7 @@ package WebMain;
 
 import java.io.*;
 
+import jakarta.servlet.ServletException;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 
@@ -21,6 +22,14 @@ public class MyServlet extends HttpServlet {
         out.println("</body></html>");
     }
 
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        System.out.println("Welcome to Java World");
+        super.doPost(req, resp);
+    }
+
+    @Override
     public void destroy() {
+        super.destroy();
     }
 }
