@@ -10,15 +10,13 @@ public class MyServlet extends HttpServlet {
     private String message;
 
     public void init() {
-        message = "Hello World!";
+        message = "Hello My Java Developer Yauhen!";
     }
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         response.setContentType("text/html");
-
-        // Hello
         PrintWriter out = response.getWriter();
-        out.println("<html><body>");
+        out.println("<html>Welcome to my first Web page<body>");
         out.println("<h1>" + message + "</h1>");
         out.println("</body></html>");
     }

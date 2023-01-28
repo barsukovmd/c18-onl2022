@@ -7,7 +7,9 @@
 <body>
 <h1><%= "Yauhen, Java Developer" %>
 </h1>
+<h2><%="I live in New York"%>
+</h2>
 <br/>
-<a href="hello-servlet">Нажми Меня</a>
+<a href="hello-servlet">Tap to open the link</a>
 </body>
 </html>
