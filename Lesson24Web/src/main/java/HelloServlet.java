@@ -9,8 +9,9 @@ import model.Calculator;
 public class HelloServlet extends HttpServlet {
     private String message;
 
-    public void init() {
-        message = "Welcome to you first Servlet";
+    @Override
+    public void init() throws ServletException {
+        message = "Welcome to you First Servlet, Yauhen";
     }
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
