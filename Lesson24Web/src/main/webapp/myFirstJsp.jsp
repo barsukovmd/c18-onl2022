@@ -19,6 +19,6 @@
 </h1>
 
 <br/>
-<a href="my-servlet2023">Hello Servlet</a>
+<a href="my-servlet2023">Hello Yauhen Developer</a>
 </body>
 </html>
