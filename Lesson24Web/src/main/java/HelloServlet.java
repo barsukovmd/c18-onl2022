@@ -2,15 +2,13 @@ import java.io.*;
 
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
-import lombok.extern.log4j.Log4j;
 
-@Log4j
-@WebServlet(name = "helloServlet", value = "/hello-servlet")
+@WebServlet(name = "helloServlet", value = "/my-servlet")
 public class HelloServlet extends HttpServlet {
     private String message;
 
     public void init() {
-        message = "Hello World!";
+        message = "Yauhen Developer!";
     }
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
