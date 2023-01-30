@@ -18,15 +18,16 @@ public class CRUDUtils {
 ////     * студентов, удаления студентов и удаления городов.
 ////     *
     private static final String GET_ALL_STUDENTS_QUERY = "SELECT * FROM students_db.students";
-    private static final String GET_ALL_STUDENTS_AND_CITIES = "SELECT * FROM students_db.students LEFT JOIN students_db.city c on c.city_id = students.city_id";
+    private static final String GET_ALL_STUDENTS_AND_CITIES =
+            "SELECT students_db.students.id, name, surname, age, course, city_id from students_db.students left join students_db.city c on students.city_id = c.city_cityid";
     private static final String GET_ALL_CITIES_QUERY = "SELECT * FROM students_db.city";
     private static final String INSERT_STUDENT_QUERY =
             "INSERT INTO students_db.students(id, name, surname, age, course, city_id) " +
                     "VALUES(?, ?, ?, ?, ?, ?);";
-    private static final String INSERT_CITY_QUERY = "INSERT INTO cities (city, city_id) VALUES (?,?);";
+    private static final String INSERT_CITY_QUERY = "INSERT INTO students_db.city (city, city_cityId) VALUES (?,?)";
     private static final String UPDATE_STUDENT_QUERY = "UPDATE students_db.students SET course = ? WHERE id = ?;";
     private static final String DELETE_STUDENT_QUERY = "DELETE FROM students_db.students WHERE students = ?";
-    private static final String DELETE_CITY_QUERY = "DELETE FROM cities WHERE cities = ? ";
+    private static final String DELETE_CITY_QUERY = "DELETE FROM students_db.city WHERE city = ? ";
 
 
     public CRUDUtils() {
@@ -44,7 +45,7 @@ public class CRUDUtils {
                 int age = resultSet.getInt("age");
                 int course = resultSet.getInt("course");
                 int city_id = resultSet.getInt("city_id");
-                int cityId = resultSet.getInt("city_id");
+                int cityId = resultSet.getInt("cityId");
                 String cityForStudent = resultSet.getString("city");
                 studentsList.put(new City(cityForStudent, cityId), new Student(id, name, surname, age, course, city_id));
             }

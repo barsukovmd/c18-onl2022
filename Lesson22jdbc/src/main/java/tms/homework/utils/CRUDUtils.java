@@ -8,8 +8,8 @@ import java.util.List;
 
 public class CRUDUtils {
     private static final String GET_ALL_WORKERS_QUERY = "SELECT * FROM workers_db.workers";
-    private static final String INSERT_WORKERS_QUERY = "INSERT INTO workers_db.workers (id, login, salary, age, localDate, description, name) VALUES(?, ?, ?, ?, ?, ?, ?)";
-    private static final String UPDATE_WORKERS_QUERY = "UPDATE workers_db.workers SET course = ? WHERE id = ?";
+    private static final String INSERT_WORKERS_QUERY = "INSERT INTO workers_db.workers (id, login, salary, age, localdate, description, name) VALUES(?, ?, ?, ?, ?, ?, ?)";
+    private static final String UPDATE_WORKERS_QUERY = "UPDATE workers_db.workers SET salary = ? WHERE id = ?";
     private static final String DELETE_WORKERS_QUERY = "DELETE FROM workers_db.workers WHERE id = ?";
 
     public static List<Worker> getAllWorkers() {
