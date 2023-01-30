@@ -2,16 +2,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>JSP - Hello World</title>
+    <title>Hello Servlet</title>
 </head>
 <body>
-<h1><% out.println("Hello from index jsp"); %>
+<h1><% out.println("Yauhen Developer !"); %>
 </h1>
 <h1>
 
 </h1>
 
 <br/>
-<a href="my-servlet">Hello Servlet</a>
+<a href="my-servlet2023">HelloServlet</a>
 </body>
 </html>

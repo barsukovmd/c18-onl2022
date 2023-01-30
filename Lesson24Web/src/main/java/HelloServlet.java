@@ -3,12 +3,12 @@ import java.io.*;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 
-@WebServlet(name = "helloServlet", value = "/my-servlet")
+@WebServlet(name = "HelloServlet", value = "/my-servlet2023")
 public class HelloServlet extends HttpServlet {
     private String message;
 
     public void init() {
-        message = "Yauhen Developer!";
+        message = "Welcome to you first Servlet";
     }
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
