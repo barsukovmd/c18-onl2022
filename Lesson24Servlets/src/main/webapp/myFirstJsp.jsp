@@ -22,9 +22,9 @@
         out.println(" Multiplying: " + calculator.multiply(10, 2));
         out.println(" Division: " + calculator.division(10, 2));
     %>
-    <br>
+        <br>
 
-    <br/>
-    <a href="my-servlet">Tap the link</a>
+        <br/>
+        <a href="my-servlet2023">Tap the link</a>
 </body>
 </html>
