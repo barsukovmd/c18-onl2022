@@ -31,5 +31,7 @@ public class MySecondServlet extends HttpServlet {
     }
 
     public void destroy() {
+        super.destroy();
+        System.out.println("destroy");
     }
 }
