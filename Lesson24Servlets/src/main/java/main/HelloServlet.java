@@ -18,7 +18,7 @@ public class HelloServlet extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         response.setContentType("text/html");
         response.setContentType("int/html");
-        RequestDispatcher dispatcherType = request.getRequestDispatcher("/myFirstJsp");
+        RequestDispatcher dispatcherType = request.getRequestDispatcher("/myFirstJsp.jsp");
         dispatcherType.forward(request, response);
     }
 
