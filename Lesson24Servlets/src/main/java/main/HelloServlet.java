@@ -4,7 +4,6 @@ import java.io.*;
 
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
-import model.Calculator;
 
 @WebServlet(value = "/my-servlet2023")
 public class HelloServlet extends HttpServlet {

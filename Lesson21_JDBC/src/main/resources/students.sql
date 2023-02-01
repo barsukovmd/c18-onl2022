@@ -2,11 +2,17 @@
 create table students
 (
     id      serial
-        primary key,
-    name    varchar(45)  not null,
-    surname varchar(100) not null,
-    course  integer      not null
+        constraint students_db_pkey
+            primary key,
+    name    varchar not null,
+    surname varchar not null,
+    age     integer not null,
+    course  integer not null,
+    city_id integer
+        constraint students_city_id_fk
+            references city
 );
 
-select *
-FROM students
+alter table students
+    owner to postgres;
+
