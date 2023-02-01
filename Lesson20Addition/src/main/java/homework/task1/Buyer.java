@@ -10,7 +10,6 @@ class Buyer extends Thread {
         super(name);
         this.cashiers = cashiers;
         this.productTypes = productTypes;
-        this.start();
     }
 
     List<ProductType> getProductType() {

@@ -6,25 +6,22 @@ import tms.homework.task1.jdbc.models.Student;
 
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
+
 
 @ToString
 
 //CRUD - create, read, update and delete.
 public class CRUDUtils {
-    //    Предусмотреть операции добавления новых городов, новых
-////     * студентов, удаления студентов и удаления городов.
-////     *
     private static final String GET_ALL_STUDENTS_QUERY = "SELECT * FROM students_db.students";
-    private static final String GET_ALL_STUDENTS_AND_CITIES =
-            "SELECT students_db.students.id, name, surname, age, course, city_id from students_db.students left join students_db.city c on students.city_id = c.city_cityid";
+    private static final String GET_ALL_STUDENTS_AND_CITIES = "SELECT * from students_db.students left join students_db.city c on c.id_for_city = students.city_id";
+
+
     private static final String GET_ALL_CITIES_QUERY = "SELECT * FROM students_db.city";
     private static final String INSERT_STUDENT_QUERY =
             "INSERT INTO students_db.students(id, name, surname, age, course, city_id) " +
                     "VALUES(?, ?, ?, ?, ?, ?);";
-    private static final String INSERT_CITY_QUERY = "INSERT INTO students_db.city (city, city_cityId) VALUES (?,?)";
+    private static final String INSERT_CITY_QUERY = "INSERT INTO students_db.city (city, id_for_city) VALUES (?,?)";
     private static final String UPDATE_STUDENT_QUERY = "UPDATE students_db.students SET course = ? WHERE id = ?;";
     private static final String DELETE_STUDENT_QUERY = "DELETE FROM students_db.students WHERE students = ?";
     private static final String DELETE_CITY_QUERY = "DELETE FROM students_db.city WHERE city = ? ";
@@ -33,21 +30,21 @@ public class CRUDUtils {
     public CRUDUtils() {
     }
 
-    public static Map<City, Student> getStudents() {
-        Map<City, Student> studentsList = new HashMap<>();
+    public static List<Student> getStudents() {
+        List<Student> studentsList = new ArrayList<>();
         try (Connection connection = DbUtils.getConnection()) {
             PreparedStatement preparedStatement = connection.prepareStatement(GET_ALL_STUDENTS_AND_CITIES);
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
+                String city = resultSet.getString("city");
+                int id_for_city = resultSet.getInt("id_for_city");
                 int id = resultSet.getInt("id");
                 String name = resultSet.getString("name");
                 String surname = resultSet.getString("surname");
                 int age = resultSet.getInt("age");
                 int course = resultSet.getInt("course");
                 int city_id = resultSet.getInt("city_id");
-                int cityId = resultSet.getInt("cityId");
-                String cityForStudent = resultSet.getString("city");
-                studentsList.put(new City(cityForStudent, cityId), new Student(id, name, surname, age, course, city_id));
+                studentsList.add(new Student(new City(city, id_for_city), id, name, surname, age, course, city_id));
             }
         } catch (SQLException e) {
             throw new RuntimeException(e.getMessage() + " Exception");
@@ -62,7 +59,7 @@ public class CRUDUtils {
             ResultSet resultSet = statement.executeQuery(GET_ALL_CITIES_QUERY);
             while (resultSet.next()) {
                 String city = resultSet.getString("city");
-                int studentId = resultSet.getInt("city_id");
+                int studentId = resultSet.getInt("id_for_city");
                 cityList.add(new City(city, studentId));
             }
         } catch (Exception e) {

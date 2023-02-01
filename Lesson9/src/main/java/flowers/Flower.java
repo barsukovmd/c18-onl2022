@@ -10,7 +10,6 @@ import lombok.ToString;
 
 public class Flower {
     private FlowerType flowerType;
-
     public Flower(FlowerType flowerType) {
         this.flowerType = flowerType;
     }

@@ -8,28 +8,38 @@ package homework.task1;
 // * У каждого покупателя есть набор товаров, которые должны быть выведены на консоль в процессе обслуживания.
 // */
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 public class Main {
-    //Если честно не понял как сделать ВСЕ через Stream API
     public static void main(String[] args) {
         System.out.println("Main Thread started");
         try {
-            List<Cashier> cashDeskList = Arrays.asList(
-                    new Cashier("Cashier #1"),
-                    new Cashier("Cashier #2"),
-                    new Cashier("Cashier #3"),
-                    new Cashier("Cashier #4"),
-                    new Cashier("Cashier #5"));
+            List<Cashier> cashiers = IntStream.range(0, 5)
+                    .boxed()
+                    .map(x -> new Cashier("Cashier #" + x))
+                    .toList();
+//            List<Cashier> cashDeskList = Arrays.asList(
+//                    new Cashier("Cashier #1"),
+//                    new Cashier("Cashier #2"),
+//                    new Cashier("Cashier #3"),
+//                    new Cashier("Cashier #4"),
+//                    new Cashier("Cashier #5"));
+
             for (int i = 1; i <= 20; i++) {
-                new Buyer("\t" + "Number " + i,
-                        cashDeskList.stream().toList(),
-                        Arrays.stream(ProductType.values()).toList());
+                Buyer buyer = new Buyer("\t" + "Number " + i,
+                        cashiers, Arrays.stream(ProductType.values()).toList());
+                buyer.start();
+//                new Buyer("\t" + "Number " + i,
+//                        cashiers.stream().toList(),
+//                        Arrays.stream(ProductType.values()).toList()).start();
                 Thread.sleep(1500);
             }
         } catch (InterruptedException e) {
-            throw new RuntimeException(e.getMessage() + " error has occurred");
+            System.out.println(e.getMessage() + " error has occurred");
         }
     }
 }
