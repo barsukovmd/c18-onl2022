@@ -23,6 +23,11 @@ public class HelloServlet extends HttpServlet {
         dispatcherType.forward(request, response);
     }
 
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        super.doPost(req, resp);
+    }
+
     public void destroy() {
         super.destroy();
         System.out.println("destroy");

@@ -15,14 +15,12 @@ import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 public class Main {
-    //Если честно не понял как сделать ВСЕ через Stream API
     public static void main(String[] args) {
         System.out.println("Main Thread started");
-        try {
-            List<Cashier> cashiers = IntStream.range(0, 5)
-                    .boxed()
-                    .map(x -> new Cashier("Cashier #" + x))
-                    .toList();
+        List<Cashier> cashiers = IntStream.range(0, 5)
+                .boxed()
+                .map(x -> new Cashier("Cashier #" + x))
+                .toList();
 //            List<Cashier> cashDeskList = Arrays.asList(
 //                    new Cashier("Cashier #1"),
 //                    new Cashier("Cashier #2"),
@@ -30,14 +28,14 @@ public class Main {
 //                    new Cashier("Cashier #4"),
 //                    new Cashier("Cashier #5"));
 
-            for (int i = 1; i <= 20; i++) {
-                new Buyer("\t" + "Number " + i,
-                        cashiers.stream().toList(),
-                        Arrays.stream(ProductType.values()).toList()).start();
-                Thread.sleep(1500);
-            }
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e.getMessage() + " error has occurred");
+        for (int i = 1; i <= 20; i++) {
+            Buyer buyer = new Buyer("\t" + "Number " + i,
+                    cashiers, Arrays.stream(ProductType.values()).toList());
+            buyer.start();
+//                new Buyer("\t" + "Number " + i,
+//                        cashiers.stream().toList(),
+//                        Arrays.stream(ProductType.values()).toList()).start();
+//                Thread.sleep(1500);
         }
     }
 }
