@@ -2,13 +2,12 @@ package main;
 
 import java.io.*;
 
-import jakarta.servlet.DispatcherType;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 
-@WebServlet("/my-servlet2023")
+@WebServlet("/first-servlet")
 public class HelloServlet extends HttpServlet {
     private String message;
 
