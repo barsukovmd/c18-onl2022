@@ -2,6 +2,8 @@ package main;
 
 import java.io.*;
 
+import jakarta.servlet.RequestDispatcher;
+import jakarta.servlet.ServletException;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 
@@ -12,22 +14,20 @@ import jakarta.servlet.annotation.*;
 // 3. Создать защищенную страницу, попасть на которую можно только после логина.
 // 4. Все запросы к защищенной странице должны приводить к перенаправлению на страницу логина,
 // если пользователь еще не залогинен, а если залогинен – должны всегда быть успешными.
-@WebServlet(value = "/second-servlet")
-public class HelloServlet extends HttpServlet {
+@WebServlet("/second-servlet")
+public class MySecondServlet extends HttpServlet {
     private String message;
 
     public void init() {
-        message = "Hello Yauhen";
+        message = "Hello Java Developer!";
     }
 
-    public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         response.setContentType("text/html");
-
-        // Hello
-        PrintWriter out = response.getWriter();
-        out.println("<html><body>");
-        out.println("<h1>" + message + "</h1>");
-        out.println("</body></html>");
+        request.setAttribute("textA", "Hello");
+        request.setAttribute("textB", "Yauhen");
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/secondServlet.jsp");
+        requestDispatcher.forward(request, response);
     }
 
     public void destroy() {
