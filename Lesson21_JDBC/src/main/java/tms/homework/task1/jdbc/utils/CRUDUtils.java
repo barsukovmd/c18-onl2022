@@ -27,7 +27,7 @@ public class CRUDUtils {
     private static final String DELETE_CITY_QUERY = "DELETE FROM students_db.city WHERE city = ? ";
 
 
-    public CRUDUtils() {
+    private CRUDUtils() {
     }
 
     public static List<Student> getStudents() {

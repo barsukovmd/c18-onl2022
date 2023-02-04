@@ -7,8 +7,8 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 
-@WebServlet("/first-servlet")
-public class HelloServlet extends HttpServlet {
+@WebServlet("/calculator")
+public class CalculatorServlet extends HttpServlet {
     private String message;
 
     public void init() {
@@ -17,7 +17,7 @@ public class HelloServlet extends HttpServlet {
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         response.setContentType("text/html");
-        response.setContentType("int/html");
+        response.setCharacterEncoding("UTF-8");
         RequestDispatcher dispatcherType = request.getRequestDispatcher("/myFirstJsp.jsp");
         dispatcherType.forward(request, response);
     }
