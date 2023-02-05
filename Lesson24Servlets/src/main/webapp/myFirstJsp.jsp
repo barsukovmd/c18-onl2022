@@ -2,10 +2,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Calculator</title>
+    <title>My Calculator</title>
 </head>
 <body>
 <h1><%= "Hello Yauhen" %>
-    <jsp:forward page="/calculator"/>
+    <jsp:forward page="/my-calculator"/>
 </body>
 </html>
