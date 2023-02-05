@@ -2,20 +2,14 @@ package main;
 
 import java.io.*;
 
-import jakarta.servlet.ServletException;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 import model.Calculator;
 import model.Calculator.*;
 @WebServlet("/calculator")
 public class CalculatorServlet extends HttpServlet {
-    private String message;
 
-    public void init() {
-        message = "Hello Java Developer";
-    }
-
-    public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+    public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         response.setContentType("text/html");
         response.setCharacterEncoding("UTF-8");
         try {
@@ -25,23 +19,14 @@ public class CalculatorServlet extends HttpServlet {
             Double result = calculate(value1, value2, Calculation.valueOf(calculator));
             println(response, "Result is: " + calculator + " " + result);
         } catch (NumberFormatException exception) {
-            println(response, "Не верный формат значений");
+            println(response, "Not compatible type");
         } catch (IllegalStateException exception2) {
-            println(response, "Не верная операция");
+            println(response, "Not correct operation");
         } catch (Exception exception) {
             println(response, exception.getMessage());
         }
     }
 
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        super.doPost(req, resp);
-    }
-
-    public void destroy() {
-        super.destroy();
-        System.out.println("destroy");
-    }
 
     private Double calculate(Double value1, Double value2, Calculation calculation) {
         return switch (calculation) {
