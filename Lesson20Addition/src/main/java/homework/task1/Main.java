@@ -1,5 +1,5 @@
 package homework.task1;
-///**
+//**
 // * Напишите программу, моделирующую кассы в магазине.
 // * Существует несколько касс, работающих одновременно.
 // * Каждый покупатель — отдельный поток.
@@ -8,11 +8,9 @@ package homework.task1;
 // * У каждого покупателя есть набор товаров, которые должны быть выведены на консоль в процессе обслуживания.
 // */
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.IntStream;
-import java.util.stream.Stream;
 
 public class Main {
     public static void main(String[] args) {
@@ -22,20 +20,11 @@ public class Main {
                     .boxed()
                     .map(x -> new Cashier("Cashier #" + x))
                     .toList();
-//            List<Cashier> cashDeskList = Arrays.asList(
-//                    new Cashier("Cashier #1"),
-//                    new Cashier("Cashier #2"),
-//                    new Cashier("Cashier #3"),
-//                    new Cashier("Cashier #4"),
-//                    new Cashier("Cashier #5"));
 
             for (int i = 1; i <= 20; i++) {
                 Buyer buyer = new Buyer("\t" + "Number " + i,
                         cashiers, Arrays.stream(ProductType.values()).toList());
                 buyer.start();
-//                new Buyer("\t" + "Number " + i,
-//                        cashiers.stream().toList(),
-//                        Arrays.stream(ProductType.values()).toList()).start();
                 Thread.sleep(1500);
             }
         } catch (InterruptedException e) {
@@ -43,5 +32,8 @@ public class Main {
         }
     }
 }
+//                new Buyer("\t" + "Number " + i,
+//                        cashiers.stream().toList(),
+//                        Arrays.stream(ProductType.values()).toList()).start();
 
 
