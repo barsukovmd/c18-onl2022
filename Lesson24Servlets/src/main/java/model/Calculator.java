@@ -19,7 +19,7 @@ public class Calculator {
         return t.doubleValue() / k.doubleValue();
     }
 
-    public enum Calculation {
-        SUM, SUBTRACTION, MULTIPLY, DIVISION
-    }
+//    public enum Calculation {
+//        SUM, SUBTRACTION, MULTIPLY, DIVISION
+//    }
 }

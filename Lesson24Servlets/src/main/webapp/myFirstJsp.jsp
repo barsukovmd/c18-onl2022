@@ -6,6 +6,6 @@
 </head>
 <body>
 <h1><%= "Hello Yauhen" %>
-    <jsp:forward page="/my-calculator"/>
+    <jsp:forward page="/my-calculator?value1=5&value2=7&operation=SUM"/>
 </body>
 </html>
