@@ -24,4 +24,8 @@ public class Calculator {
     public static <T extends Number, K extends Number> double division(T t, K k) {
         return t.doubleValue() / k.doubleValue();
     }
+
+    public enum Calculation {
+        SUM, SUBTRACTION, MULTIPLY, DIVISION
+    }
 }

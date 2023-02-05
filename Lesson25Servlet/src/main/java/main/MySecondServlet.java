@@ -19,7 +19,7 @@ public class MySecondServlet extends HttpServlet {
     private String message;
 
     public void init() {
-        message = "Hello Java Developer!";
+        message = "Hello Yauhen!";
     }
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {

@@ -4,12 +4,15 @@ import java.util.Random;
 import java.util.concurrent.locks.ReentrantLock;
 
 class Cashier {
-    private final String cashDeskName;
-    private final ReentrantLock lock;
+    private String cashDeskName;
+    private ReentrantLock lock;
 
-    Cashier(String cashDeskName) {
+    public Cashier(String cashDeskName) {
         this.cashDeskName = cashDeskName;
         lock = new ReentrantLock();
+    }
+
+    public Cashier() {
     }
 
     private String getCashDeskName() {
