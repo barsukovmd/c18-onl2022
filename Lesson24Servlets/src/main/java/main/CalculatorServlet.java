@@ -18,6 +18,8 @@ public class CalculatorServlet extends HttpServlet {
             String calculator = request.getParameter("calculator");
             Double result = calculate(value1, value2, calculator);
             println(response, "Result is: " + calculator + " " + result);
+        } catch (NullPointerException e) {
+            System.out.println(e.getMessage() + "null");
         } catch (NumberFormatException exception) {
             println(response, "Not compatible type");
         } catch (IllegalStateException exception2) {
@@ -39,8 +41,8 @@ public class CalculatorServlet extends HttpServlet {
 
     public Double getResultFromCalculation(HttpServletRequest servletRequest, String calculation) {
         String calculator = servletRequest.getParameter(calculation);
-        if (calculation == null) {
-            throw new IllegalArgumentException(calculator + " is not set up");
+        if (calculator == null) {
+            throw new IllegalArgumentException(calculation + " is not set up");
         } else {
             return Double.valueOf(calculator);
         }
