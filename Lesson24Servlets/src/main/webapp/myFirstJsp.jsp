@@ -2,10 +2,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Hello Java Developer</title>
+    <title>Calculator</title>
 </head>
 <body>
 <h1><%= "Hello Yauhen" %>
+</>
 </h1>
+<h2>
+    <jsp:forward page="/calculator?param1=2&param2=5&operation=sum"/>
+</h2>
 </body>
 </html>
