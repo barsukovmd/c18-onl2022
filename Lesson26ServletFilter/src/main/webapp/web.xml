@@ -1,0 +1,5 @@
+<listener>
+    <listener-class>
+        servlets.MyLoginServlet.listener.AppContextListener
+    </listener-class>
+</listener>
