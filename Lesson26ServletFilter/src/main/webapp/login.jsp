@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
-    <title>Login form</title>
+    <title>Login page</title>
 </head>
 <body>
 <form method="post" action="login" accept-charset="UTF-8">

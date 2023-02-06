@@ -16,9 +16,9 @@ public class CodeFilter implements Filter {
         if (servletRequest.getCharacterEncoding() == null) {
             servletRequest.setCharacterEncoding("UTF-8");
         }
+        filterChain.doFilter(servletRequest, servletResponse);
         servletResponse.setContentType("text/html");
         servletResponse.setCharacterEncoding("UTF-8");
-        filterChain.doFilter(servletRequest, servletResponse);
     }
 
     @Override
