@@ -6,7 +6,7 @@ form {
 label {
     font-family: 'Cookie', cursive;
     font-size: 4vw;
-    color: darkseagreen;
+    color: royalblue;
     text-shadow: 3px 5px 6px;
 }
 
@@ -18,9 +18,9 @@ input {
 
 #login_btn {
     font-family: 'Cookie', cursive;
-    font-size: 3vw;
-    color: black;
-    background: darkseagreen;
+    font-size: 2vw;
+    color: firebrick;
+    background: green;
 }
 
 th {
@@ -36,8 +36,8 @@ table, th, td {
 }
 
 h1 {
-    font-family: 'Cookie', cursive;
+    font-family: "American Typewriter", italic, serif;
     font-size: 4vw;
-    color: darkseagreen;
+    color: darkslategray;
     text-shadow: 3px 5px 6px;
 }

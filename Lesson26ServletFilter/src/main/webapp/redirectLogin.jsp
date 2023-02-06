@@ -6,4 +6,3 @@
 <a href="login">Tap to login page</a>
 </body>
 </html>
-

@@ -24,10 +24,10 @@ public class MyLoginServlet extends HttpServlet {
         HttpSession session = request.getSession();
         session.setAttribute("login", login);
         session.setAttribute("password", password);
-        String path = request.getContextPath() + "/home";
-        response.sendRedirect(path);
+//        String path = request.getContextPath() + "/home";
+//        response.sendRedirect(path);
         System.out.println(login + " " + password);
-        response.setContentType("text/html");
+        response.setContentType("text/plain");
         if (user.getLogin().equals(login) && user.getPassword().equals(password)) {
             response.getWriter().write("You have successfully entered");
         } else {
