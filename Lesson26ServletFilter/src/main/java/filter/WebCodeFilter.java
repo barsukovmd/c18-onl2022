@@ -3,13 +3,12 @@ package filter;
 import jakarta.servlet.*;
 
 import java.io.IOException;
-
-public class WebEncodingFilter implements Filter {
+public class WebCodeFilter implements Filter {
     private String encoding;
 
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
-        encoding = filterConfig.getInitParameter("encoding");
+        encoding = filterConfig.getInitParameter("session started");
     }
 
     @Override
@@ -24,7 +23,7 @@ public class WebEncodingFilter implements Filter {
 
     @Override
     public void destroy() {
-        System.out.println("filter destroy");
+        System.out.println("Destroy Filter");
         encoding = null;
     }
 }

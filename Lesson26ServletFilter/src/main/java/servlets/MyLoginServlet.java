@@ -16,22 +16,22 @@ public class MyLoginServlet extends HttpServlet {
     }
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         User user = new User();
-        String login = req.getParameter("login");
-        String password = req.getParameter("password");
+        String login = request.getParameter("login");
+        String password = request.getParameter("password");
 
-        HttpSession session = req.getSession();
+        HttpSession session = request.getSession();
         session.setAttribute("login", login);
         session.setAttribute("password", password);
-        String path = req.getContextPath() + "/home";
-        resp.sendRedirect(path);
+        String path = request.getContextPath() + "/home";
+        response.sendRedirect(path);
         System.out.println(login + " " + password);
-        resp.setContentType("text/plain");
+        response.setContentType("text/html");
         if (user.getLogin().equals(login) && user.getPassword().equals(password)) {
-            resp.getWriter().write("Success logged!!");
+            response.getWriter().write("Success Log!!");
         } else {
-            resp.getWriter().println("Password is not correct");
+            response.getWriter().println("Password is not correct");
         }
     }
 }
