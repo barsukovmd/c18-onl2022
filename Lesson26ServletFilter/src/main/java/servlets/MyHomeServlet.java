@@ -14,7 +14,7 @@ import java.io.PrintWriter;
 public class MyHomeServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        HttpSession session = request.getSession(false);
+        HttpSession session = request.getSession(true);
         Object login = session.getAttribute("login");
         Object password = session.getAttribute("password");
         System.out.println("From Session: " + login + " " + password);

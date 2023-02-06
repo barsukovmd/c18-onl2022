@@ -15,17 +15,4 @@
         <filter-name>CodeFilter</filter-name>
         <url-pattern>/login</url-pattern>
     </filter-mapping>
-
-    <filter>
-        <filter-name>WebCodeFilter</filter-name>
-        <filter-class>filter.WebCodeFilter</filter-class>
-        <init-param>
-            <param-name>code</param-name>
-            <param-value>UTF8</param-value>
-        </init-param>
-    </filter>
-    <filter-mapping>
-        <filter-name>WebCodeFilter</filter-name>
-        <url-pattern>/*</url-pattern>
-    </filter-mapping>
 </web-app>
