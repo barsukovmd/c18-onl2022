@@ -29,7 +29,7 @@ public class MyLoginServlet extends HttpServlet {
         System.out.println(login + " " + password);
         response.setContentType("text/html");
         if (user.getLogin().equals(login) && user.getPassword().equals(password)) {
-            response.getWriter().write("Success Log!!");
+            response.getWriter().write("You have successfully entered");
         } else {
             response.getWriter().println("Password is not correct");
         }
