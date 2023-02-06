@@ -1,6 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
+    <link rel="stylesheet" href="design.css"/>
     <title>Login page</title>
 </head>
 <body>
