@@ -85,6 +85,7 @@
         <module>Lesson23</module>
         <module>Lesson24Servlets</module>
         <module>Lesson25Servlet</module>
+        <module>Lesson26ServletFilter</module>
     </modules>
 
     <properties>

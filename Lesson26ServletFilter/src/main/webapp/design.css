@@ -1,0 +1,43 @@
+form {
+    text-align: center;
+    margin-top: 10vw;
+}
+
+label {
+    font-family: 'Cookie', cursive;
+    font-size: 4vw;
+    color: royalblue;
+    text-shadow: 3px 5px 6px;
+}
+
+input {
+    font-family: 'Cookie', cursive;
+    font-size: 3vw;
+    width: 10vw;
+}
+
+#login_btn {
+    font-family: 'Cookie', cursive;
+    font-size: 2vw;
+    color: firebrick;
+    background: green;
+}
+
+th {
+    border: 1px solid blue;
+    background: darkseagreen;
+}
+
+table, th, td {
+    border: 1px solid blue;
+    text-align: center;
+    margin-left: 25vw;
+    width: 50%;
+}
+
+h1 {
+    font-family: "American Typewriter", italic, serif;
+    font-size: 4vw;
+    color: darkslategray;
+    text-shadow: 3px 5px 6px;
+}
