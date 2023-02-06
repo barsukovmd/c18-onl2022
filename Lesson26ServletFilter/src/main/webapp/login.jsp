@@ -1,12 +1,16 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
     <title>Login form</title>
 </head>
 <body>
 <form method="post" action="login" accept-charset="UTF-8">
-    Login id: <input type="text" name="login"><br>
-    Password: <input type="password" name="password"><br>
+    <h1> Login id: <label>
+        <input type="text" name="login">
+    </label></h1><br>
+    <h1> Password: <label>
+        <input type="password" name="password">
+    </label></h1><br>
     <input type="submit" value="login">
 </form>
 </body>
