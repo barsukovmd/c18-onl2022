@@ -1,12 +1,15 @@
 package tms.homework.task1.jdbc.utils;
 
+import lombok.NonNull;
 import lombok.ToString;
+import lombok.experimental.UtilityClass;
 import tms.homework.task1.jdbc.models.City;
 import tms.homework.task1.jdbc.models.Student;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 
 @ToString
@@ -50,6 +53,15 @@ public class CRUDUtils {
             throw new RuntimeException(e.getMessage() + " Exception");
         }
         return studentsList;
+    }
+
+    @UtilityClass
+    public class DisplayUtils {
+        public static String getBuyerInNewLine(@NonNull List<?> list) {
+            return list.stream()
+                    .map(Object::toString)
+                    .collect(Collectors.joining(", \n"));
+        }
     }
 
     public static List<City> getCities() {

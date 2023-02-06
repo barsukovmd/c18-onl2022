@@ -20,7 +20,6 @@ public class MyLoginServlet extends HttpServlet {
         User user = new User();
         String login = request.getParameter("login");
         String password = request.getParameter("password");
-
         HttpSession session = request.getSession();
         session.setAttribute("login", login);
         session.setAttribute("password", password);
