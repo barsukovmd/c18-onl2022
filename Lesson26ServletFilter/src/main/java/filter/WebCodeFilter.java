@@ -3,12 +3,7 @@ package filter;
 import jakarta.servlet.*;
 import jakarta.servlet.annotation.WebInitParam;
 import jakarta.servlet.annotation.WebServlet;
-
 import java.io.IOException;
-
-//@WebServlet(urlPatterns = "/*",
-//        initParams = {@WebInitParam(name = "encoding", value = "UTF-8", description = "Encoding parameters")})
-
 public class WebCodeFilter implements Filter {
     private String encoding;
 
