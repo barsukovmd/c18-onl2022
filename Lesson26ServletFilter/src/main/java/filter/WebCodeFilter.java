@@ -8,7 +8,7 @@ public class WebCodeFilter implements Filter {
 
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
-        encoding = filterConfig.getInitParameter("session started");
+        encoding = filterConfig.getInitParameter("Encoding init");
     }
 
     @Override
