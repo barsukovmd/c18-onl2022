@@ -5,7 +5,7 @@
 </head>
 <body>
 <form method="post" action="login" accept-charset="UTF-8">
-    <h1> Login id: <label>
+    <h1> Login: <label>
         <input type="text" name="login">
     </label></h1><br>
     <h1> Password: <label>
