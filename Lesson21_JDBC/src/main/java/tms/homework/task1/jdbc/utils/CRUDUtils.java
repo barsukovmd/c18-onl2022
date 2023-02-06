@@ -56,8 +56,9 @@ public class CRUDUtils {
     }
 
     @UtilityClass
+    @NonNull
     public class DisplayUtils {
-        public static String getBuyerInNewLine(@NonNull List<?> list) {
+        public static String getBuyerInNewLine(List<?> list) {
             return list.stream()
                     .map(Object::toString)
                     .collect(Collectors.joining(", \n"));
