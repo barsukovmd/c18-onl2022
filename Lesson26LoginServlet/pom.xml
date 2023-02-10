@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>main</groupId>
-    <artifactId>Lesson26ServletFilter</artifactId>
+    <artifactId>Lesson26LoginServlet</artifactId>
     <version>1.0-SNAPSHOT</version>
     <name>Lesson26ServletFilter</name>
     <packaging>war</packaging>

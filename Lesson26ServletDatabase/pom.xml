@@ -10,6 +10,12 @@
     <name>Lesson26ServletDatabase</name>
     <packaging>war</packaging>
 
+    <parent>
+        <groupId>groupId</groupId>
+        <artifactId>c18-onl2022</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.target>11</maven.compiler.target>
