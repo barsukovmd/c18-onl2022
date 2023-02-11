@@ -39,12 +39,12 @@ public class CalculatorServlet extends HttpServlet {
         };
     }
 
-    public Double getResultFromCalculation(HttpServletRequest servletRequest, String calculation) {
-        String calculator = servletRequest.getParameter(calculation);
-        if (calculator == null) {
-            throw new IllegalArgumentException(calculation + " is not set up");
+    public Double getResultFromCalculation(HttpServletRequest servletRequest, String calculationName) {
+        String calculatorValue = servletRequest.getParameter(calculationName);
+        if (calculatorValue == null) {
+            throw new IllegalArgumentException(calculationName + " is not set up");
         } else {
-            return Double.valueOf(calculator);
+            return Double.valueOf(calculatorValue);
         }
     }
 

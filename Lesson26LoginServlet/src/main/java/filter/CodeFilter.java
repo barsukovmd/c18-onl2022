@@ -1,9 +1,7 @@
 package filter;
 
 import jakarta.servlet.*;
-
 import java.io.IOException;
-
 
 public class CodeFilter implements Filter {
     @Override

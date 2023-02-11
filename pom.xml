@@ -83,9 +83,11 @@
         <module>Lesson21_JDBC</module>
         <module>Lesson22jdbc</module>
         <module>Lesson23</module>
-        <module>Lesson24Servlets</module>
+        <module>Lesson24CalculatorServlet</module>
         <module>Lesson25Servlet</module>
-        <module>Lesson26ServletFilter</module>
+        <module>Lesson26LoginServlet</module>
+        <module>Lesson26ServletDatabase</module>
+        <module>Lesson27CSS</module>
     </modules>
 
     <properties>
