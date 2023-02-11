@@ -20,7 +20,7 @@ public class DatabaseServlet extends HttpServlet {
 
     public void init(ServletConfig servletConfig) {
         message = "Database init";
-        studentService = (StudentService) servletConfig.getServletContext().getAttribute("userService");
+        studentService = (StudentService) servletConfig.getServletContext().getAttribute("studentService");
     }
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
