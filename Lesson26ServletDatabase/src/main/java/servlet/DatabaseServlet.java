@@ -11,7 +11,6 @@ import service.StudentService;
 
 @WebServlet(name = "Database Servlet", value = "/students-database")
 public class DatabaseServlet extends HttpServlet {
-    private String message;
     private StudentService studentService;
 
     public void init(ServletConfig servletConfig) throws ServletException {
@@ -28,6 +27,6 @@ public class DatabaseServlet extends HttpServlet {
     }
 
     public void destroy() {
-        message = "Database destroy";
+        String message = "Database destroy";
     }
 }

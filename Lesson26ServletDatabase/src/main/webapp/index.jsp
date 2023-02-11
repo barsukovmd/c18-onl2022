@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Index page</title>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
 </head>
 <body>
 <jsp:forward page="main.jsp"/>

@@ -20,8 +20,7 @@
     <tbody>
     <%
         List<Students> students = (List<Students>) request.getAttribute("students");
-    %>
-    <% for (Students stud : students) {%>
+        for (Students stud : students) {%>
     <tr>
         <td><%=stud.getId()%>
         </td>
@@ -33,13 +32,14 @@
         </td>
 
         <td>
-        <%=stud.getAge()%>
+                <%=stud.getAge()%>
         <td/>
 
         <td><%=stud.getCourse()%>
         </td>
 
-        <td><%=stud.getCity()%>
+        <td>
+            <%=stud.getCity()%>
         </td>
 
         <td><%=stud.getCityId()%>

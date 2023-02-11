@@ -6,15 +6,14 @@
   <title>Students</title>
 </head>
 <body>
-
 <a href="students-database">
-  <%="Get list of students".toUpperCase()%>
-</a>
-<p>
-  Red text
-</p>
-<p class="blue_text">
-  Blue text
-</p>
-</body>
+  <br>
+  <h1><%="List of Students"%>
+  </h1>
+  <p>
+
+  </p>
+  <p class="purple_text">
+  </p>
+</a></body>
 </html>
