@@ -13,8 +13,9 @@ import service.StudentService;
 public class DatabaseServlet extends HttpServlet {
     private String message;
     private StudentService studentService;
-    public void init(ServletConfig servletConfig) {
-        message = "Database init";
+
+    public void init(ServletConfig servletConfig) throws ServletException {
+        super.init(servletConfig);
         studentService = (StudentService) servletConfig.getServletContext().getAttribute("studentService");
     }
 
