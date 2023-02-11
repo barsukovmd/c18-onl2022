@@ -10,13 +10,13 @@
 <h1>Students</h1>
 <table>
     <tr>
-        <th bgcolor="#663399" ,>id</th>
-        <th bgcolor="#b8860b" ,>Name</th>
-        <th bgcolor="#ffefd5" ,>Surname</th>
-        <th bgcolor="#fa8072" ,>Age</th>
-        <th bgcolor="#ffd700#00fa9a" ,>Course</th>
+        <th bgcolor="#663399">id</th>
+        <th bgcolor="#b8860b">Name</th>
+        <th bgcolor="#ffefd5">Surname</th>
+        <th bgcolor="#fa8072">Age</th>
+        <th bgcolor="#ffd700#00fa9a">Course</th>
         <th aria-disabled=</th>
-        <th bgcolor="#ffd700" ,>City</th>
+        <th bgcolor="#ffd700">City</th>
     </tr>
     <tbody>
     <%
