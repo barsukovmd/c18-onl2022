@@ -13,7 +13,7 @@ import java.util.List;
 @Getter
 public class DatabaseRepository implements StudentsRepository {
     private final Connection connection;
-    private final String PATH = "select students_db.students.name";
+    private final String PATH = "select students_db.students.name from students_db.students";
 
     public DatabaseRepository(Connection connection) {
         this.connection = connection;
@@ -25,7 +25,7 @@ public class DatabaseRepository implements StudentsRepository {
         try (Statement statement = connection.createStatement()) {
             ResultSet resultSet = statement.executeQuery(PATH);
             while (resultSet.next()) {
-                Students student = new Students(resultSet.getString("name"));
+                final Students student = new Students(resultSet.getString("name"));
                 students.add(student);
             }
         } catch (SQLException e) {

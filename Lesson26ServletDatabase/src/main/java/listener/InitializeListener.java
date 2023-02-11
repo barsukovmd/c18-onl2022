@@ -16,13 +16,13 @@ public class InitializeListener implements ServletContextListener {
     @Override
     public void contextInitialized(ServletContextEvent sce) {
         System.out.println("Initialize listener");
-        String username = sce.getServletContext().getInitParameter("postgres");
-        String password = sce.getServletContext().getInitParameter("Barsukov28071992");
-        String db_url = sce.getServletContext().getInitParameter("jdbc:postgresql://localhost:5432/c18-onl2022");
-        String db_driver = sce.getServletContext().getInitParameter("org.postgresql.Driver");
+        String username = sce.getServletContext().getInitParameter("db_user");
+        String password = sce.getServletContext().getInitParameter("db_password");
+        String dbUrl = sce.getServletContext().getInitParameter("db_user");
+        String dbDriver = sce.getServletContext().getInitParameter("db_driver");
         try {
-            Class.forName(db_driver);
-            Connection connection = DriverManager.getConnection(db_url, username, password);
+            Class.forName(dbDriver);
+            Connection connection = DriverManager.getConnection(dbUrl, username, password);
             StudentsRepository studentsRepository = new DatabaseRepository(connection);
             StudentService studentService = new StudentService(studentsRepository);
             sce.getServletContext().setAttribute("studentService", studentService);
