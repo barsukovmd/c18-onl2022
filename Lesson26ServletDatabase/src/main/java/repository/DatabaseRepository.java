@@ -22,13 +22,6 @@ public class DatabaseRepository implements StudentsRepository {
     }
 
     @Override
-// private City city;
-//    private int id;
-//    private String name;
-//    private String surname;
-//    private int age;
-//    private int course;
-//    private int cityId;
     public List<Students> searchStudents() {
         List<Students> students = new ArrayList<>();
         try (Statement statement = connection.createStatement()) {
