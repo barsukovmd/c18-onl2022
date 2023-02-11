@@ -15,7 +15,7 @@ import java.util.List;
 public class DatabaseRepository implements StudentsRepository {
     private final Connection connection;
     private final String PATH = "select students_db.students.id, name, surname, age, course, city_id from students_db.students";
-    private final String PATH2JOIN = "SELECT * from students_db.students left join students_db.city c on c.id_for_city = students.city_id";
+    private final String JOIN_PATH = "SELECT * from students_db.students left join students_db.city c on c.id_for_city = students.city_id";
 
     public DatabaseRepository(Connection connection) {
         this.connection = connection;
@@ -32,7 +32,7 @@ public class DatabaseRepository implements StudentsRepository {
     public List<Students> searchStudents() {
         List<Students> students = new ArrayList<>();
         try (Statement statement = connection.createStatement()) {
-            ResultSet resultSet = statement.executeQuery(PATH2JOIN);
+            ResultSet resultSet = statement.executeQuery(JOIN_PATH);
             while (resultSet.next()) {
                 int idForCity = resultSet.getInt("id_for_city");
                 String cityName = resultSet.getString("city");
