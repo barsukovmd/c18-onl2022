@@ -9,7 +9,7 @@
     </context-param>
     <context-param>
         <param-name>db_url</param-name>
-        <param-value>jdbc:postgresql://localhost:5432/c18-onl2022.students_db.students</param-value>
+        <param-value>jdbc:postgresql://localhost:5432/c18-onl2022</param-value>
     </context-param>
     <context-param>
         <param-name>db_user</param-name>

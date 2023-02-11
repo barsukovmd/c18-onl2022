@@ -18,7 +18,7 @@ public class InitializeListener implements ServletContextListener {
         System.out.println("Initialize listener");
         String username = sce.getServletContext().getInitParameter("db_user");
         String password = sce.getServletContext().getInitParameter("db_password");
-        String dbUrl = sce.getServletContext().getInitParameter("db_user");
+        String dbUrl = sce.getServletContext().getInitParameter("db_url");
         String dbDriver = sce.getServletContext().getInitParameter("db_driver");
         try {
             Class.forName(dbDriver);
