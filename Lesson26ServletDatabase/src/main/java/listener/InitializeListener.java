@@ -25,7 +25,7 @@ public class InitializeListener implements ServletContextListener {
             Connection connection = DriverManager.getConnection(db_url, username, password);
             StudentsRepository studentsRepository = new DatabaseRepository(connection);
             StudentService studentService = new StudentService(studentsRepository);
-            sce.getServletContext().setAttribute("userService", studentService);
+            sce.getServletContext().setAttribute("studentService", studentService);
             sce.getServletContext().setAttribute("connection", connection);
         } catch (Exception e) {
             System.out.println("Error " + e.getMessage());
