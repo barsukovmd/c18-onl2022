@@ -10,7 +10,6 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 import model.Students;
-import model.User;
 import service.StudentService;
 
 @WebServlet(name = "Database Servlet", value = "/students-database")
@@ -30,7 +29,7 @@ public class DatabaseServlet extends HttpServlet {
         List<Students> users = studentService.searchStudents();
         request.setAttribute("users", users);
         getServletContext().getRequestDispatcher("/database.jsp").forward(request, response);
-        hashMap.put("1312", "1242");
+//        hashMap.put("1312", "1242");
     }
 
     public void destroy() {
