@@ -20,4 +20,27 @@
     Red text
   </p>
 </a></body>
+<form action="database.jsp">
+  Name: <label>
+  <input name="name"/>
+</label>
+  <br><br>
+  Surname: <label dir="auto">
+  <input name="surname"/>
+</label>
+  <br><br>
+  Age: <label>
+  <input name="age" type="number" min=1/>
+</label>
+  <br><br>
+  Course: <label>
+  <input name="course" type="number" min=1/>
+</label>
+  <br><br>
+  City: <label>
+  <input city="city" type="text"/>
+</label>
+  <br><br/>
+  <input type="submit" value="Submit"/>
+</form>
 </html>

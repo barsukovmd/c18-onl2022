@@ -1,5 +1,7 @@
 <%@ page import="java.util.List" %>
 <%@ page import="model.Students" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="model.City" %>
 <%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
@@ -44,7 +46,6 @@
 
         <td><%=stud.getCityId()%>
         </td>
-
     </tr>
     <%} %>
     </tbody>
