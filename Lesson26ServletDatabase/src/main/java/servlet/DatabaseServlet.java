@@ -11,6 +11,7 @@ import service.StudentService;
 
 @WebServlet(name = "Database Servlet", value = "/students-database")
 public class DatabaseServlet extends HttpServlet {
+    private String message;
     private StudentService studentService;
 
     public void init(ServletConfig servletConfig) throws ServletException {
@@ -26,7 +27,15 @@ public class DatabaseServlet extends HttpServlet {
         getServletContext().getRequestDispatcher("/database.jsp").forward(request, response);
     }
 
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        resp.setCharacterEncoding("UTF-8");
+        resp.setContentType("text/html");
+        studentService.insertNewStudents(new Students());
+        getServletContext().getRequestDispatcher("/database.jsp").forward(req, resp);
+    }
+
     public void destroy() {
-        String message = "Database destroy";
+        message = "Database destroy";
     }
 }

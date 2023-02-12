@@ -15,4 +15,8 @@ public class StudentService {
     public List<Students> searchStudents() {
         return studentsRepository.searchStudents();
     }
+
+    public List<Students> insertNewStudents(Students students) {
+        return studentsRepository.insertNewStudents(students);
+    }
 }

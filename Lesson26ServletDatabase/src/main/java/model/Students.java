@@ -1,10 +1,6 @@
 package model;
-
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
-
-@AllArgsConstructor
 @Setter
 @Getter
 public class Students {
@@ -15,4 +11,17 @@ public class Students {
     private int age;
     private int course;
     private int cityId;
+
+    public Students(City city, int id, String name, String surname, int age, int course, int cityId) {
+        this.city = city;
+        this.id = id;
+        this.name = name;
+        this.surname = surname;
+        this.age = age;
+        this.course = course;
+        this.cityId = cityId;
+    }
+
+    public Students() {
+    }
 }
