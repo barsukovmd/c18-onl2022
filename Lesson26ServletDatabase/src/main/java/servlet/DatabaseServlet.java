@@ -32,7 +32,8 @@ public class DatabaseServlet extends HttpServlet {
         resp.setCharacterEncoding("UTF-8");
         resp.setContentType("text/html");
         studentService.insertNewStudents(new Students());
-        getServletContext().getRequestDispatcher("/database.jsp").forward(req, resp);
+        req.setAttribute("studentService", studentService);
+        getServletContext().getRequestDispatcher("/students-database.jsp").forward(req, resp);
     }
 
     public void destroy() {
