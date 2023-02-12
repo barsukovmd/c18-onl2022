@@ -10,10 +10,14 @@
   <br>
   <h1><%="List of Students"%>
   </h1>
-  <p>
+  <p
+          class="blue_text">
+    Blue Text
 
   </p>
-  <p class="purple_text">
+
+  <p class="red_text">
+    Red text
   </p>
 </a></body>
 </html>
