@@ -1,6 +1,7 @@
 <%@ page import="java.util.List" %>
-<%@ page import="java.io.PrintWriter" %>
 <%@ page import="model.Students" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="model.City" %>
 <%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
@@ -10,23 +11,40 @@
 <h1>Students</h1>
 <table>
     <tr>
-        <th>Name</th>
+        <th bgcolor="#663399">id</th>
+        <th bgcolor="#b8860b">Name</th>
+        <th bgcolor="#ffefd5">Surname</th>
+        <th bgcolor="#fa8072">Age</th>
+        <th bgcolor="#ffd700#00fa9a">Course</th>
+        <th aria-disabled=</th>
+        <th bgcolor="#ffd700">City</th>
     </tr>
     <tbody>
     <%
-        PrintWriter writer = response.getWriter();
         List<Students> students = (List<Students>) request.getAttribute("students");
-        System.out.println(students);
-        if (students != null && !students.isEmpty()) {
-            students
-                    .forEach(stud -> writer.println("<tr><td>" + stud.getName() + "</td></tr>"));
-
-        }
-    %>
-    <% for (Students stud : students) {%>
+        for (Students stud : students) {%>
     <tr>
+        <td><%=stud.getId()%>
+        </td>
+
+        <td><%=stud.getName()%>
+        </td>
+
+        <td><%=stud.getSurname()%>
+        </td>
+
         <td>
-            <%=stud.getName()%>
+                <%=stud.getAge()%>
+        <td/>
+
+        <td><%=stud.getCourse()%>
+        </td>
+
+        <td>
+            <%=stud.getCity()%>
+        </td>
+
+        <td><%=stud.getCityId()%>
         </td>
     </tr>
     <%} %>
