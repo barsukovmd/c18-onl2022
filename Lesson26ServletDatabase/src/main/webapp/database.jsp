@@ -33,15 +33,13 @@
         <td><%=stud.getSurname()%>
         </td>
 
-        <td>
-                <%=stud.getAge()%>
+        <td><%=stud.getAge()%>
         <td/>
 
         <td><%=stud.getCourse()%>
         </td>
 
-        <td>
-            <%=stud.getCity()%>
+        <td><%=stud.getCity().getCityName()%>
         </td>
 
         <td><%=stud.getCityId()%>
