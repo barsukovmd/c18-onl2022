@@ -3,7 +3,6 @@ package militaryOffice;
 import lombok.Getter;
 
 @Getter
-
 public class PersonRegistry {
     private Person[] persons;
 

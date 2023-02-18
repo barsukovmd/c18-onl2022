@@ -20,6 +20,7 @@ public class Main {
         persons[12] = new Person("Alexander", 26, Sex.MALE, "Belarus", "Minsk");
         persons[13] = new Person("Vitaliy", 27, Sex.MALE, "Belarus", "Minsk");
         persons[14] = new Person("Vlad", 24, Sex.MALE, "Belarus", "Minsk");
+        System.out.println(Arrays.stream(persons).count());
         MilitaryOffice militaryOffice = new MilitaryOffice(new PersonRegistry(persons));
         Person[] alexander = militaryOffice.getRecruitsByName("Alexander");
         System.out.println("Recruits with name Alexander are  " + Arrays.toString(alexander));

@@ -1,6 +1,6 @@
 package militaryOffice;
 
-import static militaryOffice.Sex.MALE;
+import static militaryOffice.Sex.*;
 
 public class MilitaryOffice {
     private PersonRegistry personRegistry;
