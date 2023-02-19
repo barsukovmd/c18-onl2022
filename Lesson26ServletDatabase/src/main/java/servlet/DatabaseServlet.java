@@ -2,7 +2,6 @@ package servlet;
 
 import java.io.*;
 import java.util.List;
-
 import jakarta.servlet.ServletConfig;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.*;
@@ -32,15 +31,6 @@ public class DatabaseServlet extends HttpServlet {
         List<Students> students = studentService.searchStudents();
         request.setAttribute("students", students);
         getServletContext().getRequestDispatcher("/database.jsp").forward(request, response);
-    }
-
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        resp.setCharacterEncoding("UTF-8");
-        resp.setContentType("text/html");
-        studentService.insertNewStudents(new Students());
-        req.setAttribute("studentService", studentService);
-        getServletContext().getRequestDispatcher("/students-database.jsp").forward(req, resp);
     }
 
     public void destroy() {

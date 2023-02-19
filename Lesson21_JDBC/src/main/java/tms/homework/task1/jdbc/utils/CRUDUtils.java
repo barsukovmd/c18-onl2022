@@ -18,8 +18,6 @@ import java.util.stream.Collectors;
 public class CRUDUtils {
     private static final String GET_ALL_STUDENTS_QUERY = "SELECT * FROM students_db.students";
     private static final String GET_ALL_STUDENTS_AND_CITIES = "SELECT * from students_db.students left join students_db.city c on c.id_for_city = students.city_id";
-
-
     private static final String GET_ALL_CITIES_QUERY = "SELECT * FROM students_db.city";
     private static final String INSERT_STUDENT_QUERY = "INSERT INTO students_db.students(id, name, surname, age, course, city_id) VALUES(?, ?, ?, ?, ?, ?);";
     private static final String INSERT_CITY_QUERY = "INSERT INTO students_db.city (city, id_for_city) VALUES (?,?)";
@@ -37,15 +35,14 @@ public class CRUDUtils {
             PreparedStatement preparedStatement = connection.prepareStatement(GET_ALL_STUDENTS_AND_CITIES);
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
-                String city = resultSet.getString("city");
-                int id_for_city = resultSet.getInt("id_for_city");
                 int id = resultSet.getInt("id");
                 String name = resultSet.getString("name");
                 String surname = resultSet.getString("surname");
                 int age = resultSet.getInt("age");
                 int course = resultSet.getInt("course");
-                int city_id = resultSet.getInt("city_id");
-                studentsList.add(new Student(new City(city, id_for_city), id, name, surname, age, course, city_id));
+                String city = resultSet.getString("city");
+                int id_for_city = resultSet.getInt("id_for_city");
+                studentsList.add(new Student(id, name, surname, age, course, new City(city, id_for_city)));
             }
         } catch (SQLException e) {
             throw new RuntimeException(e.getMessage() + " Exception");
@@ -56,7 +53,7 @@ public class CRUDUtils {
     @UtilityClass
     @NonNull
     public class DisplayUtils {
-        public static String getBuyerInNewLine(List<?> list) {
+        public static String getStudentInNewLine(List<?> list) {
             return list.stream()
                     .map(Object::toString)
                     .collect(Collectors.joining(", \n"));
