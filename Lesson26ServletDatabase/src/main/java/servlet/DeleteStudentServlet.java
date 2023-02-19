@@ -9,7 +9,6 @@ import jakarta.servlet.http.HttpServletResponse;
 import service.StudentService;
 
 import java.io.IOException;
-
 @WebServlet("/students-database/delete")
 public class DeleteStudentServlet extends HttpServlet {
     private StudentService studentService;
