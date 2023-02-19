@@ -1,5 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
     <title>Delete Student</title>
@@ -16,7 +16,9 @@
             <LABEL>ID</LABEL>
         </div>
         <div>
-            <input type="submit" value="Delete">
+            <label>
+                <input type="submit" value="Delete">
+            </label>
         </div>
     </form>
     <a href="<c:url value="students-database"/>" class="button">Return</a>

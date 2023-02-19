@@ -15,7 +15,7 @@
         <a href="<c:url value="/deleteStudent.jsp"/>" class="button">Delete</a>
     </div>
     <div style="float: right">
-        <a href="<c:url value="openPage.jsp"/>" class="button">Return</a>
+        <a href="<c:url value="startPage.jsp"/>" class="button">Return</a>
     </div>
 </div>
 <br>
