@@ -20,15 +20,15 @@
 </div>
 <br>
 <table class="container">
-    <tr><em>
+    <tr>
         <th>ID</th>
         <th>Name</th>
         <th>Surname</th>
         <th>Age</th>
-        <th>City</th>
         <th>Course</th>
+        <th>City</th>
         <th></th>
-    </em></tr>
+    </tr>
     <c:forEach var="students" items="${students}">
         <tr>
             <td>${students.id}</td>

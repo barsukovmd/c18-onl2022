@@ -10,15 +10,11 @@
     <h3>Delete student by <em>ID</em></h3>
     <form action="<c:url value="students-database/delete"/>" method="post">
         <div class="user-box">
-            <label>
                 <input type="number" name="id" required="">
-            </label>
-            <LABEL>ID</LABEL>
+            <label>ID</label>
         </div>
         <div>
-            <label>
                 <input type="submit" value="Delete">
-            </label>
         </div>
     </form>
     <a href="<c:url value="students-database"/>" class="button">Return</a>

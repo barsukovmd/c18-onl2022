@@ -21,7 +21,7 @@ public class DeleteStudentServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        getServletContext().getRequestDispatcher("/students-database/delete.jsp");
+        getServletContext().getRequestDispatcher("/students-database/deleteStudent.jsp");
     }
 
     @Override

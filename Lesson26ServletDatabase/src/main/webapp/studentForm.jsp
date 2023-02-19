@@ -9,7 +9,7 @@
 <div>
     <a id="db" class="button purple" href="<c:url value="students-database"/>">
         <i class="fa fa-address-book" aria-hidden="true"></i>
-        <span>Работа с БД</span>
+        <span>Database</span>
     </a>
 </div>
 </body>
