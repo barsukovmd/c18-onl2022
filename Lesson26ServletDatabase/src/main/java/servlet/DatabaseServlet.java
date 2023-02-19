@@ -15,7 +15,7 @@ import service.StudentService;
 //Логика будет такая с login формы мы попадаем на страницу home где можно сделать 2 сылки (посмотреть всех студентов и добавить студента, также на каждой странице должна быть сылка вернуться на страницу home).
 //Также добавить нужные сервлеты, фильтры и листнеры из предыдущих домашек.
 
-@WebServlet(name = "Database Servlet", value = "/students-database")
+@WebServlet("/students-database")
 public class DatabaseServlet extends HttpServlet {
     private String message;
     private StudentService studentService;
@@ -32,7 +32,6 @@ public class DatabaseServlet extends HttpServlet {
         request.setAttribute("students", students);
         getServletContext().getRequestDispatcher("/database.jsp").forward(request, response);
     }
-
     public void destroy() {
         message = "Database destroy";
     }

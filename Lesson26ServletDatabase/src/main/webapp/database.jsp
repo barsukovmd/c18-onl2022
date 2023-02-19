@@ -6,7 +6,6 @@
 </head>
 <tbody>
 <h1><em>Students</em></h1>
-
 <body>
 <div>
     <div style="float: left; margin: 0 10px 0 10px">
@@ -16,7 +15,7 @@
         <a href="<c:url value="/deleteStudent.jsp"/>" class="button">Delete</a>
     </div>
     <div style="float: right">
-        <a href="<c:url value="database.jsp"/>" class="button">Return</a>
+        <a href="<c:url value="openPage.jsp"/>" class="button">Return</a>
     </div>
 </div>
 <br>
@@ -36,8 +35,8 @@
             <td>${students.name}</td>
             <td>${students.surname}</td>
             <td>${students.age}</td>
-            <td>${students.city.name}</td>
             <td>${students.course}</td>
+            <td>${students.city.name}</td>
         </tr>
     </c:forEach>
 </table>
