@@ -21,7 +21,6 @@
         <th bgcolor="#ffefd5">Surname</th>
         <th bgcolor="#fa8072">Age</th>
         <th bgcolor="#ffd700#00fa9a">Course</th>
-        <th aria-disabled=</th>
         <th bgcolor="#ffd700">City</th>
     </tr>
     <tbody>

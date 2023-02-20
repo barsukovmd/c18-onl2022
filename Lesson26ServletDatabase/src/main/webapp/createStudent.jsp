@@ -30,10 +30,6 @@
             <label>Student course</label>
         </div>
         <div class="user-box">
-            <input type="text" name="course" required="">
-            <label>Student course</label>
-        </div>
-        <div class="user-box">
             <input type="text" name="cityName" required="">
             <label>City</label>
         </div>
