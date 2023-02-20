@@ -2,8 +2,6 @@ package servlet;
 
 import java.io.*;
 import java.util.List;
-
-import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletConfig;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.*;
@@ -32,8 +30,7 @@ public class DatabaseServlet extends HttpServlet {
         response.setCharacterEncoding("UTF-8");
         List<Students> students = studentService.searchStudents();
         request.setAttribute("students", students);
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/database.jsp");
-        requestDispatcher.forward(request, response);
+        getServletContext().getRequestDispatcher("/start-page.jsp").forward(request, response);
     }
     public void destroy() {
         message = "Database destroy";

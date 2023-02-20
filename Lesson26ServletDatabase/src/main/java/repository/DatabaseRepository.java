@@ -1,7 +1,6 @@
 package repository;
 
 import DbUtils.DbUtils;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import model.City;
 import model.Students;
@@ -45,7 +44,7 @@ public class DatabaseRepository implements StudentsRepository {
     }
 
     public List<Students> insertNewStudents(Students students) {
-        List<Students> newStudent = new ArrayList<>();
+        List<Students> newStudents = new ArrayList<>();
         try (Connection connection = DbUtils.getConnection()) {
             PreparedStatement preparedStatement = connection.prepareStatement(INSERT_NEW_STUDENT);
             preparedStatement.setString(1, students.getCity().getCityName());
@@ -55,23 +54,23 @@ public class DatabaseRepository implements StudentsRepository {
             preparedStatement.setInt(5, students.getAge());
             preparedStatement.setInt(6, students.getCourse());
             preparedStatement.executeUpdate();
-            newStudent = new ArrayList<>();
+            newStudents = new ArrayList<>();
         } catch (Exception e) {
             throw new RuntimeException(e.getMessage() + " Exception");
         }
-        return newStudent;
+        return newStudents;
     }
 
     public List<Students> deleteStudents(int id) {
-        List<Students> studentList = new ArrayList<>();
+        List<Students> studentsList = new ArrayList<>();
         try (Connection connection = DbUtils.getConnection()) {
             PreparedStatement preparedStatement = connection.prepareStatement(DELETE_STUDENT_QUERY);
             preparedStatement.setInt(1, id);
             preparedStatement.executeUpdate();
-            studentList = searchStudents();
+            studentsList = searchStudents();
         } catch (Exception e) {
             throw new RuntimeException(e.getMessage() + " Exception");
         }
-        return studentList;
+        return studentsList;
     }
 }

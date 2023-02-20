@@ -13,7 +13,7 @@ import service.StudentService;
 
 import java.io.IOException;
 
-@WebServlet("students-database/create")
+@WebServlet("/create")
 public class CreateStudentServlet extends HttpServlet {
     private StudentService studentService;
 
@@ -25,7 +25,7 @@ public class CreateStudentServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        RequestDispatcher requestDispatcher = req.getRequestDispatcher("/students-database/createStudent.jsp");
+        RequestDispatcher requestDispatcher = req.getRequestDispatcher("/createStudent.jsp");
         requestDispatcher.forward(req, resp);
     }
 

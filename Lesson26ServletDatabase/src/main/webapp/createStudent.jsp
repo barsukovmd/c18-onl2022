@@ -3,12 +3,12 @@
 <html>
 <head>
     <title>Create New Student</title>
-    <link rel="stylesheet" href="<c:url value="styles/studentPage.css"/>">
+    <link rel="stylesheet" href="<c:url value="styles/page.css"/>">
 </head>
 <body>
 <div class="login-box">
     <h2>Create New Student</h2>
-    <form action="<c:url value="students-database/create"/>" method="post">
+    <form action="<c:url value="/create"/>" method="post">
         <div class="user-box">
             <input type="number" name="age" required="">
             <label>Student id</label>

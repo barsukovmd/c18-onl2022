@@ -1,44 +1,56 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page contentType="text/html;charset=UTF-8" %>
+<%@ page import="model.Students" %>
+<%@ page import="java.util.List" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@include file="createStudent.jsp" %>
+<%@include file="deleteStudent.jsp" %>
+
 <html>
 <head>
-    <title>Student Database</title>
+    <meta charset="UTF-8">
+    <title>Students</title>
+    <link rel="stylesheet" href="<c:url value="/styles/table.css"/>">
+    <link rel="stylesheet" href="<c:url value="/styles/page.css"/>">
 </head>
-<tbody>
-<h1><em>Students</em></h1>
+<h1><span class="blue">&lt</span>All<span class="blue">&gt</span> <span class="yellow">Students</span></h1>
 <body>
-<div>
-    <div style="float: left; margin: 0 10px 0 10px">
-        <a href="<c:url value="/createStudent.jsp"/>" class="button">Create</a>
-    </div>
-    <div style="float: left; margin: 0 420px 0 0">
-        <a href="<c:url value="/deleteStudent.jsp"/>" class="button">Delete</a>
-    </div>
-    <div style="float: right">
-        <a href="<c:url value="startPage.jsp"/>" class="button">Return</a>
-    </div>
-</div>
-<br>
-<table class="container">
+<h1><em>Students</em></h1>
+<table class="table table-hover">
     <tr>
-        <th>ID</th>
-        <th>Name</th>
-        <th>Surname</th>
-        <th>Age</th>
-        <th>Course</th>
-        <th>City</th>
-        <th></th>
+        <th bgcolor="#663399">id</th>
+        <th bgcolor="#b8860b">Name</th>
+        <th bgcolor="#ffefd5">Surname</th>
+        <th bgcolor="#fa8072">Age</th>
+        <th bgcolor="#ffd700#00fa9a">Course</th>
+        <th aria-disabled=</th>
+        <th bgcolor="#ffd700">City</th>
     </tr>
-    <c:forEach var="students" items="${students}">
-        <tr>
-            <td>${students.id}</td>
-            <td>${students.name}</td>
-            <td>${students.surname}</td>
-            <td>${students.age}</td>
-            <td>${students.course}</td>
-            <td>${students.city.name}</td>
-        </tr>
-    </c:forEach>
+    <tbody>
+    <%
+        List<Students> student = (List<Students>) request.getAttribute("students");
+        for (Students stud : student) {%>
+    <tr>
+        <td>
+            <%=stud.getId()%>
+        </td>
+
+        <td><%=stud.getName()%>
+        </td>
+
+        <td>
+            <%=stud.getSurname()%>
+        </td>
+        <td><%=stud.getAge()%>
+        <td/>
+
+        <td><%=stud.getCourse()%>
+        </td>
+        <td><em>
+            <%=stud.getCity().getCityName()%>
+        </em>
+        </td>
+    </tr>
+    <%} %>
+    </tbody>
 </table>
 </body>
 </html>

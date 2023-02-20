@@ -9,7 +9,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import service.StudentService;
 
 import java.io.IOException;
-@WebServlet("/students-database/delete")
+@WebServlet("/delete")
 public class DeleteStudentServlet extends HttpServlet {
     private StudentService studentService;
 
@@ -21,7 +21,7 @@ public class DeleteStudentServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        getServletContext().getRequestDispatcher("/students-database/deleteStudent.jsp");
+        getServletContext().getRequestDispatcher("/deleteStudent.jsp");
     }
 
     @Override

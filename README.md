@@ -2,7 +2,7 @@
 
 <h1 align="center">Hi there, I'm <a href="https://github.com/barsukovmd" target="_top">Eugene</a>
 <img src="file:///Users/yauhenbarsukov/Downloads/kuma.svg" height="40"/></h1>
-<h3 align="center">Java student, future Senior Java Developer from the USA 🇺🇸</h3>
+<h3 align="center">Java students, future Senior Java Developer from the USA 🇺🇸</h3>
 
 [![trophy](https://github-profile-trophy.vercel.app/?username=barsukovmd)](https://github.com/ryo-ma/github-profile-trophy)
 
