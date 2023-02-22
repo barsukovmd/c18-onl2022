@@ -6,7 +6,6 @@ import jakarta.servlet.annotation.WebListener;
 import repository.StudentDatabase;
 import repository.StudentRepositoryAware;
 import service.StudentService;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 
@@ -22,9 +21,9 @@ public class InitializeListener implements ServletContextListener {
         String driver = sce.getServletContext().getInitParameter("db_driver");
         try {
             Class.forName(driver);
-            Connection connection = DriverManager.getConnection(username, password, url);
-            StudentRepositoryAware studentsRepository = new StudentDatabase(connection);
-            StudentService studentService = new StudentService(studentsRepository);
+            Connection connection = DriverManager.getConnection(url, username, password);
+            StudentRepositoryAware students = new StudentDatabase(connection);
+            StudentService studentService = new StudentService(students);
             sce.getServletContext().setAttribute("studentService", studentService);
             sce.getServletContext().setAttribute("connection", connection);
         } catch (Exception e) {

@@ -5,7 +5,10 @@ import lombok.Getter;
 import model.City;
 import model.Students;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -42,7 +45,7 @@ public class StudentDatabase implements StudentRepositoryAware {
     }
 
     public List<Students> insertNewStudents(Students students) {
-        List<Students> newStudents = new ArrayList<>();
+        List<Students> newStudents;
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(INSERT_NEW_STUDENT);
             preparedStatement.setString(1, students.getCity().getCityName());
@@ -60,7 +63,7 @@ public class StudentDatabase implements StudentRepositoryAware {
     }
 
     public List<Students> deleteStudents(int id) {
-        List<Students> studentsList = new ArrayList<>();
+        List<Students> studentsList;
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(DELETE_STUDENT_QUERY);
             preparedStatement.setInt(1, id);
