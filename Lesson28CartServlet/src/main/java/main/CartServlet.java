@@ -29,7 +29,7 @@ public class CartServlet extends HttpServlet {
             cart.setQuantity(quantity);
         }
         session.setAttribute("cart", cart);
-        getServletContext().getRequestDispatcher("/showCart.jsp").forward(request, response);
+        getServletContext().getRequestDispatcher("/show-cart.jsp").forward(request, response);
     }
 
     public void destroy() {
