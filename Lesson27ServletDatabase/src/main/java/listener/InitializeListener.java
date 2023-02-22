@@ -2,13 +2,15 @@ package listener;
 
 import jakarta.servlet.ServletContextEvent;
 import jakarta.servlet.ServletContextListener;
-import repository.StudentRepository;
+import jakarta.servlet.annotation.WebListener;
+import repository.StudentDatabase;
 import repository.StudentRepositoryAware;
 import service.StudentService;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 
+@WebListener
 public class InitializeListener implements ServletContextListener {
 
     @Override
@@ -21,11 +23,10 @@ public class InitializeListener implements ServletContextListener {
         try {
             Class.forName(driver);
             Connection connection = DriverManager.getConnection(username, password, url);
-            StudentRepositoryAware studentsRepository = new StudentRepository(connection);
+            StudentRepositoryAware studentsRepository = new StudentDatabase(connection);
             StudentService studentService = new StudentService(studentsRepository);
             sce.getServletContext().setAttribute("studentService", studentService);
             sce.getServletContext().setAttribute("connection", connection);
-
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }

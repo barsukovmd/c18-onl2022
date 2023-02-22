@@ -1,5 +1,6 @@
 package service;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 import model.Students;
@@ -9,23 +10,19 @@ import java.util.List;
 
 @Getter
 @Setter
-
+@AllArgsConstructor
 public class StudentService {
-    private final StudentRepositoryAware studentsRepositoryAware;
-
-    public StudentService(StudentRepositoryAware studentsRepositoryAware) {
-        this.studentsRepositoryAware = studentsRepositoryAware;
-    }
+    private final StudentRepositoryAware studentRepositoryAware;
 
     public List<Students> searchStudents() {
-        return studentsRepositoryAware.searchStudents();
+        return studentRepositoryAware.searchStudents();
     }
 
     public List<Students> insertNewStudents(Students students) {
-        return studentsRepositoryAware.insertNewStudents(students);
+        return studentRepositoryAware.insertNewStudents(students);
     }
 
     public List<Students> deleteStudents(int id) {
-        return studentsRepositoryAware.deleteStudents(id);
+        return studentRepositoryAware.deleteStudents(id);
     }
 }

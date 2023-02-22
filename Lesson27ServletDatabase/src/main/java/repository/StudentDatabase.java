@@ -1,5 +1,6 @@
 package repository;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import model.City;
 import model.Students;
@@ -9,22 +10,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Getter
-public class StudentRepository implements StudentRepositoryAware {
+@AllArgsConstructor
+public class StudentDatabase implements StudentRepositoryAware {
     private final Connection connection;
     private final String PATH = "select students_db.students.id, name, surname, age, course, city_id from students_db.students";
     private final String JOIN_PATH = "SELECT * from students_db.students left join students_db.city c on c.id_for_city = students.city_id";
     private static final String INSERT_NEW_STUDENT = "INSERT INTO students_db.students(id, name, surname, age, course, city_id) VALUES(?, ?, ?, ?, ?, ?);";
     private static final String DELETE_STUDENT_QUERY = "DELETE FROM students_db.students WHERE id = ?";
 
-    public StudentRepository(Connection connection) {
-        this.connection = connection;
-    }
-
     @Override
     public List<Students> searchStudents() {
         List<Students> students = new ArrayList<>();
-        try (Statement statement = connection.createStatement()) {
-            ResultSet resultSet = statement.executeQuery(JOIN_PATH);
+        try {
+            PreparedStatement statement = connection.prepareStatement(JOIN_PATH);
+            ResultSet resultSet = statement.executeQuery();
             while (resultSet.next()) {
                 int id = resultSet.getInt("id");
                 String name = resultSet.getString("name");

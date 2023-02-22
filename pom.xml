@@ -36,7 +36,7 @@
         <dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
-            <version>42.5.1</version>
+            <version>42.5.4</version>
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/jakarta.servlet/jakarta.servlet-api -->
@@ -87,6 +87,7 @@
         <module>Lesson26LoginServlet</module>
         <module>Lesson27ServletDatabase</module>
         <module>Lesson28CartServlet</module>
+        <module>Lesson28PoemServlet</module>
     </modules>
 
     <properties>
