@@ -2,14 +2,13 @@ package listener;
 
 import jakarta.servlet.ServletContextEvent;
 import jakarta.servlet.ServletContextListener;
-import jakarta.servlet.annotation.WebListener;
-import repository.DatabaseRepository;
-import repository.StudentsRepository;
+import repository.StudentRepository;
+import repository.StudentRepositoryAware;
 import service.StudentService;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 
-@WebListener
 public class InitializeListener implements ServletContextListener {
 
     @Override
@@ -17,17 +16,18 @@ public class InitializeListener implements ServletContextListener {
         System.out.println("Initialize listener");
         String username = sce.getServletContext().getInitParameter("db_user");
         String password = sce.getServletContext().getInitParameter("db_password");
-        String dbUrl = sce.getServletContext().getInitParameter("db_url");
-        String dbDriver = sce.getServletContext().getInitParameter("db_driver");
+        String url = sce.getServletContext().getInitParameter("db_url");
+        String driver = sce.getServletContext().getInitParameter("db_driver");
         try {
-            Class.forName(dbDriver);
-            Connection connection = DriverManager.getConnection(dbUrl, username, password);
-            StudentsRepository studentsRepository = new DatabaseRepository(connection);
+            Class.forName(driver);
+            Connection connection = DriverManager.getConnection(username, password, url);
+            StudentRepositoryAware studentsRepository = new StudentRepository(connection);
             StudentService studentService = new StudentService(studentsRepository);
             sce.getServletContext().setAttribute("studentService", studentService);
             sce.getServletContext().setAttribute("connection", connection);
+
         } catch (Exception e) {
-            System.out.println("Error " + e.getMessage());
+            System.out.println(e.getMessage());
         }
     }
 

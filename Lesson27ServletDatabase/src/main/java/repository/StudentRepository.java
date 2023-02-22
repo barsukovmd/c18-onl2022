@@ -1,6 +1,5 @@
 package repository;
 
-import DbUtils.DbUtils;
 import lombok.Getter;
 import model.City;
 import model.Students;
@@ -10,14 +9,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Getter
-public class DatabaseRepository implements StudentsRepository {
+public class StudentRepository implements StudentRepositoryAware {
     private final Connection connection;
     private final String PATH = "select students_db.students.id, name, surname, age, course, city_id from students_db.students";
     private final String JOIN_PATH = "SELECT * from students_db.students left join students_db.city c on c.id_for_city = students.city_id";
     private static final String INSERT_NEW_STUDENT = "INSERT INTO students_db.students(id, name, surname, age, course, city_id) VALUES(?, ?, ?, ?, ?, ?);";
     private static final String DELETE_STUDENT_QUERY = "DELETE FROM students_db.students WHERE id = ?";
 
-    public DatabaseRepository(Connection connection) {
+    public StudentRepository(Connection connection) {
         this.connection = connection;
     }
 
@@ -45,7 +44,7 @@ public class DatabaseRepository implements StudentsRepository {
 
     public List<Students> insertNewStudents(Students students) {
         List<Students> newStudents = new ArrayList<>();
-        try (Connection connection = DbUtils.getConnection()) {
+        try {
             PreparedStatement preparedStatement = connection.prepareStatement(INSERT_NEW_STUDENT);
             preparedStatement.setString(1, students.getCity().getCityName());
             preparedStatement.setInt(2, students.getId());
@@ -63,7 +62,7 @@ public class DatabaseRepository implements StudentsRepository {
 
     public List<Students> deleteStudents(int id) {
         List<Students> studentsList = new ArrayList<>();
-        try (Connection connection = DbUtils.getConnection()) {
+        try {
             PreparedStatement preparedStatement = connection.prepareStatement(DELETE_STUDENT_QUERY);
             preparedStatement.setInt(1, id);
             preparedStatement.executeUpdate();

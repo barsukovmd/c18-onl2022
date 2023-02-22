@@ -1,8 +1,6 @@
 <%@ page import="model.Students" %>
 <%@ page import="java.util.List" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@include file="createStudent.jsp" %>
-<%@include file="deleteStudent.jsp" %>
 
 <html>
 <head>
@@ -14,6 +12,7 @@
 <h1><span class="blue">&lt</span>All<span class="blue">&gt</span> <span class="yellow">Students</span></h1>
 <body>
 <h1><em>Students</em></h1>
+<h1>Hello world</h1>
 <table class="table table-hover">
     <tr>
         <th bgcolor="#663399">id</th>
@@ -49,6 +48,7 @@
         </td>
     </tr>
     <%} %>
+    <a href="students-database">Student Servlet</a>
     </tbody>
 </table>
 </body>

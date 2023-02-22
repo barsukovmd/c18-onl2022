@@ -7,13 +7,13 @@
 </head>
 <body>
 <div style="float: left; margin: 0 10px 0 10px">
-    <a href="<c:url value="createStudent.jsp"/>" class="button">Create</a>
+    <a href="<c:url value="/create"/>" class="button">Create</a>
 </div>
 <div style="float: left; margin: 0 420px 0 0">
-    <a href="<c:url value="deleteStudent.jsp"/>" class="button">Delete</a>
+    <a href="<c:url value="/delete"/>" class="button">Delete</a>
 </div>
 <div style="float: right">
-    <a href="<c:url value="database.jsp"/>" class="button">Back</a>
+    <a href="<c:url value="/students-database"/>" class="button">Back</a>
 </div>
 </body>
 </html>
