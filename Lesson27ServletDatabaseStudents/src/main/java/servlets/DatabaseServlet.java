@@ -30,7 +30,7 @@ public class DatabaseServlet extends HttpServlet {
         response.setCharacterEncoding("UTF-8");
         List<Students> students = studentService.searchStudents();
         request.setAttribute("students", students);
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/student-form.jsp");
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/student-form .jsp");
         requestDispatcher.forward(request, response);
     }
 
