@@ -2,7 +2,6 @@ package fliter;
 
 import jakarta.servlet.*;
 import jakarta.servlet.annotation.WebFilter;
-
 import java.io.IOException;
 
 @WebFilter(urlPatterns = "/*")

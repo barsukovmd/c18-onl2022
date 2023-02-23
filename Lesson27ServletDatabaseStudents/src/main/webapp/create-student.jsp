@@ -11,27 +11,27 @@
     <form action="<c:url value="/create"/>" method="post">
         <div class="user-box">
             <input type="number" name="age" required="">
-            <label>Student id</label>
+            <label>id</label>
         </div>
         <div class="user-box">
             <input type="text" name="name" required="">
-            <label>Student name</label>
+            <label>name</label>
         </div>
         <div class="user-box">
             <input type="text" name="surname" required="">
-            <label>Student surname</label>
+            <label>surname</label>
         </div>
         <div class="user-box">
             <input type="number" name="age" required="">
-            <label>Student age</label>
+            <label>age</label>
         </div>
         <div class="user-box">
             <input type="number" name="age" required="">
-            <label>Student course</label>
+            <label>course</label>
         </div>
         <div class="user-box">
             <input type="text" name="cityName" required="">
-            <label>City</label>
+            <label>city</label>
         </div>
         <div>
             <input type="submit" value="Create">
