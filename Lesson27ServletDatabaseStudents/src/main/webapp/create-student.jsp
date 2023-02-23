@@ -7,31 +7,27 @@
 </head>
 <body>
 <div class="login-box">
-    <h2>Create New Student</h2>
+    <h2>Create Student</h2>
     <form action="<c:url value="/create"/>" method="post">
         <div class="user-box">
-            <input type="number" name="age" required="">
-            <label>id</label>
-        </div>
-        <div class="user-box">
             <input type="text" name="name" required="">
-            <label>name</label>
+            <label>Name</label>
         </div>
         <div class="user-box">
             <input type="text" name="surname" required="">
-            <label>surname</label>
+            <label>Surname</label>
         </div>
         <div class="user-box">
             <input type="number" name="age" required="">
-            <label>age</label>
+            <label>Age</label>
         </div>
         <div class="user-box">
-            <input type="number" name="age" required="">
-            <label>course</label>
+            <input type="text" name="course" required="">
+            <label>Course №</label>
         </div>
         <div class="user-box">
             <input type="text" name="cityName" required="">
-            <label>city</label>
+            <label>City</label>
         </div>
         <div>
             <input type="submit" value="Create">
