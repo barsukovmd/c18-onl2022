@@ -39,14 +39,7 @@
             <version>42.5.4</version>
         </dependency>
 
-        <!--                &lt;!&ndash; https://mvnrepository.com/artifact/jakarta.servlet.jsp.jstl/jakarta.servlet.jsp.jstl-api &ndash;&gt;-->
-        <!--                <dependency>-->
-        <!--                    <groupId>jakarta.servlet.jsp.jstl</groupId>-->
-        <!--                    <artifactId>jakarta.servlet.jsp.jstl-api</artifactId>-->
-        <!--                    <version>3.0.0</version>-->
-        <!--                    <scope>provided</scope>-->
-        <!--                </dependency>-->
-
+        <!-- https://mvnrepository.com/artifact/org.glassfish.web/jakarta.servlet.jsp.jstl -->
         <dependency>
             <groupId>org.glassfish.web</groupId>
             <artifactId>jakarta.servlet.jsp.jstl</artifactId>
@@ -86,6 +79,7 @@
         <module>Lesson27ServletDatabaseStudents</module>
         <module>Lesson28CartServlet</module>
         <module>Lesson28PoemServlet</module>
+        <module>TestCore</module>
     </modules>
 
     <properties>
