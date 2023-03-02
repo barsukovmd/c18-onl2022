@@ -1,9 +1,6 @@
 package main;
 
 import models.*;
-
-import static models.WarriorType.*;
-
 //Написать программу, эмулирующую компьютерную игру.
 //В игре имеется несколько отрядов персонажей:
 //- отряд орков
@@ -22,6 +19,9 @@ import static models.WarriorType.*;
 //Используя паттерн проектирования Abstract Factory, реализовать персонажей игры и их действия.
 public class Main {
     public static void main(String[] args) {
-
+        CreateWarriorImpl createWarrior = new ElfSquad();
+        createWarrior.createArcher().getWeaponType();
+        createWarrior.createWizard().getWeaponType();
+        createWarrior.createWarrior().getWeaponType();
     }
 }
