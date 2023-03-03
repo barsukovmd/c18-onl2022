@@ -25,11 +25,11 @@ public class Main {
         elfSquad.createWarrior().getWeaponType();
         System.out.println("!!!!!!");
         CreateCarFactoryImpl mercedes = new MercedesHub();
-        mercedes.createCar1().getDistance();
+        mercedes.sportCar().getDistance();
         CreateCarFactoryImpl bmw = new BMWHub();
-        bmw.createCar2().getDistance();
+        bmw.trackCar().getDistance();
         CreateCarFactoryImpl nissan = new NissanHub();
-        nissan.createCar3().getDistance();
+        nissan.suvCar().getDistance();
         CreateWarriorFactoryImpl createWarriorFactory = createWarriorByType("OrkSquad");
         createWarriorFactory.createArcher().getWeaponType();
         CreateWarriorFactoryImpl people = createWarriorByType("PeopleSquad");
@@ -37,7 +37,9 @@ public class Main {
         CreateWarriorFactoryImpl elf = createWarriorByType("ElfSquad");
         elf.createWarrior().getWeaponType();
         CreateWarriorFactoryImpl elfByMethod = createWarriorByType("eLfSquaD");
-        elf.createArcher().getWeaponType();
+        elfByMethod.createArcher().getWeaponType();
+        CreateCarFactoryImpl bmwCar = createCarByModel("BmwHub");
+        bmwCar.suvCar().getDistance();
     }
 
     static CreateWarriorFactoryImpl createWarriorByType(String type) {
@@ -49,6 +51,18 @@ public class Main {
             return new ElfSquad();
         } else {
             throw new RuntimeException(type + " is not found");
+        }
+    }
+
+    static CreateCarFactoryImpl createCarByModel(String model) {
+        if (model.equalsIgnoreCase("NissanHub")) {
+            return new NissanHub();
+        } else if (model.equalsIgnoreCase("MercedesHub")) {
+            return new MercedesHub();
+        } else if (model.equalsIgnoreCase("bmwHUB")) {
+            return new BMWHub();
+        } else {
+            throw new RuntimeException(model + " is not found");
         }
     }
 }

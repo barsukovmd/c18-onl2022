@@ -1,9 +1,9 @@
 package models;
 
 public interface CreateCarFactoryImpl {
-    Car1 createCar1();
+    Car1 suvCar();
 
-    Car2 createCar2();
+    Car2 trackCar();
 
-    Car3 createCar3();
+    Car3 sportCar();
 }
