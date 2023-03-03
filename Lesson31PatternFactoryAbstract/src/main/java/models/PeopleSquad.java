@@ -5,7 +5,7 @@ import lombok.ToString;
 
 @Getter
 @ToString
-public class PeopleSquad implements CreateWarriorImpl {
+public class PeopleSquad implements CreateWarriorFactoryImpl {
     @Override
     public Archer createArcher() {
         return new Archer();
@@ -13,11 +13,13 @@ public class PeopleSquad implements CreateWarriorImpl {
 
     @Override
     public Warrior createWarrior() {
+        System.out.println("Warrior from People");
         return new Warrior();
     }
 
     @Override
     public Wizard createWizard() {
+        System.out.println("Wizard from People");
         return new Wizard();
     }
 }

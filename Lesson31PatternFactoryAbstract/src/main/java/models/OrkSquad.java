@@ -1,8 +1,11 @@
 package models;
 
-import java.util.Arrays;
+import lombok.Getter;
+import lombok.ToString;
 
-public class OrkSquad implements CreateWarriorImpl {
+@ToString
+@Getter
+public class OrkSquad implements CreateWarriorFactoryImpl {
 
     @Override
     public Archer createArcher() {

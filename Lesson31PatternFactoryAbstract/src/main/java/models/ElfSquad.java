@@ -1,7 +1,11 @@
 package models;
 
+import lombok.Getter;
+import lombok.ToString;
 
-public class ElfSquad implements CreateWarriorImpl {
+@Getter
+@ToString
+public class ElfSquad implements CreateWarriorFactoryImpl {
 
     @Override
     public Archer createArcher() {

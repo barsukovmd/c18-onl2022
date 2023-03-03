@@ -19,9 +19,36 @@ import models.*;
 //Используя паттерн проектирования Abstract Factory, реализовать персонажей игры и их действия.
 public class Main {
     public static void main(String[] args) {
-        CreateWarriorImpl createWarrior = new ElfSquad();
-        createWarrior.createArcher().getWeaponType();
-        createWarrior.createWizard().getWeaponType();
-        createWarrior.createWarrior().getWeaponType();
+        CreateWarriorFactoryImpl elfSquad = new ElfSquad();
+        elfSquad.createArcher().getWeaponType();
+        elfSquad.createWizard().getWeaponType();
+        elfSquad.createWarrior().getWeaponType();
+        System.out.println("!!!!!!");
+        CreateCarFactoryImpl mercedes = new MercedesHub();
+        mercedes.createCar1().getDistance();
+        CreateCarFactoryImpl bmw = new BMWHub();
+        bmw.createCar2().getDistance();
+        CreateCarFactoryImpl nissan = new NissanHub();
+        nissan.createCar3().getDistance();
+        CreateWarriorFactoryImpl createWarriorFactory = createWarriorByType("OrkSquad");
+        createWarriorFactory.createArcher().getWeaponType();
+        CreateWarriorFactoryImpl people = createWarriorByType("PeopleSquad");
+        people.createWizard().getWeaponType();
+        CreateWarriorFactoryImpl elf = createWarriorByType("ElfSquad");
+        elf.createWarrior().getWeaponType();
+        CreateWarriorFactoryImpl elfByMethod = createWarriorByType("eLfSquaD");
+        elf.createArcher().getWeaponType();
+    }
+
+    static CreateWarriorFactoryImpl createWarriorByType(String type) {
+        if (type.equalsIgnoreCase("PeopleSquad")) {
+            return new PeopleSquad();
+        } else if (type.equalsIgnoreCase("OrkSquad")) {
+            return new OrkSquad();
+        } else if (type.equalsIgnoreCase("ElfSquad")) {
+            return new ElfSquad();
+        } else {
+            throw new RuntimeException(type + " is not found");
+        }
     }
 }
