@@ -12,11 +12,11 @@ public class CarBasic implements CarCharacteristicImpl {
 
     @Override
     public void getSpeed() {
-
+        System.out.println("Speed 200km/h");
     }
 
     @Override
     public void getInsurance() {
-
+        System.out.println("3 years");
     }
 }
