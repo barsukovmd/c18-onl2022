@@ -13,13 +13,13 @@ public class PeopleSquad implements CreateWarriorFactoryImpl {
 
     @Override
     public Warrior createWarrior() {
-        System.out.println("Warrior from People");
+        System.out.println("Warrior using sworn");
         return new Warrior();
     }
 
     @Override
     public Wizard createWizard() {
-        System.out.println("Wizard from People");
+        System.out.println("Wizard using magic");
         return new Wizard();
     }
 }
