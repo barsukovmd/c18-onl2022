@@ -7,9 +7,6 @@ public abstract class CarCharacteristicImpl {
    void getDistance() {
       System.out.println("1000");
    }
-
-   ;
-
    void getSpeed() {
       System.out.println("100");
    }
