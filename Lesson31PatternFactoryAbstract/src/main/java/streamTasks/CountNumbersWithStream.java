@@ -1,6 +1,5 @@
 package streamTasks;
 import java.util.*;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 //// Сделать вывод в формате: число из списка + "-Hello" и то,
