@@ -95,6 +95,7 @@
         <module>Lesson28PoemServlet</module>
         <module>TestCore</module>
         <module>Lesson31PatternFactoryAbstract</module>
+        <module>Lesson31BuilderPattern</module>
     </modules>
 
     <properties>
