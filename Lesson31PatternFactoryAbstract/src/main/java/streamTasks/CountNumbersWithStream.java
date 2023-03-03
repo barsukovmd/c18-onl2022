@@ -10,8 +10,12 @@ public class CountNumbersWithStream {
         List<Integer> integers = List.of(1, 2, 5, 4, 4, 5, 2, 3, 6, 5);
         integers.stream()
                 .filter(i -> i != 4 & i != 6)
-                .collect(Collectors.groupingBy(integer -> integer, Collectors.counting()))
-                .entrySet().stream().filter(i -> i.getValue() > 0)
-                .forEach(count -> System.out.println(count.getKey() + ":" + count.getValue() + " -Hello"));
+                .collect(Collectors.groupingBy(key -> key + "-Hello", Collectors.counting()))
+                .forEach((key, val) -> System.out.println(key + " : " + val));
+//        integers.stream()
+//                .filter(i -> i != 4 & i != 6)
+//                .collect(Collectors.groupingBy(integer -> integer, Collectors.counting()))
+//                .entrySet().stream().filter(i -> i.getValue() > 0)
+//                .forEach(count -> System.out.println(count.getKey() + ":" + count.getValue() + " -Hello"));
     }
 }
