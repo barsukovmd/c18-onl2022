@@ -5,8 +5,8 @@ import lombok.ToString;
 
 @ToString
 @Getter
-public class Car1 implements CarCharacteristicImpl {
+public class CarVIP implements CarCharacteristicImpl {
     public void getDistance() {
-        System.out.println("Car 1 100km");
+        System.out.println("Car 3 300km");
     }
 }

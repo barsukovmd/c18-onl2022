@@ -2,17 +2,17 @@ package models;
 
 public class MercedesHub implements CreateCarFactoryImpl {
     @Override
-    public Car1 suvCar() {
-        return new Car1();
+    public CarBasic suvCar() {
+        return new CarBasic();
     }
 
     @Override
-    public Car2 trackCar() {
-        return new Car2();
+    public CarPremium trackCar() {
+        return new CarPremium();
     }
 
     @Override
-    public Car3 sportCar() {
-        return new Car3();
+    public CarVIP sportCar() {
+        return new CarVIP();
     }
 }
