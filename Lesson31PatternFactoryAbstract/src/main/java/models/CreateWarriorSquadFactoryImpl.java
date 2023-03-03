@@ -1,6 +1,6 @@
 package models;
 
-public interface CreateWarriorFactoryImpl {
+public interface CreateWarriorSquadFactoryImpl {
     Archer createArcher();
 
     Warrior createWarrior();

@@ -19,7 +19,7 @@ import models.*;
 //Используя паттерн проектирования Abstract Factory, реализовать персонажей игры и их действия.
 public class Main {
     public static void main(String[] args) {
-        CreateWarriorFactoryImpl elfSquad = new ElfSquad();
+        CreateWarriorSquadFactoryImpl elfSquad = new ElfSquad();
         elfSquad.createArcher().getWeaponType();
         elfSquad.createWizard().getWeaponType();
         elfSquad.createWarrior().getWeaponType();
@@ -30,19 +30,19 @@ public class Main {
         bmw.trackCar().getDistance();
         CreateCarFactoryImpl nissan = new NissanHub();
         nissan.suvCar().getDistance();
-        CreateWarriorFactoryImpl createWarriorFactory = createWarriorByType("OrkSquad");
+        CreateWarriorSquadFactoryImpl createWarriorFactory = createWarriorByType("OrkSquad");
         createWarriorFactory.createArcher().getWeaponType();
-        CreateWarriorFactoryImpl people = createWarriorByType("PeopleSquad");
+        CreateWarriorSquadFactoryImpl people = createWarriorByType("PeopleSquad");
         people.createWizard().getWeaponType();
-        CreateWarriorFactoryImpl elf = createWarriorByType("ElfSquad");
+        CreateWarriorSquadFactoryImpl elf = createWarriorByType("ElfSquad");
         elf.createWarrior().getWeaponType();
-        CreateWarriorFactoryImpl elfByMethod = createWarriorByType("eLfSquaD");
+        CreateWarriorSquadFactoryImpl elfByMethod = createWarriorByType("eLfSquaD");
         elfByMethod.createArcher().getWeaponType();
         CreateCarFactoryImpl bmwCar = createCarByModel("BmwHub");
         bmwCar.suvCar().getDistance();
     }
 
-    static CreateWarriorFactoryImpl createWarriorByType(String type) {
+    static CreateWarriorSquadFactoryImpl createWarriorByType(String type) {
         if (type.equalsIgnoreCase("PeopleSquad")) {
             return new PeopleSquad();
         } else if (type.equalsIgnoreCase("OrkSquad")) {

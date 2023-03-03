@@ -5,7 +5,7 @@ import lombok.ToString;
 
 @Getter
 @ToString
-public class PeopleSquad implements CreateWarriorFactoryImpl {
+public class PeopleSquad implements CreateWarriorSquadFactoryImpl {
     @Override
     public Archer createArcher() {
         return new Archer();
