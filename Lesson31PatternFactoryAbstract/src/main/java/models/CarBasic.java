@@ -5,9 +5,11 @@ import lombok.ToString;
 
 @ToString
 @Getter
-public class CarBasic implements CarCharacteristicImpl {
+public class CarBasic extends CarCharacteristicImpl {
+
+    @Override
     public void getDistance() {
-        System.out.println("Car 1 100km");
+        super.getDistance();
     }
 
     @Override
@@ -16,7 +18,7 @@ public class CarBasic implements CarCharacteristicImpl {
     }
 
     @Override
-    public void getInsurance() {
-        System.out.println("3 years");
+    void getInsurance() {
+        System.out.println("2 years");
     }
 }

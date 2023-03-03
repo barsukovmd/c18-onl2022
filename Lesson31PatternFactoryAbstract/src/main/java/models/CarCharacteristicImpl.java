@@ -1,9 +1,24 @@
 package models;
 
-public interface CarCharacteristicImpl {
-   void getDistance();
+import lombok.Getter;
 
-   void getSpeed();
+@Getter
+public abstract class CarCharacteristicImpl {
+   void getDistance() {
+      System.out.println("1000");
+   }
 
-   void getInsurance();
+   ;
+
+   void getSpeed() {
+      System.out.println("100");
+   }
+
+   ;
+
+   void getInsurance() {
+      System.out.println("1 year");
+   }
+
+   ;
 }
