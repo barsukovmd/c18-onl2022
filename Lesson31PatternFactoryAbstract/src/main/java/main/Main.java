@@ -1,9 +1,5 @@
 package main;
-
-
 import models.*;
-
-
 //Написать программу, эмулирующую компьютерную игру.
 //В игре имеется несколько отрядов персонажей:
 //- отряд орков
@@ -26,6 +22,7 @@ public class Main {
         elfSquad.createArcher().getWeaponType();
         elfSquad.createWizard().getWeaponType();
         elfSquad.createWarrior().getWeaponType();
+        elfSquad.createWarrior().getWeaponType();
         System.out.println("!!!!!!");
         CreateCarFactoryImpl mercedes = new MercedesHub();
         mercedes.sportCar().getDistance();
@@ -39,10 +36,14 @@ public class Main {
         people.createWizard().getWeaponType();
         CreateWarriorSquadFactoryImpl elf = createWarriorByType("ElfSquad");
         elf.createWarrior().getWeaponType();
-        CreateWarriorSquadFactoryImpl elfByMethod = createWarriorByType("eLfSquaD");
+        CreateWarriorSquadFactoryImpl elfByMethod = createWarriorByType("eLfSquad");
         elfByMethod.createArcher().getWeaponType();
         CreateCarFactoryImpl bmwCar = createCarByModel("BmwHub");
         bmwCar.suvCar().getDistance();
+        CreateCarFactoryImpl nissanCar = createCarByModel("NissanHub");
+        nissanCar.trackCar().getSpeed();
+        CreateCarFactoryImpl mercedesCar = createCarByModel("MercedesHub");
+        mercedesCar.sportCar().getInsurance();
     }
 
     static CreateWarriorSquadFactoryImpl createWarriorByType(String type) {

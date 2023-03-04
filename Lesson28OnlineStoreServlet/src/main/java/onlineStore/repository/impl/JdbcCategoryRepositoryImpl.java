@@ -1,5 +1,4 @@
 package onlineStore.repository.impl;
-
 import onlineStore.model.*;
 import onlineStore.repository.*;
 import lombok.AllArgsConstructor;
@@ -13,13 +12,13 @@ import java.util.List;
 
 @AllArgsConstructor
 public class JdbcCategoryRepositoryImpl implements CategoryRepository {
-    private final String PATHTOSTORE = "SELECT * FROM \"online-store\".categories";
     private final Connection connection;
     @Override
     public List<Category> getCategories() {
         List<Category> categories = new ArrayList<>();
         try {
             Statement statement = connection.createStatement();
+            String PATHTOSTORE = "SELECT * FROM \"online-store\".categories";
             ResultSet rs = statement.executeQuery(PATHTOSTORE);
             while (rs.next()) {
                 Category category = Category.builder()
