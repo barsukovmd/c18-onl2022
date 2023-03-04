@@ -15,7 +15,6 @@ import java.util.List;
 public class JdbcCategoryRepositoryImpl implements CategoryRepository {
     private final String PATHTOSTORE = "SELECT * FROM \"online-store\".categories";
     private final Connection connection;
-
     @Override
     public List<Category> getCategories() {
         List<Category> categories = new ArrayList<>();
