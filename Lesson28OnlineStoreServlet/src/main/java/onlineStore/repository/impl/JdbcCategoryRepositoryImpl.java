@@ -13,7 +13,7 @@ import java.util.List;
 
 @AllArgsConstructor
 public class JdbcCategoryRepositoryImpl implements CategoryRepository {
-
+    private final String PATHTOSTORE = "SELECT * FROM \"online-store\".categories";
     private final Connection connection;
 
     @Override
@@ -21,8 +21,7 @@ public class JdbcCategoryRepositoryImpl implements CategoryRepository {
         List<Category> categories = new ArrayList<>();
         try {
             Statement statement = connection.createStatement();
-            String sql = "select * from categories";
-            ResultSet rs = statement.executeQuery(sql);
+            ResultSet rs = statement.executeQuery(PATHTOSTORE);
             while (rs.next()) {
                 Category category = Category.builder()
                         .id(rs.getInt("id"))
