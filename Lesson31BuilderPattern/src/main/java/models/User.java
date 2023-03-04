@@ -2,7 +2,6 @@ package models;
 
 import lombok.Builder;
 import lombok.ToString;
-
 import java.util.Date;
 
 @Builder

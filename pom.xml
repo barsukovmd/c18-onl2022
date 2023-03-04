@@ -48,7 +48,7 @@
         <dependency>
             <groupId>jakarta.servlet.jsp.jstl</groupId>
             <artifactId>jakarta.servlet.jsp.jstl-api</artifactId>
-            <version>3.0.0</version>
+            <version>2.0.0</version>
         </dependency>
 
 
@@ -56,7 +56,7 @@
         <dependency>
             <groupId>org.glassfish.web</groupId>
             <artifactId>jakarta.servlet.jsp.jstl</artifactId>
-            <version>2.0.0</version>
+            <version>3.0.0</version>
         </dependency>
 
 
@@ -91,11 +91,12 @@
         <module>Lesson25Servlet</module>
         <module>Lesson26LoginServlet</module>
         <module>Lesson27ServletDatabaseStudents</module>
-        <module>Lesson28CartServlet</module>
+        <module>Lesson28OnlineStoreServlet</module>
         <module>Lesson28PoemServlet</module>
         <module>TestCore</module>
         <module>Lesson31PatternFactoryAbstract</module>
         <module>Lesson31BuilderPattern</module>
+        <module>Lesson31SingletonPattern</module>
     </modules>
 
     <properties>
