@@ -12,6 +12,12 @@
 
     <dependencies>
         <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-params</artifactId>
+            <version>${junit.jupiter.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>1.18.24</version>
@@ -36,24 +42,23 @@
         <dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
-            <version>42.5.1</version>
+            <version>42.5.4</version>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/jakarta.servlet/jakarta.servlet-api -->
         <dependency>
-            <groupId>jakarta.servlet</groupId>
-            <artifactId>jakarta.servlet-api</artifactId>
-            <version>6.0.0</version>
-            <scope>provided</scope>
+            <groupId>jakarta.servlet.jsp.jstl</groupId>
+            <artifactId>jakarta.servlet.jsp.jstl-api</artifactId>
+            <version>2.0.0</version>
         </dependency>
 
 
-        <!-- https://mvnrepository.com/artifact/jstl/jstl -->
+        <!-- https://mvnrepository.com/artifact/org.glassfish.web/jakarta.servlet.jsp.jstl -->
         <dependency>
-            <groupId>jstl</groupId>
-            <artifactId>jstl</artifactId>
-            <version>1.2</version>
+            <groupId>org.glassfish.web</groupId>
+            <artifactId>jakarta.servlet.jsp.jstl</artifactId>
+            <version>3.0.0</version>
         </dependency>
+
 
     </dependencies>
     <modules>
@@ -85,14 +90,21 @@
         <module>Lesson24CalculatorServlet</module>
         <module>Lesson25Servlet</module>
         <module>Lesson26LoginServlet</module>
-        <module>Lesson26ServletDatabase</module>
-        <module>Lesson27CartServlet</module>
+        <module>Lesson27ServletDatabaseStudents</module>
+        <module>Lesson28OnlineStoreServlet</module>
+        <module>Lesson28PoemServlet</module>
+        <module>TestCore</module>
+        <module>Lesson31PatternFactoryAbstract</module>
+        <module>Lesson31BuilderPattern</module>
+        <module>Lesson31SingletonPattern</module>
     </modules>
 
     <properties>
         <maven.compiler.source>19</maven.compiler.source>
         <maven.compiler.target>19</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <junit.jupiter.version>5.9.1</junit.jupiter.version>
+        <junit.platform.version>1.9.1</junit.platform.version>
     </properties>
 
 </project>
