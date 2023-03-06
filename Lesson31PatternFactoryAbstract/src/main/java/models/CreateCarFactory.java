@@ -1,6 +1,6 @@
 package models;
 
-public interface CreateCarFactoryImpl {
+public interface CreateCarFactory {
     CarBasic suvCar();
 
     CarPremium trackCar();

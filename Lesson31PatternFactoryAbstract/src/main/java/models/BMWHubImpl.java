@@ -1,6 +1,6 @@
 package models;
 
-public class BMWHub implements CreateCarFactoryImpl {
+public class BMWHubImpl implements CreateCarFactory {
     @Override
     public CarBasic suvCar() {
         return new CarBasic();

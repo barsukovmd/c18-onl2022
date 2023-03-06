@@ -5,7 +5,7 @@ import lombok.ToString;
 
 @ToString
 @Getter
-public class CarBasic extends CarCharacteristicImpl {
+public class CarBasic extends CarCharacteristic {
 
     @Override
     public void getDistance() {

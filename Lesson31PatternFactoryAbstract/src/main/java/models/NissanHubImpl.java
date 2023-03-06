@@ -1,6 +1,6 @@
 package models;
 
-public class MercedesHub implements CreateCarFactoryImpl {
+public class NissanHubImpl implements CreateCarFactory {
     @Override
     public CarBasic suvCar() {
         return new CarBasic();

@@ -18,53 +18,53 @@ import models.*;
 //Используя паттерн проектирования Abstract Factory, реализовать персонажей игры и их действия.
 public class Main {
     public static void main(String[] args) {
-        CreateWarriorSquadFactoryImpl elfSquad = new ElfSquad();
+        CreateWarriorSquadFactory elfSquad = new ElfSquadImpl();
         elfSquad.createArcher().getWeaponType();
         elfSquad.createWizard().getWeaponType();
         elfSquad.createWarrior().getWeaponType();
         elfSquad.createWarrior().getWeaponType();
         System.out.println("!!!!!!");
-        CreateCarFactoryImpl mercedes = new MercedesHub();
+        CreateCarFactory mercedes = new MercedesHubImpl();
         mercedes.sportCar().getDistance();
-        CreateCarFactoryImpl bmw = new BMWHub();
+        CreateCarFactory bmw = new BMWHubImpl();
         bmw.trackCar().getDistance();
-        CreateCarFactoryImpl nissan = new NissanHub();
+        CreateCarFactory nissan = new NissanHubImpl();
         nissan.suvCar().getDistance();
-        CreateWarriorSquadFactoryImpl createWarriorFactory = createWarriorByType("OrkSquad");
+        CreateWarriorSquadFactory createWarriorFactory = createWarriorByType("OrkSquad");
         createWarriorFactory.createArcher().getWeaponType();
-        CreateWarriorSquadFactoryImpl people = createWarriorByType("PeopleSquad");
+        CreateWarriorSquadFactory people = createWarriorByType("PeopleSquad");
         people.createWizard().getWeaponType();
-        CreateWarriorSquadFactoryImpl elf = createWarriorByType("ElfSquad");
+        CreateWarriorSquadFactory elf = createWarriorByType("ElfSquad");
         elf.createWarrior().getWeaponType();
-        CreateWarriorSquadFactoryImpl elfByMethod = createWarriorByType("eLfSquad");
+        CreateWarriorSquadFactory elfByMethod = createWarriorByType("eLfSquad");
         elfByMethod.createArcher().getWeaponType();
-        CreateCarFactoryImpl bmwCar = createCarByModel("BmwHub");
+        CreateCarFactory bmwCar = createCarByModel("BmwHub");
         bmwCar.suvCar().getDistance();
-        CreateCarFactoryImpl nissanCar = createCarByModel("NissanHub");
+        CreateCarFactory nissanCar = createCarByModel("NissanHub");
         nissanCar.trackCar().getSpeed();
-        CreateCarFactoryImpl mercedesCar = createCarByModel("MercedesHub");
+        CreateCarFactory mercedesCar = createCarByModel("MercedesHub");
         mercedesCar.sportCar().getInsurance();
     }
 
-    static CreateWarriorSquadFactoryImpl createWarriorByType(String type) {
+    static CreateWarriorSquadFactory createWarriorByType(String type) {
         if (type.equalsIgnoreCase("PeopleSquad")) {
-            return new PeopleSquad();
+            return new PeopleSquadImpl();
         } else if (type.equalsIgnoreCase("OrkSquad")) {
-            return new OrkSquad();
+            return new OrkSquadImpl();
         } else if (type.equalsIgnoreCase("ElfSquad")) {
-            return new ElfSquad();
+            return new ElfSquadImpl();
         } else {
             throw new RuntimeException(type + " is not found");
         }
     }
 
-    static CreateCarFactoryImpl createCarByModel(String model) {
+    static CreateCarFactory createCarByModel(String model) {
         if (model.equalsIgnoreCase("NissanHub")) {
-            return new NissanHub();
+            return new NissanHubImpl();
         } else if (model.equalsIgnoreCase("MercedesHub")) {
-            return new MercedesHub();
+            return new MercedesHubImpl();
         } else if (model.equalsIgnoreCase("bmwHUB")) {
-            return new BMWHub();
+            return new BMWHubImpl();
         } else {
             throw new RuntimeException(model + " is not found");
         }
