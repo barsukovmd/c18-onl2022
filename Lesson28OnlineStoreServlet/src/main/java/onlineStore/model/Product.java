@@ -10,7 +10,6 @@ import java.math.BigDecimal;
 @EqualsAndHashCode(of = "id")
 @ToString
 public class Product {
-
     private int id;
     private String imageName;
     private String name;

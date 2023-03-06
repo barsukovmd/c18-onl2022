@@ -20,16 +20,16 @@
 </head>
 <body>
 <ul>
-    <li><a class="active" href='home'><i class="fa fa-fw fa-home"></i> Главная</a></li>
-    <li style="float:right"><a href='cart'><i class="fa fa-fw fa-shopping-cart"></i> Корзина</a></li>
-    <li style="float:right"><a href='profile'><i class="fa fa-fw fa-user"></i> Пользователь</a></li>
+    <li><a class="active" href='home'><i class="fa fa-fw fa-home"></i> Main</a></li>
+    <li style="float:right"><a href='cart'><i class="fa fa-fw fa-shopping-cart"></i> Bin</a></li>
+    <li style="float:right"><a href='profile'><i class="fa fa-fw fa-user"></i> User</a></li>
 </ul>
 <br>
-<h3 class="text-center">Добро пожаловать, <b class="font-italic">${username.getName()}</b>!</h3>
-<p class="text-center">Ваш пароль: <b class="font-italic">${username.getPassword()}</b></p>
+<h3 class="text-center">Welcome, Dear buyer <b class="font-italic">${username.getName()}</b>!</h3>
+<p class="text-center">Password: <b class="font-italic">${username.getPassword()}</b></p>
 
 <button onclick="window.location.href = 'logout';" class="buttonQuit">
-    <i class="fa fa-sign-out fa-lg" aria-hidden="true"></i> Выйти
+    <i class="fa fa-sign-out fa-lg" aria-hidden="true"></i> Exit
 </button>
 
 </body>

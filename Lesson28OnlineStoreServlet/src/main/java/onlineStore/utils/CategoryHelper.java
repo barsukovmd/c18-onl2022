@@ -1,7 +1,7 @@
 package onlineStore.utils;
 
-import onlineStore.model.*;
 import lombok.experimental.UtilityClass;
+import onlineStore.model.Category;
 
 import java.util.Arrays;
 import java.util.List;

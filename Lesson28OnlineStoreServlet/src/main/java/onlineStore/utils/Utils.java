@@ -1,7 +1,7 @@
 package onlineStore.utils;
 
-import onlineStore.model.*;
 import lombok.experimental.UtilityClass;
+import onlineStore.model.User;
 
 import java.util.Optional;
 

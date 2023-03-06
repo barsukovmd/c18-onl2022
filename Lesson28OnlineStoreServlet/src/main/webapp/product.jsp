@@ -3,6 +3,7 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <!DOCTYPE html>
 <html lang="en">
+<html>
 <head>
     <title>Product</title>
     <meta charset="utf-8">
@@ -20,9 +21,9 @@
 <body>
 <c:set var="contextPath" value="${pageContext.request.contextPath}"/>
 <ul>
-    <li><a class="active" href='home'><i class="fa fa-fw fa-home"></i> Главная</a></li>
-    <li style="float:right"><a href='cart'><i class="fa fa-fw fa-shopping-cart"></i> Корзина</a></li>
-    <li style="float:right"><a href='profile'><i class="fa fa-fw fa-user"></i> Пользователь</a></li>
+    <li><a class="active" href='home'><i class="fa fa-fw fa-home"></i> Main</a></li>
+    <li style="float:right"><a href='cart'><i class="fa fa-fw fa-shopping-cart"></i> Cart</a></li>
+    <li style="float:right"><a href='profile'><i class="fa fa-fw fa-user"></i> User</a></li>
 </ul>
 <br>
 <c:set var="contextPath" value="${pageContext.request.contextPath}"/>
@@ -36,12 +37,12 @@
 
         <br>
         <div class="container">
-            <h2>Информация о продукте:</h2>
+            <h2>Product description:</h2>
             <table class="table table-bordered">
                 <thead>
                 <tr>
-                    <th class="text-center" style="vertical-align: middle">Описание</th>
-                    <th class="text-center" style="vertical-align: middle">Цена, руб.</th>
+                    <th class="text-center" style="vertical-align: middle">Description</th>
+                    <th class="text-center" style="vertical-align: middle">Price $</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -60,8 +61,8 @@
             <input type="hidden" value="${oneProduct.getDescription()}" name="description"/>
             <input type="hidden" value="${oneProduct.getPrice()}" name="price"/>
             <input type="hidden" value="${oneProduct.getCategory_id()}" name="categoryId"/>
-            <button type="submit" value="Купить" name="action" class="buttonAddProduct"><i
-                    class="fa fa-cart-plus fa-lg"></i> Купить
+            <button type="submit" value="Buy" name="action" class="buttonAddProduct"><i
+                    class="fa fa-cart-plus fa-lg"></i>Buy
             </button>
             <br>
         </form>

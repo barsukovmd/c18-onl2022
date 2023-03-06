@@ -1,6 +1,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
-<%@ page contentType="text/html;charset=UTF-8" %>
+<%@ page info="dsfdsf" contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
 <html>
@@ -34,8 +34,7 @@
                             <img class="card-img"
                                  style="width:150px;height:120px"
                                  src="${contextPath}/images/${category.getImageName()}"
-                                 alt="Card image">
-                        </a>
+                                 alt="Card image"></a>
                     </div>
                 </div>
             </c:forEach>
