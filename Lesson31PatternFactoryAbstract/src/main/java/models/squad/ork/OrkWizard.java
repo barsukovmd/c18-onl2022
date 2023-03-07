@@ -1,6 +1,6 @@
-package squad.ork;
+package models.squad.ork;
 
-import squad.Wizard;
+import models.squad.Wizard;
 
 public class OrkWizard extends Wizard {
     @Override

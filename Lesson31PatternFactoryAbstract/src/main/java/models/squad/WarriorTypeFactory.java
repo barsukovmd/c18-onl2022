@@ -1,4 +1,4 @@
-package squad;
+package models.squad;
 
 public interface WarriorTypeFactory {
     Archer createArcher();

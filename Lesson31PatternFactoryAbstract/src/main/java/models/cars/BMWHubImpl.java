@@ -1,4 +1,4 @@
-package cars;
+package models.cars;
 
 public class BMWHubImpl implements CreateCarFactory {
     @Override

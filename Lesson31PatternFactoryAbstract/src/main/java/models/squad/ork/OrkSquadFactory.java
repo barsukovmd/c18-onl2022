@@ -1,6 +1,9 @@
-package squad.ork;
+package models.squad.ork;
 
-import squad.*;
+import models.squad.Archer;
+import models.squad.Warrior;
+import models.squad.WarriorTypeFactory;
+import models.squad.Wizard;
 
 public class OrkSquadFactory implements WarriorTypeFactory {
     @Override

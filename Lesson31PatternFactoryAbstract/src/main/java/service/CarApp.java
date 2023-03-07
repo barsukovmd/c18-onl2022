@@ -1,9 +1,9 @@
 package service;
 
-import cars.BMWHubImpl;
-import cars.CreateCarFactory;
-import cars.MercedesHubImpl;
-import cars.NissanHubImpl;
+import models.cars.BMWHubImpl;
+import models.cars.CreateCarFactory;
+import models.cars.MercedesHubImpl;
+import models.cars.NissanHubImpl;
 
 //Написать программу, эмулирующую компьютерную игру.
 //В игре имеется несколько отрядов персонажей:

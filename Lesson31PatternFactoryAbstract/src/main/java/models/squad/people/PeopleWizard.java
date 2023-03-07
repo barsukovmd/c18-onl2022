@@ -1,6 +1,6 @@
-package squad.people;
+package models.squad.people;
 
-import squad.Wizard;
+import models.squad.Wizard;
 
 public class PeopleWizard extends Wizard {
     @Override

@@ -1,9 +1,9 @@
-package squad.elf;
+package models.squad.elf;
 
-import squad.Archer;
-import squad.Warrior;
-import squad.WarriorTypeFactory;
-import squad.Wizard;
+import models.squad.Archer;
+import models.squad.Warrior;
+import models.squad.WarriorTypeFactory;
+import models.squad.Wizard;
 
 public class ElfSquadFactory implements WarriorTypeFactory {
     @Override

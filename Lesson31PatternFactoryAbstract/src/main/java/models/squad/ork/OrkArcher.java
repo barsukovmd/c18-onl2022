@@ -1,6 +1,6 @@
-package squad.ork;
+package models.squad.ork;
 
-import squad.Archer;
+import models.squad.Archer;
 
 public class OrkArcher extends Archer {
     @Override

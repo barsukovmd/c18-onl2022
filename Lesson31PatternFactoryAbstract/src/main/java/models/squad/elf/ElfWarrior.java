@@ -1,6 +1,6 @@
-package squad.elf;
+package models.squad.elf;
 
-import squad.Warrior;
+import models.squad.Warrior;
 
 public class ElfWarrior extends Warrior {
     @Override

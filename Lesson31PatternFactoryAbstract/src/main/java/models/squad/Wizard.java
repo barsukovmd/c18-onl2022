@@ -1,4 +1,4 @@
-package squad;
+package models.squad;
 
 public class Wizard implements WeaponType {
     @Override

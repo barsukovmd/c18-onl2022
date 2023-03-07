@@ -1,4 +1,4 @@
-package cars;
+package models.cars;
 
 import lombok.Getter;
 import lombok.ToString;
