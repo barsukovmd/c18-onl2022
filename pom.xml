@@ -54,6 +54,7 @@
         <junit.jupiter.version>5.9.1</junit.jupiter.version>
         <junit.platform.version>1.9.1</junit.platform.version>
         <lombok.version>1.18.24</lombok.version>
+        <jakarta.version>10.0.0</jakarta.version>
         <mavenCompalePlugin.version>3.10.1</mavenCompalePlugin.version>
         <commons-lang.version>3.12.0</commons-lang.version>
         <guava.version>31.1-jre</guava.version>
@@ -135,5 +136,18 @@
             <version>${mybatis.version}</version>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/org.glassfish/jakarta.el -->
+        <dependency>
+            <groupId>org.glassfish</groupId>
+            <artifactId>jakarta.el</artifactId>
+            <version>5.0.0-M1</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-collections4</artifactId>
+            <version>4.4</version>
+        </dependency>
     </dependencies>
 </project>
