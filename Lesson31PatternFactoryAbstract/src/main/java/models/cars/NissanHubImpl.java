@@ -1,4 +1,4 @@
-package models;
+package models.cars;
 
 public class NissanHubImpl implements CreateCarFactory {
     @Override

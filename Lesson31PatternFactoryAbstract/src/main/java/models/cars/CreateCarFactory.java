@@ -1,4 +1,4 @@
-package models;
+package models.cars;
 
 public interface CreateCarFactory {
     CarBasic suvCar();
