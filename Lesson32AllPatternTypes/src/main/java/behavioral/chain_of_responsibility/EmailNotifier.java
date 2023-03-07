@@ -7,6 +7,6 @@ public class EmailNotifier extends Notifier {
 
     @Override
     public void write(String message) {
-        System.out.println("Sending email: " + message);
+        System.out.println("Sending notify by email: " + message);
     }
 }
