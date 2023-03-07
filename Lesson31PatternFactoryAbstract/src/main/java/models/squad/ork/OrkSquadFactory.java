@@ -4,7 +4,6 @@ import models.squad.Archer;
 import models.squad.Warrior;
 import models.squad.WarriorTypeFactory;
 import models.squad.Wizard;
-
 public class OrkSquadFactory implements WarriorTypeFactory {
     @Override
     public Archer createArcher() {
