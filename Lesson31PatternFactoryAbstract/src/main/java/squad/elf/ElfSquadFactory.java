@@ -2,10 +2,10 @@ package squad.elf;
 
 import squad.Archer;
 import squad.Warrior;
-import squad.WarriorType;
+import squad.WarriorTypeFactory;
 import squad.Wizard;
 
-public class ElfSquadFactory implements WarriorType {
+public class ElfSquadFactory implements WarriorTypeFactory {
     @Override
     public Archer createArcher() {
         return new ElfArcher();

@@ -2,7 +2,7 @@ package squad.ork;
 
 import squad.*;
 
-public class OrkSquadFactory implements WarriorType {
+public class OrkSquadFactory implements WarriorTypeFactory {
     @Override
     public Archer createArcher() {
         return new OrkArcher();

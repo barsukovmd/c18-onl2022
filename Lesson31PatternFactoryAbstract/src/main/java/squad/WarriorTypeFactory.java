@@ -1,6 +1,6 @@
 package squad;
 
-public interface WarriorType {
+public interface WarriorTypeFactory {
     Archer createArcher();
 
     Warrior createWarrior();

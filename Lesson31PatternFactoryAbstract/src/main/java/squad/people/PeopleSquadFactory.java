@@ -2,10 +2,10 @@ package squad.people;
 
 import squad.Archer;
 import squad.Warrior;
-import squad.WarriorType;
+import squad.WarriorTypeFactory;
 import squad.Wizard;
 
-public class PeopleSquadFactory implements WarriorType {
+public class PeopleSquadFactory implements WarriorTypeFactory {
     @Override
     public Archer createArcher() {
         return new PeopleArcher();

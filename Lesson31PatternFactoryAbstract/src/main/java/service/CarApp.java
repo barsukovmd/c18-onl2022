@@ -1,9 +1,9 @@
-package main;
+package service;
 
-import models.cars.BMWHubImpl;
-import models.cars.CreateCarFactory;
-import models.cars.MercedesHubImpl;
-import models.cars.NissanHubImpl;
+import cars.BMWHubImpl;
+import cars.CreateCarFactory;
+import cars.MercedesHubImpl;
+import cars.NissanHubImpl;
 
 //Написать программу, эмулирующую компьютерную игру.
 //В игре имеется несколько отрядов персонажей:
@@ -21,9 +21,8 @@ import models.cars.NissanHubImpl;
 //Лучник стреляет из лука.
 //
 //Используя паттерн проектирования Abstract Factory, реализовать персонажей игры и их действия.
-public class Main {
+public class CarApp {
     public static void main(String[] args) {
-
         System.out.println("!!!!!!");
         CreateCarFactory mercedes = new MercedesHubImpl();
         mercedes.sportCar().getDistance();
