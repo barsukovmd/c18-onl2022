@@ -10,13 +10,4 @@ public class SelectCommand implements Command {
     public void execute() {
         database.select();
     }
-
-    @Override
-    public void rollBack() {
-        if (database != null) {
-            database.rollBack();
-        } else {
-            System.out.println("Nothing to Roll back");
-        }
-    }
 }

@@ -3,11 +3,11 @@ package behavioral.command;
 import lombok.AllArgsConstructor;
 
 @AllArgsConstructor
-public class InsertCommand implements Command {
+public class RollBackCommand implements Command {
     private Database database;
 
     @Override
     public void execute() {
-        database.insert();
+        database.rollBack();
     }
 }

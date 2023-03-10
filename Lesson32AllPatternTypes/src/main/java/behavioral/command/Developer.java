@@ -8,13 +8,14 @@ public class Developer {
     private final Command select;
     private final Command delete;
     private final Command update;
-    private Command rollBack;
+    private final Command rollBack;
 
-    public Developer(Command insert, Command select, Command delete, Command update) {
+    public Developer(Command insert, Command select, Command delete, Command update, Command rollBack) {
         this.insert = insert;
         this.select = select;
         this.delete = delete;
         this.update = update;
+        this.rollBack = rollBack;
     }
 
     public void insertRecord() {
@@ -34,6 +35,6 @@ public class Developer {
     }
 
     public void rollBack() {
-        rollBack.rollBack();
+        rollBack.execute();
     }
 }
