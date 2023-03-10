@@ -7,11 +7,12 @@ public class MainCommand {
                 new SelectCommand(database),
                 new InsertCommand(database),
                 new UpdateCommand(database),
-                new DeleteCommand(database)
-        );
+                new DeleteCommand(database));
         developer.selectRecord();
         developer.insertRecord();
         developer.updateRecord();
         developer.deleteRecord();
+        Command command = new DeleteCommand(database);
+        command.rollBack();
     }
 }
