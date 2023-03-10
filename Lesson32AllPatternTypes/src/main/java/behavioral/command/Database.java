@@ -16,4 +16,8 @@ public class Database {
     public void delete() {
         System.out.println("Deleting record...");
     }
+
+    public void rollBack() {
+        System.out.println("Rolling back record...");
+    }
 }

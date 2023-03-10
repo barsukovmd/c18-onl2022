@@ -5,6 +5,7 @@ public class Developer {
     private final Command select;
     private final Command delete;
     private final Command update;
+    private Command rollBack;
 
     public Developer(Command insert, Command select, Command delete, Command update) {
         this.insert = insert;
@@ -27,5 +28,9 @@ public class Developer {
 
     public void deleteRecord() {
         delete.execute();
+    }
+
+    public void rollBackRecord() {
+        rollBack.rollBack();
     }
 }
