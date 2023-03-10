@@ -5,12 +5,11 @@ public class MainTemplate {
         WebsiteTemplate welcomePage = new WelcomePage();
         WebsiteTemplate newsPage = new NewsPage();
         WebsiteTemplate sportPage = new SportPage();
-        System.out.println("---");
         welcomePage.showPage();
-        newsPage.showContent();
         System.out.println("---");
-        welcomePage.showPage();
-        sportPage.showContent();
+        newsPage.showPage();
+        System.out.println("---");
+        sportPage.showPage();
         System.out.println("---");
     }
 }
