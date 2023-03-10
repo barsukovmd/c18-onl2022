@@ -12,7 +12,6 @@ public abstract class Notifier {
     public void setNextNotifier(Notifier nextNotifier) {
         this.nextNotifier = nextNotifier;
     }
-
     public void notifyManager(String message, int level) {
         if (level >= priority) {
             write(message);
