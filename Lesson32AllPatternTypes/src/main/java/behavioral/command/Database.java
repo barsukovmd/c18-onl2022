@@ -1,5 +1,4 @@
 package behavioral.command;
-
 public class Database {
     public void insert() {
         System.out.println("Inserting record...");

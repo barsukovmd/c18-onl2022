@@ -1,5 +1,8 @@
 package behavioral.command;
 
+import lombok.NonNull;
+
+@NonNull
 public class Developer {
     private final Command insert;
     private final Command select;
@@ -30,7 +33,7 @@ public class Developer {
         delete.execute();
     }
 
-    public void rollBackRecord() {
+    public void rollBack() {
         rollBack.rollBack();
     }
 }

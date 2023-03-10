@@ -10,4 +10,13 @@ public class DeleteCommand implements Command {
     public void execute() {
         database.delete();
     }
+
+    @Override
+    public void rollBack() {
+        if (database != null) {
+            database.rollBack();
+        } else {
+            System.out.println("Nothing to Roll back");
+        }
+    }
 }

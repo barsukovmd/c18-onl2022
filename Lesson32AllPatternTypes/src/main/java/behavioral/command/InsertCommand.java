@@ -10,4 +10,13 @@ public class InsertCommand implements Command {
     public void execute() {
         database.insert();
     }
+
+    @Override
+    public void rollBack() {
+        if (database != null) {
+            database.rollBack();
+        } else {
+            System.out.println("Nothing to Roll back");
+        }
+    }
 }
