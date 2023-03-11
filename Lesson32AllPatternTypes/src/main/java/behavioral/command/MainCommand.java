@@ -11,8 +11,8 @@ public class MainCommand {
                 new RollBackCommand(database));
         developer.insertRecord();
         developer.selectRecord();
-        developer.rollBack();
         developer.deleteRecord();
+        developer.rollBack();
         developer.updateRecord();
     }
 }
