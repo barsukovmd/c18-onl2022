@@ -1,10 +1,10 @@
 package models;
-
-import lombok.Builder;
 import lombok.ToString;
+import lombok.experimental.SuperBuilder;
+
 import java.util.Date;
 
-@Builder
+@SuperBuilder
 @ToString
 public class User {
     private final int id;

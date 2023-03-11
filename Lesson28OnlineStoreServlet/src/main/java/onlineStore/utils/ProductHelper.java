@@ -1,11 +1,11 @@
 package onlineStore.utils;
 
-import onlineStore.model.*;
 import lombok.experimental.UtilityClass;
+import onlineStore.model.Product;
 
 import java.math.BigDecimal;
 import java.util.Arrays;
-import java.util.*;
+import java.util.List;
 
 @UtilityClass
 public class ProductHelper {

@@ -1,13 +1,16 @@
 package onlineStore.servlet;
 
-import onlineStore.model.*;
-import jakarta.servlet.*;
-import jakarta.servlet.annotation.*;
-import jakarta.servlet.http.*;
+import jakarta.servlet.RequestDispatcher;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import onlineStore.model.User;
 
 import java.io.IOException;
 
-import static onlineStore.utils.Utils.*;
+import static onlineStore.utils.Utils.isUserLogIn;
 
 @WebServlet("/profile")
 public class ProfileServlet extends HttpServlet {

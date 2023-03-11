@@ -9,6 +9,67 @@
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
+    <modules>
+        <module>Lesson1</module>
+        <module>Lesson2</module>
+        <module>Lesson3</module>
+        <module>Lesson4</module>
+        <module>Lesson5</module>
+        <module>Lesson6</module>
+        <module>Lesson7</module>
+        <module>Lesson8</module>
+        <module>Lesson8Addition</module>
+        <module>Lesson9</module>
+        <module>Lesson10</module>
+        <module>Lesson11</module>
+        <module>Lesson12</module>
+        <module>Lesson13</module>
+        <module>Lesson14</module>
+        <module>Lesson15</module>
+        <module>Lesson17</module>
+        <module>Lesson18</module>
+        <module>Lesson16</module>
+        <module>Lesson19</module>
+        <module>Lesson20</module>
+        <module>Lesson20Addition</module>
+        <module>Lesson21_JDBC</module>
+        <module>Lesson22jdbc</module>
+        <module>Lesson23</module>
+        <module>Lesson24CalculatorServlet</module>
+        <module>Lesson25Servlet</module>
+        <module>Lesson26LoginServlet</module>
+        <module>Lesson27ServletDatabaseStudents</module>
+        <module>Lesson28OnlineStoreServlet</module>
+        <module>Lesson28PoemServlet</module>
+        <module>Lesson31PatternFactoryAbstract</module>
+        <module>Lesson31BuilderPattern</module>
+        <module>Lesson31SingletonPattern</module>
+        <module>Lesson32AllPatternTypes</module>
+    </modules>
+
+    <properties>
+        <maven.compiler.source>19</maven.compiler.source>
+        <maven.compiler.target>19</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <junit.jupiter.version>5.9.1</junit.jupiter.version>
+        <junit.platform.version>1.9.1</junit.platform.version>
+        <lombok.version>1.18.24</lombok.version>
+        <jakarta.version>10.0.0</jakarta.version>
+        <mavenCompalePlugin.version>3.10.1</mavenCompalePlugin.version>
+        <commons-lang.version>3.12.0</commons-lang.version>
+        <guava.version>31.1-jre</guava.version>
+        <postgresql.version>42.5.1</postgresql.version>
+        <mybatis.version>3.5.11</mybatis.version>
+        <jstl.version>1.2</jstl.version>
+        <jsp-api.version>2.2</jsp-api.version>
+        <maven-war-plugin.version>3.3.0</maven-war-plugin.version>
+        <spotbugs.maven.plugin.version>4.7.2.1</spotbugs.maven.plugin.version>
+        <spotbugs.version>4.7.3</spotbugs.version>
+        <checkstyle.maven.plugin.version>3.2.1</checkstyle.maven.plugin.version>
+        <checkstyle.version>10.7.0</checkstyle.version>
+        <pmd.maven.plugin.version>3.14.0</pmd.maven.plugin.version>
+        <pmd.version>6.53.0</pmd.version>
+    </properties>
 
     <dependencies>
         <dependency>
@@ -48,63 +109,53 @@
         <dependency>
             <groupId>jakarta.servlet.jsp.jstl</groupId>
             <artifactId>jakarta.servlet.jsp.jstl-api</artifactId>
-            <version>2.0.0</version>
+            <version>3.0.0</version>
         </dependency>
 
+        <dependency>
+            <groupId>jakarta.platform</groupId>
+            <artifactId>jakarta.jakartaee-api</artifactId>
+            <version>10.0.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>jakarta.platform</groupId>
+            <artifactId>jakarta.jakartaee-web-api</artifactId>
+            <version>10.0.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>${guava.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis</artifactId>
+            <version>${mybatis.version}</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.glassfish/jakarta.el -->
+        <dependency>
+            <groupId>org.glassfish</groupId>
+            <artifactId>jakarta.el</artifactId>
+            <version>5.0.0-M1</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-collections4</artifactId>
+            <version>4.4</version>
+        </dependency>
 
         <!-- https://mvnrepository.com/artifact/org.glassfish.web/jakarta.servlet.jsp.jstl -->
         <dependency>
             <groupId>org.glassfish.web</groupId>
             <artifactId>jakarta.servlet.jsp.jstl</artifactId>
-            <version>3.0.0</version>
+            <version>2.0.0</version>
         </dependency>
 
-
     </dependencies>
-    <modules>
-        <module>Lesson1</module>
-        <module>Lesson2</module>
-        <module>Lesson3</module>
-        <module>Lesson4</module>
-        <module>Lesson5</module>
-        <module>Lesson6</module>
-        <module>Lesson7</module>
-        <module>Lesson8</module>
-        <module>Lesson8Addition</module>
-        <module>Lesson9</module>
-        <module>Lesson10</module>
-        <module>Lesson11</module>
-        <module>Lesson12</module>
-        <module>Lesson13</module>
-        <module>Lesson14</module>
-        <module>Lesson15</module>
-        <module>Lesson17</module>
-        <module>Lesson18</module>
-        <module>Lesson16</module>
-        <module>Lesson19</module>
-        <module>Lesson20</module>
-        <module>Lesson20Addition</module>
-        <module>Lesson21_JDBC</module>
-        <module>Lesson22jdbc</module>
-        <module>Lesson23</module>
-        <module>Lesson24CalculatorServlet</module>
-        <module>Lesson25Servlet</module>
-        <module>Lesson26LoginServlet</module>
-        <module>Lesson27ServletDatabaseStudents</module>
-        <module>Lesson28OnlineStoreServlet</module>
-        <module>Lesson28PoemServlet</module>
-        <module>TestCore</module>
-        <module>Lesson31PatternFactoryAbstract</module>
-        <module>Lesson31BuilderPattern</module>
-        <module>Lesson31SingletonPattern</module>
-    </modules>
-
-    <properties>
-        <maven.compiler.source>19</maven.compiler.source>
-        <maven.compiler.target>19</maven.compiler.target>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <junit.jupiter.version>5.9.1</junit.jupiter.version>
-        <junit.platform.version>1.9.1</junit.platform.version>
-    </properties>
-
 </project>

@@ -19,9 +19,19 @@ public class Main {
                 .build();
         System.out.println(user);
 
+        User user1 = UserAbove18.builder()
+                .balance(150)
+                .birthday(new Date(8 / 12 / 2000))
+                .id(14)
+                .name("Rock")
+                .surname("Nin")
+                .email("eihgbeihrl@fnui.com")
+                .password("guvnor")
+                .build();
+        System.out.println(user1);
         User newUserUnder18 = UserUnder18.builder()
                 .balance(150)
-                .surname("Romanchuk")
+                .surname("Romancer")
                 .name("Roman")
                 .email("jnvw@jnviwa.com")
                 .birthday(new Date(2 / 17 / 2010))
@@ -33,7 +43,7 @@ public class Main {
                 .balance(200)
                 .id(3)
                 .name("Igor")
-                .surname("Manchik")
+                .surname("Kamancha")
                 .birthday(new Date(2 / 11 / 2009))
                 .email("fnw@wnvwon.com")
                 .build();

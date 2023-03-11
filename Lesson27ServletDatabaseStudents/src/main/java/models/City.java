@@ -8,6 +8,6 @@ import lombok.Setter;
 @Getter
 @AllArgsConstructor
 public class City {
-    private int idForCity;
+    private int id;
     private String cityName;
 }

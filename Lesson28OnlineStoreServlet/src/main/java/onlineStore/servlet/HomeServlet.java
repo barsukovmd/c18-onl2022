@@ -1,16 +1,22 @@
 package onlineStore.servlet;
-
-import onlineStore.exceptions.*;
-import onlineStore.model.*;
-import onlineStore.service.*;
-import jakarta.servlet.*;
-import jakarta.servlet.annotation.*;
-import jakarta.servlet.http.*;
+import jakarta.servlet.RequestDispatcher;
+import jakarta.servlet.ServletConfig;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import onlineStore.exceptions.RequestParamNullException;
+import onlineStore.model.Cart;
+import onlineStore.model.Category;
+import onlineStore.model.User;
+import onlineStore.service.CategoryService;
+import onlineStore.service.CategoryServiceAware;
 
 import java.io.IOException;
-import java.util.*;
+import java.util.List;
 
-import static onlineStore.utils.HttpRequestParamValidator.*;
+import static onlineStore.utils.HttpRequestParamValidator.validateParamNotNull;
 import static onlineStore.utils.Utils.*;
 
 @WebServlet("/home")
@@ -34,13 +40,11 @@ public class HomeServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String login = request.getParameter("username");
         String pass = request.getParameter("password");
-        User user;
-        Cart cart;
         try {
             validateParamNotNull(login);
             validateParamNotNull(pass);
-            user = new User(ADMIN_LOGIN, ADMIN_PASSWORD);
-            cart = new Cart();
+            User user = new User(ADMIN_LOGIN, ADMIN_PASSWORD);
+            Cart cart = new Cart();
             request.getSession().setAttribute("cart", cart);
             request.getSession().setAttribute("username", user);
             checkReceivedUser(user, request, response);

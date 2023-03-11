@@ -1,14 +1,19 @@
 package onlineStore.servlet;
 
-import onlineStore.model.*;
-import onlineStore.service.*;
-import jakarta.servlet.*;
-import jakarta.servlet.annotation.*;
-import jakarta.servlet.http.*;
+import jakarta.servlet.RequestDispatcher;
+import jakarta.servlet.ServletConfig;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import onlineStore.model.Product;
+import onlineStore.model.User;
+import onlineStore.service.ProductService;
 
 import java.io.IOException;
 
-import static onlineStore.utils.Utils.*;
+import static onlineStore.utils.Utils.isUserLogIn;
 
 @WebServlet("/product")
 public class ProductServlet extends HttpServlet {

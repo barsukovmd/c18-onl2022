@@ -16,7 +16,6 @@ public class InitializationContextListener implements ServletContextListener {
     public void contextInitialized(ServletContextEvent sce) {
         ProductService productService = new ProductService(new ProductRepositoryImpl());
         sce.getServletContext().setAttribute("productService", productService);
-
         CategoryRepository jdbcCategoryRepository = new JdbcCategoryRepositoryImpl(getConnection(sce));
         CategoryService categoryService = new CategoryService(jdbcCategoryRepository);
         sce.getServletContext().setAttribute("categoryService", categoryService);

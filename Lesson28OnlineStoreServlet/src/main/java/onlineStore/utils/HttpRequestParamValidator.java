@@ -1,6 +1,6 @@
 package onlineStore.utils;
 
-import onlineStore.exceptions.*;
+import onlineStore.exceptions.RequestParamNullException;
 
 import java.util.Optional;
 

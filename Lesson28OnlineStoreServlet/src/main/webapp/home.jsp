@@ -34,8 +34,7 @@
                             <img class="card-img"
                                  style="width:150px;height:120px"
                                  src="${contextPath}/images/${category.getImageName()}"
-                                 alt="Card image">
-                        </a>
+                                 alt="Card image"></a>
                     </div>
                 </div>
             </c:forEach>

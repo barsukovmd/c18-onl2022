@@ -2,7 +2,6 @@ package onlineStore.repository.impl;
 import onlineStore.model.*;
 import onlineStore.repository.*;
 import lombok.AllArgsConstructor;
-
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
