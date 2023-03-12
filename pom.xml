@@ -41,6 +41,8 @@
         <module>Lesson27ServletDatabaseStudents</module>
         <module>Lesson28OnlineStoreServlet</module>
         <module>Lesson28PoemServlet</module>
+        <module>Lesson30ServletRegistrationForm</module>
+        <module>Lesson30ServletRegisterForm</module>
         <module>Lesson31PatternFactoryAbstract</module>
         <module>Lesson31BuilderPattern</module>
         <module>Lesson31SingletonPattern</module>
@@ -156,6 +158,5 @@
             <artifactId>jakarta.servlet.jsp.jstl</artifactId>
             <version>2.0.0</version>
         </dependency>
-
     </dependencies>
 </project>
