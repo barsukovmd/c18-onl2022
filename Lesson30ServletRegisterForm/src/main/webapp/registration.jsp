@@ -1,11 +1,11 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <html>
 <head>
     <title>Регистрация</title>
-    <link rel="stylesheet" type="text/css" href="resources/mystyle.css">
-    <script type="text/javascript" src="resources/script.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script type="text/javascript" src="script.js"></script>
 </head>
 <body>
 <c:set var="basePath" value="${pageContext.request.contextPath}"/>
