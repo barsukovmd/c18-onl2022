@@ -47,9 +47,9 @@
                         <input type="hidden" value="${myProduct.getName()}" name="name"/>
                         <input type="hidden" value="${myProduct.getDescription()}" name="description"/>
                         <input type="hidden" value="${myProduct.getPrice()}" name="price"/>
-                        <input type="hidden" value="${myProduct.getCategory_id()}" name="categoryId"/>
-                        <button type="submit" value="Удалить" name="action" class="buttonDelete"><i
-                                class="fa fa-minus-square fa-lg"></i> Удалить
+                        <input type="hidden" value="${myProduct.getCategoryId()}" name="categoryId"/>
+                        <button type="submit" value="Delete" name="action" class="buttonDelete"><i
+                                class="fa fa-minus-square fa-lg"></i> Delete
                         </button>
                     </form>
                 </div>
