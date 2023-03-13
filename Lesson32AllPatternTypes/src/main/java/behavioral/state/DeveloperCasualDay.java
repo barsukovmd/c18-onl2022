@@ -22,7 +22,6 @@ public class DeveloperCasualDay {
             setActivity(new Sleeping());
         }
     }
-
     public void justDoIt() {
         activity.justDoIt();
     }
