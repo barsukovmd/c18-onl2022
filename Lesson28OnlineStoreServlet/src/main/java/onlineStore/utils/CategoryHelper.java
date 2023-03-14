@@ -10,7 +10,7 @@ import java.util.List;
 public class CategoryHelper {
 
     public static final List<Category> categories = Arrays.asList(
-            new Category(1, "Mobile phones", "mobile.jpg"),
+            new Category(1, "Mobile phones", "mobile.jpeg"),
             new Category(2, "Laptops", "laptop.jpg"),
             new Category(3, "GPS Navigators", "jps_nav.jpg"),
             new Category(4, "Fridges", "fridge.jpg"),
