@@ -48,6 +48,7 @@
         <module>Lesson31SingletonPattern</module>
         <module>Lesson32AllPatternTypes</module>
         <module>Lesson33JavaEEPatterns</module>
+        <module>Lesson33JavaEECommandPatternOnlineStore</module>
     </modules>
 
     <properties>
