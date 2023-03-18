@@ -4,9 +4,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-
-    <artifactId>Lesson27ServletDatabaseStudents</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <artifactId>Lesson28OnlineStoreDtoServlet</artifactId>
+    <name>Lesson28OnlineStoreDtoServlet</name>
     <packaging>war</packaging>
 
     <parent>
@@ -14,6 +13,7 @@
         <artifactId>c18-onl2022</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.target>11</maven.compiler.target>

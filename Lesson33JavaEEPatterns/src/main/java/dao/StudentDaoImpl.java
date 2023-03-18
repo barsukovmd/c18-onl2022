@@ -11,12 +11,12 @@ import java.util.List;
 
 public class StudentDaoImpl implements IStudentDao {
 
+    private static final String GET_ALL_STUDENTS_AND_CITIES = "SELECT * from students_db.students left join students_db.city c on c.id_for_city = students.city_id";
     private static final String GET_ALL_STUDENTS = "SELECT * from students_db.students";
 
     @Override
     public List<Student> getAllStudents() {
-        List<Student> students;
-
+        List<Student> students = new ArrayList<>();
         try (Connection connection = ConnectionPool.getInstance().getConnectionWrapper().getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(GET_ALL_STUDENTS)) {
             students = new ArrayList<>();

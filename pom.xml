@@ -40,6 +40,7 @@
         <module>Lesson26LoginServlet</module>
         <module>Lesson27ServletDatabaseStudents</module>
         <module>Lesson28OnlineStoreServlet</module>
+        <module>Lesson28OnlineStoreDtoServlet</module>
         <module>Lesson28PoemServlet</module>
         <module>Lesson30ServletRegistrationForm</module>
         <module>Lesson30ServletRegisterForm</module>
@@ -85,7 +86,7 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.24</version>
+            <version>1.18.26</version>
             <scope>provided</scope>
         </dependency>
 
@@ -137,7 +138,7 @@
         <dependency>
             <groupId>org.mybatis</groupId>
             <artifactId>mybatis</artifactId>
-            <version>${mybatis.version}</version>
+            <version>3.5.13</version>
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/org.glassfish/jakarta.el -->
