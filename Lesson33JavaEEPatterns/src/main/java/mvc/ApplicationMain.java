@@ -7,6 +7,8 @@ public class ApplicationMain {
         EmployeeController controller = new EmployeeController(employee, employeeView);
         controller.updateEmployeeInfo();
         employee.setName("Jack");
+        employee.setId(3);
+        controller.setEmployee(employee);
         controller.updateEmployeeInfo();
     }
 }

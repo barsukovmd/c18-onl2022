@@ -2,7 +2,7 @@ package model;
 
 public enum PagesPath {
     HOME_PAGE("home.jsp"),
-    SIGN_IN_PAGE("signing.jsp");
+    SIGN_IN_PAGE("signin.jsp");
 
     private final String path;
 
