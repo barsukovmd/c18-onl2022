@@ -1,7 +1,6 @@
 package repository.utils;
 
 import java.sql.Connection;
-
 import lombok.Getter;
 
 @Getter

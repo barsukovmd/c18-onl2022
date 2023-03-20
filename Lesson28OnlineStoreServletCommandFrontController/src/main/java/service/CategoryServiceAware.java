@@ -1,10 +1,10 @@
-package repository;
+package service;
 
 import models.Category;
 
 import java.util.List;
 
-public interface CategoryRepository {
+public interface CategoryServiceAware {
     List<Category> getCategories();
 
     Category getCategoryById(Long id);
