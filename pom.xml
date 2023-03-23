@@ -50,6 +50,7 @@
         <module>Lesson32AllPatternTypes</module>
         <module>Lesson33JavaEEPatterns</module>
         <module>Lesson33JavaEECommandPatternOnlineStore</module>
+        <module>Lesson34Logs</module>
     </modules>
 
     <properties>
@@ -188,7 +189,7 @@
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
-            <version>1.4.5</version>
+            <version>1.4.6</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
