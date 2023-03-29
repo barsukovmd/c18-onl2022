@@ -11,5 +11,4 @@ import lombok.ToString;
 @ToString
 public class Authenticator {
     private Map<String, String> authenticators;
-
 }
