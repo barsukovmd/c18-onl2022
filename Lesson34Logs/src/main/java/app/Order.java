@@ -1,11 +1,11 @@
 package app;
-
+import lombok.extern.log4j.Log4j2;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
+@Log4j2
 public class Order {
-    private final static Logger log = LogManager.getLogger(Order.class);
-
+    //    private final static Logger log = LogManager.getLogger(Order.class);
     public void doOrder() {
         log.info("Attempt to add product to shopping cart...");
         addToCart();

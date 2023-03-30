@@ -8,6 +8,12 @@ import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.atomic.AtomicInteger;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
+
 public class ConnectionPool {
     private static volatile ConnectionPool instance;
     private static final String DB_PROPERTY_FILE = "application";

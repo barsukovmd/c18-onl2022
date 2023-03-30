@@ -35,7 +35,12 @@ public class JdbcCategoryRepositoryImpl implements CategoryRepository {
     }
 
     @Override
-    public Category getCategory(Long id) {
+    public Category getCategoryById(Long id) {
+        return null;
+    }
+
+    @Override
+    public Category getCategoryByName(String name) {
         return null;
     }
 }

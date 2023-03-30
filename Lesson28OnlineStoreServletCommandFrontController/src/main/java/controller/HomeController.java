@@ -17,4 +17,7 @@ public class HomeController implements BaseController {
             String password = request.getParameter("password");
         }
     }
+
+    private String checkReceivedUser(User user, HttpServletRequest request) {
+    }
 }
