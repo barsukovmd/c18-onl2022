@@ -11,7 +11,7 @@ public class HomeController implements BaseController {
     public String execute(HttpServletRequest request) throws Exception {
         if (request.getMethod().equalsIgnoreCase("GET")) {
             User user = (User) request.getSession().getAttribute("username");
-            return chechReceivedUser(user, request);
+            return checkReceivedUser(user, request);
         } else {
             String login = request.getParameter("username");
             String password = request.getParameter("password");
