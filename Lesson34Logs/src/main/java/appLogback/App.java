@@ -1,6 +1,7 @@
-package app;
+package appLogback;
 
-public class Application {
+public class App {
+
     private static Order order;
 
     public static void main(String[] args) {

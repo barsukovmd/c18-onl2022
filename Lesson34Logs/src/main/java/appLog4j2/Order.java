@@ -1,7 +1,5 @@
-package app;
+package appLog4j2;
 import lombok.extern.log4j.Log4j2;
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
 
 @Log4j2
 public class Order {
