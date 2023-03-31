@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
-    <property name="LOG_FILE" value="${LOG_FILE:Lesson34Logs/src/main/java/logs}"/>
+    <property name="LOG_FILE" value="Lesson34Logs/src/main/java/logs/logback.log"/>
 
     <property name="COMMON_PATTERN"
               value="%d{ISO8601} %-5p [%t] %X{conversation} [client:%X{username:--}] [extras:[%X{extras:--}]] [%logger{40}] : %m%n%ex"/>

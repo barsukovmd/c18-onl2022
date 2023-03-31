@@ -23,7 +23,7 @@ public class Order {
     }
 
 
-    private void addToCart() throws Exception {
+    private void addToCart() {
         log.warn("Check product list is not empty before adding!");
         log.info("Product added to shopping cart");
         log.error("Some error occurred after adding the product to shopping cart");
