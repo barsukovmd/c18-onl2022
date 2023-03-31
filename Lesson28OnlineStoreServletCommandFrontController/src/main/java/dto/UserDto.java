@@ -14,5 +14,11 @@ import java.io.Serializable;
 @Getter
 @Setter
 public class UserDto implements Serializable {
+    private String username;
     private String name;
+    private String surname;
+    private String sex;
+    private String birthday;
+    private String email;
+    private String dateOfSignUp;
 }

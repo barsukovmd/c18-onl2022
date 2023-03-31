@@ -1,4 +1,4 @@
-package service;
+package service.impl;
 
 import models.Products;
 import repository.ProductRepository;

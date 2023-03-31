@@ -1,7 +1,8 @@
 package controller;
 
 import jakarta.servlet.http.HttpServletRequest;
+import models.PagesPath;
 
 public interface BaseController {
-    String execute(HttpServletRequest request) throws Exception;
+    PagesPath execute(HttpServletRequest request) throws Exception;
 }

@@ -1,8 +1,8 @@
 package utils;
 
 import controller.BaseController;
-import controller.HomeController;
-import controller.LogoutController;
+import controller.impl.HomeControllerImpl;
+import controller.impl.LogoutControllerImpl;
 import jakarta.servlet.http.HttpServletRequest;
 import models.Command;
 import models.RequestParameters;
@@ -23,8 +23,8 @@ public class CommandFactory {
 
     private static BaseController createController(Command command) {
         return switch (command) {
-            case SIGN_IN_COMMAND -> new HomeController();
-            case LOGOUT_COMMAND -> new LogoutController();
+            case SIGN_IN_COMMAND -> new HomeControllerImpl();
+            case LOGOUT_COMMAND -> new LogoutControllerImpl();
         };
     }
 }

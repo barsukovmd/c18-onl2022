@@ -5,7 +5,7 @@ import org.slf4j.MDC;
 
 import java.util.UUID;
 
-@Slf4j //используем анатацию ломбок для того что бы не делать переменную Logger внутри класса!!!
+@Slf4j
 public class Order {
 
     public void doOrder() {
@@ -18,7 +18,6 @@ public class Order {
             log.error("Unexpected error", e);
         }
         log.info("Order created");
-
         MDC.remove("conversation");
     }
 

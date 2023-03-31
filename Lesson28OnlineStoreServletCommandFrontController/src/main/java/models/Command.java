@@ -5,8 +5,15 @@ import java.util.Map;
 import java.util.Optional;
 
 public enum Command {
+    CATEGORY_COMMAND("category"),
+    HOME_COMMAND("home"),
     LOGOUT_COMMAND("logout"),
-    SIGN_IN_COMMAND("sign-in");
+    PRODUCT_COMMAND("product"),
+    PROFILE_COMMAND("profile"),
+    SHOPPING_CART_COMMAND("cart"),
+    SIGN_IN_COMMAND("sign-in"),
+    SIGN_IN_POST_COMMAND("sign-in-post"),
+    SIGN_UP_COMMAND("sign-up");
     private static final Map<String, Command> commandMapping = new HashMap<>();
 
     static {

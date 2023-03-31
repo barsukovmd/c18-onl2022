@@ -10,7 +10,7 @@ public enum PagesPath {
     HOME_PAGE("home.jsp"),
     PRODUCTS("products.jsp"),
     PROFILE("profile.jsp"),
-    SIGNING_PAGE("sign-in.jsp");
+    SIGNIN_PAGE("sign-in.jsp");
     private final String path;
 
     PagesPath(String path) {

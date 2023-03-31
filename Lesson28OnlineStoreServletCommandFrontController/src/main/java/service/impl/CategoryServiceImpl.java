@@ -1,8 +1,9 @@
-package service;
+package service.impl;
 
 import models.Category;
 import repository.CategoryRepository;
 import repository.impl.JdbcCategoryRepositoryImpl;
+import service.CategoryServiceAware;
 
 import java.util.List;
 
