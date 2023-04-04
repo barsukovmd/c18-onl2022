@@ -1,13 +1,13 @@
 package tms.controller.impl;
 
-import by.tms.controller.CommandController;
-import by.tms.exception.CommandException;
-import by.tms.model.PagesPath;
+import jakarta.servlet.http.HttpServletRequest;
 import lombok.Setter;
+import tms.controller.CommandController;
+import tms.exception.CommandException;
+import tms.model.PagesPath;
 
-import javax.servlet.http.HttpServletRequest;
+import static tms.model.PagesPath.LOGIN_PAGE;
 
-import static by.tms.model.PagesPath.LOGIN_PAGE;
 
 @Setter
 public class CreateUserPageCommandController implements CommandController {

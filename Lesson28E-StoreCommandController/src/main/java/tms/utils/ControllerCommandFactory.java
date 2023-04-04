@@ -1,15 +1,14 @@
 package tms.utils;
-
-import by.tms.controller.CommandController;
-import by.tms.controller.impl.*;
-import by.tms.model.Commands;
 import lombok.experimental.UtilityClass;
+import tms.controller.CommandController;
+import tms.controller.impl.*;
+import tms.model.Commands;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.function.Supplier;
 
-import static by.tms.utils.InjectObjectsFactory.createAndInjectInstances;
+import static tms.utils.InjectObjectsFactory.createAndInjectInstances;
 
 @UtilityClass
 public class ControllerCommandFactory {

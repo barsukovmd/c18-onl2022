@@ -1,7 +1,6 @@
 package tms.utils;
-
-import by.tms.model.User;
 import lombok.experimental.UtilityClass;
+import tms.model.User;
 
 import java.time.LocalDate;
 import java.time.Period;

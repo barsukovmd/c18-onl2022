@@ -1,10 +1,9 @@
 package tms.repository.impl;
-
-import by.tms.model.User;
-import by.tms.repository.ConnectionWrapper;
-import by.tms.repository.JdbcUserRepository;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import tms.model.User;
+import tms.repository.ConnectionWrapper;
+import tms.repository.JdbcUserRepository;
 
 import java.sql.Date;
 import java.sql.PreparedStatement;

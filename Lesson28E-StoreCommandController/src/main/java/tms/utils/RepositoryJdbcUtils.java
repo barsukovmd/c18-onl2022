@@ -1,20 +1,20 @@
 package tms.utils;
-
-import by.tms.model.Order;
-import by.tms.model.Product;
 import lombok.experimental.UtilityClass;
+import tms.model.Order;
+import tms.model.Product;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDate;
+
 import java.util.Collection;
 import java.util.List;
 import java.util.Objects;
 import java.util.Set;
 
-import static by.tms.model.ProductType.getProductType;
-import static by.tms.utils.Constants.ALL;
+import static tms.model.ProductType.getProductType;
+import static tms.utils.Constants.ALL;
 
 @UtilityClass
 public class RepositoryJdbcUtils {

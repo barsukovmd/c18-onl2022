@@ -1,12 +1,11 @@
 package tms.repository.impl;
-
-import by.tms.model.Product;
-import by.tms.repository.ConnectionWrapper;
-import by.tms.repository.JdbcCartRepository;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.tuple.ImmutablePair;
 import org.apache.commons.lang3.tuple.Pair;
+import tms.model.Product;
+import tms.repository.ConnectionWrapper;
+import tms.repository.JdbcCartRepository;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -14,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import static by.tms.utils.RepositoryJdbcUtils.*;
+import static tms.utils.RepositoryJdbcUtils.*;
 
 @Slf4j
 @AllArgsConstructor

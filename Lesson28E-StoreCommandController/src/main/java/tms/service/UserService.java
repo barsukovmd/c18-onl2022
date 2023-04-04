@@ -1,6 +1,6 @@
 package tms.service;
 
-import by.tms.model.User;
+import tms.model.User;
 
 public interface UserService {
 

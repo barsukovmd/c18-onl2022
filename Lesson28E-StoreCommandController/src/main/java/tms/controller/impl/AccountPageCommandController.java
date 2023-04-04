@@ -1,20 +1,19 @@
 package tms.controller.impl;
-
-import by.tms.controller.CommandController;
-import by.tms.exception.CommandException;
-import by.tms.model.*;
-import by.tms.service.OrderService;
-import by.tms.service.UserService;
+import jakarta.servlet.http.HttpServletRequest;
 import lombok.Setter;
+import tms.controller.CommandController;
+import tms.exception.CommandException;
+import tms.model.*;
+import tms.service.OrderService;
+import tms.service.UserService;
 
-import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
-import static by.tms.model.PagesPath.ACCOUNT_PAGE;
-import static by.tms.utils.Constants.Attributes.ORDERINGS;
-import static by.tms.utils.Constants.Attributes.USER;
-import static by.tms.utils.ServletUtils.getLogin;
-import static by.tms.utils.ServletUtils.getOrderings;
+import static tms.model.PagesPath.ACCOUNT_PAGE;
+import static tms.utils.Constants.Attributes.ORDERINGS;
+import static tms.utils.Constants.Attributes.USER;
+import static tms.utils.ServletUtils.getLogin;
+import static tms.utils.ServletUtils.getOrderings;
 
 @Setter
 public class AccountPageCommandController implements CommandController {

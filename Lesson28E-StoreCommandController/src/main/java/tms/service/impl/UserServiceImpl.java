@@ -1,10 +1,9 @@
 package tms.service.impl;
-
-import by.tms.model.Inject;
-import by.tms.model.User;
-import by.tms.repository.JdbcUserRepository;
-import by.tms.service.UserService;
 import lombok.Setter;
+import tms.model.Inject;
+import tms.model.User;
+import tms.repository.JdbcUserRepository;
+import tms.service.UserService;
 
 @Setter
 public class UserServiceImpl implements UserService {

@@ -1,24 +1,24 @@
 package tms.controller.impl;
 
-import by.tms.controller.CommandController;
-import by.tms.exception.CommandException;
-import by.tms.model.Inject;
-import by.tms.model.PagesPath;
-import by.tms.model.Product;
-import by.tms.service.CartService;
-import by.tms.service.OrderService;
-import by.tms.service.UserService;
-import by.tms.utils.Constants;
+import jakarta.servlet.http.HttpServletRequest;
 import lombok.Setter;
+import tms.controller.CommandController;
+import tms.exception.CommandException;
+import tms.model.Inject;
+import tms.model.PagesPath;
+import tms.model.Product;
+import tms.service.CartService;
+import tms.service.OrderService;
+import tms.service.UserService;
 
-import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
-import static by.tms.model.PagesPath.SHOPPING_CART_PAGE;
-import static by.tms.model.PagesPath.SUCCESS_BUY_JSP_PAGE;
-import static by.tms.utils.Constants.RequestParameters.BUY;
-import static by.tms.utils.ServletUtils.createOrderNumber;
-import static by.tms.utils.ServletUtils.getLogin;
+import static tms.model.PagesPath.SHOPPING_CART_PAGE;
+import static tms.model.PagesPath.SUCCESS_BUY_JSP_PAGE;
+import static tms.utils.Constants.*;
+import static tms.utils.ServletUtils.createOrderNumber;
+import static tms.utils.ServletUtils.getLogin;
+
 
 @Setter
 public class ShoppingCartPagePostCommandController implements CommandController {
@@ -37,7 +37,7 @@ public class ShoppingCartPagePostCommandController implements CommandController 
         Long userId = userService.getUserId(login);
         PagesPath path;
         String buyButton = request.getParameter(BUY);
-        if (buyButton.equals(Constants.BUY)) {
+        if (buyButton.equals(BUY)) {
             List<Product> products = cartService.getPurchasedProducts(userId, true, false);
             String orderNumber = "";
 //            while (!orderService.checkOrderNumber(orderNumber) || orderNumber.equals("")) {

@@ -1,9 +1,8 @@
 package tms.controller;
 
-import by.tms.exception.CommandException;
-import by.tms.model.PagesPath;
-
-import javax.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletRequest;
+import tms.exception.CommandException;
+import tms.model.PagesPath;
 
 public interface CommandController {
     PagesPath execute(HttpServletRequest request) throws CommandException;

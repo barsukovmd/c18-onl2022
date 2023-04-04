@@ -1,18 +1,16 @@
 package tms.service.impl;
-
-import by.tms.model.Inject;
-import by.tms.model.Product;
-import by.tms.repository.JdbcCartRepository;
-import by.tms.service.CartService;
 import lombok.Setter;
 import org.apache.commons.lang3.tuple.Pair;
+import tms.model.Inject;
+import tms.model.Product;
+import tms.repository.JdbcCartRepository;
+import tms.service.CartService;
 
 import java.math.BigDecimal;
 import java.util.List;
 
 @Setter
 public class CartServiceImpl implements CartService {
-
     @Inject
     private JdbcCartRepository jdbcCartRepository;
 
@@ -44,6 +42,7 @@ public class CartServiceImpl implements CartService {
             fullPrice = fullPrice.add(totalPrice);
         }
         return fullPrice;
+
     }
 
     @Override

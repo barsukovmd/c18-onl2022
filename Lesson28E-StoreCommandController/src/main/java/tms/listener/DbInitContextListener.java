@@ -1,15 +1,15 @@
 package tms.listener;
 
-import by.tms.model.Commands;
-import by.tms.repository.ConnectionPool;
-import by.tms.utils.ControllerCommandFactory;
+
+import jakarta.servlet.ServletContextEvent;
+import jakarta.servlet.ServletContextListener;
+import jakarta.servlet.annotation.WebListener;
 import lombok.extern.slf4j.Slf4j;
+import tms.model.Commands;
+import tms.repository.ConnectionPool;
+import tms.utils.ControllerCommandFactory;
 
-import javax.servlet.ServletContextEvent;
-import javax.servlet.ServletContextListener;
-import javax.servlet.annotation.WebListener;
-
-import static by.tms.utils.Constants.Attributes.USER_UUID;
+import static tms.utils.Constants.Attributes.USER_UUID;
 
 @WebListener
 @Slf4j

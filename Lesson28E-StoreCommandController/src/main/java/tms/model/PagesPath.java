@@ -3,9 +3,9 @@ package tms.model;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
-import static by.tms.model.ProductType.PHONE;
-import static by.tms.model.ProductType.TV;
-import static by.tms.utils.ControllerUtils.getPathByType;
+import static tms.model.ProductType.PHONE;
+import static tms.model.ProductType.TV;
+import static tms.utils.ControllerUtils.getPathByType;
 
 @AllArgsConstructor
 @Getter

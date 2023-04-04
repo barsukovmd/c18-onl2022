@@ -1,11 +1,10 @@
 package tms.service.impl;
-
-import by.tms.model.Inject;
-import by.tms.model.Order;
-import by.tms.model.Product;
-import by.tms.repository.JdbcOrderRepository;
-import by.tms.service.OrderService;
 import lombok.Setter;
+import tms.model.Inject;
+import tms.model.Order;
+import tms.model.Product;
+import tms.repository.JdbcOrderRepository;
+import tms.service.OrderService;
 
 import java.util.List;
 

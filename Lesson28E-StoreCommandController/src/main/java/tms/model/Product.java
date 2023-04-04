@@ -12,7 +12,6 @@ import java.math.BigDecimal;
 @ToString
 @Builder
 public class Product implements Serializable {
-
     private Long id;
     private String name;
     private BigDecimal price;

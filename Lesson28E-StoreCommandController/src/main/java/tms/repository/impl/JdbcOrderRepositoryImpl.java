@@ -1,12 +1,11 @@
 package tms.repository.impl;
-
-import by.tms.model.Order;
-import by.tms.model.Product;
-import by.tms.repository.ConnectionWrapper;
-import by.tms.repository.JdbcOrderRepository;
-import by.tms.utils.RepositoryJdbcUtils;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import tms.model.Order;
+import tms.model.Product;
+import tms.repository.ConnectionWrapper;
+import tms.repository.JdbcOrderRepository;
+import tms.utils.RepositoryJdbcUtils;
 
 import java.sql.Date;
 import java.sql.PreparedStatement;

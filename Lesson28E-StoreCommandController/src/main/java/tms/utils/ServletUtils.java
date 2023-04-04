@@ -1,25 +1,26 @@
 package tms.utils;
 
-import by.tms.model.Order;
-import by.tms.model.Ordering;
-import by.tms.model.Product;
-import by.tms.model.User;
+
+import jakarta.servlet.RequestDispatcher;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import lombok.experimental.UtilityClass;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.MDC;
+import tms.model.Order;
+import tms.model.Ordering;
+import tms.model.Product;
+import tms.model.User;
 
-import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import static by.tms.utils.Constants.Attributes.*;
-import static by.tms.utils.Constants.CONVERSATION;
 import static java.util.UUID.randomUUID;
+import static tms.utils.Constants.Attributes.*;
+import static tms.utils.Constants.CONVERSATION;
 
 @Slf4j
 @UtilityClass
@@ -79,7 +80,7 @@ public class ServletUtils {
         return "#" + id + "-" + uuid;
     }
 
-    public static void forwardToAddress(HttpServletRequest request, HttpServletResponse response, String address) throws ServletException, IOException {
+    public static void forwardToAddress(HttpServletRequest request, HttpServletResponse response, String address) throws IOException, ServletException {
         RequestDispatcher dispatcher = request.getRequestDispatcher(address);
         dispatcher.forward(request, response);
     }

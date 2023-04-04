@@ -1,10 +1,11 @@
 package tms.service;
 
-import by.tms.model.Product;
+import tms.model.Product;
 
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.Set;
+
 
 public interface ProductService {
 

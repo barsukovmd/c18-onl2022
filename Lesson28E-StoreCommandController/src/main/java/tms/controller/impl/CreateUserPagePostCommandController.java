@@ -1,25 +1,23 @@
 package tms.controller.impl;
-
-import by.tms.controller.CommandController;
-import by.tms.exception.CommandException;
-import by.tms.model.Inject;
-import by.tms.model.PagesPath;
-import by.tms.model.User;
-import by.tms.service.UserService;
+import jakarta.servlet.http.HttpServletRequest;
 import lombok.Setter;
+import tms.controller.CommandController;
+import tms.exception.CommandException;
+import tms.model.Inject;
+import tms.model.PagesPath;
+import tms.model.User;
+import tms.service.UserService;
 
-import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import static by.tms.model.PagesPath.FAIL_REGISTER_PAGE;
-import static by.tms.model.PagesPath.SUCCESS_REGISTER_PAGE;
-import static by.tms.utils.Constants.Attributes.INVALID;
-import static by.tms.utils.Constants.RequestParameters.LOGIN;
-import static by.tms.utils.Constants.RequestParameters.VERIFY_PASSWORD;
-import static by.tms.utils.ControllerUtils.getUser;
-import static by.tms.utils.ServletUtils.saveUserSession;
-import static by.tms.utils.ValidatorUtils.isVerifyUserData;
+import static tms.model.PagesPath.FAIL_REGISTER_PAGE;
+import static tms.model.PagesPath.SUCCESS_REGISTER_PAGE;
+import static tms.utils.Constants.Attributes.INVALID;
+import static tms.utils.Constants.RequestParameters.*;
+import static tms.utils.ControllerUtils.getUser;
+import static tms.utils.ServletUtils.saveUserSession;
+import static tms.utils.ValidatorUtils.isVerifyUserData;
 
 @Setter
 public class CreateUserPagePostCommandController implements CommandController {

@@ -1,11 +1,9 @@
 package tms.repository.impl;
-
-import by.tms.model.Product;
-import by.tms.repository.ConnectionWrapper;
-import by.tms.repository.JdbcProductRepository;
-import by.tms.utils.RepositoryJdbcUtils;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import tms.model.Product;
+import tms.repository.ConnectionWrapper;
+import tms.repository.JdbcProductRepository;
 
 import java.math.BigDecimal;
 import java.sql.PreparedStatement;
@@ -15,7 +13,7 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
 
-import static by.tms.utils.RepositoryJdbcUtils.*;
+import static tms.utils.RepositoryJdbcUtils.fillsCollectionValues;
 
 @Slf4j
 @AllArgsConstructor

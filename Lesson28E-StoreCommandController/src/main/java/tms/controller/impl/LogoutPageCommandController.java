@@ -1,17 +1,15 @@
 package tms.controller.impl;
-
-import by.tms.controller.CommandController;
-import by.tms.exception.CommandException;
-import by.tms.model.PagesPath;
-import by.tms.model.User;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession;
 import lombok.extern.slf4j.Slf4j;
+import tms.controller.CommandController;
+import tms.exception.CommandException;
+import tms.model.PagesPath;
+import tms.model.User;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
+import static tms.utils.Constants.Attributes.*;
+import static tms.utils.ControllerUtils.getHomePagePath;
 
-import static by.tms.utils.Constants.Attributes.ACCESS_PERMISSION;
-import static by.tms.utils.Constants.Attributes.USER_UUID;
-import static by.tms.utils.ControllerUtils.getHomePagePath;
 
 @Slf4j
 public class LogoutPageCommandController implements CommandController {

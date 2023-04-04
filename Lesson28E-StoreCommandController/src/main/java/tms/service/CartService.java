@@ -1,7 +1,6 @@
 package tms.service;
-
-import by.tms.model.Product;
 import org.apache.commons.lang3.tuple.Pair;
+import tms.model.Product;
 
 import java.math.BigDecimal;
 import java.util.List;

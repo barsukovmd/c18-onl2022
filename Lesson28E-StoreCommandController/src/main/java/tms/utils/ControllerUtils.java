@@ -1,25 +1,26 @@
 package tms.utils;
 
-import by.tms.exception.CommandException;
-import by.tms.model.PagesPath;
-import by.tms.model.ProductType;
-import by.tms.model.User;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession;
 import lombok.experimental.UtilityClass;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.MDC;
+import tms.exception.CommandException;
+import tms.model.PagesPath;
+import tms.model.ProductType;
+import tms.model.User;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.UUID;
 
-import static by.tms.model.PagesPath.*;
-import static by.tms.utils.Constants.Attributes.USER_UUID;
-import static by.tms.utils.Constants.CONVERSATION;
-import static by.tms.utils.Constants.PATH_TO_PRODUCT_TYPE;
-import static by.tms.utils.Constants.RequestParameters.*;
+import static tms.model.PagesPath.*;
+import static tms.utils.Constants.Attributes.USER_UUID;
+import static tms.utils.Constants.CONVERSATION;
+import static tms.utils.Constants.PATH_TO_PRODUCT_TYPE;
+import static tms.utils.Constants.RequestParameters.*;
+import static tms.utils.Constants.RequestParameters.PASSWORD;
 
 @UtilityClass
 @Slf4j

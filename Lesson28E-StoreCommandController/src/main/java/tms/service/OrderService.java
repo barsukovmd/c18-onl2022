@@ -1,7 +1,7 @@
 package tms.service;
 
-import by.tms.model.Order;
-import by.tms.model.Product;
+import tms.model.Order;
+import tms.model.Product;
 
 import java.util.List;
 

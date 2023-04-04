@@ -1,23 +1,23 @@
 package tms.servlet;
 
-import by.tms.controller.CommandController;
-import by.tms.exception.CommandException;
-import by.tms.model.Commands;
-import by.tms.model.PagesPath;
-import by.tms.utils.ControllerCommandFactory;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import lombok.extern.slf4j.Slf4j;
+import tms.controller.CommandController;
+import tms.exception.CommandException;
+import tms.model.Commands;
+import tms.model.PagesPath;
+import tms.utils.ControllerCommandFactory;
 
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-import static by.tms.model.Commands.HOME_PAGE_COMMAND;
-import static by.tms.utils.Constants.RequestParameters.COMMAND;
-import static by.tms.utils.ControllerUtils.throwCommandException;
-import static by.tms.utils.ServletUtils.forwardToAddress;
+import static tms.model.Commands.HOME_PAGE_COMMAND;
+import static tms.utils.Constants.RequestParameters.COMMAND;
+import static tms.utils.ControllerUtils.throwCommandException;
+import static tms.utils.ServletUtils.forwardToAddress;
 
 @Slf4j
 @WebServlet("/eshop")

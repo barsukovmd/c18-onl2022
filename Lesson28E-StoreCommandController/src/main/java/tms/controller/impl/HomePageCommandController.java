@@ -1,12 +1,11 @@
 package tms.controller.impl;
 
-import by.tms.controller.CommandController;
-import by.tms.exception.CommandException;
-import by.tms.model.PagesPath;
+import jakarta.servlet.http.HttpServletRequest;
+import tms.controller.CommandController;
+import tms.exception.CommandException;
+import tms.model.PagesPath;
 
-import javax.servlet.http.HttpServletRequest;
-
-import static by.tms.utils.ControllerUtils.getHomePagePath;
+import static tms.utils.ControllerUtils.getHomePagePath;
 
 public class HomePageCommandController implements CommandController {
 

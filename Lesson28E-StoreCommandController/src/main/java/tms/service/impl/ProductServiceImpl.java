@@ -1,10 +1,9 @@
 package tms.service.impl;
-
-import by.tms.model.Inject;
-import by.tms.model.Product;
-import by.tms.repository.JdbcProductRepository;
-import by.tms.service.ProductService;
 import lombok.Setter;
+import tms.model.Inject;
+import tms.model.Product;
+import tms.repository.JdbcProductRepository;
+import tms.service.ProductService;
 
 import java.math.BigDecimal;
 import java.util.List;

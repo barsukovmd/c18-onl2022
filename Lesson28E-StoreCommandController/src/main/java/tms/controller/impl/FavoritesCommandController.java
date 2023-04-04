@@ -1,22 +1,21 @@
 package tms.controller.impl;
 
-import by.tms.controller.CommandController;
-import by.tms.exception.CommandException;
-import by.tms.model.Inject;
-import by.tms.model.PagesPath;
-import by.tms.model.Product;
-import by.tms.service.CartService;
-import by.tms.service.UserService;
+import jakarta.servlet.http.HttpServletRequest;
 import lombok.Setter;
 import org.apache.commons.lang3.tuple.Pair;
+import tms.controller.CommandController;
+import tms.exception.CommandException;
+import tms.model.Inject;
+import tms.model.PagesPath;
+import tms.model.Product;
+import tms.service.*;
 
-import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import static by.tms.model.PagesPath.FAVORITES_JSP_PAGE;
-import static by.tms.utils.Constants.Attributes.FAVORITE_PRODUCTS;
-import static by.tms.utils.ServletUtils.getLogin;
+import static tms.model.PagesPath.FAVORITES_JSP_PAGE;
+import static tms.utils.Constants.Attributes.FAVORITE_PRODUCTS;
+import static tms.utils.ServletUtils.getLogin;
 
 @Setter
 public class FavoritesCommandController implements CommandController {

@@ -1,7 +1,7 @@
 package tms.repository;
 
-import by.tms.model.Product;
 import org.apache.commons.lang3.tuple.Pair;
+import tms.model.Product;
 
 import java.util.List;
 
