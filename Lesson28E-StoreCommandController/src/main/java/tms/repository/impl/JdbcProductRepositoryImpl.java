@@ -4,6 +4,7 @@ import lombok.extern.slf4j.Slf4j;
 import tms.model.Product;
 import tms.repository.ConnectionWrapper;
 import tms.repository.JdbcProductRepository;
+import tms.utils.RepositoryJdbcUtils;
 
 import java.math.BigDecimal;
 import java.sql.PreparedStatement;
@@ -12,7 +13,8 @@ import java.util.ArrayList;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
-import static tms.utils.RepositoryJdbcUtils.fillsCollectionValues;
+
+import static tms.utils.RepositoryJdbcUtils.*;
 
 @Slf4j
 @AllArgsConstructor
@@ -24,7 +26,7 @@ public class JdbcProductRepositoryImpl implements JdbcProductRepository {
     private static final String ADD_PRODUCT_TO_FOUNDED_PRODUCTS = "insert into founded_products (user_uuid, product_id) VALUES (?, ?)";
     private static final String GET_PRODUCTS_BY_SEARCH_CONDITION_IN_NAME = "select id from products where lower(name) like lower(?)";
     private static final String GET_PRODUCTS_BY_SEARCH_CONDITION_IN_INFO = "select id from products where lower(info) like lower(?)";
-    private static final String GET_PRODUCTS_BY_SEARCH_CONDITION_FOR_USER = "select p.id, p.name, p.price, p.type, p.info from founded_products fp join products p on fp.product_id = p.id where user_uuid = ? order by fp.id";
+    private static final String GET_PRODUCTS_BY_SEARCH_CONDITION_FOR_USER = "select p.id, p.name, p.price, p.type, p.info from founded_products fp join products p on fp.product_id = p.id where user_uuid = ? order by fp.product_id";
     private static final String DELETE_FOUND_PRODUCTS_BY_USER_UUID = "delete from founded_products where user_uuid = ?";
     private static final String GET_PRODUCT = "select * from products where id=?";
     private static final String SELECT_PRODUCTS_BY_FILTER = "select p.id, p.name, p.price, p.type, p.info from founded_products fp join products p on fp.product_id = p.id where user_uuid = ? and p.price>=? and p.price<=?";
