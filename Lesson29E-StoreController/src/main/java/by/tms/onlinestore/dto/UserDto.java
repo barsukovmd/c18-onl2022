@@ -14,11 +14,11 @@ import lombok.experimental.SuperBuilder;
 @ToString
 @SuperBuilder
 public class UserDto {
-    private String username;
+    private String login;
     private String name;
     private String surname;
-    private String gender;
-    private String birthday;
+    private String sex;
+    private String dateOfBirth;
     private String email;
     private String dateOfRegistry;
 }

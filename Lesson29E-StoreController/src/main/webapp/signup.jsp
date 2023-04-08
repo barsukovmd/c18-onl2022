@@ -17,17 +17,17 @@
             <c:set var="contextPath" value="${pageContext.request.contextPath}"/>
             <form id="registrationForm" method="post" action="${contextPath}/signup" onsubmit="return validateForm()">
                 <div class="form-item box-item">
-                    <input id="name" type="text" placeholder="Имя" name="name" oninput="validateName()"
+                    <input id="name" type="text" placeholder="name" name="name" oninput="validateName()"
                            required><br/>
                     <span id="nameError" style="display: none;">*Поле 'Имя' не заполнено!</span>
                 </div>
                 <div class="form-item box-item">
-                    <input id="surname" type="text" placeholder="Фамилия" name="newUsrSurname"
+                    <input id="surname" type="text" placeholder="surname" name="Surname"
                            oninput="validateSurname()" required><br/>
-                    <span id="surnameError" style="display: none;">*Поле 'Фамилия' не заполнено!</span>
+                    <span id="surnameError" style="display: none;">*Field 'Surname' is not filled up!</span>
                 </div>
                 <div id="brthDateLbl">
-                    <label>Дата рождения</label>
+                    <label>Date of Birth</label>
                 </div>
                 <div class="form-group">
                     <input type="date" id="birthdate" name="date" class="form-control" required>
@@ -45,7 +45,7 @@
                             <label class="label">Gender</label>
                         </div>
                         <div class="form-item">
-                            <input id="Male" type="radio" name="gender" value="Male" data-once required>
+                            <input id="Male" type="radio" name="sex" value="Male" data-once required>
                             <label for="Male">male</label>
                         </div>
                         <div class="form-item">

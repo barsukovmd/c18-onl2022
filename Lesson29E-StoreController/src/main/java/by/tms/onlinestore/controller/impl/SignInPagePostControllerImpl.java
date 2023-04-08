@@ -28,7 +28,7 @@ public class SignInPagePostControllerImpl implements BaseCommandController {
         User user = userService.getUserByLoginAndPassword(username, pass);
         if (user != null) {
             HttpSession session = request.getSession();
-            UserDto userDto = new UserDto(user.getUsername(), user.getName(), user.getSurname(), user.getGender(), user.getBirthday(), user.getEmail(), user.getDateOfRegistry());
+            UserDto userDto = new UserDto(user.getLogin(), user.getName(), user.getSurname(), user.getSex(), user.getDateOfBirth(), user.getEmail(), user.getDateOfRegistry());
             Cart cart = new Cart();
             session.setAttribute(Attribute.CART.getAttribute(), cart);
             session.setAttribute(Attribute.USERNAME.getAttribute(), username);

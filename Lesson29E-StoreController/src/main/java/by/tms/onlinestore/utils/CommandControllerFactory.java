@@ -39,7 +39,7 @@ public class CommandControllerFactory {
             case SHOPPING_CART_POST_COMMAND -> CartPagePostControllerImpl::new;
             case SIGN_IN_COMMAND -> SignInPageControllerImpl::new;
             case SIGN_IN_POST_COMMAND -> SignInPagePostControllerImpl::new;
-            case SIGN_UP_COMMAND -> SignInPageControllerImpl::new;
+            case SIGN_UP_COMMAND -> null;
         };
     }
 

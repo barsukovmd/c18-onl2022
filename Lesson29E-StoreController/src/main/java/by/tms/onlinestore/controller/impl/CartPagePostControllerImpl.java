@@ -21,7 +21,7 @@ import static by.tms.onlinestore.model.RequestParam.PRICE_PARAMETER;
 public class CartPagePostControllerImpl implements BaseCommandController {
     @Override
     public PagesPath execute(HttpServletRequest request) throws Exception {
-        HttpSession session = request.getSession(true);
+        HttpSession session = request.getSession(false);
         Cart cart = (Cart) session.getAttribute(Attribute.CART.getAttribute());
         int id = Integer.parseInt(request.getParameter(ID.getValue()));
         String imageName = request.getParameter(IMAGE_NAME.getValue());
