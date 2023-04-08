@@ -8,5 +8,7 @@ public interface CategoryRepository extends Repository {
 
     List<Category> getCategories();
 
-    Category getCategory(int id);
+    Category getCategoryById(int id);
+
+    Category getCategoryByName(String name);
 }

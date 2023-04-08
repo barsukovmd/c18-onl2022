@@ -12,16 +12,11 @@ import java.sql.ResultSet;
 @Setter
 public class UserRepositoryImpl implements UserRepository {
 
-    private static final String GET_USERS_INFO = "select login_key, pass_value from \"online-store\".users";
+    private static final String GET_USERS_INFO = "select login, password from \"online-store\".users";
     private static final String INSERT_USER_QUERY = "insert into \"online-store\".users (login, password, name, surname, birthday, sex, email, registration_date) values (?, ?, ?, ?, ?, ?, ?, ?)";
     private static final String GET_USER_BY_LOGIN_AND_PASSWORD = "SELECT login, password, name, surname, birthday, sex, email, registration_date FROM \"online-store\".users WHERE login = ? AND password = ?";
-//    private final ConnectionPool connectionPool;
 
-
-//    public JdbcUserRepositoryImpl(ConnectionPool connectionPool) {
-//        this.connectionPool = connectionPool;
-//    }
-
+    ˆ
     @Override
     public void addNewUser(User user) {
         try (ConnectionWrapper connectionWrapper = getConnectionWrapper();
@@ -33,7 +28,7 @@ public class UserRepositoryImpl implements UserRepository {
             statement.setDate(5, Date.valueOf(user.getBirthday()));
             statement.setString(6, user.getGender());
             statement.setString(7, user.getEmail());
-            statement.setDate(8, Date.valueOf(user.getRegistrationDate()));
+            statement.setDate(8, Date.valueOf(user.getDateOfRegistry()));
             statement.executeUpdate();
         } catch (Exception e) {
             System.out.println("Exception in addNewUser: " + e.getMessage());
@@ -50,14 +45,14 @@ public class UserRepositoryImpl implements UserRepository {
             ResultSet rs = statement.executeQuery();
             while (rs.next()) {
                 user = User.builder()
-                        .username(rs.getString("login_key"))
-                        .password(rs.getString("pass_value"))
-                        .name(rs.getString("first_name"))
-                        .surname(rs.getString("second_name"))
-                        .birthday(rs.getString("day_of_birthday"))
-                        .gender(rs.getString("gender"))
+                        .username(rs.getString("login"))
+                        .password(rs.getString("password"))
+                        .name(rs.getString("name"))
+                        .surname(rs.getString("surname"))
+                        .birthday(rs.getString("birthday"))
+                        .gender(rs.getString("sex"))
                         .email(rs.getString("email"))
-                        .registrationDate(rs.getString("registration_date"))
+                        .dateOfRegistry(rs.getString("registration_date"))
                         .build();
             }
         } catch (Exception e) {

@@ -1,10 +1,9 @@
 package by.tms.onlinestore.listener;
 
 import by.tms.onlinestore.repository.utils.ConnectionPool;
-
-import javax.servlet.ServletContextEvent;
-import javax.servlet.ServletContextListener;
-import javax.servlet.annotation.WebListener;
+import jakarta.servlet.ServletContextEvent;
+import jakarta.servlet.ServletContextListener;
+import jakarta.servlet.annotation.WebListener;
 
 import static by.tms.onlinestore.model.Attribute.CONNECTION_POOL;
 import static by.tms.onlinestore.model.Attribute.USER_UUID;

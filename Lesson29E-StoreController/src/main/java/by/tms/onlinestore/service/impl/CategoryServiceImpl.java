@@ -20,11 +20,11 @@ public class CategoryServiceImpl implements CategoryService {
 
     @Override
     public Category getCategoryById(int id) {
-        return categoryRepository.getCategory(id);
+        return categoryRepository.getCategoryById(id);
     }
 
     @Override
     public Category getCategoryByName(String name) {
-        return null;
+        return categoryRepository.getCategoryByName(name);
     }
 }
