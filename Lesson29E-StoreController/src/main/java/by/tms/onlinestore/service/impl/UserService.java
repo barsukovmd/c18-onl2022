@@ -18,4 +18,7 @@ public class UserService {
         userRepository.addNewUser(user);
     }
 
+    public void getUserInfo(User user) {
+        userRepository.getUserInfo(user);
+    }
 }
