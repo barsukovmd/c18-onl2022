@@ -31,11 +31,10 @@ public class HomePageBaseCommandController implements BaseCommandController {
         if (isUserLogIn(userDto)) {
             List<Category> categories = categoryService.getCategories();
             request.setAttribute("categories", categories);
-            System.out.println("checkReceivedUser good, forward to home");
-//            request.getRequestDispatcher("home.jsp").forward(request);
+            System.out.println("User successfully identified");
             path = PagesPath.HOME_PAGE;
         } else {
-            System.out.println("checkReceivedUser bad, forward to signin");
+            System.out.println("User unsuccessfully identified");
             path = PagesPath.SIGN_IN_PAGE;
         }
         return path;

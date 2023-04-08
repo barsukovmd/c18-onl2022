@@ -9,7 +9,6 @@ import lombok.experimental.UtilityClass;
 
 @UtilityClass
 public class CategoryHelper {
-
     public static final List<Category> categories = Arrays.asList(
             new Category(1, "Mobile phones", "mobile.jpg"),
             new Category(2, "Laptops", "laptop.jpg"),

@@ -11,7 +11,7 @@ public class LogoutPageControllerImpl implements BaseCommandController {
 
     @Override
     public PagesPath execute(HttpServletRequest request) throws Exception {
-        HttpSession session = request.getSession(false);
+        HttpSession session = request.getSession(true);
         if (session != null) {
             session.invalidate();
         }

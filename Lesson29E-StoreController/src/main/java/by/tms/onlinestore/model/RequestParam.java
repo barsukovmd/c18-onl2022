@@ -1,15 +1,14 @@
 package by.tms.onlinestore.model;
 
 public enum RequestParam {
-    USERNAME("username"),
+    LOGIN("login"),
     PASSWORD("password"),
     PRODUCT_ID("productId"),
-    REPEAT_PASS("repeatPass"),
-    SURNAME("newUsrSurname"),
-    BIRTHDAY("date"),
-    GENDER("gender"),
-    EMAIL("newUsrEmail"),
-    REGISTRATION_DATE("registrationDate"),
+    SURNAME("surname"),
+    DATE_OF_BIRTH("dateOfBirth"),
+    SEX("sex"),
+    EMAIL("email"),
+    DATE_OF_REGISTRY("dateOfRegistry"),
     ID("id"),
     IMAGE_NAME("imageName"),
     NAME("name"),

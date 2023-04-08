@@ -5,7 +5,6 @@ import java.util.Map;
 import java.util.Optional;
 
 public enum Commands {
-
     CATEGORY_COMMAND("category"),
     HOME_COMMAND("home"),
     LOGOUT_COMMAND("logout"),

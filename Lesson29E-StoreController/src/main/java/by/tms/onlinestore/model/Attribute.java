@@ -9,9 +9,7 @@ public enum Attribute {
 
     USER_UUID("userUUID"),
     CONNECTION_POOL("connectionPool"),
-
     CART("cart"),
-
     USERNAME("username"),
     CATEGORIES("categories"),
     PRODUCTS("products"),
@@ -19,6 +17,5 @@ public enum Attribute {
     MY_PRODUCTS("myProducts"),
     ONE_PRODUCT("oneProduct"),
     USER_DTO("userDto");
-
     private final String attribute;
 }

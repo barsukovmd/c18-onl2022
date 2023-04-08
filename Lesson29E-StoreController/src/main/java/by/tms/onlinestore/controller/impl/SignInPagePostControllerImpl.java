@@ -13,7 +13,7 @@ import jakarta.servlet.http.HttpSession;
 import lombok.Setter;
 
 import static by.tms.onlinestore.model.RequestParam.PASSWORD;
-import static by.tms.onlinestore.model.RequestParam.USERNAME;
+import static by.tms.onlinestore.model.RequestParam.LOGIN;
 
 @Setter
 public class SignInPagePostControllerImpl implements BaseCommandController {
@@ -22,14 +22,8 @@ public class SignInPagePostControllerImpl implements BaseCommandController {
 
     @Override
     public PagesPath execute(HttpServletRequest request) throws Exception {
-        String username = request.getParameter(USERNAME.getValue());
+        String username = request.getParameter(LOGIN.getValue());
         String pass = request.getParameter(PASSWORD.getValue());
-//        try {
-//            validateParamNotNull(username);
-//            validateParamNotNull(pass);
-//        } catch (RequestParamNullException ex) {
-//            System.out.println(ex.getMessage());
-//        }
         PagesPath path;
         User user = userService.getUserByLoginAndPassword(username, pass);
         if (user != null) {

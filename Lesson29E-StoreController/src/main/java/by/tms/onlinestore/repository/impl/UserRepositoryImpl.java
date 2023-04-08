@@ -12,8 +12,8 @@ import java.sql.ResultSet;
 public class UserRepositoryImpl implements UserRepository {
 
     private static final String GET_USERS_INFO = "select login, password from \"online-store\".users";
-    private static final String INSERT_USER_QUERY = "insert into \"online-store\".users (id, login, password, name, surname, birthday, sex, email, registration_date) values (?, ?, ?, ?, ?, ?, ?, ?)";
-    private static final String GET_USER_BY_LOGIN_AND_PASSWORD = "SELECT login, password, name, surname, birthday, sex, email, registration_date FROM \"online-store\".users WHERE login = ? AND password = ?";
+    private static final String INSERT_USER_QUERY = "insert into \"online-store\".users (id, login, password, name, surname, birthday, sex, email, date_of_registry) values (?, ?, ?, ?, ?, ?, ?, ?)";
+    private static final String GET_USER_BY_LOGIN_AND_PASSWORD = "SELECT login, password, name, surname, birthday, sex, email, date_of_registry FROM \"online-store\".users WHERE login = ? AND password = ?";
 
     @Override
     public void getUserInfo(User user) {

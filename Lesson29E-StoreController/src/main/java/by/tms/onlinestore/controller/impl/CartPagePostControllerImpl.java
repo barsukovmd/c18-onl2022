@@ -21,7 +21,7 @@ import static by.tms.onlinestore.model.RequestParam.PRICE_PARAMETER;
 public class CartPagePostControllerImpl implements BaseCommandController {
     @Override
     public PagesPath execute(HttpServletRequest request) throws Exception {
-        HttpSession session = request.getSession(false);
+        HttpSession session = request.getSession(true);
         Cart cart = (Cart) session.getAttribute(Attribute.CART.getAttribute());
         int id = Integer.parseInt(request.getParameter(ID.getValue()));
         String imageName = request.getParameter(IMAGE_NAME.getValue());
@@ -43,7 +43,7 @@ public class CartPagePostControllerImpl implements BaseCommandController {
             session.setAttribute(Attribute.MY_PRODUCTS.getAttribute(), cart.getProducts());
             path = PagesPath.CART_PAGE;
         } else {
-            System.out.println("Такой кнопки нет");
+            System.out.println("No button for this operation");
         }
         return path;
 
