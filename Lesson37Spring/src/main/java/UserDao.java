@@ -8,19 +8,18 @@ import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.sql.Statement;
 
 @AllArgsConstructor
 @Getter
 @Setter
-public class Users {
+public class UserDao {
     private String login;
     private String pass;
     private String description;
     private int id;
 
-    public Users findById(Integer id) {
-        try (Connection connection = newDataSource().getConnection()) {
+    public UserDao findById(Integer id) {
+        try (Connection connection = Application.INSTANCE.dataSource().getConnection()) {
 //            Statement statement = connection.createStatement("select * from users where id =  ?");
             PreparedStatement preparedStatement = connection.prepareStatement("select * from users order by id");
             return users;
@@ -29,8 +28,8 @@ public class Users {
         }
     }
 
-    public Users findByName(String name) {
-        try (Connection connection = newDataSource().getConnection()) {
+    public UserDao findByName(String name) {
+        try (Connection connection = Application.INSTANCE.dataSource().getConnection()) {
 //            Statement statement = connection.createStatement("select * from users where id =  ?");
             PreparedStatement preparedStatement = connection.prepareStatement("select * from users order by name");
             return users;
@@ -39,11 +38,11 @@ public class Users {
         }
     }
 
-    public DataSource newDataSource() {
-        MysqlDataSource dataSource = new MysqlDataSource();
-        dataSource.setUser("root");
-        dataSource.setPassword("s3cr3t");
-        dataSource.setURL("jdbc:mysql://localhost:3306/myDatabase");
-        return dataSource;
-    }
+//    public DataSource newDataSource() {
+//        MysqlDataSource dataSource = new MysqlDataSource();
+//        dataSource.setUser("root");
+//        dataSource.setPassword("s3cr3t");
+//        dataSource.setURL("jdbc:mysql://localhost:3306/myDatabase");
+//        return dataSource;
+//    }
 }
