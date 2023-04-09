@@ -20,7 +20,7 @@ public class Users {
     private int id;
 
     public Users findById(Integer id) {
-        try (Connection connection = dataSource.getConnection()) {
+        try (Connection connection = newDataSource().getConnection()) {
 //            Statement statement = connection.createStatement("select * from users where id =  ?");
             PreparedStatement preparedStatement = connection.prepareStatement("select * from users order by id");
             return users;
@@ -29,8 +29,8 @@ public class Users {
         }
     }
 
-    public Users findByName(Integer id) {
-        try (Connection connection = dataSource.getConnection()) {
+    public Users findByName(String name) {
+        try (Connection connection = newDataSource().getConnection()) {
 //            Statement statement = connection.createStatement("select * from users where id =  ?");
             PreparedStatement preparedStatement = connection.prepareStatement("select * from users order by name");
             return users;
