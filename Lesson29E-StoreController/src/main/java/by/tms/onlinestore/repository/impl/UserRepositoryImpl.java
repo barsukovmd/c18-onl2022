@@ -19,7 +19,7 @@ public class UserRepositoryImpl implements UserRepository {
     public void getUserInfo(User user) {
         try (ConnectionWrapper connectionWrapper = getConnectionWrapper();
              PreparedStatement preparedStatement = connectionWrapper.getConnection().prepareStatement(GET_USERS_INFO)) {
-            preparedStatement.setString(1, user.getUsername());
+            preparedStatement.setString(1, user.getLogin());
             preparedStatement.setString(2, user.getPassword());
             preparedStatement.executeUpdate();
         } catch (Exception e) {
@@ -31,12 +31,12 @@ public class UserRepositoryImpl implements UserRepository {
     public void addNewUser(User user) {
         try (ConnectionWrapper connectionWrapper = getConnectionWrapper();
              PreparedStatement statement = connectionWrapper.getConnection().prepareStatement(INSERT_USER_QUERY)) {
-            statement.setString(1, user.getUsername());
+            statement.setString(1, user.getLogin());
             statement.setString(2, user.getPassword());
             statement.setString(3, user.getName());
             statement.setString(4, user.getSurname());
-            statement.setDate(5, Date.valueOf(user.getBirthday()));
-            statement.setString(6, user.getGender());
+            statement.setDate(5, Date.valueOf(user.getDateOfBirth()));
+            statement.setString(6, user.getSex());
             statement.setString(7, user.getEmail());
             statement.setDate(8, Date.valueOf(user.getDateOfRegistry()));
             statement.executeUpdate();
@@ -55,12 +55,12 @@ public class UserRepositoryImpl implements UserRepository {
             ResultSet rs = statement.executeQuery();
             while (rs.next()) {
                 user = User.builder()
-                        .username(rs.getString("login"))
+                        .login(rs.getString("login"))
                         .password(rs.getString("password"))
                         .name(rs.getString("name"))
                         .surname(rs.getString("surname"))
-                        .birthday(rs.getString("birthday"))
-                        .gender(rs.getString("sex"))
+                        .dateOfBirth(rs.getString("birthday"))
+                        .sex(rs.getString("sex"))
                         .email(rs.getString("email"))
                         .dateOfRegistry(rs.getString("registration_date"))
                         .build();
