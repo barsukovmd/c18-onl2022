@@ -32,7 +32,7 @@ public class CreateStudentServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         try {
-            int idForCity = Integer.parseInt(req.getParameter("id_for_city"));
+            int idForCity = Integer.parseInt(req.getParameter("idForCity"));
             String city = req.getParameter("city");
             int id = Integer.parseInt(req.getParameter("id"));
             String name = req.getParameter("name");
