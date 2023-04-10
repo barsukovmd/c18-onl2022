@@ -1,5 +1,4 @@
-import com.mysql.cj.jdbc.MysqlDataSource;
-import lombok.AllArgsConstructor;
+package test;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -9,19 +8,19 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-@AllArgsConstructor
 @Getter
 @Setter
 public class UserDao {
-    private String login;
-    private String pass;
-    private String description;
-    private int id;
+    private DataSource dataSource;
+
+    public UserDao(DataSource dataSource) {
+        this.dataSource = dataSource;
+    }
 
     public UserDao findById(Integer id) {
         try (Connection connection = Application.INSTANCE.dataSource().getConnection()) {
-//            Statement statement = connection.createStatement("select * from users where id =  ?");
             PreparedStatement preparedStatement = connection.prepareStatement("select * from users order by id");
+            preparedStatement.execute();
             return users;
         } catch (SQLException e) {
             System.out.println(e.getMessage());

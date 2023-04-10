@@ -20,7 +20,7 @@
 </head>
 <body>
 <ul>
-    <li><a class="active" href='home'><i class="fa fa-fw fa-home"></i> Main</a></li>
+    <li><a class="active" href='home'><i class="fa fa-fw fa-home"></i> test.Main</a></li>
     <li style="float:right"><a href='cart'><i class="fa fa-fw fa-shopping-cart"></i> Bin</a></li>
     <li style="float:right"><a href='profile'><i class="fa fa-fw fa-user"></i> User</a></li>
 </ul>

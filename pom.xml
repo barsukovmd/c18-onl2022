@@ -53,7 +53,8 @@
         <module>Lesson33JavaEECommandPatternOnlineStore</module>
         <module>Lesson34Logs</module>
         <module>Lesson36Sql</module>
-        <module>Lesson37Spring</module>
+        <module>Lesson37SpringPart1</module>
+        <module>Lesson37SpringPart2</module>
     </modules>
 
     <properties>
@@ -298,10 +299,6 @@
                 <configuration>
                     <failOnViolation>false</failOnViolation>
                     <printFailingErrors>true</printFailingErrors>
-                    <rulesets>
-                        <!--                        <ruleset>../codequality/pmd-ruleset.xml</ruleset>-->
-                        <!--                        <ruleset>../codequality/rules.xml</ruleset>-->
-                    </rulesets>
                     <targetJdk>${maven.compiler.target}</targetJdk>
                     <linkXRef>false</linkXRef>
                     <excludeRoots>
