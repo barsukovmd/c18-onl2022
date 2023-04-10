@@ -1,4 +1,4 @@
-package test;
+package spring;
 
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.databind.DeserializationFeature;

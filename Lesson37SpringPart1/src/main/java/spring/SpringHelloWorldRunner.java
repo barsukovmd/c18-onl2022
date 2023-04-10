@@ -3,7 +3,6 @@ package spring;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import spring.model.SpringHelloWorld;
 import spring.model.User;
-import test.JsonMarshaller;
 
 public class SpringHelloWorldRunner {
 
