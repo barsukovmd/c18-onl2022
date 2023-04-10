@@ -13,5 +13,5 @@
 		<property name="jsonMarshaller" ref="jsonMarshaller"/>
 	</bean>
 
-	<bean id="jsonMarshaller" class="spring.JsonMarshaller" init-method="init"/>
+	<bean id="jsonMarshaller" class="spring.JsonMarshaller" init-method="init" destroy-method="destroy"/>
 </beans>

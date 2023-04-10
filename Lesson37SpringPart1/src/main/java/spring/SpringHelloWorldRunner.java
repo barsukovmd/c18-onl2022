@@ -13,7 +13,8 @@ public class SpringHelloWorldRunner {
         User user = new User("Ivan");
         System.out.println(user);
 
-        try (ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("spring-hello-bean.xml")) {
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("spring-hello-bean.xml");
+        try (context) {
             SpringHelloWorld helloWorld = (SpringHelloWorld) context.getBean("springHelloWorld");
             System.out.println(helloWorld.getHelloMessage());
             JsonMarshaller jsonMarshaller = context.getBean("jsonMarshaller", JsonMarshaller.class);

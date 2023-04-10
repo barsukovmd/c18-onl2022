@@ -24,4 +24,8 @@ public class JsonMarshaller {
         Object result = mapper.readValue(body, Object.class);
         return result;
     }
+
+    private void destroy() {
+        System.out.println("destroy");
+    }
 }
