@@ -7,9 +7,6 @@ import spring.model.User;
 public class SpringHelloWorldRunner {
 
     public static void main(String[] args) throws Exception {
-
-//        SpringHelloWorld world = new SpringHelloWorld("sdfsdf");
-//        System.out.println(world.getHelloMessage());
         User user = new User("Ivan");
         System.out.println(user);
 

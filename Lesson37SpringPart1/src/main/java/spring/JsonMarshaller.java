@@ -4,9 +4,9 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
+import jakarta.annotation.Resources;
 
 public class JsonMarshaller {
-
     private ObjectMapper mapper;
 
     public void init() {
