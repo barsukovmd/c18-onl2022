@@ -4,12 +4,11 @@ import com.mysql.cj.jdbc.MysqlDataSource;
 import javax.sql.DataSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
-import org.springframework.stereotype.Component;
+import org.springframework.context.annotation.Configuration;
 
-@Component
+@Configuration
 @ComponentScan
 public class MyApplicationContextConfiguration {
-
     @Bean
     public DataSource dataSource() {  // (2)
         MysqlDataSource dataSource = new MysqlDataSource();
@@ -18,8 +17,4 @@ public class MyApplicationContextConfiguration {
         dataSource.setURL("jdbc:mysql://localhost:3306/myDatabase");
         return dataSource;
     }
-    //        @Bean
-//        public test.UserDao userDao() { // (3)
-//            return new test.UserDao(dataSource());
-//        }
 }

@@ -7,12 +7,14 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.env.Environment;
 
 public class Application {
 
     public static void main(String[] args) {
-        String name = null;
         ApplicationContext ctx = new AnnotationConfigApplicationContext(MyApplicationContextConfiguration.class);
+        Environment environment = ctx.getEnvironment();
+        System.out.println(environment);
         //если хотим создать свой класс в xml, то создаем через
         //ApplicationContext context = new ClassPathXmlApplicationContext();
         //context.getBean("");
