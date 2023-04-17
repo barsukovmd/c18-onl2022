@@ -13,8 +13,10 @@ public class Application {
 
     public static void main(String[] args) {
         ApplicationContext ctx = new AnnotationConfigApplicationContext(MyApplicationContextConfiguration.class);
-        Environment environment = ctx.getEnvironment();
-        System.out.println(environment);
+        Environment env = ctx.getEnvironment();
+        String databaseUrl = env.getProperty("database.url"); // (2)
+        boolean containsPassword = env.containsProperty("database.password");
+        System.out.println(env);
         //если хотим создать свой класс в xml, то создаем через
         //ApplicationContext context = new ClassPathXmlApplicationContext();
         //context.getBean("");
