@@ -3,11 +3,11 @@ package music;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class Application {
-
     public static void main(String[] args) {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
-        Music music = context.getBean("musicBean", Music.class);
-        MusicPlayer musicPlayer = new MusicPlayer(music);
-        musicPlayer.playMusic(music);
+//        Music music = context.getBean("musicBean", Music.class);
+//        MusicPlayer musicPlayer = new MusicPlayer(music);
+        MusicPlayer musicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
+        musicPlayer.playMusic();
     }
 }

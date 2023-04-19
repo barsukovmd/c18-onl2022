@@ -5,4 +5,7 @@
 
     <bean id="musicBean" class="music.ClassicalMusic">
     </bean>
+    <bean id="musicPlayer" class="music.MusicPlayer">
+        <constructor-arg ref="musicBean"/>
+    </bean>
 </beans>
