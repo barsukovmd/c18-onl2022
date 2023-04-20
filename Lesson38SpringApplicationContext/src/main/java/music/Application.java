@@ -5,9 +5,17 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class Application {
     public static void main(String[] args) {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
-        ClassicalMusic classicalMusic = context.getBean("musicBean", ClassicalMusic.class);
-        System.out.println(classicalMusic.getSong());
+        Music music1 = context.getBean("classicalMusic", ClassicalMusic.class);
+        Music music2 = context.getBean("rockMusic", RockMusic.class);
+        Music music3 = context.getBean("rapMusic", RapMusic.class);
+        MusicPlayer musicPlayer1 = new MusicPlayer(music1);
+        MusicPlayer musicPlayer2 = new MusicPlayer(music2);
+        MusicPlayer musicPlayer3 = new MusicPlayer(music3);
+        musicPlayer1.playMusic();
+        musicPlayer2.playMusic();
+        musicPlayer3.playMusic();
         context.close();
+        //        ClassicalMusic classicalMusic = context.getBean("classicalMusic", ClassicalMusic.class);
 //        Music music = context.getBean("musicBean", Music.class);
 //        MusicPlayer musicPlayer = new MusicPlayer(music);
 //        MusicPlayer musicPlayer1 = context.getBean("musicPlayer", MusicPlayer.class);
