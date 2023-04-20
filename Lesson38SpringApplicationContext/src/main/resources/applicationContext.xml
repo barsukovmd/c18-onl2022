@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context" xmlns:util="http://www.springframework.org/schema/util"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd">
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!--    <context:property-placeholder location="classpath: musicPlayer.properties"/>-->
-    <context:property-placeholder location="musicPlayer.properties"/>
-    <bean id="classicalMusic" class="music.ClassicalMusic"></bean>
-    <bean id="rockMusic" class="music.RockMusic"></bean>
-    <bean id="rapMusic" class="music.RapMusic"></bean>
+    <!--    <context:property-placeholder location="musicPlayer.properties"/>-->
+    <bean id="musicBean" class="music.ClassicalMusic">
 
+    </bean>
 
-    <bean id="musicPlayer" class="music.MusicPlayer">
-        <property name="name" value="${musicPlayer.name}"/>
-
-        <property name="volume" value="${musicPlayer.volume}"/>
+    <bean id="musicPlayer" class="music.MusicPlayer"
+          scope="prototype">
+        <property name="music" ref="musicBean"/>
+        <property name="name" value="Sony"/>
+        <property name="volume" value="70"/>
     </bean>
 </beans>

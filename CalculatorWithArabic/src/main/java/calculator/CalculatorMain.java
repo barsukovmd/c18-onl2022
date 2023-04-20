@@ -2,6 +2,7 @@ package calculator;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 public class CalculatorMain {
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int number1;
@@ -33,6 +34,7 @@ public class CalculatorMain {
         String var3 = var1.trim();
         number1 = romanToGreekNumber(var0);
         number2 = romanToGreekNumber(var3);
+
         if (number1 < 0 && number2 < 0) {
             result = 0;
         } else {
