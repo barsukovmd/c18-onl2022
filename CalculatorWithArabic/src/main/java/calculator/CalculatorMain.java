@@ -32,17 +32,17 @@ public class CalculatorMain {
         String var0 = splitOption[0];
         String var1 = splitOption[1];
         String var3 = var1.trim();
-        number1 = romanToGreekNumber(var0);
-        number2 = romanToGreekNumber(var3);
+//        number1 = romanToGreekNumber(var0);
+//        number2 = romanToGreekNumber(var3);
 
-        if (number1 < 0 && number2 < 0) {
-            result = 0;
-        } else {
-            result = calculated(number1, number2, operation);
-            System.out.println("Операция для римских цифр");
-            String resultRoman = convertNumberToRoman(result);
-            System.out.println(var0 + " " + operation + " " + var3 + " = " + resultRoman);
-        }
+//        if (number1 < 0 && number2 < 0) {
+//            result = 0;
+//        } else {
+//            result = calculated(number1, number2, operation);
+//            System.out.println("Операция для римских цифр");
+////            String resultRoman = convertNumberToRoman(result);
+//            System.out.println(var0 + " " + operation + " " + var3 + " = " + resultRoman);
+//        }
         number1 = Integer.parseInt(var0);
         number2 = Integer.parseInt(var3);
         result = calculated(number1, number2, operation);
@@ -50,11 +50,11 @@ public class CalculatorMain {
         System.out.println(number1 + " " + operation + " " + number2 + " = " + result);
     }
 
-    static String convertNumberToRoman(int numberArabian) {
-        String[] roman = {"O", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X"
-        };
-        return roman[numberArabian];
-    }
+//    static String convertNumberToRoman(int numberArabian) {
+//        String[] roman = {"O", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X"
+//        };
+//        return roman[numberArabian];
+//    }
 
     public static int calculated(int number1, int number2, char operation) {
         int result = 0;
@@ -73,44 +73,44 @@ public class CalculatorMain {
         }
         return result;
     }
-
-    static int romanToGreekNumber(String roman) {
-        try {
-            switch (roman) {
-                case "I" -> {
-                    return 1;
-                }
-                case "II" -> {
-                    return 2;
-                }
-                case "III" -> {
-                    return 3;
-                }
-                case "IV" -> {
-                    return 4;
-                }
-                case "V" -> {
-                    return 5;
-                }
-                case "VI" -> {
-                    return 6;
-                }
-                case "VII" -> {
-                    return 7;
-                }
-                case "VIII" -> {
-                    return 8;
-                }
-                case "IX" -> {
-                    return 9;
-                }
-                case "X" -> {
-                    return 10;
-                }
-            }
-        } catch (InputMismatchException e) {
-            throw new InputMismatchException("Данные введены неправильно");
-        }
-        return -1;
-    }
+//
+//    static int romanToGreekNumber(String roman) {
+//        try {
+//            switch (roman) {
+//                case "I" -> {
+//                    return 1;
+//                }
+//                case "II" -> {
+//                    return 2;
+//                }
+//                case "III" -> {
+//                    return 3;
+//                }
+//                case "IV" -> {
+//                    return 4;
+//                }
+//                case "V" -> {
+//                    return 5;
+//                }
+//                case "VI" -> {
+//                    return 6;
+//                }
+//                case "VII" -> {
+//                    return 7;
+//                }
+//                case "VIII" -> {
+//                    return 8;
+//                }
+//                case "IX" -> {
+//                    return 9;
+//                }
+//                case "X" -> {
+//                    return 10;
+//                }
+//            }
+//        } catch (InputMismatchException e) {
+//            throw new InputMismatchException("Данные введены неправильно");
+//        }
+//        return -1;
+//    }
 }

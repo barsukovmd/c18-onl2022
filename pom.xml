@@ -57,6 +57,7 @@
         <module>Lesson37SpringPart2</module>
         <module>Lesson38SpringApplicationContext</module>
         <module>CalculatorWithArabic</module>
+        <module>Calculator</module>
     </modules>
 
     <properties>
