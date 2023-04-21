@@ -44,12 +44,12 @@ public class Calculator {
     }
 
     public static int calculated(int number1, int number2, char operation) {
-        int result;
+        int result = 0;
         switch (operation) {
             case '+' -> result = number1 + number2;
             case '-' -> result = number1 - number2;
             case '*' -> result = number1 * number2;
-            case '/' -> result = number1 / number2;
+            case '/' -> result = Math.ceilDiv(number1, number2);
             default -> throw new IllegalArgumentException("Неверный знак операции");
         }
         return result;
