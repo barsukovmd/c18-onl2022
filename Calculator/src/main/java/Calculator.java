@@ -44,7 +44,7 @@ public class Calculator {
     }
 
     public static int calculated(int number1, int number2, char operation) {
-        int result = 0;
+        int result;
         switch (operation) {
             case '+' -> result = number1 + number2;
             case '-' -> result = number1 - number2;
