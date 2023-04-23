@@ -2,7 +2,7 @@ package music;
 
 import org.springframework.stereotype.Component;
 
-@Component("rock")
+@Component
 public class RockMusic implements Music {
 
     @Override

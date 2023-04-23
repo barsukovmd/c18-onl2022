@@ -1,20 +1,27 @@
 package music;
 
-import jakarta.annotation.Nullable;
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.Getter;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
-@AllArgsConstructor
-@Getter
-@Setter
-
+@Component
 public class MusicPlayer {
 
-    private Music music;
+    //    @Recourse find bean by name first
+//    @Autowired find bean by type and @Qualifier first
+    private final ClassicalMusic classicalMusic;
+    private final RockMusic rockMusic;
+    private final RapMusic rapMusic;
 
-    public void playMusic() {
-        System.out.println("Playing: " + music.getSong());
+    @Autowired
+    public MusicPlayer(ClassicalMusic classicalMusic, RockMusic rockMusic, RapMusic rapMusic) {
+        this.classicalMusic = classicalMusic;
+        this.rockMusic = rockMusic;
+        this.rapMusic = rapMusic;
+    }
+
+    public String playMusic() {
+        return "Playing: " + classicalMusic.getSong();
+//        System.out.println("Playing: " + rockMusic.getSong());
+//        System.out.println("Playing: " + rapMusic.getSong());
     }
 }

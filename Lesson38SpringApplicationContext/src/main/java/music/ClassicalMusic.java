@@ -4,10 +4,11 @@ package music;
 import org.springframework.stereotype.Component;
 
 
-@Component("classic")
+
 //по умолчанию будет id = "classicalMusic"
 //@Component - помечает как класс в котором нужно создать Bean этого класса и его будем забирать из ApplicationContext
 //можно самому пометить каким нужно задать id для этого класса
+@Component
 public class ClassicalMusic implements Music {
 
     private String config;
