@@ -1,10 +1,12 @@
 package reflection;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 import lombok.AllArgsConstructor;
 
+@NoArgsConstructor
 @AllArgsConstructor
 @ToString
 @Getter
@@ -16,4 +18,9 @@ public class Person {
     private String name;
     private String surname;
     private int age;
+
+    public void sayHello() {
+        System.out.println("Hello from no parameters types" + id + " " + name);
+    }
+
 }

@@ -1,10 +1,43 @@
 package reflection;
 
 import java.lang.annotation.Annotation;
+import java.lang.reflect.Field;
+import java.lang.reflect.Method;
+import java.util.Arrays;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ClassNotFoundException {
+//        Person p = new Person();
+//        Class person2 = p.getClass();
+//        Class person3 = Class.forName("reflection.Person");
+//        Method[] methods1 = person1.getMethods();
+//        for (Method method : methods1) {
+//            System.out.println(method.getName() + " " + method.getReturnType() + " " + Arrays.toString(method.getParameterTypes()));
+//
+//        }
+        System.out.println("---------Fields---------");
+        Class<Person> person1 = Person.class;
+//        Field[] person1Fields = person1.getFields();
+        Annotation[] annotations1 = person1.getAnnotations();
+        for (Annotation annotation : annotations1) {
+            if (annotation instanceof Author) {
+                System.out.println(annotation.annotationType());
+            }
+        }
+//        Field[] person1Fields = person1.getDeclaredFields();
+//        for (Field person1Field : person1Fields) {
+//            System.out.println(person1Field.getType() + " " + person1Field.getName());
+//        }
+//        Method[] methods2 = person2.getMethods();
+//        for (Method method : methods2) {
+//            System.out.println(method.getName());
+//        }
+//        Method[] methods3 = person3.getMethods();
+//        for (Method method : methods3) {
+//            System.out.println(method.getName());
+//        }
+
 //        Class<Person> person = Person.class;
 //        Method[] methods = person.getMethods();
 //        for (Method method : methods) {
@@ -40,3 +73,4 @@ public class Main {
         }
     }
 }
+
