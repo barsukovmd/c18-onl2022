@@ -1,8 +1,5 @@
 package music;
 
-import jakarta.annotation.PostConstruct;
-import org.checkerframework.checker.units.qual.C;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -31,5 +28,10 @@ public class SpringConfig {
     @Bean
     public MusicPlayer musicPlayer() {
         return new MusicPlayer(classicalMusic(), rapMusic(), rockMusic());
+    }
+
+    @Bean
+    public Computer computer() {
+        return new Computer(musicPlayer());
     }
 }

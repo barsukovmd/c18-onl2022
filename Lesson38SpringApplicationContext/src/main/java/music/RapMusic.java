@@ -1,8 +1,5 @@
 package music;
 
-import org.springframework.stereotype.Component;
-
-@Component("rap")
 public class RapMusic implements Music {
 
     @Override

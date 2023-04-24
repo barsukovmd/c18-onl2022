@@ -1,15 +1,13 @@
 package music;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Component;
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
 
 @Getter
 @Setter
-@Component
+
 public class MusicPlayer {
 
     @Value("${musicPlayer.name}")
@@ -22,7 +20,7 @@ public class MusicPlayer {
     private Music music2;
     private Music music3;
 
-    @Autowired
+
     public MusicPlayer(@Qualifier("rock") Music music1,
                        @Qualifier("rap") Music music2,
                        @Qualifier("classical") Music music3) {
@@ -32,8 +30,8 @@ public class MusicPlayer {
     }
 
     public String playMusic() {
-        return "Playing: " + music1.getSong() + ", " +
-                music2.getSong() + ", " +
+        return "Playing: \n" + music1.getSong() + ",\n" +
+                music2.getSong() + ",\n" +
                 music3.getSong();
     }
 }
