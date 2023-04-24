@@ -1,6 +1,8 @@
 package music;
 
 
+import java.util.List;
+import java.util.Random;
 import org.springframework.stereotype.Component;
 
 
@@ -11,26 +13,13 @@ import org.springframework.stereotype.Component;
 @Component
 public class ClassicalMusic implements Music {
 
-    private String config;
-
-    private ClassicalMusic() {
-    }
-
-    public static ClassicalMusic getClassicalMusic() {//при singleton создается только 1 bean объекта фабричным методом
-        return new ClassicalMusic();
-    }
-
+    private List<String> classicalMusics;
     @Override
     public String getSong() {
-        return "Beethoven symphony";
+        Random random = new Random(classicalMusics.size());
+        classicalMusics.add("Beethoven Symphony No. 5");
+        classicalMusics.add("Beethoven Piano Sonata No. 14");
+        classicalMusics.add("Beethoven Piano Sonata No. 8");
+        return random.toString();
     }
-
-    private void doMyInit() {
-        config = "doing my initialization";
-    }
-
-    private void doMyDestroy() {
-        config = "destroying my bean";
-    }
-
 }

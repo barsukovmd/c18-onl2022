@@ -1,15 +1,18 @@
 package music;
 
+import static music.MusicType.RAP;
+import static music.MusicType.ROCK;
+
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class Application {
     public static void main(String[] args) {
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
-//        MusicPlayer musicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
-//        musicPlayer.playMusic();
-        Computer computer = context.getBean("computer", Computer.class);
-        System.out.println(computer);
-        context.close();
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(MusicPlayer.class);
+        context.getBean(MusicType.class);
+        MusicPlayer musicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
+        musicPlayer.playMusic(ROCK);
+
 //        Music music1 = context.getBean("classic", ClassicalMusic.class);
 //        Music music2 = context.getBean("rock", RockMusic.class);
 //        Music music3 = context.getBean("rapMusic", RapMusic.class);
