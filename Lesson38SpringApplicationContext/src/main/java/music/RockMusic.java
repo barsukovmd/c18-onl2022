@@ -8,7 +8,6 @@ import org.springframework.stereotype.Component;
 @Component("rock")
 public class RockMusic implements Music {
     private final List<String> rockMusics = new ArrayList<>();
-
     @Override
     public String getSong() {
         Random random = new Random(rockMusics.size());
