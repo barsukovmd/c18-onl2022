@@ -1,8 +1,4 @@
 package music;
-
-import static music.MusicType.ROCK;
-
-import java.util.List;
 import org.springframework.stereotype.Component;
 
 @Component("rock")

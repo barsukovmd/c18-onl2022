@@ -13,24 +13,24 @@ import org.springframework.stereotype.Component;
 //@Component - помечает как класс в котором нужно создать Bean этого класса и его будем забирать из ApplicationContext
 //можно самому пометить каким нужно задать id для этого класса
 @Component("classical")
-@Scope("prototype")
+@Scope("singleton")
 public class ClassicalMusic implements Music {
-
-
     private String config;
 
-    private ClassicalMusic() {
+    ClassicalMusic() {
     }
 
-    public static ClassicalMusic getClassicalMusic() {//при singleton создается только 1 bean объекта фабричным методом
+    public static ClassicalMusic getClassicalMusic() {
         return new ClassicalMusic();
     }
+    //при singleton создается только 1 bean объекта фабричным методом
 
     @Override
     public String getSong() {
 
         return "Beethoven symphony";
     }
+//init, destroy почти всегда будут void, и методы не должны иметь аргументы
 
     @PostConstruct
     private void doMyInit() {
