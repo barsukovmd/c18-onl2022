@@ -1,5 +1,6 @@
 package music;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import org.springframework.stereotype.Component;
@@ -7,7 +8,7 @@ import org.springframework.stereotype.Component;
 @Component("rap")
 public class RapMusic implements Music {
 
-    private List<String> rapMusics;
+    private final List<String> rapMusics = new ArrayList<>();
 
     @Override
     public String getSong() {

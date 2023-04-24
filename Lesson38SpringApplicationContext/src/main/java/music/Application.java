@@ -9,13 +9,14 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class Application {
     public static void main(String[] args) {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(MusicPlayer.class);
-        context.getBean(MusicType.class);
-        MusicPlayer musicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
-        musicPlayer.playMusic(ROCK);
-
-//        Music music1 = context.getBean("classic", ClassicalMusic.class);
+        context.getBean(Music.class);
+        MusicPlayer musicPlayer = new MusicPlayer();
+        musicPlayer.playMusic(RAP);
+//
+//        Music music1 = context.getBean("classical", ClassicalMusic.class);
 //        Music music2 = context.getBean("rock", RockMusic.class);
-//        Music music3 = context.getBean("rapMusic", RapMusic.class);
+//        Music music3 = context.getBean("rap", RapMusic.class);
+//
 //        MusicPlayer musicPlayer1 = new MusicPlayer(music1);
 //        MusicPlayer musicPlayer2 = new MusicPlayer(music2);
 //        MusicPlayer musicPlayer3 = new MusicPlayer(music3);

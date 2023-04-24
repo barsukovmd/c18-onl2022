@@ -2,7 +2,6 @@ package music;
 
 import static music.MusicType.*;
 
-import jakarta.annotation.Resource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
@@ -11,9 +10,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class MusicPlayer {
 
-    private ClassicalMusic classicalMusic;
-    private RapMusic rapMusic;
-    private RockMusic rockMusic;
+    private Music music;
 
     //    @Recourse find bean by name first
 //    @Autowired find bean by type and @Qualifier first
@@ -22,17 +19,16 @@ public class MusicPlayer {
     //Constructor Injection (recommended method)
     //Setter Injection (Property Injection)
     //Method Injection
-
     @Autowired
-    private Music music;
+    private MusicType musicType;
 
-    public String playMusic(MusicType musicType) {
+    public void playMusic(MusicType musicType) {
         if (musicType == ROCK) {
-            return "Playing: " + music.getSong();
+            music.getSong();
         } else if (musicType == RAP) {
-            return "Playing: " + music.getSong();
+            music.getSong();
         } else {
-            return music.getSong();
+            music.getSong();
         }
     }
 }
