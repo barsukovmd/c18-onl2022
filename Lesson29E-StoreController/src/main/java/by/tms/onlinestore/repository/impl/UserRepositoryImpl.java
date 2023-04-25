@@ -8,12 +8,13 @@ import lombok.Setter;
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+
 @Setter
 public class UserRepositoryImpl implements UserRepository {
 
     private static final String GET_USERS_INFO = "select login, password from \"online-store\".users";
-    private static final String INSERT_USER_QUERY = "insert into \"online-store\".users (id, login, password, name, surname, birthday, sex, email, date_of_registry) values (?, ?, ?, ?, ?, ?, ?, ?)";
-    private static final String GET_USER_BY_LOGIN_AND_PASSWORD = "SELECT login, password, name, surname, birthday, sex, email, date_of_registry FROM \"online-store\".users WHERE login = ? AND password = ?";
+    private static final String INSERT_USER_QUERY = "insert into \"online-store\".users (id, login, password, name, surname, date_of_birth, sex, email, date_of_registry) values (?, ?, ?, ?, ?, ?, ?, ?)";
+    private static final String GET_USER_BY_LOGIN_AND_PASSWORD = "SELECT login, password, name, surname, date_of_birth, sex, email, date_of_registry FROM \"online-store\".users WHERE login = ? AND password = ?";
 
     @Override
     public void getUserInfo(User user) {
@@ -59,7 +60,7 @@ public class UserRepositoryImpl implements UserRepository {
                         .password(rs.getString("password"))
                         .name(rs.getString("name"))
                         .surname(rs.getString("surname"))
-                        .dateOfBirth(rs.getString("birthday"))
+                        .dateOfBirth(rs.getString("dateOfBirth"))
                         .sex(rs.getString("sex"))
                         .email(rs.getString("email"))
                         .dateOfRegistry(rs.getString("registration_date"))

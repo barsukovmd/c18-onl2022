@@ -17,7 +17,6 @@ public class CategoryRepositoryImpl implements CategoryRepository {
     private static final String PATH_TO_STORE_CATEGORY_BY_NAME = "SELECT * FROM \"online-store\".categories order by name";
     private static final String PATH_TO_STORE_CATEGORY_BY_ID = "SELECT * FROM \"online-store\".categories order by id";
 
-
     @Override
     public List<Category> getCategories() {
         List<Category> categories = new ArrayList<>();
