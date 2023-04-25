@@ -59,6 +59,7 @@
         <module>CalculatorWithArabic</module>
         <module>Calculator</module>
         <module>Lesson39SpringMVCTest</module>
+        <module>Lesson41SpringMvcEstore</module>
     </modules>
 
     <properties>
