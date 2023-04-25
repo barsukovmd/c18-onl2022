@@ -3,8 +3,8 @@ package by.teachmeskills.eshop.exceptions;
 import static by.teachmeskills.eshop.PagesPathEnum.ERROR_PAGE;
 import static by.teachmeskills.eshop.RequestParamsEnum.ERROR_PARAM;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.stereotype.Component;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.method.HandlerMethod;
@@ -15,13 +15,13 @@ import org.springframework.web.servlet.ModelAndView;
 public class AuthorizationHandlerExceptionViewResolver implements HandlerExceptionResolver {
 
     @Override
-    public ModelAndView resolveException(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) {
+    public ModelAndView resolveException(HttpServletRequest request, HttpServletResponse response, Object handler, Exception exception) {
         if (handler instanceof HandlerMethod) {
             ErrorView errorView = ((HandlerMethod) handler).getMethodAnnotation(ErrorView.class);
             if (errorView != null) {
                 String viewName = errorView.value();
                 ModelMap modelMap = new ModelMap();
-                modelMap.addAttribute(ERROR_PARAM.getValue(), ex.getMessage());
+                modelMap.addAttribute(ERROR_PARAM.getValue(), exception.getMessage());
 
                 ModelAndView model = new ModelAndView(viewName);
                 model.setViewName(ERROR_PAGE.getPath());

@@ -1,9 +1,9 @@
 package by.teachmeskills.eshop.entities;
 
 import by.teachmeskills.validator.PasswordConstraint;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotEmpty;
 import java.util.Date;
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotEmpty;
 import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
