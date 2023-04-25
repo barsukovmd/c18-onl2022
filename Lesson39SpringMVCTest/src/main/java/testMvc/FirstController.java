@@ -8,16 +8,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 //@Controller similar to @Component, but has more functionality
 //@RequestMapping(/home) provides start point for mapping(if it has),
 //then other @GetMapping(/cart) will add additional map (/home/cart)
-@RequestMapping("/home")
+@RequestMapping("/first")
 public class FirstController {
-
     @GetMapping("/hello")
     public String helloPage() {
-        return "Hello world!";
+        return "(First page) Hello world!";
     }
 
     @GetMapping("/goodbye")
     public String goodByePage() {
-        return "Goodbye world!";
+        return "(First page) Goodbye world!";
     }
 }
