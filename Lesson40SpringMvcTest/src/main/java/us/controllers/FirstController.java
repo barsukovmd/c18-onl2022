@@ -41,6 +41,6 @@ public class FirstController {
             default -> throw new RuntimeException();
         }
         model.addAttribute("result", result);
-        return "";
+        return "first/calculator";
     }
 }
