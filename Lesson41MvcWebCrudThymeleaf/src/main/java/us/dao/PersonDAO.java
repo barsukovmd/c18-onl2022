@@ -9,7 +9,7 @@ import us.models.Person;
 public class PersonDAO {
 
     private static int PEOPLE_COUNT;
-    private List<Person> people;
+    private final List<Person> people;
 
     {
         people = new ArrayList<>();
@@ -28,5 +28,14 @@ public class PersonDAO {
                      .filter(person -> person.getId() == id)
                      .findAny()
                      .orElse(null);
+    }
+
+    public void save(Person person) {
+        person.setId(++PEOPLE_COUNT);
+        people.add(person);
+//        person.setId(5);
+//        person.setName("Eugene");
+//        person.setSurname("Barsukov");
+//        person.setEmail("tenniszh@mail.ru");
     }
 }

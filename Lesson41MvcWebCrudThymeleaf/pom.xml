@@ -10,7 +10,7 @@
     </parent>
 
     <groupId>com.example</groupId>
-    <artifactId>Lesson41MvcWebCrud</artifactId>
+    <artifactId>Lesson41MvcWebCrudThymeleaf</artifactId>
     <version>1.0-SNAPSHOT</version>
     <name>Lesson41MvcWebCrud</name>
     <packaging>war</packaging>
