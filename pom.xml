@@ -60,6 +60,7 @@
         <module>Calculator</module>
         <module>Lesson39SpringMVCTest</module>
         <module>Lesson40SpringMvcTest</module>
+        <module>Lesson41MvcWebCrud</module>
         <module>Lesson41SpringMvcEstore</module>
     </modules>
 
