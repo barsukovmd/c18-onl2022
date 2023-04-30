@@ -8,5 +8,25 @@
 <div th:each:="person ${people}">
   <a th:href="@{/people/{id}(id=${person.getId()})}" th:text="${person.getId()}">user</a>
 </div>
+
+<form method="post" action="/people">
+  <label for="name">Name</label>
+  <input name="name" type="text" id="name"/>
+
+  <br>
+
+  <label for="surname">Name</label>
+  <input name="surname" type="text" id="surname"/>
+
+  <br>
+
+  <label for="email">Email</label>
+  <input name="email" type="text" id="email">
+
+  <br>
+
+  <input type="submit" value="Add Person"/>
+
+</form>
 </body>
 </html>
