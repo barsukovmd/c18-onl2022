@@ -2,8 +2,10 @@ package us.dao;
 
 import java.util.ArrayList;
 import java.util.List;
+import org.springframework.stereotype.Component;
 import us.models.Person;
 
+@Component
 public class PersonDAO {
 
     private static int PEOPLE_COUNT;
