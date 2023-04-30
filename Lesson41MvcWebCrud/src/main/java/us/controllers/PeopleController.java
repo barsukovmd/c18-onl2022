@@ -45,6 +45,16 @@ public class PeopleController {
     public String populateHeaderMessage() {
         return "Welcome to our website";
     }
+
+    @PostMapping
+    public String create(@ModelAttribute("person") Person person) {
+//      добавляем человека в базу данных
+        person.setId(5);
+        person.setName("Eugene");
+        person.setSurname("Barsukov");
+        person.setEmail("tenniszh@mail.ru");
+        return "person succesfully created";
+    }
 //    В модель в каждом методе текущего контроллера добавляет ключ-значение
 //Используется для добавления тех пар ключ-значение, которые нужны во всех моделях этоГо контроллера
 //Любая модель из этого контроллера по умолчанию будет иметь значение с
