@@ -10,7 +10,6 @@ import org.springframework.web.servlet.ModelAndView;
 @RestController
 @RequestMapping("/category")
 public class CategoryController {
-
     private final CategoryService categoryService;
 
     public CategoryController(CategoryService categoryService) {
