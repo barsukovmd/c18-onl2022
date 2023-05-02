@@ -302,6 +302,12 @@
             <version>2.3.32</version>
         </dependency>
 
+        <dependency>
+            <groupId>com.github.sviperll</groupId>
+            <artifactId>maven-profiledep-extension</artifactId>
+            <version>0.24-beta2</version>
+        </dependency>
+
     </dependencies>
     <build>
         <defaultGoal>clean package</defaultGoal>
