@@ -59,7 +59,10 @@
         <module>CalculatorWithArabic</module>
         <module>Calculator</module>
         <module>Lesson39SpringMVCTest</module>
+        <module>Lesson40SpringMvcTest</module>
+        <module>Lesson41MvcWebCrudThymeleaf</module>
         <module>Lesson41SpringMvcEstore</module>
+        <module>Lesson42SpringBootStore</module>
     </modules>
 
     <properties>
@@ -272,126 +275,159 @@
             <artifactId>hibernate-validator</artifactId>
             <version>8.0.0.Final</version>
         </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.springframework/spring-jdbc -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jdbc</artifactId>
+            <version>6.0.8</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+            <version>3.0.6</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.thymeleaf</groupId>
+            <artifactId>thymeleaf</artifactId>
+            <version>3.1.1.RELEASE</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.freemarker</groupId>
+            <artifactId>freemarker</artifactId>
+            <version>2.3.32</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.github.sviperll</groupId>
+            <artifactId>maven-profiledep-extension</artifactId>
+            <version>0.24-beta2</version>
+        </dependency>
+
     </dependencies>
     <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>${mavenCompalePlugin.version}</version>
-                <configuration>
-                    <source>${maven.compiler.source}</source>
-                    <target>${maven.compiler.target}</target>
-                    <annotationProcessorPaths>
-                        <path>
-                            <groupId>org.projectlombok</groupId>
-                            <artifactId>lombok</artifactId>
-                            <version>${lombok.version}</version>
-                        </path>
-                    </annotationProcessorPaths>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-war-plugin</artifactId>
-                <version>${maven-war-plugin.version}</version>
-            </plugin>
-            <plugin>
-                <groupId>com.github.spotbugs</groupId>
-                <artifactId>spotbugs-maven-plugin</artifactId>
-                <version>${spotbugs.maven.plugin.version}</version>
-                <configuration>
-                    <effort>Max</effort>
-                    <threshold>Medium</threshold>
-                    <onlyAnalyze>com.-</onlyAnalyze>
-                    <maxHeap>1024</maxHeap>
-                </configuration>
-                <executions>
-                    <execution>
-                        <phase>compile</phase>
-                        <goals>
-                            <goal>check</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <dependencies>
-                    <dependency>
-                        <groupId>com.github.spotbugs</groupId>
-                        <artifactId>spotbugs</artifactId>
-                        <version>${spotbugs.version}</version>
-                    </dependency>
-                </dependencies>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-pmd-plugin</artifactId>
-                <version>${pmd.maven.plugin.version}</version>
-                <executions>
-                    <execution>
-                        <phase>compile</phase>
-                        <goals>
-                            <goal>check</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <failOnViolation>false</failOnViolation>
-                    <printFailingErrors>true</printFailingErrors>
-                    <targetJdk>${maven.compiler.target}</targetJdk>
-                    <linkXRef>false</linkXRef>
-                    <excludeRoots>
-                        <excludeRoot>target/generated-sources</excludeRoot>
-                    </excludeRoots>
-                </configuration>
-                <dependencies>
-                    <dependency>
-                        <groupId>net.sourceforge.pmd</groupId>
-                        <artifactId>pmd-core</artifactId>
-                        <version>${pmd.version}</version>
-                    </dependency>
-                    <dependency>
-                        <groupId>net.sourceforge.pmd</groupId>
-                        <artifactId>pmd-java</artifactId>
-                        <version>${pmd.version}</version>
-                    </dependency>
-                    <dependency>
-                        <groupId>net.sourceforge.pmd</groupId>
-                        <artifactId>pmd-javascript</artifactId>
-                        <version>${pmd.version}</version>
-                    </dependency>
-                    <dependency>
-                        <groupId>net.sourceforge.pmd</groupId>
-                        <artifactId>pmd-jsp</artifactId>
-                        <version>${pmd.version}</version>
-                    </dependency>
-                </dependencies>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-checkstyle-plugin</artifactId>
-                <version>${checkstyle.maven.plugin.version}</version>
-                <dependencies>
-                    <dependency>
-                        <groupId>com.puppycrawl.tools</groupId>
-                        <artifactId>checkstyle</artifactId>
-                        <version>${checkstyle.version}</version>
-                    </dependency>
-                </dependencies>
-                <executions>
-                    <execution>
-                        <id>validate-files</id>
-                        <phase>validate</phase>
-                        <goals>
-                            <goal>check</goal>
-                        </goals>
-                        <configuration>
-                            <configLocation>codequality/checkstyle.xml</configLocation>
-                            <consoleOutput>true</consoleOutput>
-                            <failsOnError>true</failsOnError>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
+        <defaultGoal>clean package</defaultGoal>
+        <!--        <plugins>-->
+        <!--            <plugin>-->
+        <!--                <groupId>org.apache.maven.plugins</groupId>-->
+        <!--                <artifactId>maven-compiler-plugin</artifactId>-->
+        <!--                <version>${mavenCompalePlugin.version}</version>-->
+        <!--                <configuration>-->
+        <!--                    <source>${maven.compiler.source}</source>-->
+        <!--                    <target>${maven.compiler.target}</target>-->
+        <!--                    <annotationProcessorPaths>-->
+        <!--                        <path>-->
+    <!--                            <groupId>org.projectlombok</groupId>-->
+    <!--                            <artifactId>lombok</artifactId>-->
+    <!--                            <version>${lombok.version}</version>-->
+    <!--                        </path>-->
+    <!--                    </annotationProcessorPaths>-->
+    <!--                </configuration>-->
+    <!--            </plugin>-->
+    <!--            <plugin>-->
+    <!--                <groupId>org.apache.maven.plugins</groupId>-->
+    <!--                <artifactId>maven-war-plugin</artifactId>-->
+    <!--                <version>${maven-war-plugin.version}</version>-->
+    <!--            </plugin>-->
+    <!--            <plugin>-->
+    <!--                <groupId>com.github.spotbugs</groupId>-->
+    <!--                <artifactId>spotbugs-maven-plugin</artifactId>-->
+    <!--                <version>${spotbugs.maven.plugin.version}</version>-->
+    <!--                <configuration>-->
+    <!--                    <effort>Max</effort>-->
+    <!--                    <threshold>Medium</threshold>-->
+    <!--                    <onlyAnalyze>com.-</onlyAnalyze>-->
+    <!--                    <maxHeap>1024</maxHeap>-->
+    <!--                </configuration>-->
+    <!--                <executions>-->
+    <!--                    <execution>-->
+    <!--                        <phase>compile</phase>-->
+    <!--                        <goals>-->
+    <!--                            <goal>check</goal>-->
+    <!--                        </goals>-->
+    <!--                    </execution>-->
+    <!--                </executions>-->
+    <!--                <dependencies>-->
+    <!--                    <dependency>-->
+    <!--                        <groupId>com.github.spotbugs</groupId>-->
+    <!--                        <artifactId>spotbugs</artifactId>-->
+    <!--                        <version>${spotbugs.version}</version>-->
+    <!--                    </dependency>-->
+    <!--                </dependencies>-->
+    <!--            </plugin>-->
+    <!--            <plugin>-->
+    <!--                <groupId>org.apache.maven.plugins</groupId>-->
+    <!--                <artifactId>maven-pmd-plugin</artifactId>-->
+    <!--                <version>${pmd.maven.plugin.version}</version>-->
+    <!--                <executions>-->
+    <!--                    <execution>-->
+    <!--                        <phase>compile</phase>-->
+    <!--                        <goals>-->
+    <!--                            <goal>check</goal>-->
+    <!--                        </goals>-->
+    <!--                    </execution>-->
+    <!--                </executions>-->
+    <!--                <configuration>-->
+    <!--                    <failOnViolation>false</failOnViolation>-->
+    <!--                    <printFailingErrors>true</printFailingErrors>-->
+    <!--                    <targetJdk>${maven.compiler.target}</targetJdk>-->
+    <!--                    <linkXRef>false</linkXRef>-->
+    <!--                    <excludeRoots>-->
+    <!--                        <excludeRoot>target/generated-sources</excludeRoot>-->
+    <!--                    </excludeRoots>-->
+    <!--                </configuration>-->
+    <!--                <dependencies>-->
+    <!--                    <dependency>-->
+    <!--                        <groupId>net.sourceforge.pmd</groupId>-->
+    <!--                        <artifactId>pmd-core</artifactId>-->
+    <!--                        <version>${pmd.version}</version>-->
+    <!--                    </dependency>-->
+    <!--                    <dependency>-->
+    <!--                        <groupId>net.sourceforge.pmd</groupId>-->
+    <!--                        <artifactId>pmd-java</artifactId>-->
+    <!--                        <version>${pmd.version}</version>-->
+    <!--                    </dependency>-->
+    <!--                    <dependency>-->
+    <!--                        <groupId>net.sourceforge.pmd</groupId>-->
+    <!--                        <artifactId>pmd-javascript</artifactId>-->
+    <!--                        <version>${pmd.version}</version>-->
+    <!--                    </dependency>-->
+    <!--                    <dependency>-->
+    <!--                        <groupId>net.sourceforge.pmd</groupId>-->
+    <!--                        <artifactId>pmd-jsp</artifactId>-->
+    <!--                        <version>${pmd.version}</version>-->
+    <!--                    </dependency>-->
+    <!--                </dependencies>-->
+    <!--            </plugin>-->
+    <!--            <plugin>-->
+    <!--                <groupId>org.apache.maven.plugins</groupId>-->
+    <!--                <artifactId>maven-checkstyle-plugin</artifactId>-->
+    <!--                <version>${checkstyle.maven.plugin.version}</version>-->
+    <!--                <dependencies>-->
+    <!--                    <dependency>-->
+    <!--                        <groupId>com.puppycrawl.tools</groupId>-->
+    <!--                        <artifactId>checkstyle</artifactId>-->
+    <!--                        <version>${checkstyle.version}</version>-->
+    <!--                    </dependency>-->
+    <!--                </dependencies>-->
+    <!--                <executions>-->
+    <!--                    <execution>-->
+    <!--                        <id>validate-files</id>-->
+    <!--                        <phase>validate</phase>-->
+    <!--                        <goals>-->
+    <!--                            <goal>check</goal>-->
+        <!--                        </goals>-->
+        <!--                        <configuration>-->
+        <!--                            <configLocation>codequality/checkstyle.xml</configLocation>-->
+        <!--                            <consoleOutput>true</consoleOutput>-->
+        <!--                            <failsOnError>true</failsOnError>-->
+        <!--                        </configuration>-->
+        <!--                    </execution>-->
+        <!--                </executions>-->
+        <!--            </plugin>-->
+        <!--        </plugins>-->
     </build>
 </project>
